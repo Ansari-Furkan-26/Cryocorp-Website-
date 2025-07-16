@@ -41,19 +41,6 @@ const Hero = () => {
                         ))}
                     </div>
                 </div>
-
-                {/* Social Icons */}
-                <div className="flex flex-col space-y-4 items-end mt-10">
-                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors cursor-pointer">
-                        <MessageCircle size={20} />
-                    </div>
-                    <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
-                        <Phone size={20} />
-                    </div>
-                    <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
-                        <User size={20} />
-                    </div>
-                </div>
             </div>
         </div>
     );

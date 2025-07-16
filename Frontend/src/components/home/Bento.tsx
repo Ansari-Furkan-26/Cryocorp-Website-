@@ -49,6 +49,7 @@ const gridItems: GridItem[] = [
 
 const IndustrialGrid = () => {
   return (
+    <div className="bg-slate-50 ">
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-4xl mx-auto">
       {gridItems.map((item, index) => (
         <div
@@ -63,6 +64,7 @@ const IndustrialGrid = () => {
           </div>
         </div>
       ))}
+    </div>
     </div>
   );
 };

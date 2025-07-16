@@ -2,9 +2,9 @@ import React from 'react';
 
 const Hero = () => {
     return (
-        <div className="min-h-screen bg-gray-50 flex pt-24 ">
+        <div className="min-h-screen bg-gray-50 flex pt-20 ">
             {/* Left Column - Main Content */}
-            <div className="flex-[3] p-12">
+            <div className="flex-[3] px-12">
                 <div className="mb-8 pt-24">
                     <p className="text-gray-500 text-sm mb-2">Services & Projects</p>
                     <h1 className="text-4xl font-bold text-gray-900 mb-6">Projects</h1>
