@@ -16,6 +16,7 @@ import BlogDetailPage from "@/components/public/BlogDetailPage";
 import LoginForm from "@/components/LoginForm";
 import BlogList from "@/components/admin/BlogList";
 import ProfilePage from "@/components/admin/ProfilePage";
+import Subscribers from "@/components/admin/Subscribers";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 
@@ -44,6 +45,7 @@ const App = () => (
             >
               <Route index element={<BlogList />} />
               <Route path="profile" element={<ProfilePage />} />
+              <Route path="Subscribers" element={<Subscribers />} />
             </Route>
 
             {/* 404 */}

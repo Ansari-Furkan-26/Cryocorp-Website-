@@ -4,7 +4,7 @@ import { Outlet, NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, BookOpen, User, LogOut, X } from 'lucide-react';
+import { Menu, BookOpen, MailCheck ,  User, LogOut, X } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
 const AdminLayout = () => {
@@ -16,6 +16,7 @@ const AdminLayout = () => {
   const navItems = [
     { path: '/admin', label: 'Blogs', icon: BookOpen, exact: true },
     { path: '/admin/profile', label: 'Profile', icon: User, exact: false },
+    { path: '/admin/Subscribers', label: 'Subscribers', icon: MailCheck, exact: true },
   ];
 
   const NavItems = ({ onItemClick }: { onItemClick?: () => void }) => (

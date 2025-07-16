@@ -9,7 +9,7 @@ import { AuthProvider } from "@/contexts/AuthContext";
 
 // Layouts
 import AdminLayout from "@/components/Admin/AdminLayout";
-import Layout from "@/components/Layout";
+import Layout from "@/Layout/Layout";
 
 // Admin Pages
 import LoginForm from "@/components/Admin/LoginForm";
@@ -55,6 +55,7 @@ const App = () => (
               <Route path="/disclaimer" element={<Disclaimer />} />
               <Route path="/blog" element={<HomePage />} />
               <Route path="blog/:id" element={<BlogDetailPage />} />
+              <Route path="/quiz" element={<Quiz/>} />
             </Route>
 
             {/* 🔐 Admin Login */}
@@ -72,7 +73,6 @@ const App = () => (
               <Route index element={<BlogList />} />
               <Route path="profile" element={<ProfilePage />} />
             </Route>
-              <Route path="/quiz" element={<Quiz/>} />
             {/* ❌ 404 Not Found */}
             <Route path="*" element={<NotFound />} />
           </Routes>

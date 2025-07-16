@@ -3,7 +3,7 @@ import React from "react";
 const PlantPotential = () => {
   return (
     <div className="bg-white px-6 py-12 md:px-16 lg:px-24">
-      <h2 className="text-3xl md:text-4xl font-semibold mb-12">
+      <h2 className="text-3xl md:text-4xl font-semibold mt-20 mb-10">
         DISCOVER YOUR <span className="text-red-600">TRUE PLANT POTENTIAL</span>
       </h2>
 

@@ -25,6 +25,46 @@ mongoose.connect(process.env.MONGODB_URI, {
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
 
+// Subscriber Schema and Model
+const subscriberSchema = new mongoose.Schema({
+  email: { type: String, required: true, unique: true }
+});
+
+const Subscriber = mongoose.model('Subscriber', subscriberSchema);
+
+// API to store email
+app.post('/api/subscribe', async (req, res) => {
+  const { email } = req.body;
+  
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (!email || !emailRegex.test(email)) {
+  return res.status(400).json({ message: 'Invalid email address' });
+}
+
+
+  try {
+    const subscriber = new Subscriber({ email });
+    await subscriber.save();
+    res.status(200).json({ message: 'Subscription successful' });
+  } catch (error) {
+    if (error.code === 11000) {
+      return res.status(400).json({ message: 'Email already subscribed' });
+    }
+    res.status(500).json({ message: 'Database error' });
+  }
+});
+
+// API to fetch subscribers
+app.get('/api/subscribers', async (req, res) => {
+  try {
+    const subscribers = await Subscriber.find({}, 'email');
+    res.status(200).json({ subscribers: subscribers.map(sub => sub.email) });
+  } catch (error) {
+    res.status(500).json({ message: 'Database error' });
+  }
+});
+
 // Routes
 app.use('/api/admin', adminRoutes);
 app.use('/api/blogs', blogRoutes);

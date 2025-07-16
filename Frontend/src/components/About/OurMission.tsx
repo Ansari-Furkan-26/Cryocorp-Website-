@@ -85,7 +85,7 @@ const OurMission = () => {
         </p>
 
         {/* Heading */}
-        <h2 className="text-6xl font-bold text-[#79C0A1] drop-shadow-sm leading-tight">
+        <h2 className="text-8xl font-bold text-[#79C0A1] drop-shadow-sm leading-tight">
           Our Mission
         </h2>
       </div>

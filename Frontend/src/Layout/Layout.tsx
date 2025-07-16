@@ -1,10 +1,10 @@
 // src/components/Layout.tsx
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import AIwidget from "./AIwidget"
-// import FloatingButton from "./FloatingButton"; // or whatever the file is called
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AIwidget from "@/components/AIwidget"
+import FloatingButton from "@/components/FloatingButton"; // or whatever the file is called
 
 const Layout = () => {
   return (
@@ -13,9 +13,9 @@ const Layout = () => {
       <main className="min-h-screen">
         <Outlet />
       </main>
-      {/* <AIwidget /> */}
+      <AIwidget />
       <Footer />
-      {/* <FloatingButton /> */}
+      <FloatingButton />
     </>
   );
 };

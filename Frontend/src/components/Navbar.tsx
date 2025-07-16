@@ -24,11 +24,12 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:block">
+            <a href="/quiz">
             <button
               className="bg-[#59C6D3] hover:bg-secondary text-sm rounded-3xl text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 z-50 relative"
             >
               Take Your Plant Efficiency Test!
-            </button>
+            </button></a>
           </div>
 
           <div className="md:hidden">

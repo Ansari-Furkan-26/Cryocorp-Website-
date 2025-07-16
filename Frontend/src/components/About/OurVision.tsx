@@ -4,8 +4,8 @@ const OurVision = () => {
   return (
     <div className="flex flex-col md:flex-row justify-between px-6 md:px-16 py-12 gap-10 bg-white">
       {/* Left text */}
-      <div className="max-w-md text-[#36695C] text-base leading-relaxed font-medium text-[28px]">
-        <p>
+      <div className="max-w-xl text-[#36695C] text-base leading-relaxed font-medium">
+        <p className="text-3xl py-10">
           To be recognised as India’s foremost company, and a global provider of comprehensive, end-to-end oxygen plant
           solutions — driven by advanced manufacturing, systematic data, and strong organisational values.
         </p>
@@ -18,7 +18,7 @@ const OurVision = () => {
             Indian excellence leads global innovation in oxygen
             solutions, guided by purpose, precision, and progress.
         </p>
-        <h2 style={{ WebkitTextStroke: '1px #2b4d3f' }} className="text-[120px] font-bold text-[#5AA288] drop-shadow-sm leading-tight flex flex-col items-end">
+        <h2 style={{ WebkitTextStroke: '1px #2b4d3f' }} className="text-[120px] font-bold text-[#A1D5B1] drop-shadow-sm leading-tight flex flex-col items-end">
           <span>Our </span><span>Vision</span>
         </h2>
       </div>

@@ -1,21 +1,20 @@
 import React from "react";
-import PlantPotential from "@/components/Quiz/PlantPotential";
+import HeroSection from "@/components/Quiz/HeroSection";
 import GasIndustryQuiz from "@/components/Quiz/GasIndustryQuiz";
 import PlantSelector from "@/components/Quiz/PlantSelector.jsx";
 import ASUQuizPromo from "@/components/Quiz/ASUQuizPromo";
 import PSASystemQuiz from "@/components/Quiz/PSASystemQuiz";
 import CryogenicQuizPromo from "@/components/Quiz/CryogenicQuizPromo";
-import Footer from "@/components/Footer";
+
 const Quiz: React.FC = () => {
   return (
     <>
-      <PlantPotential />
+      <HeroSection />
       <GasIndustryQuiz />
       <PlantSelector />
       <ASUQuizPromo />
       <PSASystemQuiz />
       <CryogenicQuizPromo />
-      <Footer/>
     </>
   );
 };
