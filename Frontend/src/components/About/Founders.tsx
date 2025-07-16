@@ -2,7 +2,7 @@ import React from "react";
 
 const Founders = () => {
   return (
-    <div className="bg-[#1A365E] relative pt-20">
+    <div className="bg-[#1A365E] relative pt-20 overflow-hidden">
         <div className="absolute">
             <img src="/about/founder-bg2.png" alt="" className="h-[800px]"/>
         </div>

@@ -2,21 +2,21 @@ import React from 'react';
 
 const Certifications = () => {
   return (
-    <section className="bg-white px-6 md:px-20 py-16 text-[#1A365E] font-sans">
+    <section className="bg-white px-4 sm:px-6 md:px-20 py-12 sm:py-16 text-[#1A365E] font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="text-4xl font-bold  mb-2">Certifications</h2>
-        <h3 className="text-2xl font-semibold  mb-4">& Quality Checks</h3>
-        <p className="text-sm  font-semibold mb-2">
+        <h2 className="text-2xl sm:text-4xl font-bold mb-2">Certifications</h2>
+        <h3 className="text-lg sm:text-2xl font-semibold mb-4">& Quality Checks</h3>
+        <p className="text-xs sm:text-sm font-semibold mb-2">
           Excellence isn’t a claim — it’s a standard we prove.
         </p>
-        <p className="text-sm  mb-8 max-w-[500px] leading-relaxed">
+        <p className="text-xs sm:text-sm mb-8 max-w-[500px] leading-relaxed">
           Every solution goes through rigorous quality checks and adheres to certified
           industry standards, ensuring reliability, safety, and performance at every level.
         </p>
 
         {/* Paragraphs */}
-        <div className="space-y-5 text-sm leading-relaxed ">
+        <div className="space-y-5 text-xs sm:text-sm leading-relaxed">
           <p>
             CryoCorp O2 LLP is a <span className="font-semibold">registered Micro Enterprise under India’s MSME framework</span>,
             a status that underscores our commitment to supporting small-scale, high-impact
@@ -54,12 +54,12 @@ const Certifications = () => {
         </div>
 
         {/* Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center mt-16">
-          <img src="/about/logo1.png" alt="Logo 1" className="h-12 object-contain" />
-          <img src="/about/logo2.png" alt="Logo 2" className="h-12 object-contain " />
-          <img src="/about/logo3.png" alt="Logo 3" className="h-12 object-contain" />
-          <img src="/about/logo4.png" alt="Logo 4" className="h-12 object-contain" />
-          <img src="/about/logo5.png" alt="Logo 5" className="h-12 object-contain" />
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center mt-12 sm:mt-16">
+          <img src="/about/logo1.png" alt="Logo 1" className="h-10 sm:h-12 object-contain" />
+          <img src="/about/logo2.png" alt="Logo 2" className="h-10 sm:h-12 object-contain" />
+          <img src="/about/logo3.png" alt="Logo 3" className="h-10 sm:h-12 object-contain" />
+          <img src="/about/logo4.png" alt="Logo 4" className="h-10 sm:h-12 object-contain" />
+          <img src="/about/logo5.png" alt="Logo 5" className="h-10 sm:h-12 object-contain" />
         </div>
       </div>
     </section>

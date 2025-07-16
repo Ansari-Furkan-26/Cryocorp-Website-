@@ -16,7 +16,7 @@ const Index = () => {
       <VideoHero />
       <Benefits />
       <AchievementsSection />
-      <div className="snap-y snap-mandatory overflow-y-scroll h-screen">
+      <div className="lg:snap-y lg:snap-mandatory overflow-y-scroll h-screen">
       <IndustriesSection />
       </div>
       <Bento />

@@ -2,23 +2,23 @@ import React from 'react';
 
 const OurMission = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden bg-white py-20 px-6 md:px-20">
+    <section className="min-h-screen relative overflow-hidden bg-white py-12 sm:py-20 px-4 sm:px-6 md:px-20">
       {/* === Animated Background Blobs === */}
       <div className="absolute inset-0 z-0">
         {/* Light Green Blob */}
         <div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-80 animate-bounce-x blur-2xl"
+          className="absolute w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full opacity-80 animate-bounce-x blur-2xl"
           style={{
             background: `radial-gradient(circle at 30% 30%, #A1FFCE 0%, #58D68D 60%, transparent 80%)`,
             top: '10%',
             right: '35%',
-            filter: 'blur(100px)'
+            filter: 'blur(100px)',
           }}
         />
 
         {/* Teal Blob */}
         <div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-80 animate-bounce-y blur-2xl"
+          className="absolute w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full opacity-80 animate-bounce-y blur-2xl"
           style={{
             background: `radial-gradient(circle at 70% 30%, #58D68D 0%, #138D75 60%, transparent 80%)`,
             top: '30%',
@@ -26,19 +26,9 @@ const OurMission = () => {
           }}
         />
 
-        {/* Dark Teal Blob */}
-        {/* <div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-70 animate-bounce-diagonal blur-2xl"
-          style={{
-            background: `radial-gradient(circle at 30% 70%, #138D75 0%, #0E6655 60%, transparent 80%)`,
-            top: '70%',
-            right: '5%',
-          }}
-        /> */}
-
         {/* Dark Blue Blob */}
         <div
-          className="absolute w-[400px] h-[400px] rounded-full opacity-70 animate-bounce-x blur-2xl"
+          className="absolute w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full opacity-70 animate-bounce-x blur-2xl"
           style={{
             background: `radial-gradient(circle at 50% 50%, #0B3C5D 0%, #1B263B 70%, transparent 90%)`,
             top: '30%',
@@ -47,12 +37,13 @@ const OurMission = () => {
         />
       </div>
 
+      {/* Blurred white overlay */}
       <div className="absolute inset-0 z-10 backdrop-blur-2xl bg-white/30" />
 
       {/* === Content === */}
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Top Boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 mb-12 sm:mb-20">
           {[
             {
               id: '01',
@@ -71,7 +62,7 @@ const OurMission = () => {
             },
           ].map((item) => (
             <div key={item.id}>
-              <h3 className="text-[#79C0A1] text-2xl font-bold mb-1">{item.id}</h3>
+              <h3 className="text-[#79C0A1] text-xl sm:text-2xl font-bold mb-1">{item.id}</h3>
               <h4 className="text-[#79C0A1] text-sm font-semibold mb-1">{item.title}</h4>
               <p className="text-sm text-gray-800 leading-relaxed">{item.desc}</p>
             </div>
@@ -79,13 +70,13 @@ const OurMission = () => {
         </div>
 
         {/* Bottom Text */}
-        <p className="text-sm text-[#79C0A1] mb-2 max-w-lg">
+        <p className="text-sm text-[#79C0A1] mb-3 max-w-lg">
           At CryoCorp, our mission stems from a deep commitment to strengthen the oxygen infrastructure through
           purpose-driven partnerships and progress.
         </p>
 
         {/* Heading */}
-        <h2 className="text-8xl font-bold text-[#79C0A1] drop-shadow-sm leading-tight">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-[#79C0A1] drop-shadow-sm leading-tight break-words">
           Our Mission
         </h2>
       </div>

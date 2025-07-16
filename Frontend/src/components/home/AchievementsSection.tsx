@@ -110,7 +110,7 @@ const AchievementsSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-20 px-4 bg-primary text-white overflow-hidden min-h-[120vh] flex items-end"
+      className="relative py-10 sm:py-20 px-4 bg-primary text-white overflow-hidden min-h-[120vh] flex items-end"
     >
       {/* Background Image */}
       <div className="absolute inset-0">
@@ -121,7 +121,7 @@ const AchievementsSection = () => {
         />
       </div>
       
-      <div className="relative z-10 max-w-6xl mx-auto w-full">
+      <div className="relative z-10 max-w-6xl mx-auto w-[95%]">
         <div className="text-left mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold text-white transition-all duration-1000 ${
             isVisible 
@@ -145,7 +145,7 @@ const AchievementsSection = () => {
                 transitionDelay: `${index * 0.1 + 0.2}s` // Stagger animation after title
               }}
             >
-              <div className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-none">
+              <div className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-none">
                 <AnimatedNumber 
                   value={achievement.number} 
                   shouldAnimate={isVisible && hasTriggered}

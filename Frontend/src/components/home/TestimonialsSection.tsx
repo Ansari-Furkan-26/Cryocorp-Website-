@@ -4,20 +4,97 @@ import { useRef, useState } from "react";
 
 const TestimonialsSection = () => {
   const testimonials = [
-    { company: "SCG", role: "Purchasing Executive", quote: "You all are doing the best!", img: "testimonial1" },
-    { company: "NELION", subtitle: "NELION EXPORTS", role: "Export Manager", quote: "We are happy with the product and quality.", img: "testimonial2" },
-    { company: "VG", subtitle: "Vishnu Gases", role: "Owner", quote: "You have material available whenever we want!", img: "testimonial3" },
-    { company: "ABC Corp", role: "CTO", quote: "Excellent service and support.", img: "testimonial4" },
-    { company: "XYZ Ltd", subtitle: "XYZ Solutions", role: "Operations Manager", quote: "Reliable products every time.", img: "testimonial5" },
-    { company: "Tech Innovators", role: "CEO", quote: "Transformed our workflow completely.", img: "testimonial6" },
-    { company: "GreenTech", role: "Sustainability Lead", quote: "Eco-friendly solutions that work.", img: "testimonial7" },
-    { company: "BlueWave", subtitle: "BlueWave Inc", role: "Sales Director", quote: "Impressed by the delivery speed.", img: "testimonial8" },
-    { company: "RedStone", role: "Operations Head", quote: "Quality beyond expectations.", img: "testimonial9" },
-    { company: "SilverPeak", subtitle: "SilverPeak Co", role: "Marketing Manager", quote: "Great customer engagement tools.", img: "testimonial10" },
-    { company: "GoldLine", role: "Finance Officer", quote: "Cost-effective and efficient.", img: "testimonial11" },
-    { company: "PurpleSky", subtitle: "PurpleSky Ltd", role: "Product Manager", quote: "Innovative products every time.", img: "testimonial12" },
-    { company: "OrangeBloom", role: "HR Manager", quote: "Excellent team support.", img: "testimonial13" },
-    { company: "IndigoWave", subtitle: "IndigoWave Group", role: "Founder", quote: "Always available when needed.", img: "testimonial14" },
+    {
+      company: "SCG",
+      role: "Purchasing Executive",
+      quote: "You all are doing the best!",
+      img: "testimonial1",
+    },
+    {
+      company: "NELION",
+      subtitle: "NELION EXPORTS",
+      role: "Export Manager",
+      quote: "We are happy with the product and quality.",
+      img: "testimonial2",
+    },
+    {
+      company: "VG",
+      subtitle: "Vishnu Gases",
+      role: "Owner",
+      quote: "You have material available whenever we want!",
+      img: "testimonial3",
+    },
+    {
+      company: "ABC Corp",
+      role: "CTO",
+      quote: "Excellent service and support.",
+      img: "testimonial4",
+    },
+    {
+      company: "XYZ Ltd",
+      subtitle: "XYZ Solutions",
+      role: "Operations Manager",
+      quote: "Reliable products every time.",
+      img: "testimonial5",
+    },
+    {
+      company: "Tech Innovators",
+      role: "CEO",
+      quote: "Transformed our workflow completely.",
+      img: "testimonial6",
+    },
+    {
+      company: "GreenTech",
+      role: "Sustainability Lead",
+      quote: "Eco-friendly solutions that work.",
+      img: "testimonial7",
+    },
+    {
+      company: "BlueWave",
+      subtitle: "BlueWave Inc",
+      role: "Sales Director",
+      quote: "Impressed by the delivery speed.",
+      img: "testimonial8",
+    },
+    {
+      company: "RedStone",
+      role: "Operations Head",
+      quote: "Quality beyond expectations.",
+      img: "testimonial9",
+    },
+    {
+      company: "SilverPeak",
+      subtitle: "SilverPeak Co",
+      role: "Marketing Manager",
+      quote: "Great customer engagement tools.",
+      img: "testimonial10",
+    },
+    {
+      company: "GoldLine",
+      role: "Finance Officer",
+      quote: "Cost-effective and efficient.",
+      img: "testimonial11",
+    },
+    {
+      company: "PurpleSky",
+      subtitle: "PurpleSky Ltd",
+      role: "Product Manager",
+      quote: "Innovative products every time.",
+      img: "testimonial12",
+    },
+    {
+      company: "OrangeBloom",
+      role: "HR Manager",
+      quote: "Excellent team support.",
+      img: "testimonial13",
+    },
+    {
+      company: "IndigoWave",
+      subtitle: "IndigoWave Group",
+      role: "Founder",
+      quote: "Always available when needed.",
+      img: "testimonial14",
+    },
   ];
 
   const containerRef = useRef(null);
@@ -33,7 +110,7 @@ const TestimonialsSection = () => {
     const gap = 24;
     containerRef.current.scrollTo({
       left: newIndex * (cardWidth + gap),
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
@@ -44,8 +121,10 @@ const TestimonialsSection = () => {
     <section className="py-12 px-4 bg-white">
       <div className="mx-auto">
         <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-800 ">Client</h1>
-        <h3 className="text-3xl font-bold text-[#5FC9D8]  mb-8">Testimonials</h3>
+          <h1 className="text-3xl font-bold text-gray-800 ">Client</h1>
+          <h3 className="text-3xl font-bold text-[#5FC9D8]  mb-8">
+            Testimonials
+          </h3>
         </div>
         <div className="flex justify-end mb-6 gap-2">
           <Button
@@ -69,12 +148,12 @@ const TestimonialsSection = () => {
         </div>
         <div
           ref={containerRef}
-          className="flex overflow-x-hidden scroll-smooth snap-x snap-mandatory"
+          className="flex overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory gap-x-6"
         >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-full md:w-[calc(33.333%-1rem)] p-4 border border-gray-900 shadow-sm hover:shadow-md transition-shadow"
+              className="flex-shrink-0 w-[90%] sm:w-[75%] md:w-[calc(33.333%-1rem)] snap-start p-4 border border-gray-900 shadow-sm hover:shadow-md transition-shadow rounded-xl bg-white"
             >
               <div className="mb-4">
                 <img
@@ -83,11 +162,13 @@ const TestimonialsSection = () => {
                   className="h-16 w-auto mb-2"
                 />
                 {testimonial.subtitle && (
-                  <p className="text-sm text-gray-500 ">{testimonial.subtitle}</p>
+                  <p className="text-sm text-gray-500">
+                    {testimonial.subtitle}
+                  </p>
                 )}
-                <p className="text-sm text-gray-600 ">{testimonial.role}</p>
+                <p className="text-sm text-gray-600">{testimonial.role}</p>
               </div>
-              <blockquote className="text-[#5FC9D8]  text-base font-medium">
+              <blockquote className="text-[#5FC9D8] text-base font-medium">
                 "{testimonial.quote}"
               </blockquote>
             </div>
