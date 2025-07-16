@@ -1,11 +1,11 @@
 import React from "react";
-import Hero from "@/components/Resource/hero";
+import Faq from "@/components/Resource/Faq";
 import CTA from "@/components/CTA";
 
 const Products: React.FC = () => {
     return (
         <>
-            <Hero />
+            <Faq />
             <CTA />
         </>
     );

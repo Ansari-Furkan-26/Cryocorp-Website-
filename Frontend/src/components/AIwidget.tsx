@@ -10,7 +10,7 @@ const ElevenLabsWidget = () => {
   }, []);
 
   return (
-    <elevenlabs-convai agent-id="agent_01jz7fdxrret8vzhmq80kkpeez"></elevenlabs-convai>
+  <elevenlabs-convai agent-id="agent_01jz7fdxrret8vzhmq80kkpeez" />    
   );
 };
 

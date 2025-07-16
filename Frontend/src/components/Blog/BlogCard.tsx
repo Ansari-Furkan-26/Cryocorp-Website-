@@ -32,9 +32,6 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
             month: 'long',
             day: 'numeric'
           })}
-          <span className="mx-2">•</span>
-          <Clock className="h-3 w-3 mr-1" />
-          {readingTime} min read
         </div>
         
         <CardTitle className="line-clamp-2 hover:text-blue-600 transition-colors">
