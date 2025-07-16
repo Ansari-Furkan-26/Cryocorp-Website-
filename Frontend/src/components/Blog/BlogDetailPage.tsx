@@ -140,10 +140,6 @@ const BlogDetailPage = () => {
                 day: 'numeric',
               })}
             </div>
-            <div className="flex items-center">
-              <Clock className="h-4 w-4 mr-1" />
-              {readingTime} min read
-            </div>
             <Button variant="ghost" size="sm" onClick={handleShare}>
               <Share2 className="h-4 w-4 mr-1" />
               Share

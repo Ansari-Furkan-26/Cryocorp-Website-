@@ -46,11 +46,11 @@ const filteredBlogs = blogs.filter((blog: Blog) =>
       {/* Hero Section */}
       <div className="text-center py-16">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
             Welcome to{' '}
             <span className="text-teal-600">BlogSpace</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="md:text-xl text-gray-600 mb-8">
             Discover insights, tutorials, and stories from our community of writers.
             Stay updated with the latest trends and technologies.
           </p>
