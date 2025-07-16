@@ -2,31 +2,31 @@ import React from 'react';
 
 const ProjectGridSection = () => {
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden py-16 px-4">
+        <section className="relative min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden pb-16 px-4">
             {/* Animated Background Blobs */}
             <div className="absolute inset-0 z-0">
                 {[
                     {
-                        pos: { top: '10%', left: '25%' },
+                        pos: { top: '20%', left: '60%' },
                         gradient: 'circle at 30% 30%, #A1FFCE 0%, #58D68D 60%, transparent 80%',
                         anim: 'bounce-x',
                         opacity: 'opacity-80',
                     },
                     {
-                        pos: { top: '30%', left: '45%' },
+                        pos: { top: '40%', left: '45%' },
                         gradient: 'circle at 70% 30%, #58D68D 0%, #138D75 60%, transparent 80%',
                         anim: 'bounce-y',
                         opacity: 'opacity-80',
                     },
                     {
-                        pos: { top: '30%', right: '10%' },
+                        pos: { top: '40%', left: '25%' },
                         gradient: 'circle at 30% 70%, #138D75 0%, #0E6655 60%, transparent 80%',
                         anim: 'bounce-diagonal',
                         opacity: 'opacity-70',
                     },
                     {
-                        pos: { top: '60%', left: '55%' },
-                        gradient: 'circle at 50% 50%, #0B3C5D 0%, #1B263B 70%, transparent 90%',
+                        pos: { top: '50%', left: '5%' },
+                        gradient: 'circle at 60% 60%, #0B3C5D 0%, #1B263B 70%, transparent 90%',
                         anim: 'bounce-x',
                         opacity: 'opacity-70',
                     },
@@ -41,6 +41,9 @@ const ProjectGridSection = () => {
                     />
                 ))}
             </div>
+
+            {/* 🔥 Overlay - z-10 */}
+            <div className="absolute inset-0 z-10 backdrop-blur-2xl bg-white/30" />
 
             {/* 3×2 Grid */}
             <div className="relative z-10 grid grid-cols-3 grid-rows-2 gap-4 max-w-7xl mx-auto">
@@ -107,15 +110,23 @@ const ProjectGridSection = () => {
                     />
                     <div className="p-6 flex-1">
                         <h3 className="text-lg font-bold mb-2">03. LIQUID BOTTLING PLANT COMMISSIONING</h3>
-                        <p className="text-base md:text-lg font-semibold text-black">
+                        <p className="text-xs text-black font-medium mb-4">
                             Your liquid Gold, bottled perfectly, where cryogenic safety meets distributing brilliance.
+                        </p> 
+                        <ul className="list-disc list-inside text-sm text-black font-medium space-y-2">
+                            <li>End‑to‑end relocation of ASU/PSA plants across borders</li>
+                            <li>Zero‑downtime strategy with pre‑mobilization planning & modular dismantling</li>
+                            <li>Compliance with international safety/logistics standards (ISO, CE)</li>
+                        </ul>
+                        <p className="mt-4 text-sm text-black font-semibold">
+                            Audience: Industrial gas manufacturers expanding or restructuring globally
                         </p>
                     </div>
                 </div>
             </div>
 
             {/* CTA TEXT SECTION */}
-            <div className="relative z-10 mt-20 max-w-5xl mx-auto text-center px-4">
+            <div className="relative z-10 mx-auto px-20">
                 <p className="text-2xl md:text-4xl font-bold leading-relaxed" style={{ color: '#5FC9D8' }}>
                     Ready to Optimize Every Step of Your Gas Plant Journey?
                     <br />

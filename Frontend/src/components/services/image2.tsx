@@ -11,7 +11,7 @@ const FullScreenImageWithFilter = () => {
             />
 
             {/* Blue Overlay */}
-            <div className="absolute inset-0 bg-blue-400 opacity-50 z-10"></div>
+            <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
 
 
         </div>
