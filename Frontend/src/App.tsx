@@ -32,6 +32,7 @@ import Disclaimer from "@/components/Disclaimer";
 
 // Utility
 import NotFound from "@/pages/NotFound";
+import Quiz from "./pages/Quiz";
 
 const queryClient = new QueryClient();
 
@@ -71,7 +72,7 @@ const App = () => (
               <Route index element={<BlogList />} />
               <Route path="profile" element={<ProfilePage />} />
             </Route>
-
+              <Route path="/quiz" element={<Quiz/>} />
             {/* ❌ 404 Not Found */}
             <Route path="*" element={<NotFound />} />
           </Routes>
