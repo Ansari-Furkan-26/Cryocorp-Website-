@@ -1,0 +1,482 @@
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ArrowRight, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+const Benefits = () => {
+    const [showReliabilityModal, setShowReliabilityModal] = useState(false);
+    const [showCostModal, setShowCostModal] = useState(false);
+    const [showMaintenanceModal, setShowMaintenanceModal] = useState(false);
+    const [showEfficiencyModal, setShowEfficiencyModal] = useState(false);
+    const ModalWrapper = ({ children, onClose }) => (
+        <motion.div
+            className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+        >
+            {children}
+        </motion.div>
+    );
+    const ModalContent = ({ children }) => (
+        <motion.div
+            className="relative w-full max-w-7xl h-full max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden"
+            initial={{ x: "-100vw" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100vw" }}
+            transition={{
+                type: "spring",
+                damping: 25,
+                stiffness: 200,
+                duration: 0.5
+            }}
+        >
+            {children}
+        </motion.div>
+    );
+    const features = [
+        {
+            number: '01',
+            title: 'Reliability',
+            description: 'Eliminate Plant Downtime',
+            image: 'https://images.pexels.com/photos/3862132/pexels-photo-3862132.jpeg?auto=compress&cs=tinysrgb&w=400',
+            colorClass: 'text-benefit-01'
+        },
+        {
+            number: '02',
+            title: 'Cost',
+            description: 'Reduce Operations Cost',
+            image: 'https://images.pexels.com/photos/259027/pexels-photo-259027.jpeg?auto=compress&cs=tinysrgb&w=400',
+            colorClass: 'text-benefit-02'
+        },
+        {
+            number: '03',
+            title: 'Maintenance',
+            description: 'Extend Equipment Lifespan',
+            image: 'https://images.pexels.com/photos/3862130/pexels-photo-3862130.jpeg?auto=compress&cs=tinysrgb&w=400',
+            colorClass: 'text-benefit-03'
+        },
+        {
+            number: '04',
+            title: 'Efficiency',
+            description: 'Ensure Production Continuity',
+            image: 'https://images.pexels.com/photos/3862379/pexels-photo-3862379.jpeg?auto=compress&cs=tinysrgb&w=400',
+            colorClass: 'text-benefit-04'
+        }
+    ];
+
+    // Handle escape key press
+    useEffect(() => {
+        const handleEscape = (event) => {
+            if (event.key === 'Escape') {
+                setShowReliabilityModal(false);
+                setShowCostModal(false);
+                setShowMaintenanceModal(false);
+                setShowEfficiencyModal(false);
+            }
+        };
+
+        if (showReliabilityModal || showCostModal || showMaintenanceModal || showEfficiencyModal) {
+            document.addEventListener('keydown', handleEscape);
+            document.body.style.overflow = 'hidden';
+        }
+
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+            document.body.style.overflow = 'unset';
+        };
+    }, [showReliabilityModal, showCostModal, showMaintenanceModal, showEfficiencyModal]);
+
+    const handleReliabilityClick = () => {
+        setShowReliabilityModal(true);
+    };
+
+    const handleCostClick = () => {
+        setShowCostModal(true);
+    };
+
+    const handleMaintenanceClick = () => {
+        setShowMaintenanceModal(true);
+    };
+
+    const handleEfficiencyClick = () => {
+        setShowEfficiencyModal(true);
+    };
+
+    const ReliabilityModal = () => (
+        <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
+            <ModalContent>
+                <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-8">
+                    <div className="relative w-full max-w-7xl h-full max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+                        {/* Background Image with Blue Filter */}
+                        <div className="absolute inset-0">
+                            <img
+                                src="benefits/benefits2.png"
+                                alt="Reliability Process Flow"
+                                className="w-full h-full object-cover rounded-lg shadow-lg"
+                            />
+                        </div>
+
+                        <div className="absolute inset-0 bg-blue-900/70" />
+
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setShowReliabilityModal(false)}
+                            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+                        >
+                            <X className="h-6 w-6 text-white" />
+                        </button>
+
+                        {/* Content Grid */}
+                        <div className="relative z-10 h-full flex items-center p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] w-full items-center">
+                                {/* Left Content */}
+                                <div className="text-left space-y-8">
+                                    <div className="text-8xl lg:text-9xl font-bold text-white leading-none">01</div>
+                                    <div className="space-y-4">
+                                        <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">Reliability</h2>
+                                        <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">Eliminate Plant Downtime</p>
+                                    </div>
+
+                                    <div className="pt-8">
+                                        <Button
+                                            variant="outline"
+                                            size="lg"
+                                            className="border-white text-black hover:bg-white hover:text-blue-900 transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
+                                        >
+                                            View More <ArrowRight className="ml-2 h-5 w-5" />
+                                        </Button>
+                                    </div>
+                                </div>
+
+                                {/* Right Content - Process Flow Image */}
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="rounded-lg">
+                                        <img
+                                            src="benefits/benefits1.png"
+                                            alt="Reliability Process Flow"
+                                            className="w-[800px] h-[400px] rounded-lg shadow-lg"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ModalContent>
+        </ModalWrapper>
+    );
+
+    const CostModal = () => (
+        <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
+            <ModalContent>
+                <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-8">
+                    <div className="relative w-full max-w-7xl h-full max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+                        {/* Background Image with Green Filter */}
+                        <div className="absolute inset-0">
+                            <img
+                                src="benefits/benefits3.png"
+                                alt="Cost Reduction Background"
+                                className="w-full h-full object-cover rounded-lg shadow-lg"
+                            />
+                        </div>
+
+                        <div className="absolute inset-0 bg-[rgba(95,201,216,0.7)]"></div>
+
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setShowCostModal(false)}
+                            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+                        >
+                            <X className="h-6 w-6 text-white" />
+                        </button>
+
+                        {/* Content Grid */}
+                        <div className="relative z-10 h-full flex items-center p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] w-full items-center">
+                                {/* Left Content */}
+                                <div className="text-left space-y-8">
+                                    <div className="text-8xl lg:text-9xl font-bold text-white leading-none">02</div>
+                                    <div className="space-y-4">
+                                        <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">Cost</h2>
+                                        <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">Reduce Operations Cost</p>
+                                    </div>
+
+                                    <div className="pt-8">
+                                        <Button
+                                            variant="outline"
+                                            size="lg"
+                                            className="border-white text-black hover:bg-white hover:text-green-900 transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
+                                        >
+                                            View More <ArrowRight className="ml-2 h-5 w-5" />
+                                        </Button>
+                                    </div>
+                                </div>
+
+                                {/* Right Content - Cost Analysis Image */}
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="rounded-lg">
+                                        <img
+                                            src="benefits/benefits4.png"
+                                            alt="Cost Analysis Chart"
+                                            className="w-[630px] h-[600px] rounded-lg shadow-lg object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ModalContent>
+        </ModalWrapper>
+    );
+
+    const MaintenanceModal = () => (
+        <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
+            <ModalContent>
+                <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-8">
+                    <div className="relative w-full max-w-7xl h-full max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+                        {/* Background Image with Orange Filter */}
+                        <div className="absolute inset-0">
+                            <img
+                                src="benefits/benefits5.png"
+                                alt="Maintenance Background"
+                                className="w-full h-full object-cover rounded-lg shadow-lg"
+                            />
+                        </div>
+
+                        <div className="absolute inset-0 bg-[rgba(161,213,177,0.7)]" />
+
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setShowMaintenanceModal(false)}
+                            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+                        >
+                            <X className="h-6 w-6 text-white" />
+                        </button>
+
+                        {/* Content Grid */}
+                        <div className="relative z-10 h-full flex items-center p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] w-full items-center">
+                                {/* Left Content */}
+                                <div className="text-left space-y-8">
+                                    <div className="text-8xl lg:text-9xl font-bold text-white leading-none">03</div>
+                                    <div className="space-y-4">
+                                        <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">Maintenance</h2>
+                                        <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">Extend Equipment Lifespan</p>
+                                    </div>
+
+                                    <div className="pt-8">
+                                        <Button
+                                            variant="outline"
+                                            size="lg"
+                                            className="border-white text-black hover:bg-white hover:text-orange-900 transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
+                                        >
+                                            View More <ArrowRight className="ml-2 h-5 w-5" />
+                                        </Button>
+                                    </div>
+                                </div>
+
+                                {/* Right Content - Maintenance Process Image */}
+                                <div className="flex justify-center lg:justify-end">
+                                    <div className="rounded-lg">
+                                        <img
+                                            src="benefits/benefits6.png"
+                                            alt="Maintenance Process"
+                                            className="w-[800px] h-[400px] rounded-lg shadow-lg object-cover"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ModalContent>
+        </ModalWrapper>
+    );
+
+    const EfficiencyModal = () => (
+        <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
+            <ModalContent>
+                <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-8">
+                    <div className="relative w-full max-w-7xl h-full max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+                        {/* Background Image with Purple Filter */}
+                        <div className="absolute inset-0">
+                            <img
+                                src="benefits/benefits7.png"
+                                alt="Efficiency Background"
+                                className="w-full h-full object-cover rounded-lg shadow-lg"
+                            />
+                        </div>
+
+                        <div className="absolute inset-0 bg-[rgba(80,83,84,0.7)]" />
+
+                        {/* Close Button */}
+                        <button
+                            onClick={() => setShowEfficiencyModal(false)}
+                            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+                        >
+                            <X className="h-6 w-6 text-white" />
+                        </button>
+
+                        {/* Content Grid */}
+                        <div className="relative z-10 h-full flex items-center p-12">
+                            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] w-full items-center">
+                                {/* Left Content */}
+                                <div className="text-left space-y-8">
+                                    <div className="text-8xl lg:text-9xl font-bold text-white leading-none">04</div>
+                                    <div className="space-y-4">
+                                        <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">Efficiency</h2>
+                                        <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">Ensure Production Continuity</p>
+                                    </div>
+
+                                    <div className="pt-8">
+                                        <Button
+                                            variant="outline"
+                                            size="lg"
+                                            className="border-white text-black hover:bg-white hover:text-purple-900 transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
+                                        >
+                                            View More <ArrowRight className="ml-2 h-5 w-5" />
+                                        </Button>
+                                    </div>
+                                </div>
+
+                                {/* Right Content - Efficiency Dashboard Image with Labels */}
+                                <div className="flex flex-col items-center justify-center lg:justify-end text-white space-y-6">
+                                    <div className="rounded-lg max-w-full">
+                                        <img
+                                            src="benefits/benefits8.png"
+                                            alt="Efficiency Dashboard"
+                                            className="w-full max-w-[800px] h-auto object-contain rounded-lg shadow-lg"
+                                        />
+                                    </div>
+
+                                    {/* Labels below image */}
+                                    {/* Labels below image - compact version */}
+                                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 text-center mt-3 px-2">
+                                        <div className="max-w-[120px] mx-auto">
+                                            <p className="font-medium text-xs leading-tight">Zero Downtime</p>
+                                            <p className="text-white/70 text-[10px] leading-snug mt-1">Minimizing interruptions with fast service</p>
+                                        </div>
+                                        <div className="max-w-[120px] mx-auto">
+                                            <p className="font-medium text-xs leading-tight">Smart Optimization</p>
+                                            <p className="text-white/70 text-[10px] leading-snug mt-1">Boosting output and efficiency</p>
+                                        </div>
+                                        <div className="max-w-[120px] mx-auto">
+                                            <p className="font-medium text-xs leading-tight">Proactive Maintenance</p>
+                                            <p className="text-white/70 text-[10px] leading-snug mt-1">Preventing features with regular check-ups</p>
+                                        </div>
+                                        <div className="max-w-[120px] mx-auto">
+                                            <p className="font-medium text-xs leading-tight">No Waiting for Spares</p>
+                                            <p className="text-white/70 text-[10px] leading-snug mt-1">Ensuring parts availability for repairs</p>
+                                        </div>
+                                        <div className="max-w-[120px] mx-auto">
+                                            <p className="font-medium text-xs leading-tight">Expert Team</p>
+                                            <p className="text-white/70 text-[10px] leading-snug mt-1">Providing skilled engineers and training</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ModalContent>
+        </ModalWrapper>
+    );
+
+    const getClickHandler = (title) => {
+        switch (title) {
+            case 'Reliability':
+                return handleReliabilityClick;
+            case 'Cost':
+                return handleCostClick;
+            case 'Maintenance':
+                return handleMaintenanceClick;
+            case 'Efficiency':
+                return handleEfficiencyClick;
+            default:
+                return undefined;
+        }
+    };
+
+    return (
+        <>
+            <section className="py-20 bg-background min-h-screen">
+                <div className="w-full px-8 lg:px-16">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+                        {features.map((feature, index) => (
+                            <div
+                                key={feature.number}
+                                className="flip-card h-[400px] lg:h-[500px] w-full"
+                            >
+                                <div className="flip-card-inner w-full h-full">
+                                    {/* Front of the card */}
+                                    <Card
+                                        className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-start px-12 py-16 cursor-pointer hover:bg-accent/10 transition-colors"
+                                        onClick={getClickHandler(feature.title)}
+                                    >
+                                        <div className={`text-8xl lg:text-9xl font-bold mb-8 ${feature.colorClass} leading-none`}>
+                                            {feature.number}
+                                        </div>
+                                        <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight">
+                                            {feature.title}
+                                        </h3>
+                                        <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+                                            {feature.description}
+                                        </p>
+                                        <Button
+                                            variant="outline"
+                                            size="lg"
+                                            className="border-border text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
+                                        >
+                                            View More <ArrowRight className="ml-2 h-5 w-5" />
+                                        </Button>
+                                    </Card>
+
+                                    {/* Back of the card with image */}
+                                    <Card
+                                        className="flip-card-back absolute w-full h-full border-0 overflow-hidden shadow-none cursor-pointer hover:opacity-90 transition-opacity"
+                                        onClick={getClickHandler(feature.title)}
+                                    >
+                                        <div className="relative w-full h-full">
+                                            <img
+                                                src={feature.image}
+                                                alt={feature.title}
+                                                className="w-full h-full object-cover"
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                                            <div className="absolute inset-0 flex flex-col justify-end p-12">
+                                                <div className="text-6xl lg:text-7xl font-bold text-white mb-4 leading-none">
+                                                    {feature.number}
+                                                </div>
+                                                <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">
+                                                    {feature.title}
+                                                </h3>
+                                                <p className="text-lg text-white/90 leading-relaxed">
+                                                    {feature.description}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </Card>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Modals */}
+            <AnimatePresence>
+                {showReliabilityModal && <ReliabilityModal />}
+                {showCostModal && <CostModal />}
+                {showMaintenanceModal && <MaintenanceModal />}
+                {showEfficiencyModal && <EfficiencyModal />}
+            </AnimatePresence>
+        </>
+    );
+};
+
+export default Benefits;
