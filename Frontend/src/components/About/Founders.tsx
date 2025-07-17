@@ -23,7 +23,7 @@ const Founders = () => {
             <img
               src="/about/founder1.png"
               alt=""
-              className="md:absolute md:top-[-150px] h-[300px] md:h-[500px] z-1 relative top-0"
+              className="md:absolute md:top-[-150px] h-[250px] md:h-[500px] z-1 relative top-0"
             />
             <div className="hidden md:block md:absolute md:bottom-[-290px] md:left-[70px] text-center mt-4 md:mt-0 relative bottom-0 left-0">
               <img src="/about/quote2.png" alt="" className="relative z-2 mx-auto md:mx-0" />

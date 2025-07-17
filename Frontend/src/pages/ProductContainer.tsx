@@ -7,46 +7,26 @@ import Products2 from './PSA';
 import Products3 from './LBU';
 import Products4 from './NEXT';
 import { useNavigation } from '../contexts/NavigationContext';
-import { PageTransition } from '../components/PageTransition'; // Add this import
-
+import { PageTransition } from '../components/PageTransition';
 import CTA from "@/components/CTA";
+
+// Define heights for each page
+const pageHeights = {
+    1: { mobile: 'h-[36300px]', desktop: 'md:h-[18000px]' }, // ASU - longest page
+    2: { mobile: 'h-[2000px]', desktop: 'md:h-[2100px]' },  // PSA - shorter page
+    3: { mobile: 'h-[7700px]', desktop: 'md:h-[3900px]' }, // LBU - medium page
+    4: { mobile: 'h-[3700px]', desktop: 'md:h-[3000px]' }, // NEXT - medium page
+};
 
 const ProductsContainerInner = () => {
     const { currentPage } = useNavigation();
+    
+    // Get current page height
+    const currentHeight = pageHeights[currentPage as keyof typeof pageHeights];
+    const heightClasses = `${currentHeight.mobile} ${currentHeight.desktop}`;
 
     return (
-        <div className="min-h-[40000px]  md:min-h-[15700px] bg-white relative overflow-hidden pt-32">
-            {/* Common Sidebar */}
-            <div className="absolute z-10 top-28 left-0 px-6 pt-60 w-64">
-                <div className="flex flex-col h-full">
-                    {/* Top Left List */}
-                    <div className="space-y-2 text-xs sm:text-sm font-bold text-gray-400  mb-auto">
-                        <p>01. ASU TECHNOLOGY</p>
-                        <p>02. PSA TECHNOLOGY</p>
-                        <p>03. LIQUID BOTTLING UNIT</p>
-                        <p>04. NEXT GEN GAS SOLUTIONS</p>
-                    </div>
-
-                    {/* Vertical Line Container */}
-                    <div className="relative flex-1 my-4">
-                        {/* Vertical Line */}
-                        <div className="absolute left-8 top-0 bottom-0 w-px bg-slate-400 opacity-50" />
-                    </div>
-
-                    {/* Bottom Section */}
-                    <div className="flex mt-auto pb-32">
-                        {/* Numbers */}
-                        <div className="text-gray-400 text-xs sm:text-sm space-y-1 font-semibold w-8 pt-80">
-                            <p>4</p>
-                            <p>83</p>
-                            <p>9</p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
+        <div className={`${heightClasses} bg-white relative overflow-hidden pt-16 sm:pt-32 transition-all duration-300`}>
             <AnimatePresence mode="wait">
                 {currentPage === 1 && (
                     <PageTransition pageIndex={1}>
@@ -75,10 +55,14 @@ const ProductsContainerInner = () => {
 
 const ProductsContainer = () => {
     return (
-        <NavigationProvider>
-            <ProductsContainerInner />
+        <>
+            <NavigationProvider>
+                <ProductsContainerInner />
+            </NavigationProvider>
             <CTA />
-        </NavigationProvider>
+            {/* Add Footer component here if you have one */}
+            {/* <Footer /> */}
+        </>
     );
 };
 

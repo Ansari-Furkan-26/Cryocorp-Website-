@@ -5,10 +5,10 @@ function CTA() {
   return (
     <div className="w-full bg-background">
       {/* Let's Grow Together Section */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
 
         {/* Column 1 */}
-        <div className="bg-white p-6 md:p-8 text-foreground h-full border-b md:border-r">
+        <div className="bg-white p-6 md:p-8 text-foreground h-full border-b md:border-r md:col-span-2">
           <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">LET'S GROW TOGETHER</h2>
           <p className="text-sm font-bold md:mb-1 leading-relaxed">
             Have questions about our industrial gas solutions, products, or services?
@@ -39,15 +39,12 @@ function CTA() {
             Click here
           </Button>
 
-          <div className="mt-2 md:mt-4 font-bold">
-            <h3 className=" md:mb-1">Business Hours:</h3>
-            <p className="text-sm">Monday – Saturday: 09:30 AM to 6:00 PM IST</p>
-          </div>
+          
         </div>
 
 
         {/* Column 2 */}
-        <div className="bg-white p-6 md:p-8 text-foreground h-full">
+        <div className="bg-white p-6 md:p-8 text-foreground h-full md:col-span-2">
           <h3 className="font-bold text-xl">Get in Touch</h3>
           <p className='text-sm mb-4'>General Inquiries: Hindi and English Voice ChatBot buttons</p>
 
@@ -74,6 +71,7 @@ function CTA() {
                   +91 9004759939
                 </a>
               </p>
+              
 
             </div>
 
@@ -85,11 +83,16 @@ function CTA() {
                <p><span className="font-bold">Technical Support:</span> <span className="break-words">ashish@cryocorp.in</span></p>
             </div>
 
+            <div className="mt-2 md:mt-4 ">
+            <h3 className=" md:mb-1 font-bold">Business Hours:</h3>
+            <p className="text-sm">Monday – Saturday: 09:30 AM to 6:00 PM IST</p>
+          </div>
+
           </div>
         </div>
 
         {/* Column 3 - Full Image CTA */}
-        <div className="relative overflow-hidden h-full min-h-[400px] md:min-h-[500px] lg:min-h-[600px] col-span-1 lg:col-span-1">
+        <div className="relative overflow-hidden h-full min-h-[400px] md:min-h-[500px] lg:min-h-[400px] col-span-1 lg:col-span-1">
           <div className="absolute inset-0">
             <img
               src="/images/cta-bg.png"

@@ -24,6 +24,7 @@ const FlipCard = ({
             className={`relative ${className}`}
             onMouseEnter={() => setIsFlipped(true)}
             onMouseLeave={() => setIsFlipped(false)}
+            onClick={() => setIsFlipped(!isFlipped)} // Touch support for mobile
             style={{ perspective: '1000px' }}
         >
             <div 
@@ -45,9 +46,9 @@ const FlipCard = ({
                             className={`w-full h-full object-cover ${imageClassName}`}
                         />
                         <div className="absolute inset-0 bg-blue-900/50" />
-                        <div className="absolute z-10 bottom-4 left-4 text-white text-lg font-bold tracking-wide">
+                        <div className="absolute z-10 bottom-4 left-4 text-white text-lg font-bold tracking-wide lg:text-lg text-sm">
                             {title}
-                            {subtitle && <div className="text-sm">{subtitle}</div>}
+                            {subtitle && <div className="text-sm lg:text-sm text-xs">{subtitle}</div>}
                         </div>
                     </div>
                 </div>
@@ -60,16 +61,16 @@ const FlipCard = ({
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="relative w-full h-full bg-[#1A365E] text-white p-4 overflow-y-auto rounded-lg">
-                        <div className="space-y-3">
+                    <div className="relative w-full h-full bg-[#1A365E] text-white p-4 overflow-y-auto rounded-lg lg:p-4 p-2">
+                        <div className="space-y-3 lg:space-y-3 space-y-2">
                             <div className="border-b border-blue-300 pb-2">
-                                <h3 className="font-bold text-sm">{detailCard.title}</h3>
-                                <p className="text-xs text-blue-200 mt-1">{detailCard.subtitle}</p>
+                                <h3 className="font-bold text-sm lg:text-sm text-xs">{detailCard.title}</h3>
+                                <p className="text-xs text-blue-200 mt-1 lg:text-xs text-[10px]">{detailCard.subtitle}</p>
                             </div>
                             
                             <div className="space-y-2">
-                                <h4 className="font-semibold text-xs text-blue-200">Technical Overview:</h4>
-                                <ul className="text-xs space-y-1">
+                                <h4 className="font-semibold text-xs text-blue-200 lg:text-xs text-[10px]">Technical Overview:</h4>
+                                <ul className="text-xs space-y-1 lg:text-xs text-[10px]">
                                     {detailCard.technicalSpecs.map((spec, index) => (
                                         <li key={index} className="flex items-start">
                                             <span className="text-blue-300 mr-2">•</span>
@@ -80,8 +81,8 @@ const FlipCard = ({
                             </div>
                             
                             <div className="space-y-2">
-                                <h4 className="font-semibold text-xs text-blue-200">Key Features:</h4>
-                                <ul className="text-xs space-y-1">
+                                <h4 className="font-semibold text-xs text-blue-200 lg:text-xs text-[10px]">Key Features:</h4>
+                                <ul className="text-xs space-y-1 lg:text-xs text-[10px]">
                                     {detailCard.keyFeatures.map((feature, index) => (
                                         <li key={index} className="flex items-start">
                                             <span className="text-blue-300 mr-2">•</span>
@@ -92,7 +93,7 @@ const FlipCard = ({
                             </div>
                             
                             <div className="mt-3">
-                                <p className="text-xs text-blue-100">{detailCard.description}</p>
+                                <p className="text-xs text-blue-100 lg:text-xs text-[10px]">{detailCard.description}</p>
                             </div>
                         </div>
                     </div>
@@ -104,6 +105,7 @@ const FlipCard = ({
 
 const ASUPage = () => {
     const { goNext, goPrev } = useNavigation();
+    
     // Detail cards data
     const detailCards = {
         tot: {
@@ -193,46 +195,45 @@ const ASUPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-white relative overflow-hidden pt-32" style={{ minHeight: '305vh' }}>
+        <div className="min-h-screen bg-white relative overflow-hidden pt-6 lg:pt-8" style={{ minHeight: '305vh' }}>
             {/* Main Content */}
-            <main className="relative z-10 ml-64 left-20 pr-40">
-                <div className="container mx-auto px-4 py-12">
-                    <div className="grid grid-cols-12 gap-4 min-h-[80vh]">
+            <main className="relative z-10 ml-64 left-0 pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
+                <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
+                    <div className="grid grid-cols-12 gap-4 min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
-                        <div className="col-span-7">
+                        <div className="col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
                             {/* Section Numbers */}
-                            <div className="flex items-center space-x-8 mb-8">
-                                <div className="text-2xl font-bold">02.</div>
+                            <div className="flex items-center space-x-8 mb-5 lg:mb-8 mb-4">
+                                <div className="text-2xl font-bold lg:text-2xl text-lg">02.</div>
                             </div>
 
                             {/* Main Heading */}
-                            <div className="mb-8">
-                                <h1 className="text-5xl font-bold text-black mb-2">PSA Technology </h1>
-                                <h2 className="text-xl text-gray-700">Gas Production & Distributions</h2>
+                            <div className="mb-8 lg:mb-8 mb-4">
+                                <h1 className="text-5xl font-bold text-black mb-2 lg:text-5xl text-3xl">PSA Technology</h1>
+                                <h2 className="text-xl text-gray-700 lg:text-xl text-lg">Gas Production & Distributions</h2>
                             </div>
 
                             {/* Description */}
-                            <div className="max-w-2xl pt-24">
-                                <p className="text-gray-600 leading-relaxed">
+                            <div className="w-full pt-24 lg:pt-24 pt-8">
+                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm">
                                     Pressure Swing Adsorption (PSA) is an advanced technology designed to generate high-purity Oxygen or Nitrogen directly on-site — safely, efficiently, and on demand. Using selective adsorbents like Zeolite, the PSA process filters compressed air by trapping unwanted gases such as nitrogen and CO₂, allowing only the desired gas to pass through. 
                                     This smart separation method ensures continuous, reliable gas production without relying on external supply chains.
-
+                                </p>
+                                <p className="text-gray-600 leading-relaxed mt-4 lg:text-base text-sm">
                                     Choosing a PSA plant means lower operational costs, reduced dependency on high-pressure cylinders, and enhanced safety. It also supports a greener footprint by eliminating transport-related emissions. Whether you're running a hospital, a manufacturing line, or a remote facility, PSA systems deliver flexibility, control, and long-term sustainability — right where you need it.
                                 </p>
                             </div>
 
                             {/* Level Tags */}
-                            <div className="text-gray-400 text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32">
+                            <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32 lg:pt-32 pt-16">
                                 <p>LEVEL 1</p>
-                                <p>LEVEL 2</p>
-                                <p>LEVEL 3</p>
                             </div>
                         </div>
 
                         {/* Right Side - PSU and Social Icons */}
-                        <div className="col-span-5 flex flex-col justify-between">
+                        <div className="col-span-5 flex flex-col gap-5 lg:col-span-5 lg:flex col-span-1 hidden">
                             {/* PSU Text */}
-                            <div className="flex items-center space-x-8 mb-8 ml-80">
+                            <div className="flex items-center ml-80">
                                 <div className="text-2xl font-bold text-gray-300">03.</div>
                             </div>
                             <div className="text-right">
@@ -249,21 +250,31 @@ const ASUPage = () => {
                                 </div>
                             </div>
                         </div>
+
+                        {/* Mobile Navigation */}
+                        <div className="lg:hidden flex justify-center space-x-2 col-span-4">
+                            <div onClick={goPrev} className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                                <ChevronLeft size={18} />
+                            </div>
+                            <div onClick={goNext} className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                                <ChevronRight size={18} />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </main>
 
             {/* Bottom-Left Background Image */}
             <div
-                className="absolute top-80 left-0 w-[800px] h-[800px] bg-no-repeat bg-contain pointer-events-none"
+                className="absolute top-80 left-0 w-[800px] h-[800px] bg-no-repeat bg-contain pointer-events-none lg:block hidden"
                 style={{
                     backgroundImage: `url('/Layer.png')`
                 }}
             />
             <div className="absolute top-2 left-2 text-white text-xs font-bold tracking-wide">LEVEL 1</div>
             
-            {/* Industrial Plant Images Section with Flip Animation */}
-            <div className="absolute top-[999px] left-64 -ml-60 right-0 h-[800px] z-10">
+            {/* Desktop Industrial Plant Images Section with Flip Animation */}
+            <div className="absolute top-[999px] left-64 -ml-60 right-0 h-[800px] z-10 lg:block hidden">
                 <div className="relative h-full w-full">
                     {/* TOT SERIES OXYGEN PLANT */}
                     <FlipCard
@@ -299,6 +310,47 @@ const ASUPage = () => {
                         subtitle="NITROGEN GENERATOR"
                         detailCard={detailCards.maps}
                         className="absolute top-[-410px] right-[-770px] w-[350px] h-[350px] z-20"
+                    />
+                </div>
+            </div>
+
+            {/* Mobile Plant Images Section with Flip Animation */}
+            <div className="lg:hidden block px-4 mt-8">
+                <div className="space-y-6">
+                    {/* TOT SERIES OXYGEN PLANT */}
+                    <FlipCard
+                        imageSrc="/PSA/tot.png"
+                        title="TOT SERIES OXYGEN"
+                        subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
+                        detailCard={detailCards.tot}
+                        className="w-full h-48"
+                    />
+
+                    {/* OXYGEN GENERATOR - OXYLIFE */}
+                    <FlipCard
+                        imageSrc="/PSA/generator.png"
+                        title="OXYGEN GENERATOR-"
+                        subtitle="OXYLIFE"
+                        detailCard={detailCards.oxylife}
+                        className="w-full h-48"
+                    />
+
+                    {/* NITROPAK - NITROGEN GENERATOR PLANT */}
+                    <FlipCard
+                        imageSrc="/PSA/generator.png"
+                        title="NitroPAK-"
+                        subtitle="NITROGEN GENERATOR PLANT"
+                        detailCard={detailCards.nitropak}
+                        className="w-full h-48"
+                    />
+
+                    {/* MAPS SERIES - NITROGEN GENERATOR */}
+                    <FlipCard
+                        imageSrc="/PSA/nitrogen.png"
+                        title="MAPS SERIES-"
+                        subtitle="NITROGEN GENERATOR"
+                        detailCard={detailCards.maps}
+                        className="w-full h-48"
                     />
                 </div>
             </div>
