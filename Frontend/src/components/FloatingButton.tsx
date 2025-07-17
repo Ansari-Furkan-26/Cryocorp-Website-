@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaWhatsapp, FaRocketchat, FaDiscord, FaTimes } from 'react-icons/fa';
+import { FaWhatsapp, FaRocketchat, FaTimes } from 'react-icons/fa';
 import AIwidget from './AIwidget';
 
 function FloatingButton() {
