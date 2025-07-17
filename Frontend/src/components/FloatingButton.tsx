@@ -24,14 +24,14 @@ function FloatingButton() {
       {/* AI Widget (preloaded but hidden) */}
       {(loading || showAIWidget) && (
         <div
-          className={`fixed bottom-0 right-[4vw] -mr-16 rounded-xl drop-shadow-2xl px-2 transition-all duration-300 
+          className={`fixed bottom-0 left-[14vw] md:right-[4vw] -mr-16 rounded-xl drop-shadow-2xl px-2 transition-all duration-300 
           ${showAIWidget ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 pointer-events-none scale-95'}`}
-          style={{ height: '25vh', width: '20vw' }}
+          
         >
           <div className="flex justify-between items-center py-2 px-3">
             <button
               onClick={() => setShowAIWidget(false)}
-              className="text-gray-500 hover:text-gray-900 transition-colors duration-300 z-10 p-1 rounded-full hover:bg-gray-100"
+              className="absolute mt-[130vh] ml-2 md:ml-[65vw] text-gray-500 hover:text-gray-900 transition-colors duration-300 z-10 p-1 rounded-full hover:bg-gray-100"
               aria-label="Close AI Widget"
             >
               <FaTimes className="text-xl" />
@@ -42,7 +42,8 @@ function FloatingButton() {
             )}
           </div>
 
-          <div className="p-4 h-[10vh] w-full flex items-center justify-center overflow-auto">
+          <div className="relative p-4 h-[10vh] w-full flex items-center justify-center overflow-auto" 
+          style={{ minHeight: '85vh', width: '85vw' }}>
             <AIwidget />
           </div>
         </div>
