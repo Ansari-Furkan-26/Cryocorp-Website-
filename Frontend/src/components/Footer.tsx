@@ -39,9 +39,9 @@ const Footer = () => {
   return (
     <div className="w-full">
       {/* Main Footer */}
-      <footer className="bg-blue-50 px-6 pt-6 pb-6 mb-0">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <footer className="bg-blue-50 px-6 pt-6 md:pb-6 mb-0">
+        <div className="md:mr-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Logo and Let's Talk */}
             <div>
               <div className="flex items-center mb-10">
@@ -60,7 +60,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-
+            <div className='md:flex justify-between'>
             {/* Address */}
             <div>
               <h4 className="font-bold text-gray-800 md:mb-4">Address</h4>
@@ -90,7 +90,7 @@ const Footer = () => {
             </div>
 
             {/* Subscribe */}
-            <div>
+            <div className='mt-6 mr-14'>
               <h4 className="font-bold text-gray-800 md:mb-4">Subscribe</h4>
               <p className="text-gray-600 text-sm mb-4">
                 To get notified about our new solutions!
@@ -114,10 +114,12 @@ const Footer = () => {
               </div>
             </div>
           </div>
+          </div>
 
           {/* Bottom Navigation */}
-          <div className="border-t border-gray-200 mt-6">
-            <nav className="flex flex-wrap gap-8 text-xs pr-10 md:text-sm pt-4">
+          <div className="md:relative md:mt-6">
+            <img src="/images/arrow.png" alt="" className='hidden md:block absolute h-8 left-[45%] top-[10px]'/>
+            <nav className="flex justify-center flex-wrap gap-8 text-xs pr-10 md:text-sm pt-4 md:ml-[400px]">
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Products</a>
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Services</a>
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Resource Hub</a>
