@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const blogController = require('../controllers/blogController');
-const authMiddleware = require('../middleware/auth');
+const authMiddleware = require('../middleware/Auth');
 
 // Public routes
 router.get('/', blogController.getAllBlogs);
