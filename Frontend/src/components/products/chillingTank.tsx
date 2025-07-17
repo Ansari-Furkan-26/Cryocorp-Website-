@@ -52,7 +52,7 @@ const ChillingTank = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                         Working in conjunction with a chilling tank, Freon gases industrial Refrigerant type chilling unit with Thermostatic Cooling water Tank and Air coil for cooling cools the water to a low temperature (6-10°C). This chilled water then cools the compressed air, causing moisture and CO2 to condense and be separated. It is an important stage for initial moisture and CO2 removal, contributing to overall air purity before finer purification.This equipment will improve the efficiency of the Molecular Sieve Battery and longevity of the Molecular Sieves. Spares such as compressor parts, valves, and thermostats are available.
 
                     </p>

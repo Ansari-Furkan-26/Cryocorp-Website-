@@ -50,7 +50,7 @@ const FRP = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                        This component is part of the plant's cooling system, helping to cool water used to lower the temperature of process air. Efficient cooling is vital for the performance of earlier stages like the Cascade Cooler. Essential spares like fills, sprinklers, and fans are available.
                     </p>
                 </div>

@@ -52,7 +52,7 @@ const Molecular = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                         Positioned after the Chilling Unit, this battery is crucial for removing remaining moisture and CO2 from the air. It consists of 2 vessels inter-connected with pipeline of Nitrogen and Air Electric Heater for regeneration, Temperature Sensor and Control panel with automatic temperature control. This assist in the removal of moisture, carbon-dioxide, traces of Carbon Monoxide and other hydrocarbons present n the process air. Each vessel of Molecular Battery isfilled with molecular sieve of 1.5/3 mm type 13-X. This is a regenerative type capacity 400m3/hr to 2000 m3/hr and 12 hour regeneration cycle... Its proper functioning is vital to prevent blockages in the Air Separation Column caused by ice or dry ice, thus maintaining purity and preventing plant stoppage. A variety of spare parts, including molecular sieves and various valves, are available.
                     </p>
                 </div>

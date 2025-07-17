@@ -50,7 +50,7 @@ const T = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                         These components are positioned after the air compressor and work to significantly cool the compressed air. The after cooler is specially designed vertical type of tank with MS coils fabricated using Schedule 80 Pipes. The main function is to start the cooling process of the pressured gas for the purification process.   The cascade cooler is a specially designed container consisting of High Pressure M.S. Coils fabricated using Schedule 80 in two separated chambers. The process air thatpasses through this Cooler is cooled through incoming Nitrogen (from A.S.U). Essential spare parts like Vertical coils for after cooler and coild for cascade cooler..
                     </p>
                 </div>

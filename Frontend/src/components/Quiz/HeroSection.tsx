@@ -46,9 +46,9 @@ const PlantPotential = () => {
       {/* Bottom Icons Section */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
         {/* Optimize */}
-        <div>
+        <div className="flex flex-col justify-center items-center">
           <div className="text-3xl mb-4">
-            <span role="img" aria-label="gear">⚙️</span>
+            <img src="/quiz/settings.png" alt="" className="h-12"/>
           </div>
           <h3 className="font-semibold text-lg mb-2">OPTIMIZE</h3>
           <p className="text-sm text-gray-600">
@@ -57,9 +57,9 @@ const PlantPotential = () => {
         </div>
 
         {/* Improve */}
-        <div>
+        <div className="flex flex-col justify-center items-center">
           <div className="text-3xl mb-4">
-            <span role="img" aria-label="chart">📈</span>
+            <img src="/quiz/improve.png" alt="" className="h-12"/>
           </div>
           <h3 className="font-semibold text-lg mb-2">IMPROVE</h3>
           <p className="text-sm text-gray-600">
@@ -68,9 +68,9 @@ const PlantPotential = () => {
         </div>
 
         {/* Monitor */}
-        <div>
-          <div className="text-3xl mb-4">
-            <span role="img" aria-label="monitor">📊</span>
+        <div className="flex flex-col justify-center items-center">
+          <div className="mb-4">
+            <img src="/quiz/monitor.png" alt="" className="h-12"/>
           </div>
           <h3 className="font-semibold text-lg mb-2">MONITOR</h3>
           <p className="text-sm text-gray-600">
@@ -79,9 +79,9 @@ const PlantPotential = () => {
         </div>
 
         {/* Scale */}
-        <div>
-          <div className="text-3xl mb-4">
-            <span role="img" aria-label="scale">🏗️</span>
+        <div className="flex flex-col justify-center items-center">
+          <div className="mb-4">
+            <img src="/quiz/scale.png" alt="" className="h-12"/>
           </div>
           <h3 className="font-semibold text-lg mb-2">SCALE</h3>
           <p className="text-sm text-gray-600">

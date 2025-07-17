@@ -53,7 +53,7 @@ const AirCompressorCatalog = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                         As the first primary source, the air compressor draws in and compresses atmospheric air to the
                         required pressure for the entire process. Its reliable operation is fundamental to the plant's production
                         cycle and overall performance. A wide range of spare parts are available for various makes, including
@@ -61,7 +61,7 @@ const AirCompressorCatalog = () => {
                     </p>
                 </div>
 
-                <div className="text-sm text-catalog-text space-y-1 max-w-[50%]">
+                <div className="text-sm text-catalog-text space-y-1 sm:max-w-[50%]">
                     <p>
                         <span className="font-medium">A.</span> Kirloskar LKG Khapha Compressor: 2HA2TB, 4HA4RI5, 4HA4T8, 4HA4Q, 4HP4Q, 4HB4RI5.
                     </p>

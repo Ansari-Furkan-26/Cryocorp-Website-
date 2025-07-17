@@ -55,7 +55,7 @@ const Oxygen = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                        This component serves as the final stage in the plant process where gaseous oxygen is filled into cylinders. It is essential for the controlled and safe transfer of high-pressure oxygen to cylinders, with spares like valves and gauges ensuring operational reliability. CryoCorp manufactures Oxygen, Nitrogen and Hyrdogen Manifolds under its own brand, in-house at our faciltiy in Vasai. 
                     </p>
                 </div>
