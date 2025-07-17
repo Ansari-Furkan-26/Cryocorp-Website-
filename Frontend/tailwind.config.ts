@@ -141,7 +141,19 @@ export default {
 				'float-diagonal': {
 					'0%, 100%': { transform: 'translate(0, 0)' },
 					'50%': { transform: 'translate(-50px, 60px)' },
-				}
+				},
+				glowGreen: {
+				'0%, 100%': { boxShadow: '0 0 10px 2px #22c55e' },
+				'50%': { boxShadow: '0 0 20px 4px #22c55e' },
+				},
+				glowBlue: {
+				'0%, 100%': { boxShadow: '0 0 10px 2px #3b82f6' },
+				'50%': { boxShadow: '0 0 20px 4px #3b82f6' },
+				},
+				glowIndigo: {
+				'0%, 100%': { boxShadow: '0 0 10px 2px #6366f1' },
+				'50%': { boxShadow: '0 0 20px 4px #6366f1' },
+				},
 			},
 			animation: {
 				'bounce-x': 'bounce-x 6s ease-in-out infinite',
@@ -158,9 +170,12 @@ export default {
 				'fade-in-up': 'fade-in-up 0.6s ease-out',
 				'scale-pulse': 'scale-pulse 4s ease-in-out infinite',
 				'slide-in-stagger': 'slide-in-stagger 0.8s ease-out',
-				'float-around': 'float-around 12s ease-in-out infinite'
+				'float-around': 'float-around 12s ease-in-out infinite',
+				'glow-green': 'glowGreen 2s infinite',
+				'glow-blue': 'glowBlue 2s infinite',
+				'glow-indigo': 'glowIndigo 2s infinite',
 			}
-		}
+		},
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;

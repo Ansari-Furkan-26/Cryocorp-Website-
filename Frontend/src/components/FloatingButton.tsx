@@ -1,57 +1,65 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaWhatsapp, FaRocketchat, FaDiscord, FaTimes } from 'react-icons/fa';
 import AIwidget from './AIwidget';
 
 function FloatingButton() {
   const [showAIWidget, setShowAIWidget] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true); // Start with loading = true
+
+  useEffect(() => {
+    // Simulate AIwidget preloading
+    const preloadTimer = setTimeout(() => {
+      setLoading(false);
+    }, 1000); // Adjust time if needed
+
+    return () => clearTimeout(preloadTimer);
+  }, []);
 
   const handleDiscordClick = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setShowAIWidget(true);
-    }, 3000); // simulate loading time (adjust as needed)
+    setShowAIWidget(true);
   };
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
-      {/* Show AI Widget or Loader */}
+      {/* AI Widget (preloaded but hidden) */}
       {(loading || showAIWidget) && (
-        <div className="relative top-[170px] right-[260px] rounded-xl drop-shadow-2xl ">
-          <div className="flex justify-end ">
+        <div
+          className={`fixed bottom-0 right-[4vw] -mr-16 rounded-xl drop-shadow-2xl px-2 transition-all duration-300 
+          ${showAIWidget ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 pointer-events-none scale-95'}`}
+          style={{ height: '25vh', width: '20vw' }}
+        >
+          <div className="flex justify-between items-center py-2 px-3">
             <button
-              onClick={() => {
-                setShowAIWidget(false);
-                setLoading(false);
-              }}
-              className="text-gray-500 hover:text-gray-900 transition z-10"
+              onClick={() => setShowAIWidget(false)}
+              className="text-gray-500 hover:text-gray-900 transition-colors duration-300 z-10 p-1 rounded-full hover:bg-gray-100"
               aria-label="Close AI Widget"
             >
               <FaTimes className="text-xl" />
             </button>
-          </div>
-          <div className="p-4  flex items-center justify-center">
-            {loading ? (
-              <div className="w-6 h-6 -mr-60 top-10 border-4 border-gray-300 border-t-purple-600 rounded-full animate-spin" />
-            ) : (
-              <AIwidget />
+
+            {loading && (
+              <div className="-mr-10 animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-gray-600" />
             )}
+          </div>
+
+          <div className="p-4 h-[10vh] w-full flex items-center justify-center overflow-auto">
+            <AIwidget />
           </div>
         </div>
       )}
 
       {/* Buttons */}
-      <div className={`flex flex-col items-end gap-3 transition-all duration-300 ${showAIWidget || loading ? 'mb-32' : ''}`}>
+      <div className={`flex flex-col items-end gap-4 ${showAIWidget ? 'mb-32' : ''}`}>
         {/* WhatsApp */}
         <a
           href="https://whatsapp.com/channel/0029Vao5Mx8DTkKAYtRf382R"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 shadow-lg transition-all"
+          className="relative w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 border-2 border-green-300 hover:border-green-200 overflow-hidden group"
           aria-label="Contact us on WhatsApp"
         >
-          <FaWhatsapp className="text-xl" />
+          <FaWhatsapp className="text-2xl relative z-10" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
         </a>
 
         {/* Telegram */}
@@ -59,27 +67,45 @@ function FloatingButton() {
           href="https://agentivehub.com/chat/49559140-605e-458a-ab98-0708f11ddb21"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 shadow-lg transition-all"
-          aria-label="Connect with Telegram Bot">
-          <FaRocketchat className="text-xl" />
+          className="relative w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 border-2 border-blue-300 hover:border-blue-200 overflow-hidden group"
+          aria-label="Connect with Telegram Bot"
+        >
+          <FaRocketchat className="text-2xl relative z-10" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
         </a>
 
-        {/* Discord Button (hidden when widget is open or loading) */}
+        {/* Discord */}
         {!showAIWidget && !loading && (
           <button
             onClick={handleDiscordClick}
-            className="w-12 h-12 bg-gray-50 rounded-full flex items-center justify-center text-white shadow-lg transition-all hover:bg-gray-300"
+            className="relative w-14 h-14 bg-white rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 hover:border-purple-200 overflow-hidden group"
             aria-label="Open AI Widget"
           >
-            <FaDiscord className="text-xl" />
             <img
-              src="data:image/png;base64,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"
+              src="data:image/png;base64,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"
               alt="elevenlab"
-              className="rounded-full p-2"
+              className="absolute inset-0 w-full h-full object-cover rounded-full"
             />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
           </button>
         )}
       </div>
+
+      {/* Animations */}
+      <style jsx>{`
+        @keyframes shimmer {
+          0% {
+            transform: translateX(-100%) skewX(-12deg);
+          }
+          100% {
+            transform: translateX(200%) skewX(-12deg);
+          }
+        }
+
+        .animate-shimmer {
+          animation: shimmer 2s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }

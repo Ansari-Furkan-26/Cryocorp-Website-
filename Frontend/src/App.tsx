@@ -23,6 +23,7 @@ import Resources from "@/pages/Resource";
 import About from "@/pages/About";
 import Privacy from "@/components/Privacy";
 import Disclaimer from "@/components/Disclaimer";
+import PopupBannerAds from "@/components/AddPopup"
 
 // Utility
 import NotFound from "@/pages/NotFound";
@@ -55,6 +56,7 @@ const App = () => (
             {/* ❌ 404 Not Found */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+      <PopupBannerAds />
         </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>
