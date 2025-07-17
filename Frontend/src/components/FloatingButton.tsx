@@ -24,7 +24,7 @@ function FloatingButton() {
       {/* AI Widget (preloaded but hidden) */}
       {(loading || showAIWidget) && (
         <div
-          className={`fixed bottom-0 left-[14vw] md:right-[4vw] -mr-16 rounded-xl drop-shadow-2xl px-2 transition-all duration-300 
+          className={`fixed bottom-0 left-[14vw] md:right-[4vw] -mr-16 rounded-xl drop-shadow-2xl px-2 transition-all z-10 duration-300 
           ${showAIWidget ? 'opacity-100 pointer-events-auto scale-100' : 'opacity-0 pointer-events-none scale-95'}`}
           
         >
@@ -50,7 +50,7 @@ function FloatingButton() {
       )}
 
       {/* Buttons */}
-      <div className={`flex flex-col items-end gap-4 ${showAIWidget ? 'mb-32' : ''}`}>
+      <div className={`flex flex-col items-end z-0 gap-4 ${showAIWidget ? 'mb-32' : ''}`}>
         {/* WhatsApp */}
         <a
           href="https://whatsapp.com/channel/0029Vao5Mx8DTkKAYtRf382R"
