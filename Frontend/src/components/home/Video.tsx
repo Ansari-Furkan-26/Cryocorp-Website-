@@ -17,7 +17,7 @@ const VideoHero = () => {
       {/* Single animated image */}
       <div className="animate-single-image">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+          src="images.png"
           alt="Tech workspace"
           className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg object-cover "
           loading="lazy"
@@ -27,7 +27,7 @@ const VideoHero = () => {
       {/* Double animated image */}
       <div className="animate-second-image">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+          src="image3.jpg"
           alt="Tech workspace"
           className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg object-cover "
           loading="lazy"
@@ -37,7 +37,7 @@ const VideoHero = () => {
       {/* Third animated image */}
       <div className="animate-third-image">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+          src="images.png"
           alt="Tech workspace"
           className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg object-cover "
           loading="lazy"
@@ -47,7 +47,7 @@ const VideoHero = () => {
       {/* fourth animated image */}
       <div className="animate-fourth-image">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+          src="image3.jpg"
           alt="Tech workspace"
           className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg object-cover "
           loading="lazy"
@@ -57,7 +57,7 @@ const VideoHero = () => {
       {/* fifth animated image */}
       <div className="animate-fifth-image">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+          src="image.png"
           alt="Tech workspace"
           className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg object-cover "
           loading="lazy"
@@ -67,7 +67,7 @@ const VideoHero = () => {
       {/* sixth animated image */}
       <div className="animate-sixth-image">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+          src="image1.jpg"
           alt="Tech workspace"
           className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg object-cover "
           loading="lazy"
@@ -77,7 +77,7 @@ const VideoHero = () => {
       {/* seventh animated image */}
       <div className="animate-seventh-image">
         <img
-          src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=400&h=300&fit=crop"
+          src="image2.jpg"
           alt="Tech workspace"
           className="w-24 h-24 md:w-32 md:h-32 rounded-lg shadow-lg object-cover "
           loading="lazy"

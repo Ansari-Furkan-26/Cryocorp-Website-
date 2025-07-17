@@ -6,7 +6,7 @@ import IndustriesSection from "@/components/home/IndustriesSection";
 import TestimonialsSection from "@/components/home/TestimonialsSection";
 import ContactSection from "@/components/home/ContactSection";
 import VideoHero from "@/components/home/Video";
-import Bento from "@/Components/home/Bento";
+import Bento from "@/components/home/Bento";
 import CTA from "@/Components/CTA";
 
 const Index = () => {

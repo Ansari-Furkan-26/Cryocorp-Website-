@@ -2,8 +2,8 @@
 import React from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { NavigationProvider } from '../contexts/NavigationContext';
-import Products from './products';
-import Products2 from './products2';
+import Products from './ASU';
+import Products2 from './PSA';
 import Products3 from './LBU';
 import Products4 from './NEXT';
 import { useNavigation } from '../contexts/NavigationContext';

@@ -54,20 +54,7 @@ const ASUPage: React.FC = () => {
                             <div className="text-right ">
                                 <div className="text-6xl font-bold text-gray-200 tracking-wider pb-60">NEXT</div>
                             </div>
-
-                            {/* Social Icons */}
-                            <div className="flex flex-col space-y-4 items-end">
-                                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors cursor-pointer">
-                                    <MessageCircle size={20} />
-                                </div>
-                                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
-                                    <Phone size={20} />
-                                </div>
-                                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
-                                    <User size={20} />
-                                </div>
-                            </div>
-
+                            
                             {/* Navigation Arrows */}
                             <div className="flex space-x-2 justify-end mt-8">
                                 <div onClick={goPrev} className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">

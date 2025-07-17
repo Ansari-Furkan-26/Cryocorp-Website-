@@ -13,7 +13,7 @@ const Layout = () => {
       <main className="min-h-screen">
         <Outlet />
       </main>
-      <AIwidget />
+      {/* <AIwidget /> */}
       <Footer />
       <FloatingButton />
     </>

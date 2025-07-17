@@ -7,33 +7,6 @@ const ASUPage: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-white relative overflow-hidden pt-32" style={{ minHeight: '305vh' }}>
-
-
-            {/* <div className="absolute z-10 top-28 left-0 px-6 pt-16 w-64">
-                <div className="flex flex-col h-full">
-                    <div className="space-y-2 text-xs sm:text-sm font-bold text-gray-400  mb-auto">
-                        <p>01. ASU TECHNOLOGY</p>
-                        <p>02. PSA TECHNOLOGY</p>
-                        <p>03. LIQUID BOTTLING UNIT</p>
-                        <p>04. NEXT GEN GAS SOLUTIONS</p>
-                    </div>
-
-                    <div className="relative flex-1 my-4">
-                        <div className="absolute left-8 top-0 bottom-0 w-px bg-slate-400 opacity-50" />
-                    </div>
-
-                    <div className="flex mt-auto pb-32">
-                        <div className="text-gray-400 text-xs sm:text-sm space-y-1 font-semibold w-8 pt-80">
-                            <p>4</p>
-                            <p>83</p>
-                            <p>9</p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div> */}
-
             {/* Main Content */}
             <main className="relative z-10 ml-64 left-20 pr-40">
                 <div className="container mx-auto px-4 py-12">
@@ -79,19 +52,6 @@ const ASUPage: React.FC = () => {
                             </div>
                             <div className="text-right ">
                                 <div className="text-6xl font-bold text-gray-200 tracking-wider pb-60">LIQU</div>
-                            </div>
-
-                            {/* Social Icons */}
-                            <div className="flex flex-col space-y-4 items-end">
-                                <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white hover:bg-green-600 transition-colors cursor-pointer">
-                                    <MessageCircle size={20} />
-                                </div>
-                                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
-                                    <Phone size={20} />
-                                </div>
-                                <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center text-white hover:bg-gray-800 transition-colors cursor-pointer">
-                                    <User size={20} />
-                                </div>
                             </div>
 
                             {/* Navigation Arrows */}

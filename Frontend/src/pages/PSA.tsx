@@ -1,5 +1,5 @@
 import React from "react";
-import AsuTechnologyPanel from "@/components/products2/hero";
+import AsuTechnologyPanel from "@/components/PSA/hero";
 
 const Products: React.FC = () => {
     return (

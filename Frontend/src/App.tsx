@@ -8,14 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/contexts/AuthContext";
 
 // Layouts
-import AdminLayout from "@/components/Admin/AdminLayout";
 import Layout from "@/Layout/Layout";
 
-// Admin Pages
-import LoginForm from "@/components/Admin/LoginForm";
-import BlogList from "@/components/Admin/BlogList";
-import ProfilePage from "@/components/Admin/ProfilePage";
-import ProtectedRoute from "@/components/ProtectedRoute";
 
 // Blog Public Pages
 import HomePage from "@/components/Blog/HomePage";
@@ -58,21 +52,6 @@ const App = () => (
               <Route path="/quiz" element={<Quiz/>} />
             </Route>
 
-            {/* 🔐 Admin Login */}
-            <Route path="/login" element={<LoginForm />} />
-
-            {/* 🔐 Admin Panel (Protected) */}
-            <Route
-              path="/admin"
-              element={
-                <ProtectedRoute>
-                  <AdminLayout />
-                </ProtectedRoute>
-              }
-            >
-              <Route index element={<BlogList />} />
-              <Route path="profile" element={<ProfilePage />} />
-            </Route>
             {/* ❌ 404 Not Found */}
             <Route path="*" element={<NotFound />} />
           </Routes>
