@@ -77,11 +77,11 @@ function CTA() {
         <div className="relative overflow-hidden h-full min-h-[600px]">
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=compress&cs=tinysrgb&w=600"
+              src="/images/cta-bg.png"
               alt="Industrial team meeting"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-teal-500/80 to-blue-600/80"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-br from-teal-500/80 to-blue-600/80"></div> */}
           </div>
 
           <div className="relative z-10 p-8 text-white text-center h-full flex flex-col justify-center">
@@ -92,7 +92,7 @@ function CTA() {
 
             <h3 className="text-lg font-semibold mb-6">Get in touch with our team today!</h3>
 
-            <Button className="bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/30 transition-all duration-300">
+            <Button className="bg-white/20 backdrop-blur-sm border-4 border-white max-w-[200px] mx-auto text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/30 transition-all duration-300">
               Book a slot
             </Button>
           </div>

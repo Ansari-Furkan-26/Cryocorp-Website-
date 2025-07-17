@@ -57,7 +57,7 @@ const LiquidOxygen = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                        These pumps are typically the final stage within the Air Separation Unit, responsible for transferring liquid oxygen or nitrogen from storage. The Liquid Oxygen Pump, for instance, pumps liquid oxygen for gasification and filling into cylinders at high pressure. Liquid Oxygen Horizontal single acting pump with Piston, Pump Piston Ring, Safety Devices, Non-return Valves ,Motor with pulley , V-Belts, Belt Guard, Inter Connecting pipes with A.S.U suitable for filling oxygen / Nitrogen. CryoCorp manufactures Liquid Oxygen Pumps and Liquid Nitrogen Pumps under its own brand, in-house at our faciltiy in Vasai. Various spare parts of the pumps such as liners, pistons, rings, valves, and seals, are readily available in-stock to maintain pump's performance.
                     </p>
                 </div>

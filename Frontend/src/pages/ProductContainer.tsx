@@ -15,7 +15,7 @@ const ProductsContainerInner = () => {
     const { currentPage } = useNavigation();
 
     return (
-        <div className="min-h-screen bg-white relative overflow-hidden pt-32" style={{ minHeight: '15700px' }}>
+        <div className="min-h-[40000px]  md:min-h-[15700px] bg-white relative overflow-hidden pt-32">
             {/* Common Sidebar */}
             <div className="absolute z-10 top-28 left-0 px-6 pt-60 w-64">
                 <div className="flex flex-col h-full">

@@ -54,7 +54,7 @@ const Expansion = () => {
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">
-                    <p className="max-w-[50%]">
+                    <p className="sm:max-w-[50%]">
                        Located before the Air Separation Unit, is a vertical single acting, dry running with hydraulic valve control , bursting disc for safety, complete with Flywheel ,Pressure Gauges, Motor, Motor Pulley, VBelts, Belt Guard, Slide Rails, Inter Connecting Copper Pipes (Inlet & outlet with A.S.U) including motors & starters. This engine plays a critical role in cooling the  air by expanding it, causing a significant temperature drop to around -150°C. This chilling effect provides the low temperatures necessary for the air separation process. Expansion Engine has important spares like cylinder heads, pistons, valves, and bearings are readily available, in-stock, to ensure its efficient operation and optimize plant production. CryoCorp manufactures Expansion Engines under its own brand, in-house at our faciltiy in Vasai.
                     </p>
                 </div>

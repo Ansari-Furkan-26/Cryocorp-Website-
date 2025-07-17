@@ -2,7 +2,7 @@ import React from 'react';
 
 const IndustrialDiagram: React.FC = () => {
     return (
-        <div className="bg-white p-8 shadow-lg">
+        <div className="bg-white p-4 shadow-lg">
             {/* Header Text */}
             <div className="mb-6 max-w-4xl mx-auto">
                 <p className="text-gray-700 text-sm leading-relaxed">
