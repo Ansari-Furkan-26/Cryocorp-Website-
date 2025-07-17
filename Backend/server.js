@@ -21,9 +21,11 @@ app.use(express.json());
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 15000, // Increase from default 10s
 })
 .then(() => console.log('MongoDB connected'))
 .catch(err => console.error('MongoDB connection error:', err));
+
 
 // Subscriber Schema and Model
 const subscriberSchema = new mongoose.Schema({
