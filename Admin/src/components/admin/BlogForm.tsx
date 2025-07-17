@@ -7,6 +7,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from '@/hooks/use-toast';
 import { Blog } from '@/types/blog';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 interface BlogFormProps {
   blog: Blog | null;
@@ -124,16 +126,17 @@ const BlogForm = ({ blog, onClose }: BlogFormProps) => {
       </div>
 
       <div>
-        <Label htmlFor="content">Content (Markdown)</Label>
-        <Textarea
-          id="content"
-          value={content}
-          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setContent(e.target.value)}
-          placeholder="Write your blog content in Markdown"
-          rows={10}
-          required
-        />
-      </div>
+  <Label htmlFor="content">Content</Label>
+  <div className="mt-2 bg-white text-black rounded border border-gray-300">
+    <ReactQuill
+      theme="snow"
+      value={content}
+      onChange={setContent}
+      placeholder="Write your blog content here..."
+      className="min-h-[200px]"
+    />
+  </div>
+</div>
 
       <div>
         <Label htmlFor="tags">Tags (comma-separated)</Label>

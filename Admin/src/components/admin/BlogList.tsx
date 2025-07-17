@@ -16,6 +16,8 @@ const BlogList = () => {
   const [visibleCount, setVisibleCount] = useState(6);
   const [editingBlog, setEditingBlog] = useState<Blog | null>(null);
   const [showForm, setShowForm] = useState(false);
+  const [expandedBlogIds, setExpandedBlogIds] = useState<Set<string>>(new Set());
+
 
   useEffect(() => {
     getBlogs().catch(error => {
@@ -26,6 +28,19 @@ const BlogList = () => {
       });
     }); 
   }, [getBlogs]);
+
+  const toggleExpand = (id: string) => {
+  setExpandedBlogIds(prev => {
+    const newSet = new Set(prev);
+    if (newSet.has(id)) {
+      newSet.delete(id);
+    } else {
+      newSet.add(id);
+    }
+    return newSet;
+  });
+};
+
 
   const filteredBlogs = blogs.filter(blog =>
     blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -155,49 +170,79 @@ const BlogList = () => {
             </CardContent>
           </Card>
         ) : (
-          visibleBlogs.map((blog) => (
-            <Card key={blog.id} className="hover:shadow-md transition-shadow">
-              <CardHeader>
-                <div className="flex items-start justify-between">
-                  <div className="flex-1">
-                    <CardTitle className="text-lg">{blog.title}</CardTitle>
-                    <CardDescription className="mt-1 flex items-center text-sm text-gray-500">
-                      <Calendar className="h-3 w-3 mr-1" />
-                      {new Date(blog.createdAt).toLocaleDateString()}
-                    </CardDescription>
-                  </div>
-                  <div className="flex space-x-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => handleEdit(blog)}
-                    >
-                      <Edit className="h-4 w-4" />
-                    </Button>
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => handleDelete(blog.id)}
-                    >
-                      <Trash2 className="h-4 w-4 text-red-500" />
-                    </Button>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-3">{blog.excerpt}</p>
-                {blog.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-1">
-                    {blog.tags.map((tag) => (
-                      <Badge key={tag} variant="outline" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))
+         visibleBlogs.map((blog) => {
+  const isExpanded = expandedBlogIds.has(blog.id);
+  return (
+    <Card key={blog.id} className="hover:shadow-md transition-shadow">
+      <CardHeader>
+        <div className="flex items-start justify-between">
+          <div className="flex-1">
+            <CardTitle
+              onClick={() => toggleExpand(blog.id)}
+              className="text-lg cursor-pointer hover:underline"
+            >
+              {blog.title}
+            </CardTitle>
+            <CardDescription className="mt-1 flex items-center text-sm text-gray-500">
+              <Calendar className="h-3 w-3 mr-1" />
+              {new Date(blog.createdAt).toLocaleDateString()}
+            </CardDescription>
+          </div>
+          <div className="flex space-x-2">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => handleEdit(blog)}
+            >
+              <Edit className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => handleDelete(blog.id)}
+            >
+              <Trash2 className="h-4 w-4 text-red-500" />
+            </Button>
+          </div>
+        </div>
+      </CardHeader>
+
+      <CardContent>
+        <p className="text-gray-600 mb-3">{blog.excerpt}</p>
+
+        <div
+          className={`text-gray-800 text-sm transition-all duration-300 ease-in-out overflow-hidden ${
+            isExpanded ? 'max-h-[1000px]' : 'max-h-0'
+          }`}
+        >
+          <div
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+            className="py-2"
+          />
+        </div>
+
+        <Button
+          variant="link"
+          className="text-blue-600 p-0 mt-2 text-sm"
+          onClick={() => toggleExpand(blog.id)}
+        >
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </Button>
+
+        {blog.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-4">
+            {blog.tags.map((tag) => (
+              <Badge key={tag} variant="outline" className="text-xs">
+                {tag}
+              </Badge>
+            ))}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
+})
+
         )}
       </div>
 
