@@ -12,7 +12,7 @@ import CTA from "@/components/CTA";
 
 // Define heights for each page
 const pageHeights = {
-    1: { mobile: 'h-[36300px]', desktop: 'md:h-[18000px]' }, // ASU - longest page
+    1: { mobile: 'h-[36300px]', desktop: 'md:h-[15500px]' }, // ASU - longest page
     2: { mobile: 'h-[2000px]', desktop: 'md:h-[2100px]' },  // PSA - shorter page
     3: { mobile: 'h-[7700px]', desktop: 'md:h-[3900px]' }, // LBU - medium page
     4: { mobile: 'h-[3700px]', desktop: 'md:h-[3000px]' }, // NEXT - medium page

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { FaWhatsapp, FaRocketchat, FaDiscord, FaTimes } from 'react-icons/fa';
+import { FaWhatsapp, FaRocketchat, FaTimes } from 'react-icons/fa';
+import Bot from 'lucide-react'
 import AIwidget from './AIwidget';
 
 function FloatingButton() {
@@ -70,7 +71,7 @@ function FloatingButton() {
           className="relative w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 border-2 border-blue-300 hover:border-blue-200 overflow-hidden group"
           aria-label="Connect with Telegram Bot"
         >
-          <FaRocketchat className="text-2xl relative z-10" />
+          <Bot className="text-2xl relative z-10"/>
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" />
         </a>
 
