@@ -117,45 +117,42 @@ const CardGrid = () => {
             <div className="absolute inset-0 z-10 backdrop-blur-2xl bg-white/30" />
 
             {/* Card Grid Content */}
-            <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl w-[800px] [perspective:1200px]">
-                {cards.map((card, index) => (
-                    <div
-                        key={index}
-                        className="relative w-full h-[475px] [transform-style:preserve-3d] transition-transform duration-700 hover:[transform:rotateY(180deg)]"
-                    >
-                        {/* Front Side */}
-                        <div className="absolute inset-0 bg-white shadow-2xl border border-white rounded-2xl overflow-hidden [backface-visibility:hidden]">
-                            <div className="p-5">
-                                <h2 className="text-2xl font-bold text-slate-800 mb-2">{card.title}</h2>
-                                <p className="text-slate-600 pt-[200px]">{card.content}</p>
-                            </div>
-                            <img
-                                src={card.image}
-                                alt={card.title}
-                                className="w-full h-[300px]"
-                            />
-                        </div>
-
-                       {/* Back Side */}
-                        <div
-                        className="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden] bg-cover bg-center"
-                        style={{ backgroundImage: `url(${card.image})` }}
-                        >
-                        {/* Optional dark overlay for contrast */}
-                        <div className="absolute inset-0 bg-black/40" />
-
-                        {/* Title - top-left */}
-                        <h2 className="absolute top-6 left-6 text-2xl font-bold text-gray-200 z-10">
-                            {card.title}
-                        </h2>
-
-                        {/* Content - bottom-left */}
-                        <p className="absolute bottom-6 left-6 text-gray-200 z-10 w-3/4">
-                            {card.back}
-                        </p>
-                        </div>
+            <div className='relative z-20 max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-10'>
+            {cards.map((card, index) => (
+                <div
+                key={index}
+                className="group relative w-full h-[475px] [perspective:1200px]"
+                >
+                <div className="relative w-full h-[475px] [transform-style:preserve-3d] transition-transform duration-700 group-hover:[transform:rotateY(180deg)]">
+                    {/* Front Side */}
+                    <div className="absolute inset-0 bg-white shadow-2xl border border-white rounded-2xl overflow-hidden [backface-visibility:hidden] [transform:rotateY(0deg)]">
+                    <div className="p-5">
+                        <h2 className="text-2xl font-bold text-slate-800 mb-2">{card.title}</h2>
+                        <p className="text-slate-600 pt-[200px]">{card.content}</p>
                     </div>
-                ))}
+                    <img
+                        src={card.image}
+                        alt={card.title}
+                        className="w-full h-[300px]"
+                    />
+                    </div>
+
+                    {/* Back Side */}
+                    <div
+                    className="absolute inset-0 rounded-2xl overflow-hidden [transform:rotateY(180deg)] [backface-visibility:hidden] bg-cover bg-center"
+                    style={{ backgroundImage: `url(${card.image})` }}
+                    >
+                    <div className="absolute inset-0 bg-black/40" />
+                    <h2 className="absolute top-6 left-6 text-2xl font-bold text-gray-200 z-10">
+                        {card.title}
+                    </h2>
+                    <p className="absolute bottom-6 left-6 text-gray-200 z-10 w-3/4">
+                        {card.back}
+                    </p>
+                    </div>
+                </div>
+                </div>
+            ))}
             </div>
         </section>
     );

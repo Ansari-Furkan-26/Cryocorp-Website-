@@ -1,0 +1,149 @@
+import React from 'react';
+
+const ProjectGridSection = () => {
+    return (
+        <section className="relative min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden pb-16 px-4 md:px-8">
+            {/* Animated Background Blobs - Hidden on mobile */}
+            <div className="absolute inset-0 z-0">
+                {[
+                    {
+                        pos: { top: '20%', left: '60%' },
+                        gradient: 'circle at 30% 30%, #A1FFCE 0%, #58D68D 60%, transparent 80%',
+                        anim: 'bounce-x',
+                        opacity: 'opacity-80',
+                    },
+                    {
+                        pos: { top: '40%', left: '45%' },
+                        gradient: 'circle at 70% 30%, #58D68D 0%, #138D75 60%, transparent 80%',
+                        anim: 'bounce-y',
+                        opacity: 'opacity-80',
+                    },
+                    {
+                        pos: { top: '40%', left: '25%' },
+                        gradient: 'circle at 30% 70%, #138D75 0%, #0E6655 60%, transparent 80%',
+                        anim: 'bounce-diagonal',
+                        opacity: 'opacity-70',
+                    },
+                    {
+                        pos: { top: '50%', left: '5%' },
+                        gradient: 'circle at 60% 60%, #0B3C5D 0%, #1B263B 70%, transparent 90%',
+                        anim: 'bounce-x',
+                        opacity: 'opacity-70',
+                    },
+                ].map((blob, i) => (
+                    <div
+                        key={i}
+                        className={`absolute w-[200px] h-[200px] md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] rounded-full blur-sm ${blob.opacity} animate-${blob.anim}`}
+                        style={{
+                            background: `radial-gradient(${blob.gradient})`,
+                            ...blob.pos,
+                        }}
+                    />
+                ))}
+            </div>
+
+            {/* Overlay - z-10 */}
+            <div className="absolute inset-0 z-10 backdrop-blur-2xl bg-white/30" />
+
+            {/* Grid Layout - Responsive adjustments */}
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+    {/* 1. Large top-left image */}
+    <div className="md:col-span-2 row-span-1 overflow-hidden rounded-lg order-1">
+        <img
+            src="/services/img6.png"
+            alt="Project 1"
+            className="w-full h-full object-cover"
+        />
+    </div>
+
+    {/* 2. Turn-key content block (moved below img6.png in mobile) */}
+    <div className="md:col-span-2 row-span-1 bg-transparent flex flex-col justify-start order-2 md:order-3">
+        <div className="p-4 md:p-6">
+            <h3 className="text-xl md:text-2xl font-bold text-black mb-2 md:mb-4">
+                01. TURN-KEY PROJECTS FOR PLANT RELOCATION
+            </h3>
+            <p className="text-sm md:text-base text-black font-medium mb-2 md:mb-4">
+                We are Global Plant Shift Masters who understand that – "Your plant moves, Your production doesn't."
+            </p>
+            <ul className="list-disc list-inside text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
+                <li>End-to-end relocation of ASU/PSA plants across borders</li>
+                <li>Zero-downtime strategy with pre-mobilization planning & modular dismantling</li>
+                <li>Compliance with international safety/logistics standards (ISO, CE)</li>
+            </ul>
+            <p className="mt-2 md:mt-4 text-xs md:text-sm text-black font-semibold">
+                Audience: Industrial gas manufacturers expanding or restructuring globally
+            </p>
+        </div>
+    </div>
+
+    {/* 3. Right-side image + text (img7) */}
+    <div className="md:col-span-1 row-span-1 bg-transparent flex flex-col overflow-hidden order-3 md:order-2">
+        <img
+            src="/services/img7.png"
+            alt="Project 2"
+            className="w-full h-48 md:h-1/2 object-cover"
+        />
+        <div className="p-4 md:p-6 flex-1">
+            <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4 text-black">
+                02. ERECTING & COMMISSIONING FOR PSA PLANTS
+            </h3>
+            <p className="text-sm md:text-base font-medium text-black mb-2 md:mb-4">
+                We are known for Precision-Built Gas Solutions, from blueprint to first-breath – we engineer certainty.
+            </p>
+            <ul className="list-disc list-inside text-xs md:text-base font-medium text-black space-y-1 md:space-y-2">
+                <li>Custom site drawings for seamless integration</li>
+                <li>360° commissioning: leak tests, automation calibration, staff training</li>
+                <li>95% on-time delivery rate with 24/7 remote monitoring support</li>
+            </ul>
+            <p className="mt-2 md:mt-4 text-xs md:text-sm font-semibold text-gray-800">
+                Audience: Mining, pharma, energy firms
+            </p>
+        </div>
+    </div>
+
+    {/* 4. Bottom-right: Image + Text */}
+    <div className="md:col-span-1 row-span-1 bg-transparent flex flex-col order-4">
+        <img
+            src="/services/img8.png"
+            alt="Project 3"
+            className="w-full h-48 md:h-1/2 object-cover"
+        />
+        <div className="p-4 md:p-6 flex-1">
+            <h3 className="text-lg font-bold mb-2">03. LIQUID BOTTLING PLANT COMMISSIONING</h3>
+            <p className="text-xs text-black font-medium mb-2 md:mb-4">
+                Your liquid Gold, bottled perfectly, where cryogenic safety meets distributing brilliance.
+            </p>
+            <ul className="list-disc list-inside text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
+                <li>End-to-end relocation of ASU/PSA plants across borders</li>
+                <li>Zero-downtime strategy with pre-mobilization planning & modular dismantling</li>
+                <li>Compliance with international safety/logistics standards (ISO, CE)</li>
+            </ul>
+            <p className="mt-2 md:mt-4 text-xs md:text-sm text-black font-semibold">
+                Audience: Industrial gas manufacturers expanding or restructuring globally
+            </p>
+        </div>
+    </div>
+</div>
+
+
+            {/* CTA TEXT SECTION - Responsive text sizing */}
+            <div className="relative z-10 mx-auto px-4 md:px-8 lg:px-20 mt-8 md:mt-12">
+                <p className="text-lg md:text-2xl lg:text-4xl font-bold " style={{ color: '#5FC9D8' }}>
+                    Ready to Optimize Every Step of Your Gas Plant Journey?
+                    <br />
+                    <p className="text-sm md:text-xl font-medium mt-2" style={{ color: '#5FC9D8' }}>
+                        Relocate confidently with a free ASU Plant Audit, launch faster with our PSA Plant Quiz,
+                        and bottle smarter with a complimentary Bottling Plant Safety Check.
+                        <br className="hidden md:block" />
+                        <br className="hidden md:block" />
+                        <strong className="uppercase tracking-wider block mt-2 md:mt-0 text-sm md:text-base lg:text-lg" style={{ color: '#5FC9D8' }}>
+                            TAKE THE QUIZZES, UNLOCK INSIGHTS, AND POWER UP YOUR OPERATIONS TODAY.
+                        </strong>
+                    </p>
+                </p>
+            </div>
+        </section>
+    );
+};
+
+export default ProjectGridSection;

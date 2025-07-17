@@ -29,7 +29,7 @@ const Header = () => {
 
           <div className="hidden md:block">
             <a href="/quiz">
-              <button className="bg-[#59C6D3] hover:bg-secondary text-sm rounded-3xl text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              <button className="bg-[#59C6D3] hover:bg-secondary text-sm rounded-3xl text-primary-foreground px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                 Take Your Plant Efficiency Test!
               </button>
             </a>
@@ -48,7 +48,7 @@ const Header = () => {
 
       {/* Mobile menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white/90 backdrop-blur-md h-screen flex flex-col justify-center items-center space-y-6 text-[#222]">
+        <div className="fixed inset-0 z-50 bg-white h-screen flex flex-col justify-center items-center space-y-6 text-[#222]">
           {["Home", "Products", "Services", "Resource Hub", "About"].map((label, idx) => {
             const href = label === "Home" ? "/" : `/${label.toLowerCase().replace(/\s/g, "")}`;
             return (
@@ -56,7 +56,7 @@ const Header = () => {
                 key={idx}
                 href={href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-xl font-medium hover:text-[#59C6D3] transition-colors"
+                className="text-xl  py-2 px-4 font-medium hover:text-[#59C6D3] transition-colors"
               >
                 {label}
               </a>

@@ -8,6 +8,7 @@ import ContactSection from "@/components/home/ContactSection";
 import VideoHero from "@/components/home/Video";
 import Bento from "@/components/home/Bento";
 import CTA from "@/Components/CTA";
+import AppSheetEmbed from "@/components/home/Product";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
       <IndustriesSection />
       </div>
       <Bento />
+      <AppSheetEmbed />
       <TestimonialsSection />
       <ContactSection />
       <CTA />

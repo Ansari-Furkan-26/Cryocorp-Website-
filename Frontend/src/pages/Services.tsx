@@ -3,7 +3,7 @@ import Image from "@/components/services/image"
 import Image2 from "@/components/services/image2"
 import Card from "@/components/services/card"
 import Project from "@/components/services/projects"
-import Project2 from "@/components/services/projects2"
+import Project2 from "@/components/services/Grid"
 import CTA from "@/components/CTA";
 
 const services = () => {

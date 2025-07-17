@@ -63,7 +63,7 @@ const Footer = () => {
 
             {/* Address */}
             <div>
-              <h4 className="font-semibold text-gray-800 mb-4">Address</h4>
+              <h4 className="font-bold text-gray-800 md:mb-4">Address</h4>
               <div className="text-gray-600 text-sm space-y-1">
                 <p>Unit no. 10, Swasth Chamber, S. G. Barve</p>
                 <p>Marg, Off Sion-Trombay Road, Chembur,</p>
@@ -91,7 +91,7 @@ const Footer = () => {
 
             {/* Subscribe */}
             <div>
-              <h4 className="font-semibold text-gray-800 mb-4">Subscribe</h4>
+              <h4 className="font-bold text-gray-800 md:mb-4">Subscribe</h4>
               <p className="text-gray-600 text-sm mb-4">
                 To get notified about our new solutions!
               </p>
@@ -117,7 +117,7 @@ const Footer = () => {
 
           {/* Bottom Navigation */}
           <div className="border-t border-gray-200 mt-6">
-            <nav className="flex flex-wrap gap-8 text-sm pt-4">
+            <nav className="flex flex-wrap gap-8 text-xs pr-10 md:text-sm pt-4">
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Products</a>
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Services</a>
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Resource Hub</a>
