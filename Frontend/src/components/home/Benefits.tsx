@@ -3,12 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Benefits = () => {
   const [showReliabilityModal, setShowReliabilityModal] = useState(false);
   const [showCostModal, setShowCostModal] = useState(false);
   const [showMaintenanceModal, setShowMaintenanceModal] = useState(false);
   const [showEfficiencyModal, setShowEfficiencyModal] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
+const [touchEndX, setTouchEndX] = useState(0);
   const ModalWrapper = ({ children, onClose }) => (
     <motion.div
       className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-8"
@@ -20,6 +24,25 @@ const Benefits = () => {
       {children}
     </motion.div>
   );
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+  setTouchStartX(e.touches[0].clientX);
+};
+
+const handleTouchMove = (e: React.TouchEvent) => {
+  setTouchEndX(e.touches[0].clientX);
+};
+
+const handleTouchEnd = () => {
+  const swipeDistance = touchStartX - touchEndX;
+  if (swipeDistance > 50) {
+    // Swipe Left
+    nextSlide();
+  } else if (swipeDistance < -50) {
+    // Swipe Right
+    prevSlide();
+  }
+};
   const ModalContent = ({ children }) => (
     <motion.div
       className="relative w-full max-w-7xl h-full max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden"
@@ -118,6 +141,14 @@ const Benefits = () => {
   const handleEfficiencyClick = () => {
     setShowEfficiencyModal(true);
   };
+
+  const nextSlide = () => {
+  setCurrentSlide((prev) => (prev + 1) % features.length);
+};
+
+const prevSlide = () => {
+  setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
+};
 
   const ReliabilityModal = () => (
     <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
@@ -462,70 +493,162 @@ const Benefits = () => {
   return (
     <>
       <section className="py-20 bg-background min-h-screen">
-        <div className="w-full px-8 lg:px-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+  <div className="w-full px-8 lg:px-16">
+    {/* Desktop Grid - hidden on mobile */}
+    <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+      {features.map((feature, index) => (
+        <div
+          key={feature.number}
+          className="flip-card h-[400px] lg:h-[500px] w-full"
+        >
+          <div className="flip-card-inner w-full h-full">
+            {/* Front of the card */}
+            <Card
+              className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-start px-12 py-16 cursor-pointer hover:bg-accent/10 transition-colors"
+              onClick={getClickHandler(feature.title)}
+            >
+              <div
+                className={`text-8xl lg:text-9xl font-bold mb-8 ${feature.colorClass} leading-none`}
+              >
+                {feature.number}
+              </div>
+              <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight">
+                {feature.title}
+              </h3>
+              <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+                {feature.description}
+              </p>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-border text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
+              >
+                View More <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Card>
+
+            {/* Back of the card with image */}
+            <Card
+              className="flip-card-back absolute w-full h-full border-0 overflow-hidden shadow-none cursor-pointer hover:opacity-90 transition-opacity"
+              onClick={getClickHandler(feature.title)}
+            >
+              <div className="relative w-full h-full">
+                <img
+                  src={feature.image}
+                  alt={feature.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                <div className="absolute inset-0 flex flex-col justify-end p-12">
+                  <div className="text-6xl lg:text-7xl font-bold text-white mb-4 leading-none">
+                    {feature.number}
+                  </div>
+                  <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">
+                    {feature.title}
+                  </h3>
+                  <p className="text-lg text-white/90 leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Mobile Carousel - visible only on mobile */}
+    <div className="md:hidden">
+      <div className="relative">
+        {/* Carousel Container */}
+        <div className="overflow-hidden">
+          <div
+            className="flex transition-transform duration-300 ease-in-out"
+            style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
             {features.map((feature, index) => (
               <div
                 key={feature.number}
-                className="flip-card h-[400px] lg:h-[500px] w-full"
+                className="w-full flex-shrink-0"
               >
-                <div className="flip-card-inner w-full h-full">
-                  {/* Front of the card */}
-                  <Card
-                    className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-start px-12 py-16 cursor-pointer hover:bg-accent/10 transition-colors"
-                    onClick={getClickHandler(feature.title)}
-                  >
-                    <div
-                      className={`text-8xl lg:text-9xl font-bold mb-8 ${feature.colorClass} leading-none`}
+                <div className="flip-card h-[400px] w-full ">
+                  <div className="flip-card-inner w-full h-full">
+                    {/* Front of the card */}
+                    <Card
+                      className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-center px-8 py-12 cursor-pointer hover:bg-accent/10 transition-colors"
+                      onClick={getClickHandler(feature.title)}
                     >
-                      {feature.number}
-                    </div>
-                    <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight">
-                      {feature.title}
-                    </h3>
-                    <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-                      {feature.description}
-                    </p>
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-border text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
-                    >
-                      View More <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </Card>
-
-                  {/* Back of the card with image */}
-                  <Card
-                    className="flip-card-back absolute w-full h-full border-0 overflow-hidden shadow-none cursor-pointer hover:opacity-90 transition-opacity"
-                    onClick={getClickHandler(feature.title)}
-                  >
-                    <div className="relative w-full h-full">
-                      <img
-                        src={feature.image}
-                        alt={feature.title}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
-                      <div className="absolute inset-0 flex flex-col justify-end p-12">
-                        <div className="text-6xl lg:text-7xl font-bold text-white mb-4 leading-none">
-                          {feature.number}
-                        </div>
-                        <h3 className="text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">
-                          {feature.title}
-                        </h3>
-                        <p className="text-lg text-white/90 leading-relaxed">
-                          {feature.description}
-                        </p>
+                      <div
+                        className={`text-6xl font-bold mb-6 ${feature.colorClass} leading-none`}
+                      >
+                        {feature.number}
                       </div>
-                    </div>
-                  </Card>
+                      <h3 className="text-2xl font-bold text-foreground mb-3 leading-tight">
+                        {feature.title}
+                      </h3>
+                      <p className="text-base text-muted-foreground mb-8 leading-relaxed">
+                        {feature.description}
+                      </p>
+                       <Button
+                variant="outline"
+                size="lg"
+                className="border-border text-foreground hover:bg-accent hover:text-accent-foreground transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
+              >
+                View More <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+                    </Card>
+
+                    {/* Back of the card with image */}
+                    <Card
+                      className="flip-card-back absolute w-full h-full border-0 overflow-hidden shadow-none cursor-pointer hover:opacity-90 transition-opacity"
+                      onClick={getClickHandler(feature.title)}
+                    >
+                      <div className="relative w-full h-full">
+                        <img
+                          src={feature.image}
+                          alt={feature.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
+                        <div className="absolute inset-0 flex flex-col justify-end p-8">
+                          <div className="text-5xl font-bold text-white mb-3 leading-none">
+                            {feature.number}
+                          </div>
+                          <h3 className="text-xl font-bold text-white mb-2 leading-tight">
+                            {feature.title}
+                          </h3>
+                          <p className="text-base text-white/90 leading-relaxed">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    </Card>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </section>
+
+        {/* Dots Indicator */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {features.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-colors ${
+                index === currentSlide ? 'bg-primary' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Modals */}
       <AnimatePresence>
