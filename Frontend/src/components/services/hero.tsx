@@ -35,12 +35,12 @@ const Hero = () => {
               "ASU NITROGEN PLANT",
               "ACETYLENE PLANT",
               "LIQUID BOTTLING UNIT",
-            ].map((item) => (
+            ].map((item, idx) => (
               <div
                 key={item}
                 className="flex items-center justify-between py-1 border-b border-gray-100"
               >
-                <span className="text-sm font-medium text-gray-500">{item}</span>
+                <span className="text-sm font-medium text-gray-500"><a href={`#servicecards`}>{item}</a></span>
               </div>
             ))}
           </div>

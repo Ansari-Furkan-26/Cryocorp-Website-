@@ -38,9 +38,9 @@ const ASUPage: React.FC = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32 lg:pt-32 pt-16">
-                                <p>LEVEL 1</p>
-                                <p>LEVEL 2</p>
-                                <p>LEVEL 3</p>
+                                <a className="block" href="#level-1">LEVEL 1</a>
+                                <a className="block" href="#level-2">LEVEL 2</a>
+                                <a className="block" href="#level-3">LEVEL 3</a>
                             </div>
                         </div>
 
@@ -92,6 +92,7 @@ const ASUPage: React.FC = () => {
 
             {/* Industrial Plant Images Section */}
             <div className="absolute top-[1000px] left-0 ml-60 right-0 h-[600px] z-10 lg:block hidden">
+                <p className="font-bold">LEVEL 1</p>
                 <div className="relative h-full w-full">
                     {/* ASU OXYGEN PLANT (Filtered Image Only) */}
                     <div className="absolute top-0  w-[390px] h-72">

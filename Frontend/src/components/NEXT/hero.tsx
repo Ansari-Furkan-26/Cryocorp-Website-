@@ -34,9 +34,9 @@ const ASUPage: React.FC = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-16 lg:pt-16 pt-8">
-                                <p>RELAXAIR</p>
-                                <p>MEDICAL AIR DRYERS</p>
-                                <p>HYDROGEN STORAGE TANKS & FILLING MANIFOLDS</p>
+                                <a className="block" href="">RELAXAIR</a>
+                                <a className="block" href="">MEDICAL AIR DRYERS</a>
+                                <a className="block" href="">HYDROGEN STORAGE TANKS & FILLING MANIFOLDS</a>
                             </div>
                         </div>
 

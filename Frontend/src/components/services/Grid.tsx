@@ -57,7 +57,7 @@ const ProjectGridSection = () => {
     </div>
 
     {/* 2. Turn-key content block (moved below img6.png in mobile) */}
-    <div className="md:col-span-2 row-span-1 bg-transparent flex flex-col justify-start order-2 md:order-3">
+    <div id='01. TURN-KEY PROJECTS FOR PLANT RELOCATION' className="md:col-span-2 row-span-1 bg-transparent flex flex-col justify-start order-2 md:order-3">
         <div className="p-4 md:p-6">
             <h3 className="text-xl md:text-2xl font-bold text-black mb-2 md:mb-4">
                 01. TURN-KEY PROJECTS FOR PLANT RELOCATION
@@ -77,7 +77,7 @@ const ProjectGridSection = () => {
     </div>
 
     {/* 3. Right-side image + text (img7) */}
-    <div className="md:col-span-1 row-span-1 bg-transparent flex flex-col overflow-hidden order-3 md:order-2">
+    <div id='02. ERECTING & COMMISSIONING FOR PSA PLANTS' className="md:col-span-1 row-span-1 bg-transparent flex flex-col overflow-hidden order-3 md:order-2">
         <img
             src="/services/img7.png"
             alt="Project 2"
@@ -102,7 +102,7 @@ const ProjectGridSection = () => {
     </div>
 
     {/* 4. Bottom-right: Image + Text */}
-    <div className="md:col-span-1 row-span-1 bg-transparent flex flex-col order-4">
+    <div id='03. LIQUID BOTTTLING COMMMISSIONING' className="md:col-span-1 row-span-1 bg-transparent flex flex-col order-4">
         <img
             src="/services/img8.png"
             alt="Project 3"

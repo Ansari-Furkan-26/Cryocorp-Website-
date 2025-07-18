@@ -226,7 +226,7 @@ const ASUPage = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32 lg:pt-32 pt-16">
-                                <p>LEVEL 1</p>
+                                <a href="#level-1-psa">LEVEL 1</a>
                             </div>
                         </div>
 

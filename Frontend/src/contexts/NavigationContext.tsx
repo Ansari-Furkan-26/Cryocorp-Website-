@@ -6,6 +6,7 @@ type NavigationContextType = {
     totalPages: number;
     goNext: () => void;
     goPrev: () => void;
+    updateCurrentPage: (page) => void;
 };
 
 const NavigationContext = createContext<NavigationContextType | undefined>(undefined);
@@ -19,6 +20,10 @@ export const NavigationProvider = ({
 }) => {
     const [currentPage, setCurrentPage] = useState(1);
 
+    const updateCurrentPage = (page) => {
+        setCurrentPage(page)
+    }
+
     const goNext = () => {
         setCurrentPage(prev => prev === totalPages ? 1 : prev + 1);
     };
@@ -28,7 +33,7 @@ export const NavigationProvider = ({
     };
 
     return (
-        <NavigationContext.Provider value={{ currentPage, totalPages, goNext, goPrev }}>
+        <NavigationContext.Provider value={{ currentPage, totalPages, goNext, goPrev, updateCurrentPage }}>
             {children}
         </NavigationContext.Provider>
     );

@@ -19,7 +19,7 @@ const OurVision = () => {
           solutions, guided by purpose, precision, and progress.
         </p>
         <h2
-          style={{ WebkitTextStroke: '1px #2b4d3f' }}
+          
           className="text-[60px] sm:text-[90px] md:text-[120px] font-bold text-[#A1D5B1] drop-shadow-sm leading-tight flex flex-col items-end"
         >
           <span>Our</span>

@@ -33,7 +33,7 @@ const Founders = () => {
             </div>
           </div>
           <div className="w-full md:w-1/2 mt-8 md:mt-0">
-            <div className="text-[24px] md:text-[32px] font-semibold text-center md:text-left">Ashish Goyal</div>
+            <div className="text-[24px] md:text-[28px] font-semibold text-center md:text-left">Ashish Goyal</div>
             <div className="text-[16px] md:text-[20px] mb-4 text-center md:text-left">Managing Director</div>
             <div className="w-full md:w-[80%] opacity-70 text-center md:text-left px-4 md:px-0">
               Leads the company with over 28 years of experience in the
@@ -54,7 +54,7 @@ const Founders = () => {
         {/* Second Founder - Dr. Jaya Goyal */}
         <div className="flex flex-col-reverse md:flex-row mt-20 md:mt-80 p-5 w-full">
           <div className="w-full md:w-1/2 items-end mt-8 md:mt-0">
-            <div className="text-[24px] md:text-[32px] font-semibold text-center md:text-left md:ml-[500px]">Dr. Jaya Goyal</div>
+            <div className="text-[24px] md:text-[28px] font-semibold text-center md:text-left md:ml-[500px]">Dr. Jaya Goyal</div>
             <div className="text-[16px] md:text-[20px] mb-4 text-center md:text-left md:ml-[500px]">Managing Partner</div>
             <div className="w-full md:w-[80%] opacity-70 text-center md:text-left px-4 md:px-0 md:ml-[100px]">
               Leads the company with over 28 years of experience in the
@@ -76,7 +76,7 @@ const Founders = () => {
               alt=""
               className="md:absolute md:top-[-150px] md:right-[200px] h-[300px] md:h-[500px] relative top-0 right-0"
             />
-            <div className="hidden md:block md:absolute md:bottom-[-370px] md:left-[-150px] text-center mt-4 md:mt-0 relative bottom-0 left-0">
+            <div className="hidden md:block md:absolute md:bottom-[-270px] md:left-[-50px] text-center mt-4 md:mt-0 relative bottom-0 left-0">
               <img src="/about/quote1.png" alt="" className="relative mx-auto md:mx-0" />
               <div className="md:absolute md:top-5 text-black p-4 md:p-10 text-[12px] md:text-[14px] italic relative top-0 bg-white md:bg-transparent rounded-lg md:rounded-none shadow-md md:shadow-none mt-2 md:mt-0">
                 "Leading CryoCorp, I want to be your trusted partner, providing end-to-end solutions that keep your plants running efficiently. My focus is on understanding exact needs of the clients, eliminating plant downtime and boosting profits by delivering reliable products and responsive technical support."

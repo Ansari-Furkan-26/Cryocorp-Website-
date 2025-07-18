@@ -2,9 +2,9 @@ import React from 'react';
 
 const IndustrialDiagram: React.FC = () => {
     return (
-        <div className="bg-white p-4 shadow-lg">
+        <div id='level-2' className="bg-white p-4 shadow-lg">
             {/* Header Text */}
-            <div className="mb-6 max-w-4xl mx-auto">
+            <div className="mb-6 max-w-4xl mx-auto border-l-2 border-blue-600 pl-5">
                 <p className="text-gray-700 text-sm leading-relaxed">
                     At CryoCorp, our <strong>ASU (Air Separation Unit) Plants</strong> transform atmospheric air into high-purity industrial gases
                     through a precise and highly efficient cryogenic process. It starts with compressing and cooling the air,

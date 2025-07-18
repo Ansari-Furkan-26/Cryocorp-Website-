@@ -4,9 +4,10 @@ interface SparePartProps {
     number: string;
     title: string;
     imageSrc?: string;
+    customCss?:string;
 }
 
-const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
+const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
     <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow z-10">
         <div className="space-y-3">
             <div className="text-sm font-medium text-catalog-number">
@@ -20,7 +21,7 @@ const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
                     <img
                         src={imageSrc}
                         alt={title}
-                        className="max-h-full max-w-full object-contain"
+                        className={`h-full w-full object-contain ${customCss}`}
                     />
                 ) : (
                     <div className="text-gray-400 text-xs text-center">
@@ -42,7 +43,7 @@ const LiquidOxygen = () => {
         { number: "06", title: "gland packing", imageSrc: "liquidOxygen/6.png" },
         { number: "07", title: "oil wiper rings", imageSrc: "liquidOxygen/7.png" },
         { number: "08", title: "coldend assembly", imageSrc: "liquidOxygen/8.png" },
-        { number: "09", title: "cross head", imageSrc: "liquidOxygen/9.png" },
+        { number: "09", title: "cross head", imageSrc: "liquidOxygen/9.png", customCss:"mt-24" },
         { number: "10", title: "connecting rod with crank shaft", imageSrc: "liquidOxygen/10.png" },
         { number: "11", title: "crank shaft", imageSrc: "liquidOxygen/11.png" }
     ];
@@ -86,6 +87,7 @@ const LiquidOxygen = () => {
                             number={part.number}
                             title={part.title}
                             imageSrc={part.imageSrc}
+                            customCss={part?.customCss}
                         />
                     ))}
                 </div>

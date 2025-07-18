@@ -39,8 +39,8 @@ const ASUPage: React.FC = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-16 lg:pt-16 pt-8">
-                                <p>LEVEL 1</p>
-                                <p>LEVEL 2</p>
+                                <a className="block" href="#level-1-lbu">LEVEL 1</a>
+                                <a className="block" href="#level-2-lbu">LEVEL 2</a>
                             </div>
                         </div>
 

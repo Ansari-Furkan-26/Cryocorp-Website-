@@ -23,9 +23,9 @@ const Hero = () => {
                             "01. TURN-KEY PROJECTS FOR PLANT RELOCATION",
                             "02. ERECTING & COMMISSIONING FOR PSA PLANTS",
                             "03. LIQUID BOTTTLING COMMMISSIONING",
-                        ].map((item) => (
+                        ].map((item, idx) => (
                             <div key={item} className="flex items-center justify-between py-2 border-b border-gray-100">
-                                <span className="text-sm font-medium text-gray-500">{item}</span>
+                                <span className="text-sm font-medium text-gray-500"><a href={`#${item}`}>{item}</a></span>
                             </div>
                         ))}
                     </div>

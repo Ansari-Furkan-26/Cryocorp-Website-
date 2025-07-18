@@ -4,9 +4,10 @@ interface SparePartProps {
     number: string;
     title: string;
     imageSrc?: string;
+    customCss?:string;
 }
 
-const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
+const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
     <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow">
         <div className="space-y-3">
             <div className="text-sm font-medium text-catalog-number">
@@ -15,12 +16,12 @@ const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
             <div className="text-sm font-medium text-catalog-text uppercase tracking-wide">
                 {title}
             </div>
-            <div className="h-64 bg-[#EDEDED] rounded-md flex items-center justify-center">
+            <div className={`h-64 bg-[#EDEDED] rounded-md flex items-center justify-center `}>
                 {imageSrc ? (
                     <img
                         src={imageSrc}
                         alt={title}
-                        className="max-h-full max-w-full object-contain"
+                        className={`h-full w-full object-contain ${customCss}`}
                     />
                 ) : (
                     <div className="text-gray-400 text-xs text-center">
@@ -34,17 +35,17 @@ const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
 
 const AirCompressorCatalog = () => {
     const spareParts = [
-        { number: "01", title: "SUCTION FILTER", imageSrc: "AirCompressor/suctionFilter.png" },
-        { number: "02", title: "SUCTION & DISCHARGE VALVE", imageSrc: "AirCompressor/suction.png" },
-        { number: "03", title: "GASKETS", imageSrc: "AirCompressor/gaskets.png" },
-        { number: "04", title: "TUBE BUNDLES", imageSrc: "AirCompressor/tube.png" },
-        { number: "05", title: "DRAIN VALVE", imageSrc: "AirCompressor/drain.png" },
-        { number: "06", title: "PISTON RINGS", imageSrc: "AirCompressor/piston.png" },
-        { number: "07", title: "GLAND PACKING", imageSrc: "AirCompressor/gland.png" },
+        { number: "01", title: "SUCTION FILTER", imageSrc: "AirCompressor/suctionFilter.png", customCss:"" },
+        { number: "02", title: "SUCTION & DISCHARGE VALVE", imageSrc: "AirCompressor/suction.png",customCss:"h-[200px] object-cover pr-10" },
+        { number: "03", title: "GASKETS", imageSrc: "AirCompressor/gaskets.png",customCss:"" },
+        { number: "04", title: "TUBE BUNDLES", imageSrc: "AirCompressor/tube.png",customCss:"rotate-45" },
+        { number: "05", title: "DRAIN VALVE", imageSrc: "AirCompressor/drain.png",customCss:"" },
+        { number: "06", title: "PISTON RINGS", imageSrc: "AirCompressor/piston.png",customCss:"" },
+        { number: "07", title: "GLAND PACKING", imageSrc: "AirCompressor/gland.png",customCss:"" },
     ];
 
     return (
-        <div className="w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12">
+        <div className="w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-32">
             {/* Header Section */}
             <div className="mb-8">
                 <h1 className="text-lg font-bold text-catalog-header mb-4">
@@ -85,6 +86,7 @@ const AirCompressorCatalog = () => {
                             number={part.number}
                             title={part.title}
                             imageSrc={part.imageSrc}
+                            customCss={part.customCss}
                         />
                     ))}
                 </div>

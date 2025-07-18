@@ -56,7 +56,7 @@ const App = () => (
             {/* ❌ 404 Not Found */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-      <PopupBannerAds />
+      
         </BrowserRouter>
       </AuthProvider>
     </TooltipProvider>

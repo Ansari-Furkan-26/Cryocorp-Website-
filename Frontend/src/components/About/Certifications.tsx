@@ -54,12 +54,12 @@ const Certifications = () => {
         </div>
 
         {/* Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center mt-12 sm:mt-16">
-          <img src="/about/logo1.png" alt="Logo 1" className="h-10 sm:h-12 object-contain" />
-          <img src="/about/logo2.png" alt="Logo 2" className="h-10 sm:h-12 object-contain" />
-          <img src="/about/logo3.png" alt="Logo 3" className="h-10 sm:h-12 object-contain" />
+        <div className="grid grid-cols-2 mb-10 sm:mb-0 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center h-[200px]">
+          <img src="/about/logo1.png" alt="Logo 1" className="h-16 sm:h-20 object-contain" />
+          <img src="/about/logo2.png" alt="Logo 2" className="h-20 sm:h-28 object-contain" />
+          <img src="/about/logo3.png" alt="Logo 3" className="h-20 sm:h-20 object-contain" />
           <img src="/about/logo4.png" alt="Logo 4" className="h-10 sm:h-12 object-contain" />
-          <img src="/about/logo5.png" alt="Logo 5" className="h-10 sm:h-12 object-contain" />
+          <img src="/about/logo5.png" alt="Logo 5" className="h-20 sm:h-32 object-contain" />
         </div>
       </div>
     </section>

@@ -17,7 +17,7 @@ const PopupBannerAds = () => {
       icon: <Play className="w-5 h-5" />,
       gradient: "from-purple-500 to-pink-500",
       section: "/quiz",
-      img: "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+      img: "/about/quiz4.jpg"
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const PopupBannerAds = () => {
       icon: <Search className="w-5 h-5" />,
       gradient: "from-blue-500 to-cyan-500",
       section: "/services",
-      img: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+      img: "/services/img7.png"
     },
     {
       id: 3,
@@ -36,7 +36,7 @@ const PopupBannerAds = () => {
       buttonText: "Chat Now",
       icon: <MessageCircle className="w-5 h-5" />,
       gradient: "from-green-500 to-emerald-500",
-      section: "/chat",
+      section: "",
       img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
     }
   ];
@@ -55,6 +55,12 @@ const PopupBannerAds = () => {
   const closePopup = () => setShowPopup(false);
 
   const handleNavigation = (section) => {
+    if(section == ""){
+      closePopup();
+      setTimeout(() => {
+        window.location.href = "https://agentivehub.com/chat/49559140-605e-458a-ab98-0708f11ddb21"
+      }, 300);
+    }
     closePopup();
     setTimeout(() => {
       navigate(section);

@@ -3,37 +3,37 @@ import React from 'react';
 const CardGrid = () => {
     const cards = [
         {
-            title: 'PSA Oxygen Plant',
+            title: 'PSA OXYGEN PLANT',
             content: '(93–95% purity Nitrogen from Air) with technicians & spares support',
             image: '/services/img2.png',
             back: 'Keep your PSA Oxygen Plant compliant, efficient, and always delivering high-purity oxygen. With AMC, get scheduled service for smooth operation. Upgrade to CMC for full coverage—parts, repairs, and emergency support. No downtime. No surprise costs. Just reliable performance, 24/7.',
         },
         {
-            title: 'PSA Nitrogen Plant',
+            title: 'PSA NITROGEN PLANT',
             content: '(93–95% purity Nitrogen from Air) with technicians & spares support',
             image: '/services/img2.png',
             back: 'Keep your PSA Nitrogen Plant running at peak efficiency, always. AMC offers routine maintenance to minimize interruptions. CMC gives you full coverage—parts, repairs, and expert support. No unplanned stoppages. No hidden costs. Just nonstop performance. Engineered for businesses that can’t afford downtime.',
         },
         {
-            title: 'ASU Oxygen Plant',
+            title: 'ASU OXYGEN PLANT',
             content: '(99%+ purity Oxygen from Air) with technicians & spares support',
             image: '/services/img3.png',
             back: 'Maximize uptime and regulatory compliance for your ASU Oxygen Plant with specialized maintenance and relocation services. From advanced diagnostics to critical spares, our team ensures seamless, ultra-high purity oxygen production. Need to relocate? We have done it—successfully shifted a live plant from Nashik to Yemen, including export, erection, and commissioning support. Whether it’s routine servicing or a full-scale move, we keep your operations uninterrupted and future-ready.',
         },
         {
-            title: 'ASU Nitrogen Plant',
+            title: 'ASU NITROGEN PLANT',
             content: '(99%+ purity Nitrogen from Air) with technicians & spares support',
             image: '/services/img3.png',
             back: 'Guarantee consistent, high-purity nitrogen output with proactive maintenance and rapid-response troubleshooting. Our AMC/CMC services include skilled technical support and spare parts management, reducing the risk of costly failures and keeping your plant running at optimal performance.',
         },
         {
-            title: 'Acetylene Plant',
+            title: 'ACETYLENE PLANT',
             content: '(Storing and Distribution) of Industrial Gases with technicians & spares support',
             image: '/services/img4.png',
             back: 'Stay safe and compliant with dedicated maintenance for your Acetylene Plant, where reliability and safety are paramount. Our contracts provide expert inspections, preventive care, and immediate access to spares—helping you avoid hazardous breakdowns and maintain smooth, continuous operations.',
         },
         {
-            title: 'Liquid Bottling Unit',
+            title: 'LIQUID BOTTLING UNIT',
             content: '(Storing and Distribution) of Industrial Gases with technicians & spares support',
             image: '/services/img4.png',
             back: 'Protect your bottling operations with tailored maintenance contracts that cover the complex needs of liquid gas storage and distribution systems. With expert technicians and timely spares, you minimize risks of leaks, contamination, or supply chain disruptions, ensuring safe and reliable gas delivery for your customers.',
@@ -41,7 +41,7 @@ const CardGrid = () => {
     ];
 
     return (
-        <section className="relative min-h-[200vh] bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden py-16 px-4 flex items-center justify-center">
+        <section id="servicecards" className="relative min-h-[200vh] bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden py-16 px-4 flex items-center justify-center">
             {/* Animated Background Blobs (Twice across height) */}
             <div className="absolute inset-0 z-0">
                 {/* Set 1 */}
