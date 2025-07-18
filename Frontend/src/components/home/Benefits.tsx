@@ -499,12 +499,12 @@ const prevSlide = () => {
       {features.map((feature, index) => (
         <div
           key={feature.number}
-          className="flip-card h-[400px] lg:h-[500px] w-full"
+          className="flip-card h-[400px] lg:h-[700px] w-full"
         >
           <div className="flip-card-inner w-full h-full">
             {/* Front of the card */}
             <Card
-              className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-start px-12 py-16 cursor-pointer hover:bg-accent/10 transition-colors"
+              className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-start px-12 py-20 cursor-pointer hover:bg-accent/10 transition-colors"
               onClick={getClickHandler(feature.title)}
             >
               <div
@@ -539,7 +539,7 @@ const prevSlide = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
-                <div className="absolute inset-0 flex flex-col justify-end p-12">
+                <div className="absolute inset-0 flex flex-col justify-center p-12">
                   <div className="text-6xl lg:text-7xl font-bold text-white mb-4 leading-none">
                     {feature.number}
                   </div>

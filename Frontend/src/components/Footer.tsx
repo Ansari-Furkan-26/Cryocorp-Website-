@@ -39,7 +39,7 @@ const Footer = () => {
   return (
     <div className="w-full">
       {/* Main Footer */}
-      <footer className="bg-blue-50 px-6 pt-6 md:pb-6 mb-0">
+      <footer className="bg-blue-50 px-9 pt-6 md:pb-6 mb-0">
         <div className="md:mr-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Logo and Let's Talk */}

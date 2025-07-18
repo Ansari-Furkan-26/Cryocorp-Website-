@@ -1,6 +1,6 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TestimonialsSection = () => {
   const testimonials = [
@@ -116,6 +116,17 @@ const TestimonialsSection = () => {
 
   const handlePrev = () => scrollToIndex(currentIndex - 1);
   const handleNext = () => scrollToIndex(currentIndex + 1);
+
+  // Auto-slide every 5 seconds
+useEffect(() => {
+  const interval = setInterval(() => {
+    const isLast = currentIndex >= testimonials.length - cardsPerView;
+    scrollToIndex(isLast ? 0 : currentIndex + 1);
+  }, 3000); // 5000ms = 5 seconds
+
+  return () => clearInterval(interval); // Cleanup
+}, [currentIndex, testimonials.length]);
+
 
   return (
     <section className="py-12 px-4 bg-white">
