@@ -19,6 +19,7 @@ const Header = () => {
 
           <nav className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8 text-[#59C6D3]">
+              <a href="/">Home</a>
               <a href="/products">Products</a>
               <a href="/services">Services</a>
               <a href="/Resources">Resource Hub</a>

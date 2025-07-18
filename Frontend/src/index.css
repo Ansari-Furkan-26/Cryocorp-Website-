@@ -377,23 +377,23 @@ html, body {
   }
 
   75% {
-    transform: translate(-15vw, -40vh) scale(3.5);
+    transform: translate(-15vw, -40vh) scale(2);
 
   }
 
   85% {
-    transform: translate(-15vw, -40vh) scale(3.5);
+    transform: translate(-15vw, -40vh) scale(2);
     opacity: 1;
   }
 
   90% {
-    transform: translate(-30vw, -40vh) scale(3);
+    transform: translate(-30vw, -40vh) scale(2);
     opacity: 0;
 
   }
 
   100% {
-    transform: translate(-30vw, -40vh) scale(2);
+    transform: translate(-30vw, -40vh) scale(1);
     opacity: 0;
 
   }
@@ -684,3 +684,41 @@ html, body {
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 767px) {
+  /* Hide 2 images for clarity on mobile screens */
+   .animate-seventh-image, .animate-third-image, .animate-fourth-image {
+    display: none;
+  }
+  /* Scale down headline text for mobile */
+  .animate-why-path, .animate-cryocorp-path {
+    font-size: 3.5rem; /* adjust as needed for your design */
+  }
+  /* Reduce image sizes on mobile for less overlap */
+  .animate-sixth-image,
+  .animate-second-image,
+  .animate-single-image,
+  .animate-fifth-image
+   {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  .animate-cryocorp-path {
+  position: absolute;
+  top: 35vh;
+  left: 5vw;             /* Moves text further inside the viewport */
+  max-width: 90vw;       /* Prevents text from overflowing horizontally */
+  animation: rectanglePath 6s linear infinite;
+  animation-delay: -3s;
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;   /* Keeps the text in a single line */
+  overflow: hidden;      /* Hides any overflow content */
+  text-overflow: ellipsis;
+}
+
+}
+

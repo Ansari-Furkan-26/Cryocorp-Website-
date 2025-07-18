@@ -88,7 +88,7 @@ const HeroSection = () => {
         {/* Glass Container */}
         <div className="p-8 md:p-12 shadow-2xl max-w-4xl mx-auto text-left">
           <div className="animate-fade-in-up">
-            <h1 className="text-xl md:text-4xl text-left font-semibold text-slate-700 mb-8 max-w-3xl mx-auto z-50 relative pb-10">
+            <h1 className="text-3xl md:text-4xl text-left font-semibold text-slate-700 sm:mb-8 max-w-3xl mx-auto z-50 relative pb-10">
               Welcome to <span className="text-black font-bold">CRYOCORP O2 LLP,</span> <br />
               one-stop-shop for industrial gas solutions <br />using air separation technology.
             </h1>

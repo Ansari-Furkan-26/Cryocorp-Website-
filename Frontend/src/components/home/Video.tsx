@@ -2,7 +2,7 @@ import React from "react";
 
 const VideoHero = () => {
   return (
-    <section className="relative w-[95%] m-auto h-[115vh] bg-white overflow-hidden">
+    <section className="relative m-auto h-[115vh] bg-white overflow-hidden">
 
       {/* WHY - starting at top-left corner */}
       <div className="animate-why-path z-20">

@@ -7,6 +7,8 @@ type GridItem = {
   type: "Products" | "Services";
   image: string;
   className: string;
+  blueOverlay?:string;
+  fontColor?:string;
 };
 
 const gridItems: GridItem[] = [
@@ -14,42 +16,49 @@ const gridItems: GridItem[] = [
     title: "ASU Technology - Gas Production and Distribution",
     subtitle: "Products:",
     type: "Products",
-    image: "/images.png",
+    image: "/bento/asu.png",
     className: "col-span-2 row-span-2 h-[400px]",
+    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50"
   },
   {
     title: "PSA Technology",
     subtitle: "Products:",
     type: "Products",
-    image: "/image.png",
+    image: "/bento/psa.png",
     className: "col-span-1 row-span-1 h-[250px]",
+    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50"
   },
   {
     title: "Maintenance Solutions",
     subtitle: "Services:",
     type: "Services",
-    image: "/bento3.jpg",
+    image: "/bento/maintenance.png",
     className: "col-span-1 row-span-1 h-[250px]",
+    blueOverlay:"absolute inset-0 bg-[#a3d9c9]/50",
+    fontColor:"text-black"
   },
   {
     title: "Plant Installation & Commissioning",
     subtitle: "Services:",
     type: "Services",
-    image: "/bento4.png",
+    image: "/bento/plant.png",
     className: "col-span-2 row-span-2 row-start-3 row-start-2 h-[250px] -mt-14",
+    blueOverlay:"absolute inset-0 bg-[#a3d9c9]/50",
+    fontColor:"text-black"
   },
   {
     title: "Liquid Bottling Plants - Storage & Distribution",
     subtitle: "Products:",
     type: "Products",
-    image: "/image.png",
+    image: "/bento/liquid.png",
     className: "col-span-2 row-span-2 h-[400px]",
+    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50"
   },
 ];
 
 const IndustrialGrid = () => {
   return (
-    <div className="bg-slate-50 ">
+    <div className="bg-slate-50 sm:pt-20">
       {/* Mobile Layout (single column) */}
       <div className="block lg:hidden">
         <div className="flex flex-col gap-4 p-4 max-w-md mx-auto">
@@ -60,10 +69,11 @@ const IndustrialGrid = () => {
               style={{ backgroundImage: `url(${item.image})` }}
             >
               <div className="absolute inset-0 bg-black/40"></div>
-              <div className="relative z-10">
+              <div className={`relative z-10 ${item?.fontColor}`}>
                 <p className="text-sm font-semibold">{item.subtitle}</p>
                 <h3 className="text-lg font-bold leading-tight">{item.title}</h3>
               </div>
+              <div className={`${item?.blueOverlay}`}></div>
             </div>
           ))}
         </div>
@@ -79,10 +89,11 @@ const IndustrialGrid = () => {
               style={{ backgroundImage: `url(${item.image})` }}
             >
               <div className="absolute inset-0 bg-black/40"></div>
-              <div className="relative z-10">
+              <div className={`relative z-10 ${item?.fontColor}`}>
                 <p className="text-sm font-semibold">{item.subtitle}</p>
                 <h3 className="text-lg font-bold leading-tight">{item.title}</h3>
               </div>
+              <div className={`${item?.blueOverlay}`}></div>
             </div>
           ))}
         </div>

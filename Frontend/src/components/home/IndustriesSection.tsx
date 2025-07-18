@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -9,6 +9,7 @@ const IndustriesAnimatedSection = () => {
   const containerRef = useRef(null);
   const industriesRef = useRef([]);
   const textRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   const industries = [
     "Healthcare",
@@ -26,59 +27,110 @@ const IndustriesAnimatedSection = () => {
 
   const ITEM_WIDTH = 300;
   const ITEM_HEIGHT = 120;
-  const CONTAINER_HEIGHT = 300; // Reduced height to minimize space
 
-useEffect(() => {
-  const ctx = gsap.context(() => {
-    const totalWidth = industries.length * ITEM_WIDTH;
-    const scrollLength = totalWidth - window.innerWidth + 32;
+  // Check if mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
-    // Pin the section
-    ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: "top top",
-      end: `+=${scrollLength}`,
-      pin: true,
-      scrub: false,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-    });
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (isMobile) {
+        // Mobile - Horizontal scrolling
+        const totalWidth = industries.length * ITEM_WIDTH;
+        const containerWidth = window.innerWidth;
+        const scrollLength = totalWidth - containerWidth + 50;
 
-    // Animate horizontal scroll
-    gsap.fromTo(
-      industriesRef.current,
-      { x: 0 },
-      {
-        x: -scrollLength,
-        ease: "none",
-        scrollTrigger: {
+        // Pin the section
+        ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 60%",
+          start: "top top",
           end: `+=${scrollLength}`,
-          scrub: 1, // smoother animation
-        }
-      }
-    );
+          pin: true,
+          scrub: false,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        });
 
-    // Keep the text fixed vertically
-    gsap.fromTo(
-      textRef.current,
-      { y: 0 },
-      {
-        y: 0,
-        scrollTrigger: {
+        // Animate horizontal scroll
+        gsap.fromTo(
+          industriesRef.current,
+          { x: 0 },
+          {
+            x: -scrollLength,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: `+=${scrollLength}`,
+              scrub: 0.8,
+            }
+          }
+        );
+
+      } else {
+        // Desktop - Vertical scrolling
+        const totalHeight = industries.length * ITEM_HEIGHT;
+        const containerHeight = window.innerHeight;
+        const scrollLength = totalHeight - containerHeight + 400; // Increased buffer
+
+        // Pin the section
+        ScrollTrigger.create({
           trigger: sectionRef.current,
-          start: "top 60%",
+          start: "top top",
           end: `+=${scrollLength}`,
-          scrub: true,
-        }
+          pin: true,
+          scrub: false,
+          anticipatePin: 1,
+          invalidateOnRefresh: true,
+        });
+
+        // Animate vertical scroll - Fixed to show all items properly
+        gsap.fromTo(
+          industriesRef.current,
+          { y: 100 }, // Start with a slight offset to show first items
+          {
+            y: -(totalHeight - containerHeight + 200), // End position
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: `+=${scrollLength}`,
+              scrub: 0.5,
+            }
+          }
+        );
       }
-    );
-  }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+      // Keep the text fixed
+      const textScrollLength = isMobile 
+        ? industries.length * ITEM_WIDTH - window.innerWidth + 50
+        : industries.length * ITEM_HEIGHT - window.innerHeight + 400;
 
+      gsap.fromTo(
+        textRef.current,
+        { y: 0 },
+        {
+          y: 0,
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: `+=${textScrollLength}`,
+            scrub: true,
+          }
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, [isMobile, industries.length]);
 
   // Populate industriesRef with refs for each industry item
   const addToRefs = (el) => {
@@ -90,61 +142,59 @@ useEffect(() => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen snap-start py-12 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden flex items-start"
-      style={{ minHeight: '70vh', background: 'linear-gradient(to bottom right, #0a192f, #1e3a8a, #0f172a)' }}
+      className="h-screen snap-start bg-blue-600 text-white relative overflow-hidden flex items-center"
+      style={{ 
+        minHeight: '100vh',
+        background: 'linear-gradient(to bottom right, #0a192f, #1e3a8a, #0f172a)'
+      }}
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 right-10 w-64 h-64 bg-white rounded-full blur-2xl"></div>
-        <div className="absolute bottom-10 left-10 w-48 h-48 bg-white rounded-full blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-400 rounded-full blur-2xl opacity-5"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto w-full relative z-10">
-       <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
+      {/* Removed background decoration circles */}
+      
+      <div className="max-w-7xl mx-auto w-full relative z-10 px-4">
+        <div className={`grid grid-cols-1 lg:grid-cols-5 sm:gap-8 items-center h-full ${isMobile ? 'pt-12 gap-0' : ''}`}>
 
           {/* Left Content (Pinned Text) */}
-          <div ref={textRef} className="lg:col-span-2">
+          <div ref={textRef} className={`lg:col-span-2 ${isMobile ? 'mb-4' : ''}`}>
             <div className="sticky top-12 transition-all duration-1000">
-              <h2 className="text-4xl md:text-5xl font-bold md:mb-6 leading-tight">
+              <h2 className={`font-bold leading-tight ${isMobile ? 'text-2xl mb-3' : 'text-4xl md:text-6xl mb-6'}`}>
                 Industries We Serve
               </h2>
-              <p className="text-xl opacity-90 mb-6 leading-relaxed">
-                With over 35 years of combined experience, we serve diverse industries
-                with cutting-edge air separation technology and industrial gas solutions.
+              <p className={`opacity-90 leading-relaxed ${isMobile ? 'text-sm mb-3' : 'text-md mb-6'}`}>
+               CryoCorp acts as a comprehensive partner to these businesses, providing engineering solutions in ASU or PSA Oxygen or Nitrogen generation, OEM quality genuine spares, and expert maintenance services, going beyond supplying products. We exists to reduce operational costs and increase profits of our clients.
+
+
               </p>
-              <p className="text-lg opacity-80 leading-relaxed mb-6">
-                Our expertise spans across multiple sectors, ensuring reliable and
-                efficient gas supply systems tailored to your specific needs.
+              <p className={`opacity-80 leading-relaxed ${isMobile ? 'text-xs mb-3' : 'text-md mb-6'}`}>
+                Drawing on over 35+ years of combined industry experience, our focus is on addressing our clients' pain points and helping save costs across diverse Oxygen & Nitrogen Plant types and applications. Our aim is to ensure production continuity and extend the lifespan of valuable equipment for our clients globally. 
               </p>
             </div>
           </div>
 
           {/* Right Content - Industries List */}
-          <div className="lg:col-span-3 lg:pl-8">
+          <div className={`lg:col-span-3 lg:pl-8 ${isMobile ? 'h-1/2' : ''}`}>
             <div
               ref={containerRef}
-              className="relative overflow-x-auto"
-              style={{ height: `${CONTAINER_HEIGHT}px` }}
+              className={`relative overflow-hidden ${isMobile ? 'h-64' : 'h-screen flex items-start pt-20'}`}
             >
-              <div className="flex items-center" style={{ height: `${CONTAINER_HEIGHT}px` }}>
+              <div className={`flex ${isMobile ? 'flex-row' : 'flex-col'} w-full`}>
                 {industries.map((industry, index) => (
                   <div
                     key={industry}
                     ref={addToRefs}
                     className="flex items-center justify-center flex-shrink-0"
                     style={{ 
-                      width: `${ITEM_WIDTH}px`,
+                      width: isMobile ? `${ITEM_WIDTH}px` : '100%',
                       height: `${ITEM_HEIGHT}px`
                     }}
                   >
                     <div className={`
-                      text-3xl  md:text-4xl font-light
+                      font-light
                       transition-all duration-1000 transform
                       hover:text-blue-300 cursor-default
                       bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent
                       leading-tight tracking-tight text-center
-                      whitespace-nowrap
+                      whitespace-nowrap text-[#2C5EA4]
+                      ${isMobile ? 'text-4xl' : 'md:text-8xl'}
                     `}>
                       {industry}
                     </div>
@@ -152,12 +202,11 @@ useEffect(() => {
                 ))}
               </div>
             </div>
-            
           </div>
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-slate-900 to-transparent pointer-events-none"></div>
+      {/* Removed the bottom gradient that was causing the white background */}
     </section>
   );
 };

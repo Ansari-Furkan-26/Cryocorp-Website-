@@ -7,12 +7,12 @@ const ASUPage: React.FC = () => {
     const { goNext, goPrev } = useNavigation();
     return (
 
-        <div className="min-h-screen bg-white relative overflow-hidden pt-6 lg:pt-8" style={{ minHeight: '225vh' }}>
+        <div className="sm:min-h-[225vh] bg-white relative overflow-hidden mb-10 pt-6 lg:pt-8">
 
             {/* Main Content */}
-            <main className="relative z-10 ml-64 left-0 pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
+            <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
-                    <div className="grid grid-cols-12 gap-4 min-h-[80vh] lg:grid-cols-12 grid-cols-1">
+                    <div className="grid grid-cols-12 gap-4 sm:min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
                         <div className="col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
                             {/* Section Numbers */}
@@ -38,9 +38,9 @@ const ASUPage: React.FC = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32 lg:pt-32 pt-16">
-                                <a className="block" href="#level-1">LEVEL 1</a>
-                                <a className="block" href="#level-2">LEVEL 2</a>
-                                <a className="block" href="#level-3">LEVEL 3</a>
+                                <a className="sm:block" href="#level-1">LEVEL 1</a>
+                                <a className="sm:block" href="#level-2">LEVEL 2</a>
+                                <a className="sm:block" href="#level-3">LEVEL 3</a>
                             </div>
                         </div>
 
@@ -91,9 +91,9 @@ const ASUPage: React.FC = () => {
             <div className="absolute top-2 left-2 text-white text-xs font-bold tracking-wide">LEVEL 1</div>
 
             {/* Industrial Plant Images Section */}
-            <div className="absolute top-[1000px] left-0 ml-60 right-0 h-[600px] z-10 lg:block hidden">
+            <div id="level-1" className="absolute top-[1000px] left-0 ml-60 right-0 h-[600px] z-10 lg:block hidden">
                 <p className="font-bold">LEVEL 1</p>
-                <div className="relative h-full w-full">
+                <div className="relative sm:h-full w-full">
                     {/* ASU OXYGEN PLANT (Filtered Image Only) */}
                     <div className="absolute top-0  w-[390px] h-72">
                         <div className="relative w-full h-full overflow-hidden shadow-lg">

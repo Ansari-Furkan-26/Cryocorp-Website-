@@ -36,16 +36,16 @@ const FlipCard = ({
             >
                 {/* Front Card */}
                 <div 
-                    className="absolute inset-0"
+                    className="absolute inset-0 cursor-pointer"
                     style={{ backfaceVisibility: 'hidden' }}
                 >
-                    <div className="relative w-full h-full overflow-hidden shadow-lg rounded-lg">
+                    <div className="relative w-full h-full overflow-hidden shadow-lg">
                         <img
                             src={imageSrc}
                             alt={title}
                             className={`w-full h-full object-cover ${imageClassName}`}
                         />
-                        <div className="absolute inset-0 bg-blue-900/50" />
+                        <div className="absolute inset-0 bg-[#1A365EB2]/60" />
                         <div className="absolute z-10 bottom-4 left-4 text-white text-lg font-bold tracking-wide lg:text-lg text-sm">
                             {title}
                             {subtitle && <div className="text-sm lg:text-sm text-xs">{subtitle}</div>}
@@ -61,7 +61,7 @@ const FlipCard = ({
                         transform: 'rotateY(180deg)'
                     }}
                 >
-                    <div className="relative w-full h-full bg-[#1A365E] text-white p-4 overflow-y-auto rounded-lg lg:p-4 p-2">
+                    <div className="relative w-full h-full bg-[#1A365E] text-white p-4 overflow-y-auto lg:p-4 p-2">
                         <div className="space-y-3 lg:space-y-3 space-y-2">
                             <div className="border-b border-blue-300 pb-2">
                                 <h3 className="font-bold text-sm lg:text-sm text-xs">{detailCard.title}</h3>
@@ -197,7 +197,7 @@ const ASUPage = () => {
     return (
         <div className="min-h-screen bg-white relative overflow-hidden pt-6 lg:pt-8" style={{ minHeight: '305vh' }}>
             {/* Main Content */}
-            <main className="relative z-10 ml-64 left-0 pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
+            <main className="relative z-10 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
                     <div className="grid grid-cols-12 gap-4 min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}

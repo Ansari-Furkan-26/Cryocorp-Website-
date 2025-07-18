@@ -364,7 +364,7 @@ const prevSlide = () => {
     <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
       <ModalContent>
         <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
-          <div className="relative w-full max-w-7xl h-auto sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+          <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
             {/* Background Image with Purple Filter */}
             <div className="absolute inset-0">
               <img
@@ -492,7 +492,7 @@ const prevSlide = () => {
 
   return (
     <>
-      <section className="py-20 bg-background min-h-screen">
+      <section className="py-20 bg-background sm:min-h-screen">
   <div className="w-full px-8 lg:px-16">
     {/* Desktop Grid - hidden on mobile */}
     <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
@@ -572,7 +572,7 @@ const prevSlide = () => {
             {features.map((feature, index) => (
               <div
                 key={feature.number}
-                className="w-full flex-shrink-0"
+                className="w-full flex-shrink-0 shadow-lg rounded-lg border-2 border-gray-100"
               >
                 <div className="flip-card h-[400px] w-full ">
                   <div className="flip-card-inner w-full h-full">

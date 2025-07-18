@@ -9,9 +9,9 @@ const ASUPage: React.FC = () => {
         <div className="min-h-[300px] md:min-h-[145vh] bg-white relative overflow-hidden pt-6 lg:pt-8">
 
             {/* Main Content */}
-            <main className="relative z-10 ml-64 left-0 pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
+            <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
-                    <div className="grid grid-cols-12 gap-4 min-h-[80vh] lg:grid-cols-12 grid-cols-1">
+                    <div className="grid grid-cols-12 gap-4 min-h-[56vh] sm:min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
                         <div className="col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
                             {/* Section Numbers */}

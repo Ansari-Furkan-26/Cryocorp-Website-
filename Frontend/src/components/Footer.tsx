@@ -72,16 +72,23 @@ const Footer = () => {
 
               <div className="flex space-x-4 mt-6">
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
+                  <a href="https://www.instagram.com/cryocorp_/" target='_blank'>
                   <FaInstagram size={25} className="text-gray-500" />
+                  </a>
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
+                  <a href="https://www.facebook.com/cryocorp.co.in" target='_blank'></a>
                   <FaFacebook size={25} className="text-gray-500" />
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
+                  <a href="https://www.linkedin.com/company/cryocorp-o2-llp/?viewAMember=true">
                   <FaLinkedin size={25} className="text-gray-500" />
+                  </a>
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
+                  <a href="https://x.com/cryocorp_02_LLP" target='_blank'>
                   <FaTwitter size={25} className="text-gray-500" />
+                  </a>
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
                   <FaShoppingCart size={25} className="text-gray-500" />

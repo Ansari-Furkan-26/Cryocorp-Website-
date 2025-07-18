@@ -110,7 +110,7 @@ const AchievementsSection = () => {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-10 sm:py-20 px-4 bg-primary text-white overflow-hidden min-h-[120vh] flex items-end"
+      className="relative py-10 sm:py-20 px-4 bg-primary text-white overflow-hidden sm:min-h-[120vh] flex items-end"
     >
       {/* Background Image */}
       <div className="absolute inset-0">

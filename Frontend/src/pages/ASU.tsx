@@ -22,10 +22,10 @@ const Products: React.FC = () => {
                 <div className="flex flex-col h-full">
                     {/* Top Left List */}
                     <div className="hidden sm:block space-y-2 text-xs sm:text-sm font-bold text-gray-400 mb-[35px]">
-                        <a className="block cursor-pointer" onClick={() => {updateCurrentPage(1)}}>01. ASU TECHNOLOGY</a>
-                        <a className="block cursor-pointer" onClick={() => {updateCurrentPage(2)}}>02. PSA TECHNOLOGY</a>
-                        <a className="block cursor-pointer" onClick={() => {updateCurrentPage(3)}}>03. LIQUID BOTTLING UNIT</a>
-                        <a className="block cursor-pointer" onClick={() => {updateCurrentPage(4)}}>04. NEXT GEN GAS SOLUTIONS</a>
+                        <a className="sm:block cursor-pointer" onClick={() => {updateCurrentPage(1)}}>01. ASU TECHNOLOGY</a>
+                        <a className="sm:block cursor-pointer" onClick={() => {updateCurrentPage(2)}}>02. PSA TECHNOLOGY</a>
+                        <a className="sm:block cursor-pointer" onClick={() => {updateCurrentPage(3)}}>03. LIQUID BOTTLING UNIT</a>
+                        <a className="sm:block cursor-pointer" onClick={() => {updateCurrentPage(4)}}>04. NEXT GEN GAS SOLUTIONS</a>
                     </div>
 
                     {/* Vertical Line Container */}
