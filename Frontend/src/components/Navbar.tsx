@@ -47,22 +47,51 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu with white background overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-white h-screen flex flex-col justify-center items-center space-y-6 text-[#222]">
-          {["Home", "Products", "Services", "Resource Hub", "About"].map((label, idx) => {
-            const href = label === "Home" ? "/" : `/${label.toLowerCase().replace(/\s/g, "")}`;
-            return (
-              <a
-                key={idx}
-                href={href}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-xl  py-2 px-4 font-medium hover:text-[#59C6D3] transition-colors"
-              >
-                {label}
+        <div className="min-h-screen z-40 bg-white">
+          {/* Mobile menu container */}
+          <div className="flex flex-col h-full px-6 pt-20">
+            {/* Navigation Links */}
+            <nav className="flex-1">
+              <div className="space-y-0">
+                {[
+                  { label: "Home", href: "/" },
+                  { label: "Products", href: "/products" },
+                  { label: "Services", href: "/services" },
+                  { label: "Resource Hub", href: "/resources" },
+                  { label: "Blog", href: "/blog" },
+                  { label: "About", href: "/about" }
+                ].map((item, idx) => (
+                  <div key={idx}>
+                    <a
+                      href={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="block py-4 text-left text-lg font-medium text-[#428b93] hover:text-[#59C6D3] hover:bg-gray-50 hover:pl-4 transition-all duration-300 ease-in-out"
+                    >
+                      {item.label}
+                    </a>
+                    {/* Divider line between nav items */}
+                    {idx < 5 && (
+                      <hr className="border-gray-200 border-t-[0.5px]" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </nav>
+
+            {/* Bottom section with quiz button */}
+            <div className="pb-8">
+              {/* Final divider before button */}
+              <hr className="border-gray-300 border-t-[1px] mb-6" />
+              
+              <a href="/quiz" onClick={() => setIsMenuOpen(false)}>
+                <button className="w-full bg-[#59C6D3] hover:bg-[#4bb5c2] text-white text-base rounded-3xl px-6 py-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                  Take Your Plant Efficiency Test!
+                </button>
               </a>
-            );
-          })}
+            </div>
+          </div>
         </div>
       )}
     </header>

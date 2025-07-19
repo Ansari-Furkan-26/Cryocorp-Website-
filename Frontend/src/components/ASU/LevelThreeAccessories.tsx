@@ -13,7 +13,7 @@ const SpareCard = ({ imageSrc, number, detailCard }: { imageSrc?: string, number
             <div className={`relative w-full h-full transition-transform duration-500 transform-style-preserve-3d ${isFlipped ? 'rotate-y-180' : ''}`}>
                 {/* Front Card */}
                 <Card className="absolute inset-0 p-4 bg-[#EDEDED] border-catalog-card-border h-64 flex items-center justify-center backface-hidden">
-                    <div className="absolute top-0 left-2">0{number}.</div>
+                    <div className="absolute top-0 left-2 font-bold md:text-lg md:font-bold text-[#BDBDBD]">0{number}.</div>
                     {imageSrc ? (
                         <img
                             src={imageSrc}
@@ -44,8 +44,8 @@ const TitleCard = ({ titles, number }: { titles: string[], number: string[] }) =
     <Card className="p-4 bg-white border-catalog-card-border h-64 flex items-end justify-start">
         <div className="text-sm text-catalog-text space-y-1 uppercase tracking-wide">
             {titles.map((title, index) => (
-                <p key={index}>
-                    <span className="font-semibold">
+                <p key={index} className="font-bold md:text-sm md:font-bold text-[#BDBDBD]">
+                    <span className="">
                         {number[index]}
                     </span>{" "}
                     {title}
