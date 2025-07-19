@@ -10,7 +10,7 @@ const useBlogs = () => {
   const getBlogs = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/blogs', {
+      const response = await fetch('https://cryocorp.onrender.com/api/blogs', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const useBlogs = () => {
 
   const getBlogById = async (id: string): Promise<Blog | null> => {
   try {
-    const res = await fetch(`http://localhost:5000/api/blogs/${id}`);
+    const res = await fetch(`https://cryocorp.onrender.com/api/blogs/${id}`);
     if (!res.ok) throw new Error('Blog not found');
     const data = await res.json();
     return data;
@@ -52,7 +52,7 @@ const useBlogs = () => {
 
   const createBlog = useCallback(async (data: Omit<Blog, 'id' | 'author' | 'createdAt' | 'updatedAt'>) => {
     try {
-      const response = await fetch('http://localhost:5000/api/blogs', {
+      const response = await fetch('https://cryocorp.onrender.com/api/blogs', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -80,7 +80,7 @@ const useBlogs = () => {
 
   const updateBlog = useCallback(async ({ id, ...data }: Partial<Blog> & { id: string }) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+      const response = await fetch(`https://cryocorp.onrender.com/api/blogs/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ const useBlogs = () => {
 
   const deleteBlog = useCallback(async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+      const response = await fetch(`https://cryocorp.onrender.com/api/blogs/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token || localStorage.getItem('auth_token')}`

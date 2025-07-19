@@ -8,7 +8,7 @@ const SubscriberDashboard = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/subscribers')
+    fetch('https://cryocorp.onrender.com/api/subscribers')
       .then((res) => res.json())
       .then((data) => {
         setSubscribers(data.subscribers || []);
