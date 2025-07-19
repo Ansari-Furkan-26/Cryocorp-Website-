@@ -1,5 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { MdEmail, MdPhone, MdAccessTime } from "react-icons/md";
+import { FaWhatsapp, FaRobot } from "react-icons/fa";
 
 function CTA() {
   return (
@@ -25,12 +27,9 @@ function CTA() {
           </div>
 
           <div className="hidden md:block mb-4">
-            <h3 className="font-bold mb-1">Send Us a Message</h3>
+            <h3 className="font-bold mb-1">Leave Us a Message</h3>
             <p className="text-sm leading-relaxed">
-              Fill out the form and we will get back to you shortly.
-            </p>
-            <p className="text-sm leading-relaxed">
-              This requirement gets connected to our backend CRM inquiry collection system.
+              Fill out the form and we will get back to you within 24 hours.
             </p>
           </div>
 
@@ -44,52 +43,83 @@ function CTA() {
 
 
         {/* Column 2 */}
-        <div className="bg-white p-6 md:p-8 text-foreground h-full md:col-span-2">
-          <h3 className="font-bold text-xl">Get in Touch</h3>
-          <p className='text-sm mb-4'>General Inquiries: Hindi and English Voice ChatBot buttons</p>
+        <div className="bg-white p-6 md:p-8 text-foreground h-full md:col-span-2 rounded-xl shadow-sm">
+      <h3 className="font-bold text-2xl mb-4">Get in Touch</h3>
 
-          <div className="space-y-3 text-sm">
+      <div className="space-y-4 text-sm">
+        <div className="flex flex-wrap gap-2 items-center">
+          <p className="text-base font-medium">General Inquiries 24x7:</p>
+          <a
+            className="flex items-center gap-1 text-blue-700 px-3 py-1 border border-gray-300 hover:text-blue-900 hover:bg-gray-100 rounded-full"
+            href="https://agentivehub.com/chat/49559140-605e-458a-ab98-0708f11ddb21"
+            target="_blank"
+          >
+            <FaRobot /> GPT
+          </a>
+          <a
+            className="flex items-center gap-1 text-green-700 px-3 py-1 border border-gray-300 hover:text-green-900 hover:bg-gray-100 rounded-full"
+            href="https://api.whatsapp.com/send?phone=917710089939"
+            target="_blank"
+          >
+            <FaWhatsapp /> WhatsApp Chat
+          </a>
+        </div>
+
+        <div>
+          <p className="font-bold mb-2">Technical Help: Mr. Ashish Goyal</p>
+          <p className="break-words">
+            WhatsApp For Business:&nbsp;
+            <a
+              href="https://wa.me/917710049939"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-600 font-medium hover:underline"
+            >
+              +91 7710089939
+            </a>
+          </p>
+        </div>
+
+        <div className="space-y-1">
+          <p>
+            <span className="font-bold">Sales & General Inquiries:</span>{" "}
+            <a
+              href="mailto:admin@cryocorp.co.in"
+              className="text-blue-700 hover:underline"
+            >
+              admin@cryocorp.co.in
+            </a>
+          </p>
+          <p>
+            <span className="font-bold">Dispatch or Quotation Inquiries:</span>{" "}
+            <a
+              href="mailto:crm@cryocorp.in"
+              className="text-blue-700 hover:underline"
+            >
+              crm@cryocorp.in
+            </a>
+          </p>
+        </div>
+
+        <div className="pt-2">
+          <div className="flex items-start gap-2">
+            <MdPhone className="mt-1 text-blue-600" />
             <div>
-              <p className="font-bold mb-1 md:mb-3">Technical Help: Mr. Ashish Goyal.</p>
-              <p className="break-words">
-                WhatsApp For Business:{" "}
-                <a
-                  href="https://wa.me/917710049939"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-600 font-medium hover:underline">
-                  +91 7710049939
-                </a>
-              </p>
-              <p className="break-words">
-                Mr. Ashish Goyal can also be reached via WhatsApp at{" "}
-                <a
-                  href="https://wa.me/919004759939"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-green-600 font-medium hover:underline">
-                  +91 9004759939
-                </a>
-              </p>
-              
-
+              <h4 className="font-bold">Call Us:</h4>
+              <p className="text-sm">+91 9004759939, +91 7738069949</p>
             </div>
-
-            <div className='space-y-2 '>
-              <p><span className="font-bold">Email:</span> Dispatch or Quotation Inquiries:
-                 <a href="mailto:crm@cryocorp.in" className="break-words font-bold text-blue-600 hover:underline"> crm@cryocorp.in</a>
-              </p>
-              <p><span className="font-bold">Sales & General Inquiries:</span> <span className="break-words">admin@cryocorp.co.in</span></p>
-               <p><span className="font-bold">Technical Support:</span> <span className="break-words">ashish@cryocorp.in</span></p>
-            </div>
-
-            <div className="mt-2 md:mt-4 ">
-            <h3 className=" md:mb-1 font-bold">Business Hours:</h3>
-            <p className="text-sm">Monday – Saturday: 09:30 AM to 6:00 PM IST</p>
           </div>
 
+          <div className="flex items-start gap-2 mt-3">
+            <MdAccessTime className="mt-1 text-blue-600" />
+            <div>
+              <h4 className="font-bold">Business Hours:</h4>
+              <p className="text-sm">Monday – Saturday: 09:30 AM to 6:00 PM IST</p>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
 
         {/* Column 3 - Full Image CTA */}
         <div className="relative overflow-hidden h-full min-h-[400px] md:min-h-[500px] lg:min-h-[400px] col-span-1 lg:col-span-1">

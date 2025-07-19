@@ -28,6 +28,7 @@ import PopupBannerAds from "@/components/AddPopup"
 // Utility
 import NotFound from "@/pages/NotFound";
 import Quiz from "./pages/Quiz";
+import WhatsAppRedirect from "./components/Whatsapp";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => (
               <Route path="/blog" element={<HomePage />} />
               <Route path="blog/:id" element={<BlogDetailPage />} />
               <Route path="/quiz" element={<Quiz/>} />
+              <Route path="/whatsapp" element={<WhatsAppRedirect link="https://api.whatsapp.com/send?phone=917710089939"/>} />
             </Route>
 
             {/* ❌ 404 Not Found */}

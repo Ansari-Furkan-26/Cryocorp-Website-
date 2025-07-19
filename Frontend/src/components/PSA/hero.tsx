@@ -43,9 +43,9 @@ const FlipCard = ({
                         <img
                             src={imageSrc}
                             alt={title}
-                            className={`w-full h-full object-cover ${imageClassName}`}
+                            className={`w-full h-full object-fit ${imageClassName}`}
                         />
-                        <div className="absolute inset-0 bg-[#1A365EB2]/60" />
+                        <div className="absolute inset-0 bg-[#1A365EB2]/70" />
                         <div className="absolute z-10 bottom-4 left-4 text-white text-lg font-bold tracking-wide lg:text-lg text-sm">
                             {title}
                             {subtitle && <div className="text-sm lg:text-sm text-xs">{subtitle}</div>}
@@ -287,7 +287,7 @@ const ASUPage = () => {
 
                     {/* OXYGEN GENERATOR - OXYLIFE */}
                     <FlipCard
-                        imageSrc="/PSA/generator.png"
+                        imageSrc="/PSA/oxygen.png"
                         title="OXYGEN GENERATOR-"
                         subtitle="OXYLIFE"
                         detailCard={detailCards.oxylife}

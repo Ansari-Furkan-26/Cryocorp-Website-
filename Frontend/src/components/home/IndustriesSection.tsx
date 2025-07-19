@@ -193,8 +193,8 @@ const IndustriesAnimatedSection = () => {
                       hover:text-blue-300 cursor-default
                       bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent
                       leading-tight tracking-tight text-center
-                      whitespace-nowrap text-[#2C5EA4]
-                      ${isMobile ? 'text-4xl' : 'md:text-8xl'}
+                      whitespace-nowrap text-[#2C5EA3]
+                      ${isMobile ? 'text-4xl font-medium text-[#77a8eb]' : 'md:text-8xl'}
                     `}>
                       {industry}
                     </div>

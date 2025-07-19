@@ -190,16 +190,6 @@ const prevSlide = () => {
                       Eliminate Plant Downtime
                     </p>
                   </div>
-
-                  <div className="pt-8">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-white text-black hover:bg-white hover:text-blue-900 transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
-                    >
-                      View More <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </div>
                 </div>
 
                 {/* Right Content - Process Flow Image */}
@@ -259,16 +249,6 @@ const prevSlide = () => {
                     <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
                       Reduce Operations Cost
                     </p>
-                  </div>
-
-                  <div className="pt-8">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-white text-black hover:bg-white hover:text-green-900 transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
-                    >
-                      View More <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
                   </div>
                 </div>
 
@@ -330,16 +310,6 @@ const prevSlide = () => {
                       Extend Equipment Lifespan
                     </p>
                   </div>
-
-                  <div className="pt-6 sm:pt-8">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-white text-black hover:bg-white hover:text-orange-900 transition-all duration-300 rounded-full px-6 sm:px-8 py-3 text-md sm:text-lg font-medium"
-                    >
-                      View More <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </div>
                 </div>
 
                 {/* Right Content - Maintenance Process Image */}
@@ -399,16 +369,6 @@ const prevSlide = () => {
                     <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
                       Ensure Production Continuity
                     </p>
-                  </div>
-
-                  <div className="pt-8">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-white text-black hover:bg-white hover:text-purple-900 transition-all duration-300 rounded-full px-8 py-3 text-lg font-medium"
-                    >
-                      View More <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
                   </div>
                 </div>
 

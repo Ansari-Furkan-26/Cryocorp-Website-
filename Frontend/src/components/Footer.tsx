@@ -73,21 +73,21 @@ const Footer = () => {
               <div className="flex space-x-4 mt-6">
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
                   <a href="https://www.instagram.com/cryocorp_/" target='_blank'>
-                  <FaInstagram size={25} className="text-gray-500" />
+                  <FaInstagram size={25} className="text-red-500" />
                   </a>
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
                   <a href="https://www.facebook.com/cryocorp.co.in" target='_blank'></a>
-                  <FaFacebook size={25} className="text-gray-500" />
+                  <FaFacebook size={25} className="text-blue-500" />
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
-                  <a href="https://www.linkedin.com/company/cryocorp-o2-llp/?viewAMember=true">
-                  <FaLinkedin size={25} className="text-gray-500" />
+                  <a href="https://www.linkedin.com/company/cryocorp-o2-llp/?viewAMember=true" target='_blank'>
+                  <FaLinkedin size={25} className="text-blue-700" />
                   </a>
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
                   <a href="https://x.com/cryocorp_02_LLP" target='_blank'>
-                  <FaTwitter size={25} className="text-gray-500" />
+                  <FaTwitter size={25} className="text-gray-900" />
                   </a>
                 </div>
                 <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
@@ -114,11 +114,17 @@ const Footer = () => {
                 />
                 <Button
                   onClick={handleSubmit}
-                  className="bg-teal-500 text-white px-4 py-2 rounded-r-lg hover:bg-teal-600 transition-colors"
+                  className="bg-teal-500 text-white px-4 py-2 rounded-r-lg hover:bg-teal-600 transition-colors ml-2"
                 >
                   GO
                 </Button>
               </div>
+              <Button
+                  className="bg-teal-500 text-white px-4 py-2 rounded-r-lg hover:bg-teal-600 transition-colors mt-2"
+                >
+                  <a href="https://whatsapp.com/channel/0029Vao5Mx8DTkKAYtRf382R" target='_blank'>
+                  Join Our WhatsApp Community</a>
+                </Button>
             </div>
           </div>
           </div>
@@ -126,7 +132,7 @@ const Footer = () => {
           {/* Bottom Navigation */}
           <div className="md:relative md:mt-6">
             <img src="/images/arrow.png" alt="" className='hidden md:block absolute h-8 left-[45%] top-[10px]'/>
-            <nav className="flex justify-center flex-wrap gap-8 text-xs pr-10 md:text-sm pt-4 md:ml-[400px]">
+            <nav className="flex justify-center flex-wrap gap-4 mb-4 sm:mb-0 text-xs pr-10 md:text-sm pt-4 md:ml-[400px]">
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Products</a>
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Services</a>
               <a href="#" className="text-teal-500 hover:text-teal-600 transition-colors">Resource Hub</a>
