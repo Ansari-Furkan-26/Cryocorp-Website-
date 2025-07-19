@@ -52,7 +52,7 @@ const Founders = () => {
         </div>
 
         {/* Second Founder - Dr. Jaya Goyal */}
-        <div className="flex flex-col-reverse md:flex-row mt-20 md:mt-80 p-5 w-full">
+        <div className="flex flex-col-reverse md:flex-row pb-20 md:pb-0 mt-20 md:mt-80 p-5 w-full">
           <div className="w-full md:w-1/2 items-end mt-8 md:mt-0">
             <div className="text-[24px] md:text-[28px] font-semibold text-center md:text-left md:ml-[500px]">Dr. Jaya Goyal</div>
             <div className="text-[16px] md:text-[20px] mb-4 text-center md:text-left md:ml-[500px]">Managing Partner</div>

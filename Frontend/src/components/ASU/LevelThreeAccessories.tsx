@@ -18,7 +18,7 @@ const SpareCard = ({ imageSrc, number, detailCard }: { imageSrc?: string, number
                         <img
                             src={imageSrc}
                             alt="Spare part"
-                            className="max-h-full max-w-full object-contain p-4"
+                            className="h-full w-full object-contain p-4"
                         />
                     ) : (
                         <div className="text-gray-400 text-xs text-center">Image Placeholder</div>

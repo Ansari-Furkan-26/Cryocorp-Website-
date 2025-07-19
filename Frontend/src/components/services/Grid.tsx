@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProjectGridSection = () => {
     return (
-        <section className="relative min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden pb-16 px-4 md:px-8">
+        <section className="relative min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 overflow-hidden pb-16 px-4 sm:mt-20">
             {/* Animated Background Blobs - Hidden on mobile */}
             <div className="absolute inset-0 z-0">
                 {[
@@ -46,7 +46,7 @@ const ProjectGridSection = () => {
             <div className="absolute inset-0 z-10 backdrop-blur-2xl bg-white/30" />
 
             {/* Grid Layout - Responsive adjustments */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  mx-auto border-b-[0.5px] border-[#1A365E]">
     {/* 1. Large top-left image */}
     <div className="md:col-span-2 row-span-1 overflow-hidden rounded-lg order-1">
         <img
@@ -127,18 +127,18 @@ const ProjectGridSection = () => {
 
 
             {/* CTA TEXT SECTION - Responsive text sizing */}
-            <div className="relative z-10 mx-auto px-4 md:px-8 lg:px-20 mt-8 md:mt-12">
-                <p className="text-lg md:text-2xl lg:text-4xl font-bold " style={{ color: '#5FC9D8' }}>
+            <div className="relative z-10 mx-auto px-4 md:px-8 lg:px-20 mt-8 md:mt-12 md:pb-10">
+                <p className="text-lg md:text-2xl lg:text-[29px] font-semibold " style={{ color: '#5FC9D8' }}>
                     Ready to Optimize Every Step of Your Gas Plant Journey?
                     <br />
-                    <p className="text-sm md:text-xl font-medium mt-2" style={{ color: '#5FC9D8' }}>
+                    <p className="text-sm md:text-[29px] font-semibold mt-2 md:leading-normal" style={{ color: '#5FC9D8' }}>
                         Relocate confidently with a free ASU Plant Audit, launch faster with our PSA Plant Quiz,
                         and bottle smarter with a complimentary Bottling Plant Safety Check.
                         <br className="hidden md:block" />
                         <br className="hidden md:block" />
-                        <strong className="uppercase tracking-wider block mt-2 md:mt-0 text-sm md:text-base lg:text-lg" style={{ color: '#5FC9D8' }}>
+                        <div className="uppercase tracking-wider block mt-2 md:mt-0 text-sm md:text-base lg:text-[29px]" style={{ color: '#5FC9D8' }}>
                             TAKE THE QUIZZES, UNLOCK INSIGHTS, AND POWER UP YOUR OPERATIONS TODAY.
-                        </strong>
+                        </div>
                     </p>
                 </p>
             </div>

@@ -4,23 +4,26 @@ interface SparePartProps {
     number: string;
     title: string;
     imageSrc?: string;
+    customCss?: string;
 }
 
-const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
+const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
     <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow">
-        <div className="space-y-3">
-            <div className="text-sm font-medium text-catalog-number">
+        <div className="space-y-6 z-10">
+            <div>
+            <div className="text-sm font-medium text-catalog-number md:text-xl md:font-bold text-[#BDBDBD]">
                 {number}.
             </div>
-            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide">
+            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide md:text-xl md:font-bold text-[#BDBDBD] max-w-[90%]">
                 {title}
+            </div>
             </div>
             <div className="h-64 bg-[#EDEDED] rounded-md flex items-center justify-center">
                 {imageSrc ? (
                     <img
                         src={imageSrc}
                         alt={title}
-                        className="max-h-full max-w-full object-contain"
+                        className={`h-full w-full object-contain ${customCss}`}
                     />
                 ) : (
                     <div className="text-gray-400 text-xs text-center">
@@ -37,7 +40,7 @@ const Molecular = () => {
         { number: "01", title: "NITROGEN INLET & OUTLET VALVES", imageSrc: "molecular/1.png" },
         { number: "02", title: "MOLECULAR SIEVE & ACTIVATED ALUMINA", imageSrc: "molecular/2.png" },
         { number: "03", title: "NEEDLE VALVES FOR PRESSURIZING & DE-PRESSURIZING LINES", imageSrc: "molecular/3.png" },
-        { number: "04", title: "ELECTRIC HEATING ELEMENT FOR BATTERY HEATERS", imageSrc: "molecular/4.png" },
+        { number: "04", title: "ELECTRIC HEATING ELEMENT FOR BATTERY HEATERS", imageSrc: "molecular/4.png", customCss:"rotate-[35deg]" },
         { number: "05", title: "TERMINALS FOR BATTERY HEATER", imageSrc: "molecular/5.png" },
         { number: "06", title: "TEMPERATURE INDICATOR WITH RTD THERMOCOUPLE", imageSrc: "molecular/6.png" }
     ];
@@ -81,6 +84,7 @@ const Molecular = () => {
                             number={part.number}
                             title={part.title}
                             imageSrc={part.imageSrc}
+                            customCss={part?.customCss}
                         />
                     ))}
                 </div>

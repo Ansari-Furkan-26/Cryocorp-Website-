@@ -4,16 +4,20 @@ interface SparePartProps {
     number: string;
     title: string;
     imageSrc?: string;
+    extraText?:string;
 }
 
-const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
+const SparePart = ({ number, title, imageSrc, extraText }: SparePartProps) => (
     <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow">
-        <div className="space-y-3">
-            <div className="text-sm font-medium text-catalog-number">
+        <div className="space-y-7">
+            <div>
+            <div className="text-sm font-medium text-catalog-number md:text-xl md:font-bold text-[#BDBDBD]">
                 {number}.
             </div>
-            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide">
+            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide md:text-xl md:font-bold text-[#BDBDBD] max-w-[90%]">
                 {title}
+            </div>
+            <div className="font-bold text-[12px] text-[#BDBDBD]">{extraText}</div>
             </div>
             <div className="h-64 bg-[#EDEDED] rounded-md flex items-center justify-center">
                 {imageSrc ? (
@@ -34,8 +38,8 @@ const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
 
 const T = () => {
     const spareParts = [
-        { number: "01", title: "Vertical Coil", imageSrc: "t/1.png" },
-        { number: "02", title: "Side by Side Coil", imageSrc: "t/2.png" },
+        { number: "01", title: "Vertical Coil", imageSrc: "t/1.png", extraText: 'Sizes- 1", 1.5", 2" and 2.5" depending on capacity.' },
+        { number: "02", title: "Side by Side Coil", imageSrc: "t/2.png", extraText: 'size - 1", 1.5", 2" and 2.5" depending on capacity.' },
         { number: "03", title: "Complete After Cooler with Coil", imageSrc: "t/3.png" },
         { number: "04", title: "COMPLETE CASCADE COOLER WITH S2S COIL", imageSrc: "t/4.png" },
     ];
@@ -79,6 +83,7 @@ const T = () => {
                             number={part.number}
                             title={part.title}
                             imageSrc={part.imageSrc}
+                            extraText={part.extraText}
                         />
                     ))}
                 </div>

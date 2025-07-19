@@ -5,23 +5,26 @@ interface SparePartProps {
     number: string;
     title: string;
     imageSrc?: string;
+    customCss?:string;
 }
 
-const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
+const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
     <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow z-10">
-        <div className="space-y-3 z-10">
-            <div className="text-sm font-medium text-catalog-number">
+        <div className="space-y-6 z-10">
+            <div>
+            <div className="text-sm font-medium text-catalog-number md:text-xl md:font-bold text-[#BDBDBD]">
                 {number}.
             </div>
-            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide">
+            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide md:text-xl md:font-bold text-[#BDBDBD] max-w-[90%]">
                 {title}
+            </div>
             </div>
             <div className="h-64 bg-[#EDEDED] rounded-md flex items-center justify-center">
                 {imageSrc ? (
                     <img
                         src={imageSrc}
                         alt={title}
-                        className="max-h-full max-w-full object-contain"
+                        className={`h-full w-full object-contain ${customCss}`}
                     />
                 ) : (
                     <div className="text-gray-400 text-xs text-center">
@@ -39,7 +42,7 @@ const ChillingTank = () => {
         { number: "02", title: "EXPANSION VALVE", imageSrc: "chilling/2.png" },
         { number: "03", title: "CHILLING UNIT FILTER", imageSrc: "chilling/3.png" },
         { number: "04", title: "TEMPERATURE INCATOR", imageSrc: "chilling/4.png" },
-        { number: "06", title: "CONDENSER", imageSrc: "chilling/5.png" },
+        { number: "05", title: "CONDENSER", imageSrc: "chilling/5.png", customCss:"rotate-[-60deg]" },
     ];
 
     return (
@@ -82,6 +85,7 @@ const ChillingTank = () => {
                             number={part.number}
                             title={part.title}
                             imageSrc={part.imageSrc}
+                            customCss={part?.customCss}
                         />
                     ))}
                 </div>

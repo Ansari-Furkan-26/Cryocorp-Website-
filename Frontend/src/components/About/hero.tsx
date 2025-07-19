@@ -63,10 +63,10 @@ const HeroSection = () => {
 
 
             {/* Main Content */}
-            <div className="backdrop-blur-2xl pt-24 bg-white/20 relative z-20 flex flex-col items-center justify-start min-h-screen px-4 text-center">
+            <div className="backdrop-blur-2xl sm:pt-24 bg-white/20 relative z-20 flex flex-col items-center justify-start min-h-screen px-4 sm:px-6 md:px-20 text-center py-16 sm:py-0">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2">
                     {/* Left column */}
-                    <div className="p-8 text-left max-w-[60%]">
+                    <div className="sm:p-8 text-left max-w-[60%]">
                         <h2 className="text-4xl font-normal mb-4 pt-20">
                             Together we can build a world of positive consumption
                         </h2>
@@ -74,7 +74,7 @@ const HeroSection = () => {
 
 
                     {/* Right column */}
-                    <div className="p-8 text-left">
+                    <div className="sm:p-8 text-left mt-4 sm:mt-0">
                         <h2 className="text-lg  font-bold mb-4">Our Story</h2>
                         <p>
                             Our journey began in 1996, when Cryo Sales Corporation was founded in Mumbai, India—the very hub where many of the country's first air separation plants were conceived. The foundation was laid by Late Mr. N.M. Goyal, a seasoned mechanical engineer from the 1960s, who brought with him decades of manufacturing experience from pioneering institutions like INOX and Sanghi. His deep knowledge of cryogenic engineering and Indian ASU plants shaped the early DNA of the company. For over a decade, served customers with precision parts, technical advice, and machinery for Indian-make ASUs and PSA plants.

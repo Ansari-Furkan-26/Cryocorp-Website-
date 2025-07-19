@@ -5,23 +5,26 @@ interface SparePartProps {
     number: string;
     title: string;
     imageSrc?: string;
+    customCss?:string;
 }
 
-const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
+const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
     <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow z-10">
-        <div className="space-y-3">
-            <div className="text-sm font-medium text-catalog-number">
+        <div className="space-y-6 z-10">
+            <div>
+            <div className="text-sm font-medium text-catalog-number md:text-xl md:font-bold text-[#BDBDBD]">
                 {number}.
             </div>
-            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide">
+            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide md:text-xl md:font-bold text-[#BDBDBD] max-w-[90%]">
                 {title}
+            </div>
             </div>
             <div className="h-64 bg-[#EDEDED] rounded-md flex items-center justify-center">
                 {imageSrc ? (
                     <img
                         src={imageSrc}
                         alt={title}
-                        className="max-h-full max-w-full object-contain"
+                        className={`h-full w-full object-contain ${customCss}`}
                     />
                 ) : (
                     <div className="text-gray-400 text-xs text-center">
@@ -39,10 +42,10 @@ const Oxygen = () => {
         { number: "02", title: "s.s.spindles", imageSrc: "oxygen/2.png" },
         { number: "03", title: "brass bull nose & nuts", imageSrc: "oxygen/3.png" },
         { number: "04", title: "spindle keys", imageSrc: "oxygen/4.png" },
-        { number: "05", title: "copper tubes for pig tail connection", imageSrc: "oxygen/5.png" },
+        { number: "05", title: "copper tubes for pig tail connection", imageSrc: "oxygen/5.png", customCss:"rotate-[-90deg]" },
         { number: "06", title: "manifold valves", imageSrc: "oxygen/6.png" },
         { number: "07", title: "pressure gauges", imageSrc: "oxygen/7.png" },
-        { number: "08", title: "safety valves", imageSrc: "oxygen/8.png" }
+        { number: "08", title: "safety valves", imageSrc: "oxygen/8.png", customCss:"rotate-[90deg]" }
     ];
 
     return (
@@ -84,6 +87,7 @@ const Oxygen = () => {
                             number={part.number}
                             title={part.title}
                             imageSrc={part.imageSrc}
+                            customCss={part.customCss}
                         />
                     ))}
                 </div>

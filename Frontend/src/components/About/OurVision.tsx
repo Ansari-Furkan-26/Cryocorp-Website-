@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurVision = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between px-4 sm:px-6 md:px-16 py-8 sm:py-12 gap-8 sm:gap-10 bg-white">
+    <div className="flex flex-col md:flex-row justify-between px-4 sm:px-6 md:px-32 py-8 sm:py-12 gap-8 sm:gap-10 bg-white">
       {/* Left text */}
       <div className="max-w-xl text-[#36695C] text-sm sm:text-base leading-relaxed font-medium">
         <p className="text-xl sm:text-2xl md:text-3xl py-6 sm:py-10">

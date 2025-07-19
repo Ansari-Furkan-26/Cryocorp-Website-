@@ -181,7 +181,7 @@ const IndustriesAnimatedSection = () => {
                   <div
                     key={industry}
                     ref={addToRefs}
-                    className="flex items-center justify-center flex-shrink-0"
+                    className="flex items-start justify-start flex-shrink-0"
                     style={{ 
                       width: isMobile ? `${ITEM_WIDTH}px` : '100%',
                       height: `${ITEM_HEIGHT}px`
@@ -192,9 +192,9 @@ const IndustriesAnimatedSection = () => {
                       transition-all duration-1000 transform
                       hover:text-blue-300 cursor-default
                       bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent
-                      leading-tight tracking-tight text-center
+                      leading-tight tracking-tight text-start
                       whitespace-nowrap text-[#2C5EA3]
-                      ${isMobile ? 'text-4xl font-medium text-[#77a8eb]' : 'md:text-8xl'}
+                    ${isMobile ? 'text-4xl font-medium text-[#77a8eb]' : 'md:text-8xl'}
                     `}>
                       {industry}
                     </div>

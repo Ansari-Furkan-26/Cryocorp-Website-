@@ -5,23 +5,26 @@ interface SparePartProps {
     number: string;
     title: string;
     imageSrc?: string;
+    customCss?:string;
 }
 
-const SparePart = ({ number, title, imageSrc }: SparePartProps) => (
+const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
     <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow z-10">
-        <div className="space-y-3">
-            <div className="text-sm font-medium text-catalog-number">
+        <div className="space-y-6 z-10">
+            <div>
+            <div className="text-sm font-medium text-catalog-number md:text-xl md:font-bold text-[#BDBDBD]">
                 {number}.
             </div>
-            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide">
+            <div className="text-sm font-medium text-catalog-text uppercase tracking-wide md:text-xl md:font-bold text-[#BDBDBD] max-w-[90%]">
                 {title}
+            </div>
             </div>
             <div className="h-64 bg-[#EDEDED] rounded-md flex items-center justify-center">
                 {imageSrc ? (
                     <img
                         src={imageSrc}
                         alt={title}
-                        className="max-h-full max-w-full object-contain"
+                        className={`h-full w-full object-contain ${customCss}`}
                     />
                 ) : (
                     <div className="text-gray-400 text-xs text-center">
@@ -40,7 +43,7 @@ const AirSeperation = () => {
         { number: "03", title: "RTD SENSOR", imageSrc: "airSeperation/3.png" },
         { number: "04", title: "ISOLATION VALVES", imageSrc: "airSeperation/4.png" },
         { number: "05", title: "PRESSURE GAUGES", imageSrc: "airSeperation/5.png" },
-        { number: "06", title: "EXPANSION VALVES", imageSrc: "airSeperation/6.png" },
+        { number: "06", title: "EXPANSION VALVES", imageSrc: "airSeperation/6.png", customCss:"rotate-[-30deg]" },
         { number: "07", title: "PERLITE POWDER", imageSrc: "airSeperation/7.png" },
         { number: "08", title: "SAFETY VALVES FOR TOP AND BOTTOM COLUMS", imageSrc: "airSeperation/8.png" },
         { number: "09", title: "ANGLE TYPE MANIFOLD VALVE FOR OUTLET OF HIGH PURITY OXYGEN AND NITORGRN AT 165 KG/CM2 PRESSURE", imageSrc: "airSeperation/9.png" },
@@ -85,6 +88,7 @@ const AirSeperation = () => {
                             number={part.number}
                             title={part.title}
                             imageSrc={part.imageSrc}
+                            customCss={part?.customCss}
                         />
                     ))}
                 </div>

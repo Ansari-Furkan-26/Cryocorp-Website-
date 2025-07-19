@@ -29,7 +29,7 @@ const values = [
 
 const OurValues = () => {
   return (
-    <section className="bg-white px-6 md:px-16 py-20">
+    <section className="bg-white px-6 md:px-16 mb-10 md:py-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-start justify-between">
         {/* Left Section */}
         <div className="self-center">

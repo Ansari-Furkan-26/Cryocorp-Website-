@@ -62,21 +62,21 @@ const OurMission = () => {
             },
           ].map((item) => (
             <div key={item.id}>
-              <h3 className="text-[#79C0A1] text-xl sm:text-2xl font-bold mb-1">{item.id}</h3>
-              <h4 className="text-[#79C0A1] text-sm font-semibold mb-1">{item.title}</h4>
-              <p className="text-sm text-gray-800 leading-relaxed">{item.desc}</p>
+              <h3 className="md:text-[#A1D5B1] text-[#5c946d] text-xl sm:text-[50px] font-bold mb-1 sm:mb-4">{item.id}</h3>
+              <h4 className="md:text-[#A1D5B1] text-[#5c946d] text-sm font-semibold mb-1">{item.title}</h4>
+              <p className="text-sm text-gray-800 leading-relaxed font-light">{item.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Bottom Text */}
-        <p className="text-sm text-[#79C0A1] mb-3 max-w-lg">
+        <p className="text-sm md:text-xl font-light text-[#80B791] mb-3 max-w-lg md:mt-52">
           At CryoCorp, our mission stems from a deep commitment to strengthen the oxygen infrastructure through
           purpose-driven partnerships and progress.
         </p>
 
         {/* Heading */}
-        <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-[#79C0A1] drop-shadow-sm leading-tight break-words">
+        <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-[#80B791] drop-shadow-sm leading-tight break-words">
           Our Mission
         </h2>
       </div>
