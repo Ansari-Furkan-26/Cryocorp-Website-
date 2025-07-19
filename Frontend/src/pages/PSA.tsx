@@ -26,7 +26,7 @@ const Products: React.FC = () => {
                     <div className="flex mt-auto pb-32">
                         {/* Numbers */}
                         <div className="text-gray-400 hidden sm:block text-xs sm:text-sm space-y-1 font-semibold w-8 pt-80">
-                            <p>4</p>
+                            {/* <p>4</p> */}
                         </div>
 
 

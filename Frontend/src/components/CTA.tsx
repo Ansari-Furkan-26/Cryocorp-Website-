@@ -35,7 +35,7 @@ function CTA() {
 
           <Button variant="outline"
             className="border-2 bg-foreground  text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
-            Click here
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfW25lcHJaqzTeg97xtwD1a0QWDNvg0o3RfDWFetrnbd0GFSA/viewform" target='_blank'>Click here</a>
           </Button>
 
           
