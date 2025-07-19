@@ -68,7 +68,7 @@ const DustFilter = () => {
 
             {/* Spares Section */}
             <div className="space-y-6">
-                <h2 className="text-xl font-bold text-catalog-header">
+                <h2 className="text-xl font-bold text-catalog-header text-[#797979]">
                     SPARES
                 </h2>
 
