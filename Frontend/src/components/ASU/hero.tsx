@@ -38,9 +38,12 @@ const ASUPage: React.FC = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32 lg:pt-32 pt-16">
-                                <a className="sm:block" href="#level-1">LEVEL 1</a>
+                                {/* <a className="sm:block" href="#level-1">LEVEL 1</a>
                                 <a className="sm:block" href="#level-2">LEVEL 2</a>
-                                <a className="sm:block" href="#level-3">LEVEL 3</a>
+                                <a className="sm:block" href="#level-3">LEVEL 3</a> */}
+                                <p>LEVEL 1</p>
+                                <p>LEVEL 2</p>
+                                <p>LEVEL 3</p>
                             </div>
                         </div>
 
