@@ -144,8 +144,8 @@ const LevelThreeAccessories = () => {
 
                 {/* Row 3 */}
                 <TitleCard titles={["ELECTRICAL PANEL", "PORTA CRYO", "LIQUID OXYGEN & NITROGEN TANKS"]} number={["07.", "08.","09."]}/>
-                <SpareCard imageSrc="/level3/8.png" number={"7"} detailCard={detailCards[7]} />
-                <SpareCard imageSrc="/level3/7.png" number={"8"} detailCard={detailCards[8]} />
+                <SpareCard imageSrc="/level3/7.png" number={"7"} detailCard={detailCards[7]} />
+                <SpareCard imageSrc="/level3/8.png" number={"8"} detailCard={detailCards[8]} />
                 <SpareCard imageSrc="/level3/9.png" number={"9"} detailCard={detailCards[9]} />
             </div>
         </div>

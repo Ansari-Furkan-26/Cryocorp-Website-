@@ -55,7 +55,7 @@ const AirSeperation = () => {
             <div className="mb-8">
                 <h1 className="text-lg font-bold text-catalog-header mb-4">
                     07.<br />
-                    Nitrogen Inlet & Outlet Valves
+                    Air Seperation Column
                 </h1>
 
                 <div className="text-sm text-catalog-text leading-relaxed mb-6">

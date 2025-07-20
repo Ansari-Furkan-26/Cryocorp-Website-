@@ -4,13 +4,13 @@ const CardGrid = () => {
     const cards = [
         {
             title: 'PSA OXYGEN PLANT',
-            content: '(93–95% purity Nitrogen from Air) with technicians & spares support',
+            content: '(99–95% purity Nitrogen from Air) with technicians & spares support',
             image: '/services/img2.png',
             back: 'Keep your PSA Oxygen Plant compliant, efficient, and always delivering high-purity oxygen. With AMC, get scheduled service for smooth operation. Upgrade to CMC for full coverage—parts, repairs, and emergency support. No downtime. No surprise costs. Just reliable performance, 24/7.',
         },
         {
             title: 'PSA NITROGEN PLANT',
-            content: '(93–95% purity Nitrogen from Air) with technicians & spares support',
+            content: '(99–95% purity Nitrogen from Air) with technicians & spares support',
             image: '/services/img2.png',
             back: 'Keep your PSA Nitrogen Plant running at peak efficiency, always. AMC offers routine maintenance to minimize interruptions. CMC gives you full coverage—parts, repairs, and expert support. No unplanned stoppages. No hidden costs. Just nonstop performance. Engineered for businesses that can’t afford downtime.',
         },

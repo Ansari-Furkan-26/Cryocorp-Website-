@@ -45,8 +45,8 @@ const LiquidOxygen = () => {
         { number: "06", title: "gland packing", imageSrc: "liquidOxygen/6.png" },
         { number: "07", title: "oil wiper rings", imageSrc: "liquidOxygen/7.png" },
         { number: "08", title: "coldend assembly", imageSrc: "liquidOxygen/8.png" },
-        { number: "09", title: "cross head", imageSrc: "liquidOxygen/9.png", customCss:"mt-24" },
-        { number: "10", title: "connecting rod with crank shaft", imageSrc: "liquidOxygen/10.png" },
+        { number: "09", title: "cross head", imageSrc: "liquidOxygen/10.png", customCss:"" },
+        { number: "10", title: "connecting rod with crank shaft", imageSrc: "liquidOxygen/9.png",customCss:"mt-24" },
         { number: "11", title: "crank shaft", imageSrc: "liquidOxygen/11.png" }
     ];
 
