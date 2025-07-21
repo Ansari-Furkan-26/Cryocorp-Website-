@@ -90,13 +90,14 @@ const ProjectGridSection = () => {
             <p className="text-sm md:text-base font-medium text-black mb-2 md:mb-4">
                 We are known for Precision-Built Gas Solutions, from blueprint to first-breath – we engineer certainty.
             </p>
+            <p className='font-medium'>Key Features of our Projects services include:</p>
             <ul className="list-disc list-inside text-xs md:text-base font-medium text-black space-y-1 md:space-y-2">
-                <li>Custom site drawings for seamless integration</li>
-                <li>360° commissioning: leak tests, automation calibration, staff training</li>
-                <li>95% on-time delivery rate with 24/7 remote monitoring support</li>
+                <li>Custom site drawings for seamless integration into your facility.</li>
+                <li>360° commissioning: leak tests, automation calibration, staff training.</li>
+                <li>98% on-time delivery rate with 24/7 remote monitoring support.</li>
             </ul>
             <p className="mt-2 md:mt-4 text-xs md:text-sm font-semibold text-gray-800">
-                Audience: Mining, pharma, energy firms
+                Audience: Mining, pharma, or energy firms setting up new gas plants.
             </p>
         </div>
     </div>
@@ -113,13 +114,14 @@ const ProjectGridSection = () => {
             <p className="text-xs text-black font-medium mb-2 md:mb-4">
                 Your liquid Gold, bottled perfectly, where cryogenic safety meets distributing brilliance.
             </p>
+            <p className='font-medium'>Key Features of the Project Service includes:</p>
             <ul className="list-disc list-inside text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
-                <li>End-to-end relocation of ASU/PSA plants across borders</li>
-                <li>Zero-downtime strategy with pre-mobilization planning & modular dismantling</li>
-                <li>Compliance with international safety/logistics standards (ISO, CE)</li>
+                <li>Expertise in bottling ultra-cold gases (-196°C handling for O2/N2/Ar).</li>
+                <li>Explosion-proof storage systems with IoT-based inventory tracking.</li>
+                <li>Global certifications: ASME, PED, and country-specific pressure vessel codes.</li>
             </ul>
             <p className="mt-2 md:mt-4 text-xs md:text-sm text-black font-semibold">
-                Audience: Industrial gas manufacturers expanding or restructuring globally
+                Audience: LNG terminals, aerospace, and medical gas suppliers.
             </p>
         </div>
     </div>
