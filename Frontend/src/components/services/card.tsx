@@ -6,7 +6,8 @@ const CardGrid = () => {
             title: 'PSA OXYGEN PLANT',
             content: '(99–95% purity Nitrogen from Air) with technicians & spares support',
             image: '/services/img2.png',
-            back: 'Keep your PSA Oxygen Plant compliant, efficient, and always delivering high-purity oxygen. With AMC, get scheduled service for smooth operation. Upgrade to CMC for full coverage—parts, repairs, and emergency support. No downtime. No surprise costs. Just reliable performance, 24/7.',
+            back: `1. Critical Maintenance Consultancy for PSA Oxygen Plants (93–96% purity) with technicians & spares support
+            Ensure your PSA Oxygen Plant runs smoothly year-round with expert maintenance and rapid-response technical support. AMC covers scheduled service visits for peace of mind, while CMC offers all-inclusive coverage—including parts and emergency breakdowns—so you avoid unexpected costs and downtime. This keeps your plant compliant, efficient, and always ready to deliver high-purity oxygen.`,
         },
         {
             title: 'PSA NITROGEN PLANT',

@@ -5,12 +5,12 @@ const Certifications = () => {
     <section className="bg-white px-4 sm:px-6 md:px-20 py-12 sm:py-16 text-[#1A365E] font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
-        <h2 className="text-2xl sm:text-4xl font-bold mb-2">Certifications</h2>
-        <h3 className="text-lg sm:text-2xl font-semibold mb-4">& Quality Checks</h3>
-        <p className="text-xs sm:text-sm font-semibold mb-2">
+        <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold">Certifications</h2>
+        <h3 className="text-lg sm:text-2xl lg:text-4xl font-bold ">& Quality Checks</h3>
+        <p className="text-xs sm:text-sm font-semibold ">
           Excellence isn’t a claim — it’s a standard we prove.
         </p>
-        <p className="text-xs sm:text-sm mb-8 max-w-[500px] leading-relaxed">
+        <p className="text-xs sm:text-sm mb-8 sm:mb-12 max-w-[500px] leading-relaxed">
           Every solution goes through rigorous quality checks and adheres to certified
           industry standards, ensuring reliability, safety, and performance at every level.
         </p>
