@@ -102,7 +102,7 @@ const ASUPage: React.FC = () => {
                         <div className="relative w-full h-full overflow-hidden shadow-lg">
                             {/* Image */}
                             <img
-                                src="/ASU/asu1.png"
+                                src="/ASU/ASU.jpg"
                                 alt="ASU Oxygen Plant"
                                 className="w-full h-full object-cover"
                             />
@@ -148,7 +148,7 @@ const ASUPage: React.FC = () => {
                     <div className="absolute top-[250px] right-[210px] w-64 h-64">
                         <div className="relative w-[300px] h-full overflow-hidden shadow-lg">
                             <img
-                                src="/ASU/asu2.png"
+                                src="/ASU/asu3.png"
                                 alt="Second Hand ASU Plant"
                                 className="w-full h-full object-cover"
                             />
@@ -172,7 +172,7 @@ const ASUPage: React.FC = () => {
                     <div className="w-full h-48">
                         <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
                             <img
-                                src="/ASU/asu1.png"
+                                src="/ASU/ASU.jpg"
                                 alt="ASU Oxygen Plant"
                                 className="w-full h-full object-cover"
                             />
@@ -217,7 +217,7 @@ const ASUPage: React.FC = () => {
                     <div className="w-full h-48">
                         <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
                             <img
-                                src="/ASU/asu2.png"
+                                src="/ASU/asu3.png"
                                 alt="Second Hand ASU Plant"
                                 className="w-full h-full object-cover"
                             />
