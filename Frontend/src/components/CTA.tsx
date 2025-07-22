@@ -141,7 +141,7 @@ function CTA() {
             <h3 className="text-lg font-bold mb-6">Get in touch with our team today!</h3>
 
             <Button className="bg-white/20 backdrop-blur-sm border-4 border-white max-w-[200px] mx-auto text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/30 transition-all duration-300">
-              Book a slot
+              <a href="https://calendly.com/admin-cryocorp/new-meeting" target='_blank'></a>Book a slot
             </Button>
           </div>
         </div>
