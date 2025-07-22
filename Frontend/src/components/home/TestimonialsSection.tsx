@@ -164,7 +164,7 @@ useEffect(() => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[90%] sm:w-[75%] md:w-[calc(33.333%-1rem)] snap-start p-4 border border-gray-900 shadow-sm hover:shadow-md transition-shadow rounded-xl bg-white"
+              className="flex-shrink-0 flex flex-col justify-between w-[90%] sm:w-[75%] md:w-[calc(33.333%-1rem)] snap-start p-4 border border-gray-900 shadow-sm hover:shadow-md transition-shadow rounded-xl bg-white"
             >
               <div className="mb-4">
                 <img
@@ -173,13 +173,13 @@ useEffect(() => {
                   className="h-16 w-auto mb-2"
                 />
                 {testimonial.subtitle && (
-                  <p className="text-sm text-gray-500">
+                  <p className="text-[20px] font-medium text-gray-500">
                     {testimonial.subtitle}
                   </p>
                 )}
-                <p className="text-sm text-gray-600">{testimonial.role}</p>
+                <p className="text-[20px] font-medium text-gray-600">{testimonial.role}</p>
               </div>
-              <blockquote className="text-[#5FC9D8] text-base font-medium">
+              <blockquote className="text-[#5FC9D8] text-[35px] font-light">
                 "{testimonial.quote}"
               </blockquote>
             </div>

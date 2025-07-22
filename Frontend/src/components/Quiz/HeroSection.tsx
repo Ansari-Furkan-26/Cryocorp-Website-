@@ -12,19 +12,19 @@ const PlantPotential = () => {
 
           <div className="flex flex-col space-y-4">
             <button
-              onClick={() => (window.location.href = "/asu-quiz")}
+              onClick={() => (window.location.href = "/quiz-form/ASU")}
               className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold tracking-wide hover:bg-[#014040] transition"
             >
               AIR SEPARATION UNIT(ASU)
             </button>
             <button
-              onClick={() => (window.location.href = "/psa-quiz")}
+              onClick={() => (window.location.href = "/quiz-form/PSA")}
               className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold tracking-wide hover:bg-[#014040] transition"
             >
               PRESSURE SWING ADSORPTION(PSA)
             </button>
             <button
-              onClick={() => (window.location.href = "/cryogenic-quiz")}
+              onClick={() => (window.location.href = "/quiz-form/LBU")}
               className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold tracking-wide hover:bg-[#014040] transition"
             >
               CRYOGENIC LIQUID BOTTLING UNIT
@@ -37,7 +37,7 @@ const PlantPotential = () => {
           {/* Left image - tall image */}
           <div className="overflow-hidden h-[300px] md:h-[500px] bg-gray-300">
             <img
-              src="/about/first.jpg"
+              src="/about/first1.png"
               alt="Main Plant"
               className="object-cover w-full h-full"
             />

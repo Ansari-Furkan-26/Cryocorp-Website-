@@ -16,7 +16,7 @@ const ASUQuizPromo = () => {
           Discover the potential optimization opportunities and cost savings of your existing air separation unit with our ASU Performance Evaluation Quiz. This assessment helps you identify areas for improvement in your current operations and reveals the untapped financial and operational benefits of enhanced ASU management.
         </p>
 
-        <button  onClick={() => window.open('/quiz/ASU.html', '_blank')} className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#014040] transition">
+        <button  onClick={() => window.location.href = "/quiz-form/ASU"} className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#014040] transition">
           TAKE THE QUIZ
         </button>
       </div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface QuizModalProps {
   isOpen: boolean;
@@ -7,6 +7,7 @@ interface QuizModalProps {
 }
 
 const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
+  const { link } = useParams();
     const navigate = useNavigate();
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -22,7 +23,7 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleClose = () => {
-    navigate('/');
+    navigate('/quiz');
     onClose();
   }
 
@@ -54,17 +55,17 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
         <form
           onSubmit={(e) => {
             e.preventDefault();
-            const name = (e.target as any).name.value;
+            // const name = (e.target as any).name.value;
             const email = (e.target as any).email.value;
             // store the data in backend
-
-            console.log("Submitted:", { name, email });
-            navigate('/quiz')
+            
+            console.log("Submitted:", { email });
+            window.location.href = `/quiz/${link}.html`
             onClose();
           }}
           className="space-y-5"
         >
-          <div>
+          {/* <div>
             <label className="block mb-1 text-sm font-medium text-[#1A365E]">
               Full Name
             </label>
@@ -75,7 +76,7 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
               placeholder="Enter your name"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-400"
             />
-          </div>
+          </div> */}
           <div>
             <label className="block mb-1 text-sm font-medium text-[#1A365E]">
               Email Address

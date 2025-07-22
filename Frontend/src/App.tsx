@@ -35,6 +35,7 @@ import CryogenicQuizPromo from "./components/Quiz/CryogenicQuizPromo";
 import QuizInfoForm from "./components/Quiz/QuizInfoForm";
 import { useEffect, useState } from "react";
 import ChatBot from "./components/Chatbot";
+import HeroSection from "@/components/Quiz/HeroSection";
 
 const queryClient = new QueryClient();
 
@@ -64,9 +65,10 @@ const App = () => {
               <Route path="/blog" element={<HomePage />} />
               <Route path="blog/:id" element={<BlogDetailPage />} />
               <Route path="/quiz" element={<Quiz/>} />
-              <Route path="/quiz-form" element={<QuizInfoForm isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)}/>} />
+              <Route path="/quiz-form/:link" element={<QuizInfoForm isOpen={isQuizOpen} onClose={() => setIsQuizOpen(false)}/>} />
               <Route path="/asu-quiz" element={<ASUQuizPromo/>} />
               <Route path="/psa-quiz" element={<PSASystemQuiz/>} />
+              <Route path="/select-quiz" element={<HeroSection/>}/>
               <Route path="/cryogenic-quiz" element={<CryogenicQuizPromo/>} />
               <Route path="/whatsapp" element={<WhatsAppRedirect link="https://api.whatsapp.com/send?phone=917710089939"/>} />
               <Route path="/chat" element={<ChatBot link="https://agentivehub.com/chat/49559140-605e-458a-ab98-0708f11ddb21"/>} />

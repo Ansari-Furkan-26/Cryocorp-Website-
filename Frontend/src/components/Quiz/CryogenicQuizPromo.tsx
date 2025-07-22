@@ -16,7 +16,7 @@ const CryogenicQuizPromo = () => {
           Uncover the efficiency potential and performance opportunities of your existing cryogenic liquid bottling unit with our specialized Cryogenic Bottling System Evaluation Quiz. This diagnostic tool examines your current operations and highlights the substantial financial and operational benefits of optimizing your bottling processes.
         </p>
 
-        <button  onClick={() => window.open('/quiz/LBU.html', '_blank')} className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#014040] transition">
+        <button  onClick={() => window.location.href = "/quiz-form/LBU"} className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#014040] transition">
           TAKE THE QUIZ
         </button>
       </div>

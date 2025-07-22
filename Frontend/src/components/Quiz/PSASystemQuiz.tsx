@@ -25,7 +25,7 @@ const PSASystemQuiz = () => {
           Discover the untapped potential and efficiency gains of your existing PSA system with our Pressure Swing Adsorption Performance Assessment Quiz. This evaluation tool helps you benchmark your current operations and reveals the significant financial and operational advantages of optimizing your PSA unit.
         </p>
 
-        <button  onClick={() => window.open('/quiz/PSA.html', '_blank')} className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#014040] transition">
+        <button  onClick={() => window.location.href = "/quiz-form/PSA"} className="bg-[#002c2c] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#014040] transition">
           TAKE THE QUIZ
         </button>
       </div>

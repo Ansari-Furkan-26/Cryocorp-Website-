@@ -5,7 +5,7 @@ import { FaWhatsapp, FaRobot } from "react-icons/fa";
 
 function CTA() {
   return (
-    <div id='cta' className="w-full bg-background">
+    <div id='cta' className="w-full bg-background lg:mt-40">
       {/* Let's Grow Together Section */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
 

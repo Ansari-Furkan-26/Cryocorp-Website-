@@ -105,7 +105,7 @@ const Oxygen = () => {
         </div>
       </div>
       <div
-        className="absolute top-100 left-0 w-[1800px] h-[1800px] bg-no-repeat bg-contain pointer-events-none opacity-40 rotate-90"
+        className="absolute top-[400px] left-0 w-[1800px] h-[1800px] bg-no-repeat bg-contain pointer-events-none opacity-40 rotate-90"
         style={{
           backgroundImage: `url(${layerImage})`,
         }}

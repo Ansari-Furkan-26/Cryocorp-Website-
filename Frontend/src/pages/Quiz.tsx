@@ -17,7 +17,7 @@ const Quiz: React.FC = () => {
       <PSASystemQuiz />
       <CryogenicQuizPromo /> */}
       <WhoAreYou/>
-      <HeroSection />
+      {/* <HeroSection /> */}
     </>
   );
 };

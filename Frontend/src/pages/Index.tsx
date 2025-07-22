@@ -9,6 +9,7 @@ import Bento from "@/components/home/Bento";
 import CTA from "@/components/CTA";
 import AppSheetEmbed from "@/components/home/Product";
 import PopupBannerAds from "@/components/AddPopup";
+import IndustriesAnimatedSection2 from "@/components/home/IndustriesSection2";
 
 const Index = () => {
   return (
@@ -17,7 +18,7 @@ const Index = () => {
       <VideoHero />
       <Benefits />
       <AchievementsSection />
-      <IndustriesSection />
+      <IndustriesAnimatedSection2 />
       <Bento />
       <AppSheetEmbed />
       <TestimonialsSection />

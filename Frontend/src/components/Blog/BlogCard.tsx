@@ -25,6 +25,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
       )} 
       
       <CardHeader className="flex-1">
+        <Link to={`/blog/${blog.id}`}>
         <div className="flex items-center text-sm text-gray-500 mb-2">
           <Calendar className="h-3 w-3 mr-1" />
           {new Date(blog.createdAt).toLocaleDateString('en-US', {
@@ -34,15 +35,14 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
           })}
         </div>
         
-        <CardTitle className="line-clamp-2 hover:text-blue-600 transition-colors">
-          <Link to={`/blog/${blog.id}`}>
+        <CardTitle className="line-clamp-2 mb-1 pb-1 hover:text-blue-600 transition-colors">
             {blog.title}
-          </Link>
         </CardTitle>
         
         <CardDescription className="line-clamp-3">
           {blog.excerpt}
         </CardDescription>
+        </Link>
       </CardHeader>
       
       <CardContent>
