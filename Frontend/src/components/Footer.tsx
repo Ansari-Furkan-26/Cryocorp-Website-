@@ -90,9 +90,9 @@ const Footer = () => {
                   <FaTwitter size={25} className="text-gray-900" />
                   </a>
                 </div>
-                <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
+                {/* <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
                   <FaShoppingCart size={25} className="text-gray-500" />
-                </div>
+                </div> */}
               </div>
             </div>
 

@@ -20,7 +20,7 @@ const PromotionBanner = () => {
         rel="noopener noreferrer"
         className="absolute left-1/3 bottom-[12vh] md:left-[6vw] md:bottom-[20vh] z-10"
       >
-        <button className="bg-white text-black px-6 py-2 rounded-full shadow hover:bg-gray-200 transition-all">
+        <button className="bg-cyan-300 text-white text-2xl uppercase font-bold px-6 py-2 rounded-full shadow hover:bg-gray-200 transition-all ml-24">
           Try it Now!
         </button>
       </a>

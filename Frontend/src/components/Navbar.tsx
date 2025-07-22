@@ -17,7 +17,7 @@ const Header = () => {
             <a href="/"><img src="/logo.png" alt="logo" className="w-32 md:w-56 md:pt-10" /></a>
           </div>
 
-          <nav className="hidden md:block">
+          <nav className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8 text-lg text-[#428b93]">
               <a href="/">Home</a>
               <a href="/products">Products</a>
@@ -28,7 +28,7 @@ const Header = () => {
             </div>
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <a href="/quiz">
               <button className="bg-[#59C6D3] hover:bg-secondary text-sm rounded-3xl text-primary-foreground px-8 py-3 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                 Take Your Plant Efficiency Test!
@@ -36,7 +36,7 @@ const Header = () => {
             </a>
           </div>
 
-          <div className="md:hidden z-[999]">
+          <div className="lg:hidden z-[999]">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-[#59C6D3] hover:text-teal-600 transition-colors duration-200"
@@ -85,7 +85,7 @@ const Header = () => {
               {/* Final divider before button */}
               <hr className="border-gray-300 border-t-[1px] mb-6" />
               
-              <a href="/quiz" onClick={() => setIsMenuOpen(false)}>
+              <a href="/quiz-form" onClick={() => setIsMenuOpen(false)}>
                 <button className="w-full bg-[#59C6D3] hover:bg-[#4bb5c2] text-white text-base rounded-3xl px-6 py-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
                   Take Your Plant Efficiency Test!
                 </button>

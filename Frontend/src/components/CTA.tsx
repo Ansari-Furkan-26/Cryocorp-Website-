@@ -5,12 +5,12 @@ import { FaWhatsapp, FaRobot } from "react-icons/fa";
 
 function CTA() {
   return (
-    <div className="w-full bg-background sm:pl-6 md:pl-20">
+    <div id='cta' className="w-full bg-background">
       {/* Let's Grow Together Section */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
 
         {/* Column 1 */}
-        <div className="bg-white p-6 md:p-0 text-foreground h-full border-b md:border-r md:col-span-2">
+        <div className="bg-white p-6 md:p-0 sm:ml-6 lg:pl-20 text-foreground h-full border-b md:border-r md:col-span-2">
           <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">LET'S GROW TOGETHER</h2>
           <p className="text-sm font-bold md:mb-1 leading-relaxed">
             Have questions about our industrial gas solutions, products, or services?

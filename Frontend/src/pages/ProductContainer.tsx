@@ -10,43 +10,31 @@ import { useNavigation } from "../contexts/NavigationContext";
 import { PageTransition } from "../components/PageTransition";
 import CTA from "@/components/CTA";
 
-// Define heights for each page
-const pageHeights = {
-  1: { mobile: "h-[36500px]", desktop: "md:h-[2290vh]" }, // ASU - longest page md:h-[15900px]
-  2: { mobile: "h-[2000px]", desktop: "md:h-[2200px]" }, // PSA - shorter page
-  3: { mobile: "h-[7700px]", desktop: "md:h-[3900px]" }, // LBU - medium page
-  4: { mobile: "h-[5100px]", desktop: "md:h-[3400px]" }, // NEXT - medium page
-};
-
 const ProductsContainerInner = () => {
   const { currentPage } = useNavigation();
 
-  // Get current page height
-  const currentHeight = pageHeights[currentPage as keyof typeof pageHeights];
-  const heightClasses = `${currentHeight.mobile} ${currentHeight.desktop}`;
-
   return (
     <div
-      className={`${heightClasses} bg-white relative overflow-hidden pt-16 sm:pt-32 transition-all duration-300`}
+      className={`bg-white relative overflow-x-hidden pt-16 lg:pt-16 xl:pt-16 sm:pt-32 transition-all duration-300`}
     >
       <AnimatePresence mode="wait">
         {currentPage === 1 && (
-          <PageTransition pageIndex={1}>
+          <PageTransition key="page-1" pageIndex={1}>
             <Products />
           </PageTransition>
         )}
         {currentPage === 2 && (
-          <PageTransition pageIndex={2}>
+          <PageTransition key="page-2" pageIndex={2}>
             <Products2 />
           </PageTransition>
         )}
         {currentPage === 3 && (
-          <PageTransition pageIndex={3}>
+          <PageTransition key="page-3" pageIndex={3}>
             <Products3 />
           </PageTransition>
         )}
         {currentPage === 4 && (
-          <PageTransition pageIndex={4}>
+          <PageTransition key="page-4" pageIndex={4}>
             <Products4 />
           </PageTransition>
         )}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ASUQuizPromo = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 p-10">
+    <div className="flex flex-col lg:flex-row justify-around items-center gap-10 lg:gap-0 p-10 mt-24">
       {/* Left Section - Text */}
       <div className="max-w-xl space-y-6">
         <h2 className="text-2xl font-bold text-gray-800 leading-snug">

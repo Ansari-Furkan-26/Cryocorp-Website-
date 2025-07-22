@@ -19,7 +19,7 @@ const TestimonialsSection = () => {
     },
     {
       company: "VG",
-      subtitle: "Vishnu Gases",
+      subtitle: "Verma Gases",
       role: "Owner",
       quote: "You have material available whenever we want!",
       img: "testimonial3",

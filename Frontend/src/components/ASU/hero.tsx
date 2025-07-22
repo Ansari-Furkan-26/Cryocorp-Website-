@@ -7,10 +7,10 @@ const ASUPage: React.FC = () => {
     const { goNext, goPrev } = useNavigation();
     return (
 
-        <div className="sm:min-h-[225vh] bg-white relative overflow-hidden mb-10 pt-6 lg:pt-8">
+        <div className="sm:min-h-[225vh] bg-white relative  mb-10 pt-6 lg:pt-8">
 
             {/* Main Content */}
-            <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
+            <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
                     <div className="grid grid-cols-12 gap-4 sm:min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
@@ -37,13 +37,13 @@ const ASUPage: React.FC = () => {
                             </div>
 
                             {/* Level Tags */}
-                            <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32 lg:pt-32 pt-16">
-                                {/* <a className="sm:block" href="#level-1">LEVEL 1</a>
+                            <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 lg:pt-32 pt-16">
+                                <a className="sm:block" href="#level-1">LEVEL 1</a>
                                 <a className="sm:block" href="#level-2">LEVEL 2</a>
-                                <a className="sm:block" href="#level-3">LEVEL 3</a> */}
-                                <p>LEVEL 1</p>
+                                <a className="sm:block" href="#level-3">LEVEL 3</a>
+                                {/* <p>LEVEL 1</p>
                                 <p>LEVEL 2</p>
-                                <p>LEVEL 3</p>
+                                <p>LEVEL 3</p> */}
                             </div>
                         </div>
 

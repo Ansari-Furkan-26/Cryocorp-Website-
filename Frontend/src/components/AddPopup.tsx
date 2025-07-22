@@ -1,50 +1,84 @@
 import React, { useState, useEffect } from "react";
-import { X, Play, Search, MessageCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { X, Play, MessageCircle, Search, Calendar, Phone, Mic } from "lucide-react";
 
-const PopupBannerAds = () => {
+const StepwisePopup = () => {
   const [showPopup, setShowPopup] = useState(false);
-  const [currentAd, setCurrentAd] = useState(null);
-  const navigate = useNavigate();
 
-  const ads = [
+  const steps = [
     {
       id: 1,
-      title: "Test Your Knowledge!",
-      description: "Take our interactive quiz and discover how much you really know. Challenge yourself with fun questions!",
-      buttonText: "Play the Quiz",
+      step: "Step 1",
+      title: "Test",
+      subtitle: "Assess your plant efficiency",
+      description: "Take our comprehensive quiz to evaluate your current plant performance and identify areas for improvement.",
+      gradient: "from-teal-500 to-cyan-500",
       icon: <Play className="w-5 h-5" />,
-      gradient: "from-purple-500 to-pink-500",
-      section: "/quiz",
-      img: "/about/quiz4.jpg"
+      actions: [
+        {
+          text: "TEST LINK",
+          path: "/quiz",
+          primary: true
+        }
+      ]
     },
     {
       id: 2,
-      title: "Chat with us on WhatsApp 24x7",
-      description: "Connect with our team anytime, anywhere for instant support and inquiries. We're available 24x7 on WhatsApp to assist you with all your needs.",
-      buttonText: "Chat Now",
+      step: "Step 2", 
+      title: "Clarify",
+      subtitle: "Get answers on doubts or questions",
+      description: "Connect with our AI-powered voice and text agents to clarify any questions about your plant operations.",
+      gradient: "from-cyan-500 to-blue-500",
       icon: <MessageCircle className="w-5 h-5" />,
-      gradient: "from-blue-500 to-cyan-500",
-      section: "/whatsapp",
-      img: "/services/img7.png"
+      actions: [
+        {
+          text: "TEXT",
+          path: "/chat",
+          primary: false,
+          icon: <MessageCircle className="w-4 h-4" />
+        },
+        {
+          text: "CALL", 
+          path: "/whatsapp",
+          primary: false,
+          icon: <Phone className="w-4 h-4" />
+        }
+      ]
     },
     {
       id: 3,
-      title: "Use our GPT by OpenAI to ask any questions 24x7",
-      description: "Get instant answers to your queries with our AI-powered GPT assistant. Available 24x7 to help you with information, support, and more—anytime you need!",
-      buttonText: "Use Our GPT",
-      icon: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/ChatGPT-Logo.png/1024px-ChatGPT-Logo.png" alt="" className="w-8 h-5"/>,
-      gradient: "from-green-500 to-emerald-500",
-      section: "",
-      img: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+      step: "Step 3",
+      title: "Explore", 
+      subtitle: "Search for the spares and send us enquiry",
+      description: "Browse our comprehensive spare parts catalog and submit inquiries for the components you need.",
+      gradient: "from-teal-600 to-green-500",
+      icon: <Search className="w-5 h-5" />,
+      actions: [
+        {
+          text: "LINK TO APP",
+          path: "/products",
+          primary: true
+        }
+      ]
+    },
+    {
+      id: 4,
+      step: "Step 4",
+      title: "Connect",
+      subtitle: "Schedule a free consultation",
+      description: "Book a complimentary consultation with our experts to discuss your specific requirements and solutions.",
+      gradient: "from-cyan-600 to-teal-600", 
+      icon: <Calendar className="w-5 h-5" />,
+      actions: [
+        {
+          text: "BOOK NOW",
+          path: "/#cta",
+          primary: true
+        }
+      ]
     }
   ];
 
   useEffect(() => {
-    const randomAd = ads[Math.floor(Math.random() * ads.length)];
-    setCurrentAd(randomAd);
-
     const timer = setTimeout(() => {
       setShowPopup(true);
     }, 1000);
@@ -54,81 +88,161 @@ const PopupBannerAds = () => {
 
   const closePopup = () => setShowPopup(false);
 
-  const handleNavigation = (section) => {
-    if(section == ""){
-      closePopup();
-      setTimeout(() => {
-        window.location.href = "https://agentivehub.com/chat/49559140-605e-458a-ab98-0708f11ddb21"
-      }, 300);
-    }
+  const handleNavigation = (path) => {
     closePopup();
+    window.location.href = path;
     setTimeout(() => {
-      navigate(section);
+      console.log(`Navigate to: ${path}`);
     }, 300);
   };
 
   return (
-    <AnimatePresence>
-      {showPopup && currentAd && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black bg-opacity-40 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+    <>
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes fadeOut {
+          from { opacity: 1; }
+          to { opacity: 0; }
+        }
+        
+        @keyframes slideIn {
+          from { 
+            opacity: 0;
+            transform: translateY(-50px) scale(0.95);
+          }
+          to { 
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        
+        @keyframes slideOut {
+          from { 
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+          to { 
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+          }
+        }
+        
+        @keyframes slideUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
+      
+      {showPopup && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 p-2 sm:p-4"
+          style={{
+            animation: showPopup ? 'fadeIn 0.3s ease-out' : 'fadeOut 0.3s ease-out'
+          }}
         >
-          <motion.div
-            initial={{ y: -50, scale: 0.95, opacity: 0 }}
-            animate={{ y: 0, scale: 1, opacity: 1 }}
-            exit={{ y: 50, scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full mx-4 overflow-hidden"
+          <div
+            className="relative bg-white rounded-3xl shadow-2xl max-w-lg sm:max-w-6xl w-full max-h-[80vh] sm:max-h-none mx-4 overflow-y-auto transform transition-all duration-300"
+            style={{
+              animation: showPopup ? 'slideIn 0.4s ease-out' : 'slideOut 0.4s ease-out'
+            }}
           >
             {/* Close Button */}
             <button
               onClick={closePopup}
-              className="absolute top-4 right-4 z-10 bg-white bg-opacity-80 hover:bg-opacity-100 rounded-full p-2 transition-all hover:scale-110 shadow-sm"
+              className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 bg-white/90 hover:bg-white rounded-full p-1.5 sm:p-3 transition-all hover:scale-110 shadow-lg border border-teal-100 group"
             >
-              <X className="w-4 h-4 text-gray-600" />
+              <X className="w-4 h-4 text-teal-600 group-hover:text-teal-700" />
             </button>
 
-            <div className="flex flex-col md:flex-row">
-              {/* Content Section (Left) */}
-              <div className="w-full md:w-1/2 p-6 md:p-8 flex flex-col justify-between">
-                <div>
-                  <div className={`inline-flex items-center gap-2 mb-4 px-3 py-1 rounded-full bg-gradient-to-r ${currentAd.gradient} text-white text-sm font-medium`}>
-                    {currentAd.icon}
-                    <span>Featured</span>
-                  </div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">{currentAd.title}</h2>
-                  <p className="text-gray-600 mb-6">{currentAd.description}</p>
-                </div>
-                <div>
-                  <button
-                    onClick={() => handleNavigation(currentAd.section)}
-                    className={`w-full bg-gradient-to-r ${currentAd.gradient} text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transform hover:scale-[1.02] transition-all flex items-center justify-center gap-2`}
-                  >
-                    {currentAd.icon}
-                    {currentAd.buttonText}
-                  </button>
-                  <p className="text-xs text-gray-500 mt-2 text-center">No credit card required</p>
-                </div>
-              </div>
-
-              {/* Image Section (Right) */}
-              <div className="w-full md:w-1/2 h-48 md:h-auto relative">
-                <img
-                  src={currentAd.img}
-                  alt={currentAd.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${currentAd.gradient}`} />
+            {/* Header */}
+            <div className="bg-gradient-to-r from-slate-700 via-teal-700 to-cyan-600 p-3 sm:p-8 text-center relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-cyan-400/10 backdrop-blur-3xl"></div>
+              <div className="relative z-10">
+                <h1 className="text-xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-3">
+                  Your Journey to Plant Optimization
+                </h1>
+                <p className="text-teal-100 text-sm sm:text-lg">Follow these simple steps to maximize your industrial gas solutions</p>
               </div>
             </div>
-          </motion.div>
-        </motion.div>
+
+            {/* Steps Grid (Scrollable Wrapper) */}
+            <div className="overflow-y-auto max-h-[60vh] sm:max-h-none">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0">
+                {steps.map((step, index) => (
+                  <div
+                    key={step.id}
+                    className="relative p-3 sm:p-6 border-b md:border-b-0 md:border-r border-gray-100 last:border-r-0 hover:bg-gradient-to-br hover:from-teal-50 hover:to-cyan-50 transition-all duration-300 group"
+                    style={{
+                      animation: `slideUp 0.5s ease-out ${index * 0.1}s both`
+                    }}
+                  >
+                    {/* Step Header */}
+                    <div className={`inline-flex items-center gap-1 sm:gap-2 mb-2 sm:mb-4 px-2 sm:px-4 py-1 rounded-full bg-gradient-to-r ${step.gradient} text-white text-xs font-bold shadow-lg transform group-hover:scale-105 transition-transform`}>
+                      {step.icon}
+                      <span>{step.step}</span>
+                    </div>
+
+                    {/* Step Content */}
+                    <div className="mb-3 sm:mb-6">
+                      <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-1 group-hover:text-teal-700 transition-colors">{step.title}</h3>
+                      <p className="text-xs text-teal-600 font-semibold mb-1 sm:mb-3">{step.subtitle}</p>
+                      <p className="text-xs text-gray-600 leading-relaxed">{step.description}</p>
+                    </div>
+
+                    {/* Action Buttons */}
+                    <div className="space-y-2">
+                      {step.actions.map((action, actionIndex) => (
+                        <button
+                          key={actionIndex}
+                          onClick={() => handleNavigation(action.path)}
+                          className={`w-full py-1.5 sm:py-3 px-3 sm:px-5 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl ${
+                            action.primary
+                              ? `bg-gradient-to-r ${step.gradient} text-white hover:shadow-teal-200/50`
+                              : 'bg-white text-teal-700 border-2 border-teal-200 hover:border-teal-300 hover:bg-teal-50'
+                          }`}
+                        >
+                          {action.icon && action.icon}
+                          <span className="text-xs font-bold">{action.text}</span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="hidden md:block bg-gradient-to-r from-teal-50 to-cyan-50 p-3 sm:p-6 text-center border-t border-teal-100">
+              <div className="flex flex-col md:flex-row items-center justify-center gap-2 sm:gap-4 text-xs text-teal-700">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
+                  No credit card required
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-cyan-500 rounded-full"></span>
+                  Free consultation
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 bg-teal-500 rounded-full"></span>
+                  Expert guidance for industrial gas solutions
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 
-export default PopupBannerAds;
+export default StepwisePopup;

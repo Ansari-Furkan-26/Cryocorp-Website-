@@ -34,7 +34,6 @@ const FlipCard = ({
             className={`relative ${className}`}
             onMouseEnter={() => setIsFlipped(true)}
             onMouseLeave={() => setIsFlipped(false)}
-            onClick={handleCardClick}
             style={{ perspective: '1000px' }}
         >
             <div 
@@ -62,7 +61,7 @@ const FlipCard = ({
                         </div>
                         {/* External Link Indicator */}
                         {externalLink && (
-                            <div className="absolute top-4 right-4 text-white">
+                            <div onClick={handleCardClick} className="absolute top-4 right-4 text-white">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
                                 </svg>
@@ -114,23 +113,14 @@ const FlipCard = ({
                                 <p className="text-xs text-blue-100 lg:text-xs text-[10px]">{detailCard.description}</p>
                             </div>
 
-                            {/* External Link Button */}
-                            {externalLink && (
-                                <div className="mt-4 pt-2 border-t border-blue-300">
-                                    <button 
-                                        onClick={(e) => {
-                                            e.stopPropagation();
-                                            window.open(externalLink, '_blank', 'noopener,noreferrer');
-                                        }}
-                                        className="text-xs text-blue-100 hover:text-white underline flex items-center gap-1"
-                                    >
-                                        Learn More
-                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            )}
+                            {/* External Link Indicator */}
+                        {externalLink && (
+                            <div onClick={handleCardClick} className="absolute top-4 right-4 text-white">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                </svg>
+                            </div>
+                        )}
                         </div>
                     </div>
                 </div>

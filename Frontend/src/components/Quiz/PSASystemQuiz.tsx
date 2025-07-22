@@ -2,7 +2,7 @@ import React from 'react';
 
 const PSASystemQuiz = () => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row justify-around items-center gap-10 lg:gap-0 p-10">
+    <div className="flex flex-col-reverse lg:flex-row justify-around items-center gap-10 lg:gap-0 p-10 mt-24">
       {/* Left Section - Image */}
       <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-lg">
         <img

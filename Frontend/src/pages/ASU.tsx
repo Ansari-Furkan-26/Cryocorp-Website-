@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ASUPage from "@/components/ASU/hero";
 import IndustrialDiagram from "@/components/ASU/level1";
 import AirCompressorCatalog from "@/components/ASU/airCompressor";
@@ -13,11 +13,12 @@ import Oxygen from "@/components/ASU/oxygen";
 import LiquidOxygen from "@/components/ASU/liquidOxygen";
 import LevelThreeAccessories from "@/components/ASU/LevelThreeAccessories";
 import { useNavigation } from "@/contexts/NavigationContext";
+import VectorImageSlider from "@/components/ASU/VectorImageSlider";
 
 const Products: React.FC = () => {
     const { updateCurrentPage } = useNavigation();
     return (
-        <div className="">
+        <div className="relative">
         <div className="hidden sm:block absolute z-10 top-20 left-0 px-6 pt-[12px] w-64">
                 <div className="flex flex-col h-full">
                     {/* Top Left List */}
@@ -49,6 +50,7 @@ const Products: React.FC = () => {
             </div>
             <ASUPage />
             <IndustrialDiagram />
+            <VectorImageSlider/>
             <AirCompressorCatalog />
             <T/>
             <ChillingTank/>

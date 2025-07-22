@@ -6,7 +6,7 @@ import { useNavigation } from "@/contexts/NavigationContext";
 const Products: React.FC = () => {
     const { updateCurrentPage } = useNavigation();
     return (
-        <>
+        <div className="relative">
         <div className="hidden sm:block absolute z-10 top-[70px] left-0 px-6 pt-[12px] w-64">
                 <div className="flex flex-col h-full">
                     {/* Top Left List */}
@@ -38,7 +38,7 @@ const Products: React.FC = () => {
             </div>
             <AsuTechnologyPanel />
             <IndoorSolutionsSection />
-        </>
+        </div>
     );
 };
 

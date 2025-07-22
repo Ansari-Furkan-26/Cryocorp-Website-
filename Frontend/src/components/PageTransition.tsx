@@ -17,7 +17,7 @@ export const PageTransition = ({ children, pageIndex }: PageTransitionProps) => 
             initial={{
                 x: direction * 100,
                 opacity: 0,
-                position: 'absolute' as const,
+                // position: 'absolute' as const,
                 width: '100%'
             }}
             animate={{
