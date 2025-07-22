@@ -8,7 +8,8 @@ const FlipCard = ({
     subtitle, 
     detailCard, 
     className = "",
-    imageClassName = ""
+    imageClassName = "",
+    externalLink,
 }: { 
     imageSrc: string;
     title: string;
@@ -16,15 +17,24 @@ const FlipCard = ({
     detailCard: any;
     className?: string;
     imageClassName?: string;
+    externalLink?: string;
 }) => {
     const [isFlipped, setIsFlipped] = useState(false);
+    
+    const handleCardClick = () => {
+        if (externalLink) {
+            window.open(externalLink, '_blank', 'noopener,noreferrer');
+        } else {
+            setIsFlipped(!isFlipped);
+        }
+    };
     
     return (
         <div 
             className={`relative ${className}`}
             onMouseEnter={() => setIsFlipped(true)}
             onMouseLeave={() => setIsFlipped(false)}
-            onClick={() => setIsFlipped(!isFlipped)} // Touch support for mobile
+            onClick={handleCardClick}
             style={{ perspective: '1000px' }}
         >
             <div 
@@ -50,12 +60,20 @@ const FlipCard = ({
                             {title}
                             {subtitle && <div className="text-sm lg:text-sm text-xs">{subtitle}</div>}
                         </div>
+                        {/* External Link Indicator */}
+                        {externalLink && (
+                            <div className="absolute top-4 right-4 text-white">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                </svg>
+                            </div>
+                        )}
                     </div>
                 </div>
                 
                 {/* Back Card */}
                 <div 
-                    className="absolute inset-0"
+                    className="absolute inset-0 cursor-pointer"
                     style={{ 
                         backfaceVisibility: 'hidden',
                         transform: 'rotateY(180deg)'
@@ -95,6 +113,24 @@ const FlipCard = ({
                             <div className="mt-3">
                                 <p className="text-xs text-blue-100 lg:text-xs text-[10px]">{detailCard.description}</p>
                             </div>
+
+                            {/* External Link Button */}
+                            {externalLink && (
+                                <div className="mt-4 pt-2 border-t border-blue-300">
+                                    <button 
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            window.open(externalLink, '_blank', 'noopener,noreferrer');
+                                        }}
+                                        className="text-xs text-blue-100 hover:text-white underline flex items-center gap-1"
+                                    >
+                                        Learn More
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -102,6 +138,7 @@ const FlipCard = ({
         </div>
     );
 };
+
 
 const ASUPage = () => {
     const { goNext, goPrev } = useNavigation();
@@ -275,86 +312,95 @@ const ASUPage = () => {
             <div className="absolute top-2 left-2 text-white text-xs font-bold tracking-wide">LEVEL 1</div>
             
             {/* Desktop Industrial Plant Images Section with Flip Animation */}
-            <div className="absolute top-[999px] left-64 -ml-60 right-0 h-[800px] z-10 lg:block hidden">
-                <div className="relative h-full w-full">
-                    {/* TOT SERIES OXYGEN PLANT */}
-                    <FlipCard
-                        imageSrc="/PSA/tot.png"
-                        title="TOT SERIES OXYGEN"
-                        subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
-                        detailCard={detailCards.tot}
-                        className="absolute top-0 left-[460px] w-[280px] h-[400px] z-20"
-                    />
+<div className="absolute top-[999px] left-64 -ml-60 right-0 h-[800px] z-10 lg:block hidden">
+    <div className="relative h-full w-full">
+        {/* TOT SERIES OXYGEN PLANT */}
+        <FlipCard
+            imageSrc="/PSA/tot.png"
+            title="TOT SERIES OXYGEN"
+            subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
+            detailCard={detailCards.tot}
+            className="absolute top-0 left-[460px] w-[280px] h-[400px] z-20"
+            externalLink="https://www.instagram.com/reel/DMIGQBvpsgf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
 
-                    {/* OXYGEN GENERATOR - OXYLIFE */}
-                    <FlipCard
-                        imageSrc="/PSA/oxygen.png"
-                        title="OXYGEN GENERATOR-"
-                        subtitle="OXYLIFE"
-                        detailCard={detailCards.oxylife}
-                        className="absolute top-[-200px] left-[800px] w-[400px] h-[280px] z-20"
-                    />
+        {/* OXYGEN GENERATOR - OXYLIFE */}
+        <FlipCard
+            imageSrc="/PSA/oxygen.png"
+            title="OXYGEN GENERATOR-"
+            subtitle="OXYLIFE"
+            detailCard={detailCards.oxylife}
+            className="absolute top-[-200px] left-[800px] w-[400px] h-[280px] z-20"
+            externalLink="https://www.instagram.com/reel/DMIGz6Ip8pB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
 
-                    {/* NITROPAK - NITROGEN GENERATOR PLANT */}
-                    <FlipCard
-                        imageSrc="/PSA/generator.png"
-                        title="NitroPAK-"
-                        subtitle="NITROGEN GENERATOR PLANT"
-                        detailCard={detailCards.nitropak}
-                        className="absolute left-[290px] top-[-250px] w-[450px] h-[250px] z-20"
-                    />
+        {/* NITROPAK - NITROGEN GENERATOR PLANT */}
+        <FlipCard
+            imageSrc="/PSA/generator.png"
+            title="NitroPAK-"
+            subtitle="NITROGEN GENERATOR PLANT"
+            detailCard={detailCards.nitropak}
+            className="absolute left-[290px] top-[-250px] w-[450px] h-[250px] z-20"
+            externalLink="https://www.instagram.com/reel/DMIEkmop-yq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
 
-                    {/* MAPS SERIES - NITROGEN GENERATOR */}
-                    <FlipCard
-                        imageSrc="/PSA/nitrogen.png"
-                        title="MAPS SERIES-"
-                        subtitle="NITROGEN GENERATOR"
-                        detailCard={detailCards.maps}
-                        className="absolute top-[-410px] right-[-770px] w-[350px] h-[350px] z-20"
-                    />
-                </div>
-            </div>
+        {/* MAPS SERIES - NITROGEN GENERATOR */}
+        <FlipCard
+            imageSrc="/PSA/nitrogen.png"
+            title="MAPS SERIES-"
+            subtitle="NITROGEN GENERATOR"
+            detailCard={detailCards.maps}
+            className="absolute top-[-410px] right-[-770px] w-[350px] h-[350px] z-20"
+            externalLink="https://www.instagram.com/reel/DMH8sE4pB7w/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
+    </div>
+</div>
 
-            {/* Mobile Plant Images Section with Flip Animation */}
-            <div className="lg:hidden block px-4 mt-8">
-                <div className="space-y-6">
-                    {/* TOT SERIES OXYGEN PLANT */}
-                    <FlipCard
-                        imageSrc="/PSA/tot.png"
-                        title="TOT SERIES OXYGEN"
-                        subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
-                        detailCard={detailCards.tot}
-                        className="w-full h-48"
-                    />
+{/* Mobile Plant Images Section with Flip Animation */}
+<div className="lg:hidden block px-4 mt-8">
+    <div className="space-y-6">
+        {/* TOT SERIES OXYGEN PLANT */}
+        <FlipCard
+            imageSrc="/PSA/tot.png"
+            title="TOT SERIES OXYGEN"
+            subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
+            detailCard={detailCards.tot}
+            className="w-full h-48"
+            externalLink="https://www.instagram.com/reel/DMIGQBvpsgf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
 
-                    {/* OXYGEN GENERATOR - OXYLIFE */}
-                    <FlipCard
-                        imageSrc="/PSA/generator.png"
-                        title="OXYGEN GENERATOR-"
-                        subtitle="OXYLIFE"
-                        detailCard={detailCards.oxylife}
-                        className="w-full h-48"
-                    />
+        {/* OXYGEN GENERATOR - OXYLIFE */}
+        <FlipCard
+            imageSrc="/PSA/generator.png"
+            title="OXYGEN GENERATOR-"
+            subtitle="OXYLIFE"
+            detailCard={detailCards.oxylife}
+            className="w-full h-48"
+            externalLink="https://www.instagram.com/reel/DMIGz6Ip8pB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
 
-                    {/* NITROPAK - NITROGEN GENERATOR PLANT */}
-                    <FlipCard
-                        imageSrc="/PSA/generator.png"
-                        title="NitroPAK-"
-                        subtitle="NITROGEN GENERATOR PLANT"
-                        detailCard={detailCards.nitropak}
-                        className="w-full h-48"
-                    />
+        {/* NITROPAK - NITROGEN GENERATOR PLANT */}
+        <FlipCard
+            imageSrc="/PSA/generator.png"
+            title="NitroPAK-"
+            subtitle="NITROGEN GENERATOR PLANT"
+            detailCard={detailCards.nitropak}
+            className="w-full h-48"
+            externalLink="https://www.instagram.com/reel/DMIEkmop-yq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
 
-                    {/* MAPS SERIES - NITROGEN GENERATOR */}
-                    <FlipCard
-                        imageSrc="/PSA/nitrogen.png"
-                        title="MAPS SERIES-"
-                        subtitle="NITROGEN GENERATOR"
-                        detailCard={detailCards.maps}
-                        className="w-full h-48"
-                    />
-                </div>
-            </div>
+        {/* MAPS SERIES - NITROGEN GENERATOR */}
+        <FlipCard
+            imageSrc="/PSA/nitrogen.png"
+            title="MAPS SERIES-"
+            subtitle="NITROGEN GENERATOR"
+            detailCard={detailCards.maps}
+            className="w-full h-48"
+            externalLink="https://www.instagram.com/reel/DMH8sE4pB7w/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        />
+    </div>
+</div>
+
         </div>
     );
 };
