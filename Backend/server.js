@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const adminRoutes = require('./routes/adminRoutes');
 const blogRoutes = require('./routes/blog');
+const emailRoutes = require('./routes/emailRoutes');
 
 dotenv.config();
 
@@ -79,6 +80,7 @@ app.get('/api/subscribers', async (req, res) => {
 // Routes
 app.use('/api/admin', adminRoutes);
 app.use('/api/blogs', blogRoutes);
+app.use('/api/email', emailRoutes);
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
