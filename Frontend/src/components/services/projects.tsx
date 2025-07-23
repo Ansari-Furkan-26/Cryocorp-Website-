@@ -24,8 +24,8 @@ const Hero = () => {
                             "02. ERECTING & COMMISSIONING FOR PSA PLANTS",
                             "03. LIQUID BOTTTLING COMMMISSIONING",
                         ].map((item, idx) => (
-                            <div key={item} className="flex items-center justify-between py-2 border-b border-gray-100">
-                                <span className="text-sm font-medium text-gray-500"><a href={`#${item}`}>{item}</a></span>
+                            <div key={item} className="flex items-center justify-between  ">
+                                <span className="text-sm font-bold text-gray-500"><a href={`#${item}`}>{item}</a></span>
                             </div>
                         ))}
                     </div>

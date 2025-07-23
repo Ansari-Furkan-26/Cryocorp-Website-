@@ -39,7 +39,7 @@ const Footer = () => {
   return (
     <div className="w-full">
       {/* Main Footer */}
-      <footer className="bg-blue-50 px-9 pt-6 md:pb-6 mb-0">
+      <footer className="bg-[#DDEAEB] px-9 pt-6 md:pb-6 mb-0">
         <div className="md:mr-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Logo and Let's Talk */}
@@ -48,12 +48,12 @@ const Footer = () => {
                 <a href="/"><img src="/logo.png" alt="Logo" className="h-14" /></a>
               </div>
 
-              <div className="text-teal-500">
-                <p className="text-xs mb-2">Got a project in mind?</p>
-                <h3 className="text-5xl font-light mb-2">Let's Talk</h3>
+              <div className="">
+                <p className="text-[17px] mb-2 font-extralight text-[#8B8D8E]">Got a project in mind?</p>
+                <h3 className="text-5xl font-thin mb-2 text-[#8B8D8E]">Let's Talk</h3>
                 <div className="items-center text-xs">
-                  <span className="mr-2">All Rights Reserved © Cryo Corp O2 LLP</span>
-                  <div className="flex gap-4">
+                  <span className="mr-2 text-[#8B8D8E]">All Rights Reserved © Cryo Corp O2 LLP</span>
+                  <div className="flex gap-4 text-teal-500">
                     <a href="/privacy-policy"><p>Privacy Policy</p></a>
                     <a href="/disclaimer"><p>Disclaimer</p></a>
                   </div>
