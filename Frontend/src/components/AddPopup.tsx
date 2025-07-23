@@ -36,12 +36,12 @@ const StepwisePopup = () => {
           primary: false,
           icon: <MessageCircle className="w-4 h-4" />
         },
-        {
-          text: "CALL", 
-          path: "/whatsapp",
-          primary: false,
-          icon: <Phone className="w-4 h-4" />
-        }
+        // {
+        //   text: "CALL", 
+        //   path: "/whatsapp",
+        //   primary: false,
+        //   icon: <Phone className="w-4 h-4" />
+        // }
       ]
     },
     {
