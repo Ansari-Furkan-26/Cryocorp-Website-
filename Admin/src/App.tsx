@@ -19,6 +19,7 @@ import ProfilePage from "@/components/admin/ProfilePage";
 import Subscribers from "@/components/admin/Subscribers";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
+import QuizTakersDashboard from "./components/admin/QuizTakersDashboard";
 
 const queryClient = new QueryClient();
 
@@ -46,6 +47,7 @@ const App = () => (
               <Route index element={<BlogList />} />
               <Route path="profile" element={<ProfilePage />} />
               <Route path="Subscribers" element={<Subscribers />} />
+              <Route path="quiz" element={<QuizTakersDashboard />} />
             </Route>
 
             {/* 404 */}
