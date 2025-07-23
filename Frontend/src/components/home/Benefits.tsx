@@ -284,7 +284,7 @@ const prevSlide = () => {
               />
             </div>
 
-            <div className="absolute inset-0 bg-[rgba(50,76,58,0.7)]" />
+            <div className="absolute inset-0 bg-[rgba(156,203,171,0.7)]" />
 
             {/* Close Button */}
             <button
@@ -314,11 +314,11 @@ const prevSlide = () => {
 
                 {/* Right Content - Maintenance Process Image */}
                 <div className="flex justify-center lg:justify-end">
-                  <div className="rounded-lg">
+                  <div className="rounded-lg p-4">
                     <img
-                      src="benefits/benefits6.png"
+                      src="benefits/benefits-6.png"
                       alt="Maintenance Process"
-                      className="w-full sm:w-[800px] h-auto sm:h-[400px] rounded-lg shadow-lg object-cover"
+                      className="w-full sm:w-[500px] h-auto sm:h-[400px] rounded-lg shadow-lg object-cover overflow-visible"
                     />
                   </div>
                 </div>
