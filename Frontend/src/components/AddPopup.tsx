@@ -55,7 +55,7 @@ const StepwisePopup = () => {
       actions: [
         {
           text: "LINK TO APP",
-          path: "/products",
+          path: "https://www.appsheet.com/start/aa652aa4-fbf5-4527-a453-574efcd9aa28",
           primary: true
         }
       ]

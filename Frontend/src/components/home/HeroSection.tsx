@@ -93,6 +93,7 @@ const HeroSection = () => {
               one-stop-shop for industrial gas solutions <br />using air separation technology.
             </h1>
             <Button
+              onClick={() => window.location.href = "/#cta"}
               size="lg"
               className="bg-[#59C6D3] hover:bg-secondary rounded-3xl text-primary-foreground px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 z-50 relative"
             >

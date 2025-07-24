@@ -17,7 +17,7 @@ const PrivacyPolicy = () => {
 
         {/* Right: Main Content */}
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Private Policy</h1>
+          <h1 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">Privacy Policy</h1>
           <p className="text-xs sm:text-sm max-w-3xl leading-relaxed">
             At CryoCorp O2 LLP, we value your privacy and are committed to protecting your personal
             information. This Privacy Policy explains how we collect, use, and safeguard your data

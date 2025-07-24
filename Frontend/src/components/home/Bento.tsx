@@ -9,6 +9,7 @@ type GridItem = {
   className: string;
   blueOverlay?:string;
   fontColor?:string;
+  id?:string;
 };
 
 const gridItems: GridItem[] = [
@@ -18,7 +19,8 @@ const gridItems: GridItem[] = [
     type: "Products",
     image: "/bento/asu.png",
     className: "col-span-2 row-span-2 h-[400px]",
-    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50"
+    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50",
+    id:"/products/#asu"
   },
   {
     title: "PSA Technology",
@@ -26,7 +28,8 @@ const gridItems: GridItem[] = [
     type: "Products",
     image: "/bento/psa.png",
     className: "col-span-1 row-span-1 h-[250px]",
-    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50"
+    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50",
+    id:"/products/#psa"
   },
   {
     title: "Maintenance Solutions",
@@ -35,7 +38,8 @@ const gridItems: GridItem[] = [
     image: "/bento/maintenance.png",
     className: "col-span-1 row-span-1 h-[250px]",
     blueOverlay:"absolute inset-0 bg-[#a3d9c9]/50",
-    fontColor:"text-black"
+    fontColor:"text-black",
+    id:"/services/#services"
   },
   {
     title: "Plant Installation & Commissioning",
@@ -44,7 +48,8 @@ const gridItems: GridItem[] = [
     image: "/bento/plant.png",
     className: "col-span-2 row-span-2 row-start-3 row-start-2 h-[250px] -mt-14",
     blueOverlay:"absolute inset-0 bg-[#a3d9c9]/50",
-    fontColor:"text-black"
+    fontColor:"text-black",
+    id:"/services/#plants"
   },
   {
     title: "Liquid Bottling Plants - Storage & Distribution",
@@ -52,7 +57,8 @@ const gridItems: GridItem[] = [
     type: "Products",
     image: "/bento/liquid.png",
     className: "col-span-2 row-span-2 h-[400px]",
-    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50"
+    blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50",
+    id:"/products/#liquid"
   },
 ];
 
@@ -64,8 +70,9 @@ const IndustrialGrid = () => {
         <div className="flex flex-col gap-4 p-4 max-w-md mx-auto">
           {gridItems.map((item, index) => (
             <div
+            onClick={() => { window.location.href = item.id}}
               key={index}
-              className="relative rounded-2xl overflow-hidden bg-cover bg-center text-white flex items-end p-4 h-[250px]"
+              className="relative rounded-2xl overflow-hidden bg-cover bg-center text-white flex items-end p-4 h-[250px] cursor-pointer"
               style={{ backgroundImage: `url(${item.image})` }}
             >
               <div className="absolute inset-0 bg-black/40"></div>
@@ -84,8 +91,9 @@ const IndustrialGrid = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 max-w-4xl mx-auto">
           {gridItems.map((item, index) => (
             <div
+              onClick={() => { window.location.href = item.id}}
               key={index}
-              className={`relative rounded-2xl overflow-hidden bg-cover bg-center text-white flex items-end p-4 ${item.className}`}
+              className={`cursor-pointer relative rounded-2xl overflow-hidden bg-cover bg-center text-white flex items-end p-4 ${item.className}`}
               style={{ backgroundImage: `url(${item.image})` }}
             >
               <div className="absolute inset-0 bg-black/40"></div>

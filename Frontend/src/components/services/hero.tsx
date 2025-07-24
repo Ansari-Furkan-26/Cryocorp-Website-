@@ -2,7 +2,7 @@ import React from 'react';
 
 const Hero = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col lg:flex-row pt-24 w-full">
+    <div id="services" className="min-h-screen bg-gray-50 flex flex-col lg:flex-row pt-24 w-full">
       {/* Left Column - Main Content */}
       <div className="lg:flex-[3] p-6 sm:p-10 lg:p-12">
         <div className="mb-8 pt-10 sm:pt-16 lg:pt-24">

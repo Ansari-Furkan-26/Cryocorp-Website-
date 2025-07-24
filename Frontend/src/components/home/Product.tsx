@@ -9,7 +9,7 @@ const PromotionBanner = () => {
         <img
           src="/promotion-desktop.png"
           alt="Promotion"
-          className="w-full h-full max-h-screen object-contain sm:object-cover"
+          className="w-full h-full max-h-screen object-contain xl:object-cover"
         />
       </picture>
 

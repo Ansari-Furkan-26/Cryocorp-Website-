@@ -73,7 +73,7 @@ const LiquidOxygen = () => {
   ];
 
   return (
-    <div id="liquid-oxyzen-section" className="w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-20">
+    <div id="liquid-oxygen-pump-section" className="w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-20">
       {/* Header Section */}
       <div className="mb-8 flex flex-col items-center  lg:flex-row lg:gap-20">
         <div className="sm:max-w-[60%]">

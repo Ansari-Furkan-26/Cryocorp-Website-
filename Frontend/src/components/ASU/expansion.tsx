@@ -81,7 +81,7 @@ const Expansion = () => {
 
   return (
     <div
-      id="expansion-section"
+      id="expansion-engine-section"
       className="w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-20"
     >
       {/* Header Section */}

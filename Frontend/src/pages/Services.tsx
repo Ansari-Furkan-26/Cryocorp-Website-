@@ -8,7 +8,7 @@ import CTA from "@/components/CTA";
 
 const services = () => {
   return (
-    <div className="min-h-screen">
+  <div  className="min-h-screen">
       <Hero />
       <Image />
       <Card />

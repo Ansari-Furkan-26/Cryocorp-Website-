@@ -7,7 +7,7 @@ const ASUPage: React.FC = () => {
     const { goNext, goPrev } = useNavigation();
     return (
 
-        <div className="sm:min-h-[225vh] bg-white relative  mb-10 pt-6 lg:pt-8">
+        <div id="asu" className="sm:min-h-[225vh] bg-white relative  mb-10 pt-6 lg:pt-8">
 
             {/* Main Content */}
             <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 pr-4">
