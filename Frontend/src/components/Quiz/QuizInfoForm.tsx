@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import axios from "axios";
 
 interface QuizModalProps {
   isOpen: boolean;
@@ -8,13 +9,13 @@ interface QuizModalProps {
 
 const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
   const { link } = useParams();
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        navigate('/')  
+        navigate("/");
         onClose();
-      };
+      }
     };
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
@@ -23,17 +24,14 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   const handleClose = () => {
-    navigate('/quiz');
+    navigate("/quiz");
     onClose();
-  }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
       {/* Background click to close */}
-      <div
-        className="absolute inset-0"
-        onClick={handleClose}
-      ></div>
+      <div className="absolute inset-0" onClick={handleClose}></div>
 
       {/* Modal content */}
       <div className="relative z-10 w-full max-w-lg bg-white backdrop-blur-xl rounded-2xl shadow-2xl p-8 mx-4">
@@ -53,14 +51,16 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
 
         {/* Form */}
         <form
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
             // const name = (e.target as any).name.value;
             const email = (e.target as any).email.value;
             // store the data in backend
-            
+            await axios.post(" https://api.cryocorp.in/api/email/emails", {
+              email,
+            });
             console.log("Submitted:", { email });
-            window.location.href = `/quiz/${link}.html`
+            window.location.href = `/quiz/${link}.html`;
             onClose();
           }}
           className="space-y-5"
