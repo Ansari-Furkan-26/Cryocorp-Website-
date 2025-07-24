@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
-import { UserRoundCheck } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { UserRoundCheck } from "lucide-react";
 
 const SubscriberDashboard = () => {
   const [subscribers, setSubscribers] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://cryocorp.onrender.com/api/subscribers')
+    fetch(" https://api.cryocorp.in/api/subscribers")
       .then((res) => res.json())
       .then((data) => {
         setSubscribers(data.subscribers || []);
         setLoading(false);
       })
       .catch(() => {
-        toast.error('Failed to fetch subscribers.');
+        toast.error("Failed to fetch subscribers.");
         setLoading(false);
       });
   }, []);
 
   const handleExport = () => {
     if (subscribers.length === 0) {
-      toast.warning('No subscribers to export.');
+      toast.warning("No subscribers to export.");
       return;
     }
 
-    const csvContent = 'data:text/csv;charset=utf-8,' + subscribers.join('\n');
+    const csvContent = "data:text/csv;charset=utf-8," + subscribers.join("\n");
     const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'subscribers.csv');
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "subscribers.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -41,7 +41,10 @@ const SubscriberDashboard = () => {
       <div className="mx-auto bg-white rounded-2xl border shadow-sm p-6">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold">Subscriber Emails</h2>
-          <Button onClick={handleExport} className="bg-blue-600 text-white hover:bg-blue-700">
+          <Button
+            onClick={handleExport}
+            className="bg-blue-600 text-white hover:bg-blue-700"
+          >
             Export as CSV
           </Button>
         </div>
@@ -56,7 +59,7 @@ const SubscriberDashboard = () => {
                 className="text-sm text-gray-800 flex gap-4 px-4 py-2 rounded-md hover:bg-blue-50 transition"
               >
                 <UserRoundCheck />
-                
+
                 {email}
               </div>
             ))}

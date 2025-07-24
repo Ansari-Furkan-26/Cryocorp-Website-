@@ -1,38 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
-import { UserRoundCheck } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
+import { UserRoundCheck } from "lucide-react";
 
 const QuizTakersDashboard = () => {
   const [emails, setEmails] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://cryocorp.onrender.com/api/email/emails') // Replace with your actual endpoint
+    fetch(" https://api.cryocorp.in/api/email/emails") // Replace with your actual endpoint
       .then((res) => res.json())
       .then((data) => {
         // assuming backend returns { emails: ["user1@gmail.com", ...] }
-        console.log(data)
+        console.log(data);
         setEmails(data || []);
         setLoading(false);
       })
       .catch(() => {
-        toast.error('Failed to fetch quiz takers.');
+        toast.error("Failed to fetch quiz takers.");
         setLoading(false);
       });
   }, []);
 
   const handleExport = () => {
     if (emails.length === 0) {
-      toast.warning('No emails to export.');
+      toast.warning("No emails to export.");
       return;
     }
 
-    const csvContent = 'data:text/csv;charset=utf-8,' + emails.join('\n');
+    const csvContent = "data:text/csv;charset=utf-8," + emails.join("\n");
     const encodedUri = encodeURI(csvContent);
-    const link = document.createElement('a');
-    link.setAttribute('href', encodedUri);
-    link.setAttribute('download', 'quiz_takers.csv');
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", "quiz_takers.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -43,7 +43,10 @@ const QuizTakersDashboard = () => {
       <div className="mx-auto bg-white rounded-2xl border shadow-sm p-6 max-w-3xl">
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold">Quiz Takers Emails</h2>
-          <Button onClick={handleExport} className="bg-blue-600 text-white hover:bg-blue-700">
+          <Button
+            onClick={handleExport}
+            className="bg-blue-600 text-white hover:bg-blue-700"
+          >
             Export as CSV
           </Button>
         </div>
