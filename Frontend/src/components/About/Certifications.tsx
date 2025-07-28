@@ -2,7 +2,7 @@ import React from 'react';
 
 const Certifications = () => {
   return (
-    <section className="bg-white px-4 sm:px-6 md:px-20 py-12 sm:py-16 text-[#1A365E] font-sans">
+    <section className="bg-white px-4 sm:px-6 md:px-32 py-12 sm:py-16 text-[#1A365E] font-sans">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold">Certifications</h2>

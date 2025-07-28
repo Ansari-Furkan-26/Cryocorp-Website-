@@ -31,7 +31,7 @@ function FloatingButton() {
           <div className="flex justify-between items-center py-2 px-3">
             <button
               onClick={() => setShowAIWidget(false)}
-              className="absolute mt-[130vh] ml-2 md:ml-[65vw] text-gray-500 hover:text-gray-900 transition-colors duration-300 z-10 p-1 rounded-full hover:bg-gray-100"
+              className="absolute left-[-40px] mt-[130vh] ml-2 md:ml-[65vw] text-gray-500 hover:text-gray-900 transition-colors duration-300 z-10 p-1 rounded-full shadow-lg bg-gray-100"
               aria-label="Close AI Widget"
             >
               <FaTimes className="text-xl" />

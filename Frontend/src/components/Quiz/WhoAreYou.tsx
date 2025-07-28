@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoAreYou: React.FC = () => {
   return (
-    <section className="w-full bg-white py-10 px-6 md:px-20 font-sans text-[#1A365E] mt-20 md:mt-40">
+    <section className="w-full bg-white py-10 px-6 md:px-20 font-sans text-[#1A365E] mt-20 md:mt-52 ">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
       

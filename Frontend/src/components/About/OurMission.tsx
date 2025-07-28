@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurMission = () => {
   return (
-    <section className="min-h-screen relative overflow-hidden bg-white py-12 sm:py-20 px-4 sm:px-6 md:px-20">
+    <section className="min-h-screen relative overflow-hidden bg-white py-12 sm:py-20 px-4 sm:px-6 md:px-32">
       {/* === Animated Background Blobs === */}
       <div className="absolute inset-0 z-0">
         {/* Light Green Blob */}

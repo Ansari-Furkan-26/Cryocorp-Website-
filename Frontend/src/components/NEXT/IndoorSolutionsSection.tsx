@@ -33,7 +33,7 @@ Introducing the Summits Pneuzorb series Compact Air Dryers, engineered to delive
 
 const IndoorSolutionsSection = () => {
   return (
-    <section className="max-w-7xl mx-auto px-6 sm:py-12 space-y-24">
+    <section className="max-w-7xl mx-auto px-6 pb-20 sm:pb-0 sm:py-12 space-y-24">
       {sections.map((sec) => (
         <div
           key={sec.id}
