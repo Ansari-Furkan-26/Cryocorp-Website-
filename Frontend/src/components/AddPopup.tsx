@@ -71,7 +71,7 @@ const StepwisePopup = () => {
       actions: [
         {
           text: "BOOK NOW",
-          path: "/#cta",
+          path: "https://calendly.com/admin-cryocorp/new-meeting",
           primary: true
         }
       ]

@@ -48,44 +48,42 @@ const DustFilter = () => {
       number: "04",
       title: "COMPLETE ASSEMBLY OF DUST & ACTIVATED CARBON FILTER",
       imageSrc: "dustFilter/4.png",
-      customCss:"rotate-[45deg]"
+      customCss: "rotate-[45deg]",
     },
   ];
 
   return (
-    <div id="dust-filter-section" className="w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-20">
+    <div
+      id="dust-filter-section"
+      className="w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-20"
+    >
       {/* Header Section */}
-      <div className="mb-8">
-        <h1 className="text-lg font-bold text-catalog-header mb-4">
-          05.
-          <br />
-          DUST FILTER AND OIL ABSORBER
-        </h1>
+      <div className="mb-8 flex flex-col lg:flex-row lg:gap-32">
+        <div className="sm:max-w-[60%]">
+          <h1 className="text-lg font-bold text-catalog-header mb-4">
+            05.
+            <br />
+            DUST FILTER AND OIL ABSORBER
+          </h1>
 
-        <div className="text-sm text-catalog-text leading-relaxed mb-6">
-          <p className="sm:max-w-[50%]">
-            Situated in the process after the chiiling tank, these units remove
-            dust, oil, and other contaminants from the compressed cool air.
-            Acticated Carbon oil absorber filter is made of M.S. capsule shape
-            vessel with activated filter carbon with 2 Nos. sand filters inside.
-            This equipment assists absorption of Hydro carbons in the process
-            air. The Dust Ceramic Filter: -This equipment is made of M.S and in
-            cylindrical in shape. It consists of micro-ceramic filters to avoid
-            entry of dust to the MSB . This purification step is critical for
-            protecting downstream equipment and ensuring the air entering the
-            separation process is clean. Spare parts, including filter elements
-            and carbon, are available.
-          </p>
+          <div className="text-sm text-catalog-text leading-relaxed mb-6">
+            <p className="sm:max-w-[80%]">
+              Situated in the process after the chiiling tank, these units
+              remove dust, oil, and other contaminants from the compressed cool
+              air. Acticated Carbon oil absorber filter is made of M.S. capsule
+              shape vessel with activated filter carbon with 2 Nos. sand filters
+              inside. This equipment assists absorption of Hydro carbons in the
+              process air. The Dust Ceramic Filter: -This equipment is made of
+              M.S and in cylindrical in shape. It consists of micro-ceramic
+              filters to avoid entry of dust to the MSB . This purification step
+              is critical for protecting downstream equipment and ensuring the
+              air entering the separation process is clean. Spare parts,
+              including filter elements and carbon, are available.
+            </p>
+          </div>
         </div>
-
-        <div className="text-sm text-catalog-text space-y-1 max-w-[50%]">
-          {/* <p>
-                        <span className="font-medium">A.</span> Kirloskar LKG Khapha Compressor: 2HA2TB, 4HA4RI5, 4HA4T8, 4HA4Q, 4HP4Q, 4HB4RI5.
-                    </p>
-                    <p>
-                        <span className="font-medium">B.</span> IR Compressor: 10"x6"x4.75"x2.375"x7"HE4, 12"x7"x4.5"x4"x7"HE4LUB, 16"x10"x6.5"x6"x8"HE4LUB,
-                        A54180, A54225, A54245, A54270, A54300.
-                    </p> */}
+        <div className="sm:mt-10">
+          <img src="/dustFilter/main.png" alt="" />
         </div>
       </div>
 

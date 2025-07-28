@@ -11,13 +11,13 @@ const productData = [
     title: "Ambient Liquid Vapourizer",
     description:
       "These are key components to gasify the liquid from our LOX/Nitrogen storage tanks using natural convection. These fin-type aluminum vaporizers have high thermal efficiency, and come in sizes from 500 Nm³/hr to 10,000 Nm³/hr. Their design eliminates the need for electricity or fuel-based heating, supporting a clean and cost-effective mode of vaporization.",
-    image: "/LBU/LBU2.png",
+    image: "/LBU/LBU3.png",
   },
   {
     title: "Liquid Oxygen/ Nitrogen Pumps",
     description:
       "These are a major component of the Liquid Bottling Station Plant. Their role is to pressurize the cryogenic fluid before it's vaporized and filled in gas cylinders. CRYO CORP provides high-efficiency piston-type pumps used in both cylinder filling and gas transfer operations. Available in multiple flow & pressure ratings, they are built to precise specifications and come with PLC-controlled automation.",
-    image: "/LBU/LBU3.png",
+    image: "/LBU/LBU2.png",
   },
 ];
 
@@ -39,7 +39,7 @@ const LiquidProductsSection: React.FC = () => {
             />
           </div>
           <div className="w-full md:w-1/2">
-            <h3 className="text-xl font-bold text-gray-800 mb-3">
+            <h3 className="text-[32px] font-light text-gray-800 mb-3">
               {product.title}
             </h3>
             <p className="text-gray-700 text-sm leading-relaxed">
@@ -50,9 +50,14 @@ const LiquidProductsSection: React.FC = () => {
       ))}
 
       {/* Footer Note */}
-      <div className="text-xs text-gray-600 text-center border-t pt-8">
-        At Cryo Corp, we take pride in supporting liquid bottling gas plant owners with a comprehensive range of high-performance system components. Whether upgrading, expanding, or starting fresh — our tailored solutions offer long-term value. With strict quality standards like ASME and EN 13458, our team ensures reliability, efficiency, and safety — all designed to maximize performance and uptime for oxygen, nitrogen, argon, CO₂, dry air, and more.
-      </div>
+      <div id="level-3" className="w-full flex justify-center mb-10">
+                <div className="mb-10 sm:w-[80%] pl-4 border-l-[2px] border-gray-400 flex flex-col justify-between gap-10 sm:gap-20">
+                    <p className="text-sm opacity-70 text-catalog-text leading-relaxed max-w-[90%]">
+                        At Cryo Corp, we take pride in supporting liquid bottling gas plant owners with a comprehensive range of high-performance system components. Whether upgrading, expanding, or starting fresh — our tailored solutions offer long-term value. With strict quality standards like ASME and EN 13458, our team ensures reliability, efficiency, and safety — all designed to maximize performance and uptime for oxygen, nitrogen, argon, CO₂, dry air, and more.
+                    </p>
+                    <h1 className="text-lg font-bold text-catalog-header mb-4 opacity-70">LEVEL 2</h1>
+                </div>
+            </div>
     </section>
   );
 };

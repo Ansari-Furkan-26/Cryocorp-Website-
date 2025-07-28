@@ -53,8 +53,21 @@ const Certifications = () => {
           </p>
         </div>
 
+        {/* Other Certificates */}
+        <div className="mt-12">
+          <h4 className="text-sm sm:text-base font-bold mb-3 uppercase">Other Certificates</h4>
+          <ul className="text-sm sm:text-base font-semibold space-y-1 underline text-[#1A365E]">
+            <li><a href="#" target="_blank" rel="noopener noreferrer">BCI</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Channel Partner Agreement Certificate with Summits Hygronics Pvt. Ltd.</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">EEPC</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">IMC</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Trademark</a></li>
+            <li><a href="https://drive.google.com/file/d/1NdVqAChMvHOtm4Gt-koep5n-SIuVKeBe/view?usp=sharing" target="_blank" rel="noopener noreferrer">Udyog Aadhar</a></li>
+          </ul>
+        </div>
+
         {/* Logos */}
-        <div className="grid grid-cols-2 mb-10 sm:mb-0 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center h-[200px]">
+        <div className="grid grid-cols-2 mb-10 sm:mb-0 sm:grid-cols-3 md:grid-cols-5 gap-6 items-center justify-items-center h-[200px] mt-12">
           <img src="/about/logo1.png" alt="Logo 1" className="h-16 sm:h-20 object-contain" />
           <img src="/about/logo2.png" alt="Logo 2" className="h-20 sm:h-28 object-contain" />
           <img src="/about/logo3.png" alt="Logo 3" className="h-20 sm:h-20 object-contain" />

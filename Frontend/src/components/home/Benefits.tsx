@@ -150,290 +150,271 @@ const prevSlide = () => {
   setCurrentSlide((prev) => (prev - 1 + features.length) % features.length);
 };
 
-  const ReliabilityModal = () => (
-    <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
-      <ModalContent>
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
-          <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
-            {/* Background Image with Blue Filter */}
-            <div className="absolute inset-0">
-              <img
-                src="benefits/benefits2.png"
-                alt="Reliability Process Flow"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </div>
-
-            <div className="absolute inset-0 bg-blue-900/70" />
-
-            {/* Close Button */}
-            <button
-              onClick={() => setShowReliabilityModal(false)}
-              className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
-            >
-              <X className="h-6 w-6 text-white" />
-            </button>
-
-            {/* Content Grid */}
-            <div className="relative z-10 h-full flex items-center p-8">
-              <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-8 w-full items-center">
-                {/* Left Content */}
-                <div className="text-left space-y-8">
-                  <div className="text-8xl lg:text-9xl font-bold text-white leading-none">
-                    01
-                  </div>
-                  <div className="space-y-4">
-                    <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-                      Reliability
-                    </h2>
-                    <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-                      Eliminate Plant Downtime
-                    </p>
-                  </div>
+const ReliabilityModal = () => (
+  <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
+    <ModalContent>
+      <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
+        <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+          <div className="absolute inset-0">
+            <img
+              src="benefits/benefits2.png"
+              alt="Reliability Process Flow"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="absolute inset-0 bg-blue-900/70" />
+          <button
+            onClick={() => setShowReliabilityModal(false)}
+            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+          >
+            <X className="h-6 w-6 text-white" />
+          </button>
+          <div className="relative z-10 h-full flex items-center p-4 sm:p-8">
+            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-8 w-full items-center">
+              <div className="text-left space-y-4 sm:space-y-6">
+                <div className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
+                  01
                 </div>
+                <div className="space-y-2 sm:space-y-4">
+                  <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight">
+                    Reliability
+                  </h2>
+                  <p className="text-sm sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
+                    Eliminate Plant Downtime
+                  </p>
+                  <ul className="text-white/90 list-disc pl-5 space-y-1 sm:space-y-2">
+                    <li className="text-sm sm:text-base">1. Cut-out downtime</li>
+                    <li className="text-sm sm:text-base">2. 24-hour crisis response</li>
+                    <li className="text-sm sm:text-base">3. Save up to $463 per avoided shutdown</li>
+                  </ul>
+                  <p className="text-sm sm:text-base text-white/90">
+                    Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
+                  </p>
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
+                    Take test
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-end">
+                <div className="rounded-lg">
+                  <img
+                    src="benefits/benefits1.png"
+                    alt="Reliability Process Flow"
+                    className="w-full max-w-full sm:w-[800px] h-auto sm:h-[400px] rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ModalContent>
+  </ModalWrapper>
+);
 
-                {/* Right Content - Process Flow Image */}
-                <div className="flex justify-center lg:justify-end">
-                  <div className="rounded-lg">
-                    <img
-                      src="benefits/benefits1.png"
-                      alt="Reliability Process Flow"
-                      className="w-full max-w-full sm:w-[800px] h-auto sm:h-[400px] rounded-lg shadow-lg"
-                    />
+const CostModal = () => (
+  <ModalWrapper onClose={() => setShowCostModal(false)}>
+    <ModalContent>
+      <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
+        <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+          <div className="absolute inset-0">
+            <img
+              src="benefits/benefits3.png"
+              alt="Cost Reduction Background"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="absolute inset-0 bg-[rgba(179,210,214,0.7)]"></div>
+          <button
+            onClick={() => setShowCostModal(false)}
+            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+          >
+            <X className="h-6 w-6 text-white" />
+          </button>
+          <div className="relative z-10 h-full flex items-center p-4 sm:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-6 w-full items-center">
+              <div className="text-left space-y-4 sm:space-y-8">
+                <div className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
+                  02
+                </div>
+                <div className="space-y-2 sm:space-y-4">
+                  <h2 className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight">
+                    Cost
+                  </h2>
+                  <p className="text-sm sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
+                    Reduce Operations Cost
+                  </p>
+                  <p className="text-sm sm:text-base text-white/90">
+                    Ready to see how much you can save? Take our quick Plant Assessment and start cutting costs today!
+                  </p>
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
+                    Take test
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-end">
+                <div className="rounded-lg">
+                  <img
+                    src="benefits/benefits4.png"
+                    alt="Cost Analysis Chart"
+                    className="w-full max-w-full sm:w-[630px] h-auto sm:h-[600px] rounded-lg shadow-lg object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ModalContent>
+  </ModalWrapper>
+);
+
+const MaintenanceModal = () => (
+  <ModalWrapper onClose={() => setShowMaintenanceModal(false)}>
+    <ModalContent>
+      <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
+        <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+          <div className="absolute inset-0">
+            <img
+              src="benefits/benefits5.png"
+              alt="Maintenance Background"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="absolute inset-0 bg-[rgba(156,203,171,0.7)]" />
+          <button
+            onClick={() => setShowMaintenanceModal(false)}
+            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+          >
+            <X className="h-6 w-6 text-white" />
+          </button>
+          <div className="relative z-10 h-full flex items-center p-4 sm:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-6 w-full items-center">
+              <div className="text-left space-y-4 sm:space-y-8">
+                <div className="text-5xl sm:text-6xl lg:text-9xl font-bold text-white leading-none">
+                  03
+                </div>
+                <div className="space-y-2 sm:space-y-4">
+                  <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white leading-tight">
+                    Maintenance
+                  </h2>
+                  <p className="text-sm sm:text-lg lg:text-2xl text-black leading-relaxed">
+                    Extend Equipment Lifespan
+                  </p>
+                  <ul className="text-black list-disc pl-5 space-y-1 sm:space-y-2">
+                    <li className="text-sm sm:text-base">1. Prolonged equipment lifespan with fewer breakdowns</li>
+                    <li className="text-sm sm:text-base">2. Reduced spare parts consumption due to quality maintenance</li>
+                    <li className="text-sm sm:text-base">3. Improved operational efficiency and cost savings</li>
+                  </ul>
+                  <p className="text-sm sm:text-base text-black">
+                    Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
+                  </p>
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
+                    Take test
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-center lg:justify-end">
+                <div className="rounded-lg p-4">
+                  <img
+                    src="benefits/benefits-6.png"
+                    alt="Maintenance Process"
+                    className="w-full sm:w-[500px] h-auto sm:h-[400px] rounded-lg shadow-lg object-cover overflow-visible"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ModalContent>
+  </ModalWrapper>
+);
+
+const EfficiencyModal = () => (
+  <ModalWrapper onClose={() => setShowEfficiencyModal(false)}>
+    <ModalContent>
+      <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
+        <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
+          <div className="absolute inset-0">
+            <img
+              src="benefits/benefits7.png"
+              alt="Efficiency Background"
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="absolute inset-0 bg-[rgba(80,83,84,0.7)]" />
+          <button
+            onClick={() => setShowEfficiencyModal(false)}
+            className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
+          >
+            <X className="h-6 w-6 text-white" />
+          </button>
+          <div className="relative z-10 h-full flex items-center p-4 sm:p-12">
+            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-6 w-full items-center">
+              <div className="text-left space-y-2">
+                <div className="text-5xl sm:text-6xl lg:text-9xl font-bold text-white leading-none">
+                  04
+                </div>
+                <div className="space-y-2 sm:space-y-2">
+                  <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white leading-tight">
+                    Efficiency
+                  </h2>
+                  <p className="text-sm sm:text-lg lg:text-2xl text-white/90 leading-relaxed">
+                    Ensure Production Continuity
+                  </p>
+                  <ul className="text-white/90 list-disc pl-5 space-y-1 sm:space-y-2">
+                    <li className="text-sm sm:text-base">1. Consistent oxygen purity (93-95% for PSA, 99%+ for ASU)</li>
+                    <li className="text-sm sm:text-base">2. Uninterrupted operations and fast problem resolution</li>
+                    <li className="text-sm sm:text-base">3. Avoid production delays and financial losses from breakdowns (up to ₹75,000 saved per incident)</li>
+                    <li className="text-sm sm:text-base">4. International safety standards for peace of mind</li>
+                  </ul>
+                  <p className="text-sm sm:text-base text-white/90">
+                    Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
+                  </p>
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
+                    Take test
+                  </button>
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center lg:justify-end text-white space-y-4 sm:space-y-6">
+                <div className="rounded-lg max-w-full">
+                  <img
+                    src="benefits/benefits8.png"
+                    alt="Efficiency Dashboard"
+                    className="w-full max-w-[800px] h-auto object-contain rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 text-center mt-2 sm:mt-3 px-2">
+                  <div className="max-w-[120px] mx-auto">
+                    <p className="font-medium text-xs sm:text-sm leading-tight">Zero Downtime</p>
+                    <p className="text-white/70 text-[8px] sm:text-[10px] leading-snug mt-1">Minimizing interruptions with fast service</p>
+                  </div>
+                  <div className="max-w-[120px] mx-auto">
+                    <p className="font-medium text-xs sm:text-sm leading-tight">Smart Optimization</p>
+                    <p className="text-white/70 text-[8px] sm:text-[10px] leading-snug mt-1">Boosting output and efficiency</p>
+                  </div>
+                  <div className="max-w-[120px] mx-auto">
+                    <p className="font-medium text-xs sm:text-sm leading-tight">Proactive Maintenance</p>
+                    <p className="text-white/70 text-[8px] sm:text-[10px] leading-snug mt-1">Preventing features with regular check-ups</p>
+                  </div>
+                  <div className="max-w-[120px] mx-auto">
+                    <p className="font-medium text-xs sm:text-sm leading-tight">No Waiting for Spares</p>
+                    <p className="text-white/70 text-[8px] sm:text-[10px] leading-snug mt-1">Ensuring parts availability for repairs</p>
+                  </div>
+                  <div className="max-w-[120px] mx-auto">
+                    <p className="font-medium text-xs sm:text-sm leading-tight">Expert Team</p>
+                    <p className="text-white/70 text-[8px] sm:text-[10px] leading-snug mt-1">Providing skilled engineers and training</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </ModalContent>
-    </ModalWrapper>
-  );
-
-  const CostModal = () => (
-    <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
-      <ModalContent>
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
-          <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
-            {/* Background Image with Green Filter */}
-            <div className="absolute inset-0">
-              <img
-                src="benefits/benefits3.png"
-                alt="Cost Reduction Background"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </div>
-
-            <div className="absolute inset-0 bg-[rgba(179,210,214,0.7)]"></div>
-
-            {/* Close Button */}
-            <button
-              onClick={() => setShowCostModal(false)}
-              className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
-            >
-              <X className="h-6 w-6 text-white" />
-            </button>
-
-            {/* Content Grid */}
-            <div className="relative z-10 h-full flex items-center p-6 sm:p-12">
-              <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-6 w-full items-center">
-                {/* Left Content */}
-                <div className="text-left space-y-8">
-                  <div className="text-8xl lg:text-9xl font-bold text-white leading-none">
-                    02
-                  </div>
-                  <div className="space-y-4">
-                    <h2 className="text-4xl lg:text-6xl font-bold text-white leading-tight">
-                      Cost
-                    </h2>
-                    <p className="text-xl lg:text-2xl text-white/90 leading-relaxed">
-                      Reduce Operations Cost
-                    </p>
-                  </div>
-                </div>
-
-                {/* Right Content - Cost Analysis Image */}
-                <div className="flex justify-center lg:justify-end">
-                  <div className="rounded-lg">
-                    <img
-                      src="benefits/benefits4.png"
-                      alt="Cost Analysis Chart"
-                      className="w-full max-w-full sm:w-[630px] h-auto sm:h-[600px] rounded-lg shadow-lg object-cover"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ModalContent>
-    </ModalWrapper>
-  );
-
-  const MaintenanceModal = () => (
-    <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
-      <ModalContent>
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
-          <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
-            {/* Background Image with Orange Filter */}
-            <div className="absolute inset-0">
-              <img
-                src="benefits/benefits5.png"
-                alt="Maintenance Background"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </div>
-
-            <div className="absolute inset-0 bg-[rgba(156,203,171,0.7)]" />
-
-            {/* Close Button */}
-            <button
-              onClick={() => setShowMaintenanceModal(false)}
-              className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
-            >
-              <X className="h-6 w-6 text-white" />
-            </button>
-
-            {/* Content Grid */}
-            <div className="relative z-10 h-full flex items-center p-6 sm:p-12">
-              <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-6 w-full items-center">
-                {/* Left Content */}
-                <div className="text-left space-y-8">
-                  <div className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
-                    03
-                  </div>
-                  <div className="space-y-4">
-                    <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight">
-                      Maintenance
-                    </h2>
-                    <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
-                      Extend Equipment Lifespan
-                    </p>
-                  </div>
-                </div>
-
-                {/* Right Content - Maintenance Process Image */}
-                <div className="flex justify-center lg:justify-end">
-                  <div className="rounded-lg p-4">
-                    <img
-                      src="benefits/benefits-6.png"
-                      alt="Maintenance Process"
-                      className="w-full sm:w-[500px] h-auto sm:h-[400px] rounded-lg shadow-lg object-cover overflow-visible"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ModalContent>
-    </ModalWrapper>
-  );
-
-  const EfficiencyModal = () => (
-    <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
-      <ModalContent>
-        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
-          <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
-            {/* Background Image with Purple Filter */}
-            <div className="absolute inset-0">
-              <img
-                src="benefits/benefits7.png"
-                alt="Efficiency Background"
-                className="w-full h-full object-cover rounded-lg shadow-lg"
-              />
-            </div>
-
-            <div className="absolute inset-0 bg-[rgba(80,83,84,0.7)]" />
-
-            {/* Close Button */}
-            <button
-              onClick={() => setShowEfficiencyModal(false)}
-              className="absolute top-6 right-6 z-20 bg-white/20 hover:bg-white/30 rounded-full p-3 transition-colors"
-            >
-              <X className="h-6 w-6 text-white" />
-            </button>
-
-            {/* Content Grid */}
-            <div className="relative z-10 h-full flex items-center p-6 sm:p-12">
-              <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-6 w-full items-center">
-                {/* Left Content */}
-                <div className="text-left space-y-8">
-                  <div className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
-                    04
-                  </div>
-                  <div className="space-y-4">
-                    <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white leading-tight">
-                      Efficiency
-                    </h2>
-                    <p className="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
-                      Ensure Production Continuity
-                    </p>
-                  </div>
-                </div>
-
-                {/* Right Content - Efficiency Dashboard Image with Labels */}
-                <div className="flex flex-col items-center justify-center lg:justify-end text-white space-y-6">
-                  <div className="rounded-lg max-w-full">
-                    <img
-                      src="benefits/benefits8.png"
-                      alt="Efficiency Dashboard"
-                      className="w-full max-w-[800px] h-auto object-contain rounded-lg shadow-lg"
-                    />
-                  </div>
-
-                  {/* Labels below image */}
-                  {/* Labels below image - compact version */}
-                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-2 text-center mt-3 px-2">
-                    <div className="max-w-[120px] mx-auto">
-                      <p className="font-medium text-xs leading-tight">
-                        Zero Downtime
-                      </p>
-                      <p className="text-white/70 text-[10px] leading-snug mt-1">
-                        Minimizing interruptions with fast service
-                      </p>
-                    </div>
-                    <div className="max-w-[120px] mx-auto">
-                      <p className="font-medium text-xs leading-tight">
-                        Smart Optimization
-                      </p>
-                      <p className="text-white/70 text-[10px] leading-snug mt-1">
-                        Boosting output and efficiency
-                      </p>
-                    </div>
-                    <div className="max-w-[120px] mx-auto">
-                      <p className="font-medium text-xs leading-tight">
-                        Proactive Maintenance
-                      </p>
-                      <p className="text-white/70 text-[10px] leading-snug mt-1">
-                        Preventing features with regular check-ups
-                      </p>
-                    </div>
-                    <div className="max-w-[120px] mx-auto">
-                      <p className="font-medium text-xs leading-tight">
-                        No Waiting for Spares
-                      </p>
-                      <p className="text-white/70 text-[10px] leading-snug mt-1">
-                        Ensuring parts availability for repairs
-                      </p>
-                    </div>
-                    <div className="max-w-[120px] mx-auto">
-                      <p className="font-medium text-xs leading-tight">
-                        Expert Team
-                      </p>
-                      <p className="text-white/70 text-[10px] leading-snug mt-1">
-                        Providing skilled engineers and training
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </ModalContent>
-    </ModalWrapper>
-  );
+      </div>
+    </ModalContent>
+  </ModalWrapper>
+);
 
   const getClickHandler = (title) => {
     switch (title) {

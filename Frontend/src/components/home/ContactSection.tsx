@@ -3,7 +3,7 @@ import GoogleMap from "./GoogleMap";
 
 const ContactSection = () => {
   return (
-    <section className="py-10 px-4 sm:px-6 md:px-20 bg-white md:pb-32">
+    <section className="py-10 px-4 sm:px-6 md:px-20 bg-white">
       <div className="mx-auto">
         {/* Google Map Integration */}
         <div className=" animate-fade-in-up">

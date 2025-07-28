@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const IndustriesAnimatedSection2 = () => {
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   const listContainerRef = useRef(null);
-  const industriesRef = useRef([]);
   const textRef = useRef(null);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -44,7 +40,7 @@ const IndustriesAnimatedSection2 = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (isMobile) {
-        // Mobile - Automatic horizontal sliding without pinning or scroll-based animation
+        // Mobile - Automatic horizontal sliding
         const totalWidth = industries.length * ITEM_WIDTH;
         const duration = industries.length * 2; // 2 seconds per item for smooth auto-slide
 
@@ -56,68 +52,21 @@ const IndustriesAnimatedSection2 = () => {
         });
 
       } else {
-        // Desktop - Vertical scrolling (unchanged)
+        // Desktop - Automatic vertical sliding (similar to mobile)
         const totalHeight = industries.length * ITEM_HEIGHT;
-        const containerHeight = window.innerHeight;
-        const scrollLength = totalHeight - containerHeight + 400; // Increased buffer
+        const duration = industries.length * 2; // 2 seconds per item for smooth auto-slide
 
-        // Pin the section
-        ScrollTrigger.create({
-          trigger: sectionRef.current,
-          start: "top top",
-          end: `+=${scrollLength}`,
-          pin: true,
-          scrub: false,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
+        gsap.to(listContainerRef.current, {
+          y: -totalHeight,
+          duration: duration,
+          ease: "none",
+          repeat: -1
         });
-
-        // Animate vertical scroll - Fixed to show all items properly
-        gsap.fromTo(
-          industriesRef.current,
-          { y: 100 }, // Start with a slight offset to show first items
-          {
-            y: -(totalHeight - containerHeight + 200), // End position
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top top",
-              end: `+=${scrollLength}`,
-              scrub: 0.5,
-            }
-          }
-        );
-      }
-
-      // Keep the text fixed (only for desktop)
-      if (!isMobile) {
-        const textScrollLength = industries.length * ITEM_HEIGHT - window.innerHeight + 400;
-
-        gsap.fromTo(
-          textRef.current,
-          { y: 0 },
-          {
-            y: 0,
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top top",
-              end: `+=${textScrollLength}`,
-              scrub: true,
-            }
-          }
-        );
       }
     }, sectionRef);
 
     return () => ctx.revert();
   }, [isMobile, industries.length]);
-
-  // Populate industriesRef with refs for each industry item (only for desktop)
-  const addToRefs = (el) => {
-    if (!isMobile && el && !industriesRef.current.includes(el)) {
-      industriesRef.current.push(el);
-    }
-  };
 
   return (
     <section
@@ -128,14 +77,12 @@ const IndustriesAnimatedSection2 = () => {
         background: 'linear-gradient(to bottom right, #0a192f, #1e3a8a, #0f172a)'
       }}
     >
-      {/* Removed background decoration circles */}
-      
       <div className="max-w-7xl mx-auto w-full relative z-10 px-4">
         <div className={`grid grid-cols-1 lg:grid-cols-5 sm:gap-8 items-center h-full ${isMobile ? 'pt-12 gap-0' : ''}`}>
 
-          {/* Left Content (Pinned Text) */}
+          {/* Left Content (Static Text) */}
           <div ref={textRef} className={`lg:col-span-2 ${isMobile ? 'mb-4' : ''}`}>
-            <div className="sticky top-12 transition-all duration-1000">
+            <div className="transition-all duration-1000">
               <h2 className={`font-bold leading-tight ${isMobile ? 'text-2xl mb-3' : 'text-4xl md:text-6xl mb-6'}`}>
                 Industries We Serve
               </h2>
@@ -152,13 +99,13 @@ const IndustriesAnimatedSection2 = () => {
           <div className={`lg:col-span-3 lg:pl-8 ${isMobile ? 'h-1/2' : ''}`}>
             <div
               ref={containerRef}
-              className={`relative overflow-hidden ${isMobile ? 'h-64' : 'h-screen flex items-start pt-20'}`}
+              className={`relative overflow-hidden ${isMobile ? 'h-64' : 'h-screen flex items-center'}`}
             >
               <div ref={listContainerRef} className={`flex ${isMobile ? 'flex-row' : 'flex-col'} w-full`}>
+                {/* Original industries */}
                 {industries.map((industry, index) => (
                   <div
                     key={industry}
-                    ref={addToRefs}
                     className="flex items-start justify-start flex-shrink-0"
                     style={{ 
                       width: isMobile ? `${ITEM_WIDTH}px` : '100%',
@@ -172,18 +119,20 @@ const IndustriesAnimatedSection2 = () => {
                       bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent
                       leading-tight tracking-tight text-start
                       whitespace-nowrap text-[#2C5EA3]
-                    ${isMobile ? 'text-4xl font-medium text-[#77a8eb]' : 'md:text-8xl'}
+                      ${isMobile ? 'text-4xl font-medium text-[#77a8eb]' : 'md:text-8xl'}
                     `}>
                       {industry}
                     </div>
                   </div>
                 ))}
-                {isMobile && industries.map((industry, index) => (
+                
+                {/* Duplicate industries for seamless loop */}
+                {industries.map((industry, index) => (
                   <div
                     key={`${industry}-dup`}
                     className="flex items-start justify-start flex-shrink-0"
                     style={{ 
-                      width: `${ITEM_WIDTH}px`,
+                      width: isMobile ? `${ITEM_WIDTH}px` : '100%',
                       height: `${ITEM_HEIGHT}px`
                     }}
                   >
@@ -194,7 +143,7 @@ const IndustriesAnimatedSection2 = () => {
                       bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent
                       leading-tight tracking-tight text-start
                       whitespace-nowrap text-[#2C5EA3]
-                      text-4xl font-medium text-[#77a8eb]
+                      ${isMobile ? 'text-4xl font-medium text-[#77a8eb]' : 'md:text-8xl'}
                     `}>
                       {industry}
                     </div>
@@ -205,8 +154,6 @@ const IndustriesAnimatedSection2 = () => {
           </div>
         </div>
       </div>
-
-      {/* Removed the bottom gradient that was causing the white background */}
     </section>
   );
 };

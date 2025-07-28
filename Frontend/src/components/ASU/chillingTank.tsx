@@ -69,38 +69,37 @@ const ChillingTank = () => {
   ];
 
   return (
-    <div id="chilling-tank-section" className="relative w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-20">
+    <div
+      id="chilling-tank-section"
+      className="relative w-full bg-background px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pb-12 mt-20"
+    >
       {/* Header Section */}
-      <div className="mb-8 z-1">
-        <h1 className="text-lg font-bold text-catalog-header mb-4">
-          03.
-          <br />
-          CHILLING TANK & CHILLING UNIT
-        </h1>
+      <div className="mb-8 z-1 flex flex-col lg:flex-row lg:gap-32">
+        <div className="md:max-w-[60%]">
+          <h1 className="text-lg font-bold text-catalog-header mb-4">
+            03.
+            <br />
+            CHILLING TANK & CHILLING UNIT
+          </h1>
 
-        <div className="text-sm text-catalog-text leading-relaxed mb-6">
-          <p className="sm:max-w-[50%]">
-            Working in conjunction with a chilling tank, Freon gases industrial
-            Refrigerant type chilling unit with Thermostatic Cooling water Tank
-            and Air coil for cooling cools the water to a low temperature
-            (6-10°C). This chilled water then cools the compressed air, causing
-            moisture and CO2 to condense and be separated. It is an important
-            stage for initial moisture and CO2 removal, contributing to overall
-            air purity before finer purification.This equipment will improve the
-            efficiency of the Molecular Sieve Battery and longevity of the
-            Molecular Sieves. Spares such as compressor parts, valves, and
-            thermostats are available.
-          </p>
+          <div className="text-sm text-catalog-text leading-relaxed mb-6">
+            <p className="sm:max-w-[80%]">
+              Working in conjunction with a chilling tank, Freon gases
+              industrial Refrigerant type chilling unit with Thermostatic
+              Cooling water Tank and Air coil for cooling cools the water to a
+              low temperature (6-10°C). This chilled water then cools the
+              compressed air, causing moisture and CO2 to condense and be
+              separated. It is an important stage for initial moisture and CO2
+              removal, contributing to overall air purity before finer
+              purification.This equipment will improve the efficiency of the
+              Molecular Sieve Battery and longevity of the Molecular Sieves.
+              Spares such as compressor parts, valves, and thermostats are
+              available.
+            </p>
+          </div>
         </div>
-
-        <div className="text-sm text-catalog-text space-y-1 max-w-[50%]">
-          {/* <p>
-                        <span className="font-medium">A.</span> Kirloskar LKG Khapha Compressor: 2HA2TB, 4HA4RI5, 4HA4T8, 4HA4Q, 4HP4Q, 4HB4RI5.
-                    </p>
-                    <p>
-                        <span className="font-medium">B.</span> IR Compressor: 10"x6"x4.75"x2.375"x7"HE4, 12"x7"x4.5"x4"x7"HE4LUB, 16"x10"x6.5"x6"x8"HE4LUB,
-                        A54180, A54225, A54245, A54270, A54300.
-                    </p> */}
+        <div className="">
+          <img src="/chilling/6.png" alt="" className="h-[300px]"/>
         </div>
       </div>
 

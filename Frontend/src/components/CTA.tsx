@@ -123,28 +123,49 @@ function CTA() {
 
         {/* Column 3 - Full Image CTA */}
         <div className="relative overflow-hidden h-full min-h-[400px] md:min-h-[500px] lg:min-h-[400px] col-span-1 lg:col-span-1">
-          <div className="absolute inset-0">
-            <img
-              src="/images/cta-bg.png"
-              alt="Industrial team meeting"
-              className="w-full h-full object-cover"
-            />
-            {/* <div className="absolute inset-0 bg-gradient-to-br from-teal-500/80 to-blue-600/80"></div> */}
-          </div>
+  {/* Background Image */}
+  <div className="absolute inset-0">
+    <img
+      src="/images/cta-bg.png"
+      alt="Industrial team meeting"
+      className="w-full h-full object-cover"
+    />
+  </div>
 
-          <div className="relative z-10 p-6 md:p-8 text-gray-100  text-center h-full flex flex-col justify-center">
-            <div className="mb-4">
-              <p className="md:text-sm mb-2">You can also schedule a meeting</p>
-              <p className="md:text-sm mb-6">appointment at your convenience using our online calendar.</p>
-            </div>
+  {/* Content Overlay */}
+  <div className="relative z-10 p-6 md:p-8 text-gray-100 text-center h-full flex flex-col justify-center items-center">
+    {/* Calendly Logo in Black Circle */}
+    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-black flex items-center justify-center mb-6 shadow-lg">
+      <img
+        src="/calendly.png" // Make sure this path points to your Calendly logo
+        alt="Calendly Logo"
+        className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+      />
+    </div>
 
-            <h3 className="text-lg font-bold mb-6">Get in touch with our team today!</h3>
+    {/* Text */}
+    <div className="mb-4 max-w-[50%] md:max-w-[100%]">
+      <p className="text-xs sm:text-sm mb-1">You can also schedule a meeting</p>
+      <p className="text-xs sm:text-sm">appointment at your convenience using our online calendar.</p>
+    </div>
 
-            <Button className="bg-white/20 backdrop-blur-sm border-4 border-white max-w-[200px] mx-auto text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/30 transition-all duration-300">
-              <a href="https://calendly.com/admin-cryocorp/new-meeting" target='_blank'>Book a slot</a>
-            </Button>
-          </div>
-        </div>
+    <h3 className="text-base sm:text-lg font-bold mb-6 max-w-[50%] md:max-w-[100%]">
+      Get in touch with our team today!
+    </h3>
+
+    {/* Button */}
+    <Button className="bg-white/20 backdrop-blur-sm border-4 border-white max-w-[200px] mx-auto text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/30 transition-all duration-300">
+      <a
+        href="https://calendly.com/admin-cryocorp/new-meeting"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book a slot
+      </a>
+    </Button>
+  </div>
+</div>
+
 
       </div>
     </div>
