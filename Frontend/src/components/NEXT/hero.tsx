@@ -2,12 +2,29 @@ import React from "react";
 import { MessageCircle, Phone, User, ChevronLeft, ChevronRight } from "lucide-react";
 import layerImage from '/public/Layer.png';
 import { useNavigation } from '../../contexts/NavigationContext';
+import { useNavigate } from "react-router-dom";
 
 const ASUPage: React.FC = () => {
-    const { goNext, goPrev } = useNavigation();
+    const { currentPage, updateCurrentPage } = useNavigation();
+    const navigate = useNavigate();
+
+    // Function to handle navigation with URL update
+    const handlePageNavigation = (direction: 'next' | 'prev') => {
+        const productRoutes = ['asu', 'psa', 'lbu', 'next'];
+        let newPage: number;
+        
+        if (direction === 'next') {
+            newPage = currentPage === 4 ? 1 : currentPage + 1;
+        } else {
+            newPage = currentPage === 1 ? 4 : currentPage - 1;
+        }
+        
+        updateCurrentPage(newPage);
+        navigate(`/products/${productRoutes[newPage - 1]}`);
+    };
+
     return (
         <div className="min-h-[300px] md:min-h-[145vh] bg-white relative overflow-hidden pt-6 lg:pt-8">
-
             {/* Main Content */}
             <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
@@ -34,9 +51,6 @@ const ASUPage: React.FC = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-16 lg:pt-16 pt-8">
-                                {/* <a className="block" href="">RELAXAIR</a>
-                                <a className="block" href="">MEDICAL AIR DRYERS</a>
-                                <a className="block" href="">HYDROGEN STORAGE TANKS & FILLING MANIFOLDS</a> */}
                                 <p>RELAXAIR</p>
                                 <p>MEDICAL AIR DRYERS</p>
                                 <p>HYDROGEN STORAGE TANKS & FILLING MANIFOLDS</p>
@@ -55,10 +69,16 @@ const ASUPage: React.FC = () => {
                             
                             {/* Navigation Arrows */}
                             <div className="flex space-x-2 justify-end mt-8">
-                                <div onClick={goPrev} className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                                <div 
+                                    onClick={() => handlePageNavigation('prev')} 
+                                    className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                                >
                                     <ChevronLeft size={20} />
                                 </div>
-                                <div onClick={goNext} className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                                <div 
+                                    onClick={() => handlePageNavigation('next')} 
+                                    className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                                >
                                     <ChevronRight size={20} />
                                 </div>
                             </div>
@@ -66,10 +86,16 @@ const ASUPage: React.FC = () => {
 
                         {/* Mobile Navigation */}
                         <div className="lg:hidden flex justify-center space-x-2 col-span-4">
-                            <div onClick={goPrev} className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                            <div 
+                                onClick={() => handlePageNavigation('prev')} 
+                                className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                            >
                                 <ChevronLeft size={18} />
                             </div>
-                            <div onClick={goNext} className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                            <div 
+                                onClick={() => handlePageNavigation('next')} 
+                                className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                            >
                                 <ChevronRight size={18} />
                             </div>
                         </div>

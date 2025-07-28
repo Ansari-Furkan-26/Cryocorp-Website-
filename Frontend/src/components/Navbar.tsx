@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useNavigation } from "@/contexts/NavigationContext";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isProductsOpen, setIsProductsOpen] = useState(false);
+  const { currentPage, updateCurrentPage } = useNavigation();
 
   // Prevent scrolling when menu is open
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = isMenuOpen ? "hidden" : "auto";
   }, [isMenuOpen]);
 
   // Simple 4 product categories
   const productCategories = [
-    "ASU TECHNOLOGY",
-    "PSA TECHNOLOGY", 
-    "LIQUID BOTTLING UNIT",
-    "NEXT GEN GAS SOLUTIONS"
+    { name: "ASU TECHNOLOGY", route: "asu" },
+    { name: "PSA TECHNOLOGY", route: "psa" },
+    { name: "LIQUID BOTTLING UNIT", route: "lbu" },
+    { name: "NEXT GEN GAS SOLUTIONS", route: "next" },
   ];
 
   return (
@@ -23,15 +25,21 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <a href="/"><img src="/logo.png" alt="logo" className="w-32 md:w-56 md:pt-10" /></a>
+            <a href="/">
+              <img
+                src="/logo.png"
+                alt="logo"
+                className="w-32 md:w-56 md:pt-10"
+              />
+            </a>
           </div>
 
           <nav className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8 font-semibold text-lg text-[#275e64]">
               <a href="/">Home</a>
-              
+
               {/* Products dropdown */}
-              <div 
+              <div
                 className="relative"
                 onMouseEnter={() => setIsProductsOpen(true)}
                 onMouseLeave={() => setIsProductsOpen(false)}
@@ -40,17 +48,17 @@ const Header = () => {
                   Products
                   <ChevronDown size={16} />
                 </button>
-                
+
                 {/* Simple dropdown */}
                 {isProductsOpen && (
-                  <div className="absolute top-[40%] left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border">
+                  <div className="absolute top-[55%] left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border">
                     {productCategories.map((category, index) => (
-                      <a 
+                      <a
                         key={index}
-                        href={`/products/${category.toLowerCase().replace(/\s+/g, '-')}`}
+                        href={`/products/${category.route}`}
                         className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#59C6D3] transition-colors"
                       >
-                        {category}
+                        {category.name}
                       </a>
                     ))}
                   </div>
@@ -91,20 +99,40 @@ const Header = () => {
               <div className="space-y-0">
                 {[
                   { label: "Home", href: "/" },
-                  { label: "Products", href: "/products" },
+                  { label: "Products", href: "/products", hasDropdown: true },
                   { label: "Services", href: "/services" },
                   { label: "Resource Hub", href: "/resources" },
                   { label: "Blog", href: "/blog" },
-                  { label: "About", href: "/about" }
+                  { label: "About", href: "/about" },
                 ].map((item, idx) => (
                   <div key={idx}>
-                    <a
-                      href={item.href}
-                      onClick={() => setIsMenuOpen(false)}
-                      className="block py-4 text-left text-lg font-medium text-[#428b93] hover:text-[#59C6D3] hover:bg-gray-50 hover:pl-4 transition-all duration-300 ease-in-out"
-                    >
-                      {item.label}
-                    </a>
+                    {item.hasDropdown ? (
+                      <div>
+                        <div className="py-4 text-left text-lg font-medium text-[#428b93]">
+                          {item.label}
+                        </div>
+                        <div className="pl-4 space-y-2">
+                          {productCategories.map((category, catIdx) => (
+                            <a
+                              key={catIdx}
+                              href={`/products/${category.route}`}
+                              onClick={() => setIsMenuOpen(false)}
+                              className="block py-2 text-md text-[#428b93] hover:text-[#59C6D3] transition-colors"
+                            >
+                              {category.name}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <a
+                        href={item.href}
+                        onClick={() => setIsMenuOpen(false)}
+                        className="block py-4 text-left text-lg font-medium text-[#428b93] hover:text-[#59C6D3] hover:bg-gray-50 hover:pl-4 transition-all duration-300 ease-in-out"
+                      >
+                        {item.label}
+                      </a>
+                    )}
                     {idx < 5 && (
                       <hr className="border-gray-200 border-t-[0.5px]" />
                     )}

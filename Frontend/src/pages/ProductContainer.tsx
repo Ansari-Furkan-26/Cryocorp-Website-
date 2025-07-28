@@ -1,5 +1,5 @@
 // src/pages/ProductsContainer.tsx
-import React from "react";
+import React, { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import { NavigationProvider } from "../contexts/NavigationContext";
 import Products from "./ASU";
@@ -13,23 +13,29 @@ import { useParams } from "react-router-dom";
 
 const ProductsContainerInner = () => {
   const { currentPage, updateCurrentPage } = useNavigation();
-  const {id} = useParams();
-  console.log(id)
+  const { productType } = useParams();
 
-  if(id == "psa-technology"){
-    updateCurrentPage(2)
-  }
-  else if(id == "liquid-bottling-unit"){
-    updateCurrentPage(3)
-  }
-  else if(id == "next-gen-gas-solutions"){
-    updateCurrentPage(4)
-  }
+  // Map URL parameters to page numbers
+  const getPageFromProductType = (type) => {
+    switch (type) {
+      case 'asu': return 1;
+      case 'psa': return 2;
+      case 'lbu': return 3;
+      case 'next': return 4;
+      default: return 1;
+    }
+  };
+
+  // Update current page based on URL parameter
+  useEffect(() => {
+    if (productType) {
+      const pageNumber = getPageFromProductType(productType);
+      updateCurrentPage(pageNumber);
+    }
+  }, [productType, updateCurrentPage]);
 
   return (
-    <div
-      className={`bg-white relative overflow-x-hidden pt-16 lg:pt-16 xl:pt-16 sm:pt-32 transition-all duration-300`}
-    >
+    <div className={`bg-white relative overflow-x-hidden pt-16 lg:pt-16 xl:pt-16 sm:pt-32 transition-all duration-300`}>
       <AnimatePresence mode="wait">
         {currentPage === 1 && (
           <PageTransition key="page-1" pageIndex={1}>
@@ -57,15 +63,12 @@ const ProductsContainerInner = () => {
 };
 
 const ProductsContainer = () => {
-  
   return (
     <>
       <NavigationProvider>
         <ProductsContainerInner />
       </NavigationProvider>
       <CTA />
-      {/* Add Footer component here if you have one */}
-      {/* <Footer /> */}
     </>
   );
 };

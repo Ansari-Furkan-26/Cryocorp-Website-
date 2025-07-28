@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MessageCircle, Phone, User, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigation } from '../../contexts/NavigationContext';
+import { useNavigate } from "react-router-dom";
 
 const FlipCard = ({ 
     imageSrc, 
@@ -114,13 +115,13 @@ const FlipCard = ({
                             </div>
 
                             {/* External Link Indicator */}
-                        {externalLink && (
-                            <div onClick={handleCardClick} className="absolute top-4 right-4 text-white">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-                                </svg>
-                            </div>
-                        )}
+                            {externalLink && (
+                                <div onClick={handleCardClick} className="absolute top-4 right-4 text-white">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+                                    </svg>
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
@@ -129,9 +130,24 @@ const FlipCard = ({
     );
 };
 
-
 const ASUPage = () => {
-    const { goNext, goPrev } = useNavigation();
+    const { currentPage, updateCurrentPage } = useNavigation();
+    const navigate = useNavigate();
+
+    // Function to handle navigation with URL update
+    const handlePageNavigation = (direction: 'next' | 'prev') => {
+        const productRoutes = ['asu', 'psa', 'lbu', 'next'];
+        let newPage: number;
+        
+        if (direction === 'next') {
+            newPage = currentPage === 4 ? 1 : currentPage + 1;
+        } else {
+            newPage = currentPage === 1 ? 4 : currentPage - 1;
+        }
+        
+        updateCurrentPage(newPage);
+        navigate(`/products/${productRoutes[newPage - 1]}`);
+    };
     
     // Detail cards data
     const detailCards = {
@@ -253,7 +269,6 @@ const ASUPage = () => {
 
                             {/* Level Tags */}
                             <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-32 lg:pt-32 pt-16">
-                                {/* <a href="#level-1-psa">LEVEL 1</a> */}
                                 <p>LEVEL 1</p>
                             </div>
                         </div>
@@ -270,10 +285,16 @@ const ASUPage = () => {
 
                             {/* Navigation Arrows */}
                             <div className="flex space-x-2 justify-end mt-8">
-                                <div onClick={goPrev} className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                                <div 
+                                    onClick={() => handlePageNavigation('prev')} 
+                                    className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                                >
                                     <ChevronLeft size={20} />
                                 </div>
-                                <div onClick={goNext} className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                                <div 
+                                    onClick={() => handlePageNavigation('next')} 
+                                    className="w-12 h-12 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                                >
                                     <ChevronRight size={20} />
                                 </div>
                             </div>
@@ -281,11 +302,17 @@ const ASUPage = () => {
 
                         {/* Mobile Navigation */}
                         <div className="lg:hidden flex justify-center space-x-2 col-span-4">
-                            <div onClick={goPrev} className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
+                            <div 
+                                onClick={() => handlePageNavigation('prev')} 
+                                className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                            >
                                 <ChevronLeft size={18} />
                             </div>
-                            <div onClick={goNext} className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer">
-                                <ChevronRight size={18} />
+                            <div 
+                                onClick={() => handlePageNavigation('next')} 
+                                className="w-10 h-10 border-2 border-gray-300 rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors cursor-pointer"
+                            >
+                                <ChevronRight size={20} />
                             </div>
                         </div>
                     </div>
@@ -302,95 +329,94 @@ const ASUPage = () => {
             <div className="absolute top-2 left-2 text-white text-xs font-bold tracking-wide">LEVEL 1</div>
             
             {/* Desktop Industrial Plant Images Section with Flip Animation */}
-<div className="absolute top-[999px] left-64 -ml-60 right-0 h-[800px] z-10 lg:block hidden">
-    <div className="relative h-full w-full">
-        {/* TOT SERIES OXYGEN PLANT */}
-        <FlipCard
-            imageSrc="/PSA/tot.png"
-            title="TOT SERIES OXYGEN"
-            subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
-            detailCard={detailCards.tot}
-            className="absolute top-0 left-[460px] w-[280px] h-[400px] z-20"
-            externalLink="https://www.instagram.com/reel/DMIGQBvpsgf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
+            <div className="absolute top-[999px] left-64 -ml-60 right-0 h-[800px] z-10 lg:block hidden">
+                <div className="relative h-full w-full">
+                    {/* TOT SERIES OXYGEN PLANT */}
+                    <FlipCard
+                        imageSrc="/PSA/tot.png"
+                        title="TOT SERIES OXYGEN"
+                        subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
+                        detailCard={detailCards.tot}
+                        className="absolute top-0 left-[460px] w-[280px] h-[400px] z-20"
+                        externalLink="https://www.instagram.com/reel/DMIGQBvpsgf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
 
-        {/* OXYGEN GENERATOR - OXYLIFE */}
-        <FlipCard
-            imageSrc="/PSA/oxygen.png"
-            title="OXYGEN GENERATOR-"
-            subtitle="OXYLIFE"
-            detailCard={detailCards.oxylife}
-            className="absolute top-[-200px] left-[800px] w-[400px] h-[280px] z-20"
-            externalLink="https://www.instagram.com/reel/DMIGz6Ip8pB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
+                    {/* OXYGEN GENERATOR - OXYLIFE */}
+                    <FlipCard
+                        imageSrc="/PSA/oxygen.png"
+                        title="OXYGEN GENERATOR-"
+                        subtitle="OXYLIFE"
+                        detailCard={detailCards.oxylife}
+                        className="absolute top-[-200px] left-[800px] w-[400px] h-[280px] z-20"
+                        externalLink="https://www.instagram.com/reel/DMIGz6Ip8pB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
 
-        {/* NITROPAK - NITROGEN GENERATOR PLANT */}
-        <FlipCard
-            imageSrc="/PSA/generator.png"
-            title="NitroPAK-"
-            subtitle="NITROGEN GENERATOR PLANT"
-            detailCard={detailCards.nitropak}
-            className="absolute left-[290px] top-[-250px] w-[450px] h-[250px] z-20"
-            externalLink="https://www.instagram.com/reel/DMIEkmop-yq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
+                    {/* NITROPAK - NITROGEN GENERATOR PLANT */}
+                    <FlipCard
+                        imageSrc="/PSA/generator.png"
+                        title="NitroPAK-"
+                        subtitle="NITROGEN GENERATOR PLANT"
+                        detailCard={detailCards.nitropak}
+                        className="absolute left-[290px] top-[-250px] w-[450px] h-[250px] z-20"
+                        externalLink="https://www.instagram.com/reel/DMIEkmop-yq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
 
-        {/* MAPS SERIES - NITROGEN GENERATOR */}
-        <FlipCard
-            imageSrc="/PSA/nitrogen.png"
-            title="MAPS SERIES-"
-            subtitle="NITROGEN GENERATOR"
-            detailCard={detailCards.maps}
-            className="absolute top-[-410px] right-[-770px] w-[350px] h-[350px] z-20"
-            externalLink="https://www.instagram.com/reel/DMH8sE4pB7w/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
-    </div>
-</div>
+                    {/* MAPS SERIES - NITROGEN GENERATOR */}
+                    <FlipCard
+                        imageSrc="/PSA/nitrogen.png"
+                        title="MAPS SERIES-"
+                        subtitle="NITROGEN GENERATOR"
+                        detailCard={detailCards.maps}
+                        className="absolute top-[-410px] right-[-770px] w-[350px] h-[350px] z-20"
+                        externalLink="https://www.instagram.com/reel/DMH8sE4pB7w/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
+                </div>
+            </div>
 
-{/* Mobile Plant Images Section with Flip Animation */}
-<div className="lg:hidden block px-4 mt-8">
-    <div className="space-y-6">
-        {/* TOT SERIES OXYGEN PLANT */}
-        <FlipCard
-            imageSrc="/PSA/tot.png"
-            title="TOT SERIES OXYGEN"
-            subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
-            detailCard={detailCards.tot}
-            className="w-full h-48"
-            externalLink="https://www.instagram.com/reel/DMIGQBvpsgf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
+            {/* Mobile Plant Images Section with Flip Animation */}
+            <div className="lg:hidden block px-4 mt-8">
+                <div className="space-y-6">
+                    {/* TOT SERIES OXYGEN PLANT */}
+                    <FlipCard
+                        imageSrc="/PSA/tot.png"
+                        title="TOT SERIES OXYGEN"
+                        subtitle="PLANT- ONSITE COMPACT OXYGEN GENERATOR"
+                        detailCard={detailCards.tot}
+                        className="w-full h-48"
+                        externalLink="https://www.instagram.com/reel/DMIGQBvpsgf/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
 
-        {/* OXYGEN GENERATOR - OXYLIFE */}
-        <FlipCard
-            imageSrc="/PSA/generator.png"
-            title="OXYGEN GENERATOR-"
-            subtitle="OXYLIFE"
-            detailCard={detailCards.oxylife}
-            className="w-full h-48"
-            externalLink="https://www.instagram.com/reel/DMIGz6Ip8pB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
+                    {/* OXYGEN GENERATOR - OXYLIFE */}
+                    <FlipCard
+                        imageSrc="/PSA/generator.png"
+                        title="OXYGEN GENERATOR-"
+                        subtitle="OXYLIFE"
+                        detailCard={detailCards.oxylife}
+                        className="w-full h-48"
+                        externalLink="https://www.instagram.com/reel/DMIGz6Ip8pB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
 
-        {/* NITROPAK - NITROGEN GENERATOR PLANT */}
-        <FlipCard
-            imageSrc="/PSA/generator.png"
-            title="NitroPAK-"
-            subtitle="NITROGEN GENERATOR PLANT"
-            detailCard={detailCards.nitropak}
-            className="w-full h-48"
-            externalLink="https://www.instagram.com/reel/DMIEkmop-yq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
+                    {/* NITROPAK - NITROGEN GENERATOR PLANT */}
+                    <FlipCard
+                        imageSrc="/PSA/generator.png"
+                        title="NitroPAK-"
+                        subtitle="NITROGEN GENERATOR PLANT"
+                        detailCard={detailCards.nitropak}
+                        className="w-full h-48"
+                        externalLink="https://www.instagram.com/reel/DMIEkmop-yq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
 
-        {/* MAPS SERIES - NITROGEN GENERATOR */}
-        <FlipCard
-            imageSrc="/PSA/nitrogen.png"
-            title="MAPS SERIES-"
-            subtitle="NITROGEN GENERATOR"
-            detailCard={detailCards.maps}
-            className="w-full h-48"
-            externalLink="https://www.instagram.com/reel/DMH8sE4pB7w/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        />
-    </div>
-</div>
-
+                    {/* MAPS SERIES - NITROGEN GENERATOR */}
+                    <FlipCard
+                        imageSrc="/PSA/nitrogen.png"
+                        title="MAPS SERIES-"
+                        subtitle="NITROGEN GENERATOR"
+                        detailCard={detailCards.maps}
+                        className="w-full h-48"
+                        externalLink="https://www.instagram.com/reel/DMH8sE4pB7w/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                    />
+                </div>
+            </div>
         </div>
     );
 };
