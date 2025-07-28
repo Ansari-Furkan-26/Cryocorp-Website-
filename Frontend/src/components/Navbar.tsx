@@ -1,13 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
 
   // Prevent scrolling when menu is open
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
   }, [isMenuOpen]);
+
+  // Simple 4 product categories
+  const productCategories = [
+    "ASU TECHNOLOGY",
+    "PSA TECHNOLOGY", 
+    "LIQUID BOTTLING UNIT",
+    "NEXT GEN GAS SOLUTIONS"
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg">
@@ -20,7 +29,34 @@ const Header = () => {
           <nav className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-8 font-semibold text-lg text-[#275e64]">
               <a href="/">Home</a>
-              <a href="/products">Products</a>
+              
+              {/* Products dropdown */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsProductsOpen(true)}
+                onMouseLeave={() => setIsProductsOpen(false)}
+              >
+                <button className="flex items-center gap-1 hover:text-[#59C6D3] transition-colors duration-200">
+                  Products
+                  <ChevronDown size={16} />
+                </button>
+                
+                {/* Simple dropdown */}
+                {isProductsOpen && (
+                  <div className="absolute top-[40%] left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border">
+                    {productCategories.map((category, index) => (
+                      <a 
+                        key={index}
+                        href={`/products/${category.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#59C6D3] transition-colors"
+                      >
+                        {category}
+                      </a>
+                    ))}
+                  </div>
+                )}
+              </div>
+
               <a href="/services">Services</a>
               <a href="/Resources">Resource Hub</a>
               <a href="/blog">Blog</a>
@@ -47,12 +83,10 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu with white background overlay */}
+      {/* Mobile menu remains the same */}
       {isMenuOpen && (
         <div className="min-h-screen z-40 bg-white">
-          {/* Mobile menu container */}
           <div className="flex flex-col h-full px-6 pt-20">
-            {/* Navigation Links */}
             <nav className="flex-1">
               <div className="space-y-0">
                 {[
@@ -71,7 +105,6 @@ const Header = () => {
                     >
                       {item.label}
                     </a>
-                    {/* Divider line between nav items */}
                     {idx < 5 && (
                       <hr className="border-gray-200 border-t-[0.5px]" />
                     )}
@@ -80,11 +113,8 @@ const Header = () => {
               </div>
             </nav>
 
-            {/* Bottom section with quiz button */}
             <div className="pb-8">
-              {/* Final divider before button */}
               <hr className="border-gray-300 border-t-[1px] mb-6" />
-              
               <a href="/quiz-form" onClick={() => setIsMenuOpen(false)}>
                 <button className="w-full bg-[#59C6D3] hover:bg-[#4bb5c2] text-white text-base rounded-3xl px-6 py-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
                   Take Your Plant Efficiency Test!

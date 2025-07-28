@@ -44,10 +44,6 @@ const IndustrialDiagram: React.FC = () => {
           className="w-full h-auto"
         />
         </div>
-        <div className="md:max-w-[60%] flex flex-col md:flex-row sm:ml-12 ">
-            <img src="/ASU/bottom-left.png" alt="" className="sm:h-[110px]"/>
-            <img src="/ASU/bottom-right.jpg" alt="" className="sm:h-[110px] h-[100px] w-[140px]"/>
-        </div>
       </div>
     </div>
   );

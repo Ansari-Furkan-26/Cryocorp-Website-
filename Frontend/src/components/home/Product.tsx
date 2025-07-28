@@ -2,14 +2,14 @@ import React from 'react';
 
 const PromotionBanner = () => {
   return (
-    <div className="relative w-full h-screen bg-[#1B365D]">
+    <div className="relative w-full bg-[#1B365D]">
       {/* Responsive Background Image */}
       <picture>
         <source media="(max-width: 768px)" srcSet="/promotion-mobile.png" />
         <img
           src="/promotion-desktop.png"
           alt="Promotion"
-          className="w-full h-full max-h-screen object-contain xl:object-cover"
+          className="w-full max-h-screen object-contain xl:object-cover"
         />
       </picture>
 

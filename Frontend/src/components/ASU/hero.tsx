@@ -145,7 +145,7 @@ const ASUPage: React.FC = () => {
                     </div>
 
                     {/* SECOND HAND ASU PLANT (Top Right) */}
-                    <div className="absolute top-[250px] right-[210px] w-64 h-64">
+                    <div className="absolute top-[250px] left-[830px] w-64 h-64">
                         <div className="relative w-[300px] h-full overflow-hidden shadow-lg">
                             <img
                                 src="/ASU/asu3.png"

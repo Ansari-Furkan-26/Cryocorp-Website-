@@ -56,7 +56,7 @@ const App = () => {
             {/* ✅ Public routes with shared PublicLayout (navbar/footer) */}
             <Route element={<Layout />}>
               <Route path="/" element={<Index />} />
-              <Route path="/products" element={<ProductsContainer />} />
+              <Route path="/products/:id" element={<ProductsContainer />} />
               <Route path="/services" element={<Services />} />
               <Route path="/resources" element={<Resources />} />
               <Route path="/about" element={<About />} />

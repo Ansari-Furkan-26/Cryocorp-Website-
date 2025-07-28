@@ -89,7 +89,7 @@ const VectorImageSlider = () => {
   };
 
   return (
-    <div className="w-full bg-white py-4 border-t border-b border-gray-300">
+    <div className="w-full bg-white py-4 border-b border-gray-300">
       <div className="mx-auto px-4 overflow-x-auto flex">
         <div className="inline-flex items-end space-x-4">
           {vectorImages.map((image, index) => (

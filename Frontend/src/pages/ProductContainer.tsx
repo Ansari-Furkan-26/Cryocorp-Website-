@@ -9,9 +9,22 @@ import Products4 from "./NEXT";
 import { useNavigation } from "../contexts/NavigationContext";
 import { PageTransition } from "../components/PageTransition";
 import CTA from "@/components/CTA";
+import { useParams } from "react-router-dom";
 
 const ProductsContainerInner = () => {
-  const { currentPage } = useNavigation();
+  const { currentPage, updateCurrentPage } = useNavigation();
+  const {id} = useParams();
+  console.log(id)
+
+  if(id == "psa-technology"){
+    updateCurrentPage(2)
+  }
+  else if(id == "liquid-bottling-unit"){
+    updateCurrentPage(3)
+  }
+  else if(id == "next-gen-gas-solutions"){
+    updateCurrentPage(4)
+  }
 
   return (
     <div
@@ -44,6 +57,7 @@ const ProductsContainerInner = () => {
 };
 
 const ProductsContainer = () => {
+  
   return (
     <>
       <NavigationProvider>
