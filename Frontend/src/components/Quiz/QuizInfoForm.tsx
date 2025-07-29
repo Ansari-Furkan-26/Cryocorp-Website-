@@ -56,11 +56,11 @@ const QuizModal: React.FC<QuizModalProps> = ({ isOpen, onClose }) => {
             // const name = (e.target as any).name.value;
             const email = (e.target as any).email.value;
             // store the data in backend
-            await axios.post(" https://api.cryocorp.in/api/email/emails", {
+            window.location.href = `/quiz/${link}.html`;
+            await axios.post("https://api.cryocorp.in/api/email/emails", {
               email,
             });
             console.log("Submitted:", { email });
-            window.location.href = `/quiz/${link}.html`;
             onClose();
           }}
           className="space-y-5"
