@@ -44,7 +44,7 @@ const ASUPage: React.FC = () => {
 
                             {/* Description */}
                             <div className="w-full pt-24 lg:pt-24 pt-8">
-                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm">
+                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm  text-justify">
                                     Air Separation Unit (ASU) technology is at the heart of CryoCorp's operations — a cutting-edge process
                                     where atmospheric air is compressed, cooled, and separated into its key components: oxygen, nitrogen,
                                     and argon. These gases are then purified, liquefied, or stored in gaseous form depending on industrial

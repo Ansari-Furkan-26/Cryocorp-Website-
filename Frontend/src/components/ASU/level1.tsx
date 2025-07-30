@@ -4,7 +4,7 @@ const IndustrialDiagram: React.FC = () => {
   return (
     <div id="level-2" className="bg-white p-4 shadow-lg">
       {/* Header Text */}
-      <div className="mb-6 max-w-4xl mx-auto border-l-[0.5px] border-[#1A365E] pl-5">
+      <div className="mb-6 max-w-4xl mx-auto border-l-[0.5px] border-[#1A365E] pl-5 text-justify">
         <p className="text-gray-700 text-sm leading-relaxed">
           At CryoCorp, our <strong>ASU (Air Separation Unit) Plants</strong>{" "}
           transform atmospheric air into high-purity industrial gases through a

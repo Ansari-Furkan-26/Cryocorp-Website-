@@ -8,7 +8,7 @@ const Hero = () => {
         <div className="mb-8 pt-10 sm:pt-16 lg:pt-24">
           <p className="text-gray-500 text-sm sm:text-xl font-bold opacity-45">Services & Projects</p>
           <h1 className="text-3xl sm:text-7xl font-bold text-gray-900 mb-6">Services</h1>
-          <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+          <p className="text-gray-600 leading-relaxed text-base sm:text-lg text-justify">
             At Cryo Corp, we deliver comprehensive solutions for industrial gas plant owners,
             specializing in ASU, Oxygen, Nitrogen, and Acetylene systems. We offer end-to-end services,
             from expert plant installation and commissioning to annual maintenance contracts,

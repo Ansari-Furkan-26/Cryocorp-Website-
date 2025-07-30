@@ -74,7 +74,7 @@ const T = () => {
         </h1>
 
         <div className="text-sm text-catalog-text leading-relaxed mb-6">
-          <p className="sm:max-w-[80%]">
+          <p className="sm:max-w-[80%] text-justify">
             These components are positioned after the air compressor and work to
             significantly cool the compressed air. The after cooler is specially
             designed vertical type of tank with MS coils fabricated using

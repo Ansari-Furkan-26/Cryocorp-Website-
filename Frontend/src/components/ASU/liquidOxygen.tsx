@@ -84,7 +84,7 @@ const LiquidOxygen = () => {
         </h1>
 
         <div className="text-sm text-catalog-text leading-relaxed mb-6">
-          <p className="sm:max-w-[80%]">
+          <p className="sm:max-w-[80%] text-justify">
             These pumps are typically the final stage within the Air Separation
             Unit, responsible for transferring liquid oxygen or nitrogen from
             storage. The Liquid Oxygen Pump, for instance, pumps liquid oxygen

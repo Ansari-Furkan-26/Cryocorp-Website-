@@ -67,7 +67,7 @@ const DustFilter = () => {
           </h1>
 
           <div className="text-sm text-catalog-text leading-relaxed mb-6">
-            <p className="sm:max-w-[80%]">
+            <p className="sm:max-w-[80%] text-justify">
               Situated in the process after the chiiling tank, these units
               remove dust, oil, and other contaminants from the compressed cool
               air. Acticated Carbon oil absorber filter is made of M.S. capsule

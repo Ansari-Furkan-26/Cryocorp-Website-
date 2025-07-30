@@ -96,7 +96,7 @@ const AirCompressorCatalog = () => {
           </h1>
 
           <div className="text-sm text-catalog-text leading-relaxed mb-6">
-            <p className="sm:max-w-[80%]">
+            <p className="sm:max-w-[80%] text-justify">
               As the first primary source, the air compressor draws in and
               compresses atmospheric air to the required pressure for the entire
               process. Its reliable operation is fundamental to the plant's

@@ -83,7 +83,7 @@ const ChillingTank = () => {
           </h1>
 
           <div className="text-sm text-catalog-text leading-relaxed mb-6">
-            <p className="sm:max-w-[80%]">
+            <p className="sm:max-w-[80%] text-justify">
               Working in conjunction with a chilling tank, Freon gases
               industrial Refrigerant type chilling unit with Thermostatic
               Cooling water Tank and Air coil for cooling cools the water to a

@@ -44,7 +44,7 @@ const ASUPage: React.FC = () => {
 
                             {/* Description */}
                             <div className="w-full pt-24 lg:pt-24 pt-8">
-                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm">
+                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm text-justify">
                                     Products in this category are aspiratinal products that we are fully equipped of supplying to our clients when the interest is received. These products will be supplied in collaboration with our partners like Summits Hygronics and others.
                                 </p>
                             </div>

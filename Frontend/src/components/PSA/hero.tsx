@@ -257,7 +257,7 @@ const ASUPage = () => {
                             </div>
 
                             {/* Description */}
-                            <div className="w-full pt-24 lg:pt-24 pt-8">
+                            <div className="w-full pt-24 lg:pt-24 pt-8 text-justify">
                                 <p className="text-gray-600 leading-relaxed lg:text-base text-sm">
                                     Pressure Swing Adsorption (PSA) is an advanced technology designed to generate high-purity Oxygen or Nitrogen directly on-site — safely, efficiently, and on demand. Using selective adsorbents like Zeolite, the PSA process filters compressed air by trapping unwanted gases such as nitrogen and CO₂, allowing only the desired gas to pass through. 
                                     This smart separation method ensures continuous, reliable gas production without relying on external supply chains.

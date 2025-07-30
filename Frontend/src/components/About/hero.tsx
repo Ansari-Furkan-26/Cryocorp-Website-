@@ -159,7 +159,7 @@ const HeroSection = () => {
             )}
             <button
               onClick={() => setShowFull(!showFull)}
-              className="hidden px-4 py-2 border-2 rounded-md mt-2 border-gray-600"
+              className="sm:hidden px-4 py-2 border-2 rounded-md mt-2 border-gray-600"
             >
               {showFull ? "Read Less" : "Read More"}
             </button>

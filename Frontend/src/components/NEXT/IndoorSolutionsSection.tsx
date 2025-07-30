@@ -54,7 +54,7 @@ const IndoorSolutionsSection = () => {
           <div className="lg:w-1/2 text-gray-700 space-y-4">
             <h2 className="text-xl font-semibold text-black">{sec.title}</h2>
             {sec.description.split("\n").map((para, i) => (
-              <p key={i} className="text-sm leading-relaxed">
+              <p key={i} className="text-sm leading-relaxed text-justify">
                 {para.trim()}
               </p>
             ))}
@@ -80,7 +80,7 @@ const IndoorSolutionsSection = () => {
 
           {/* Text */}
           <div className="lg:w-1/2 text-gray-700 space-y-4">
-            <h2 className="text-xl font-semibold text-black">03. Hydrogen Storage Tanks, Hydrogen Filling Manifolds and Hydrogen Compressors</h2>
+            <h2 className="text-xl font-semibold text-black text-justify">03. Hydrogen Storage Tanks, Hydrogen Filling Manifolds and Hydrogen Compressors</h2>
             {`Hydrogen Buffer Tanks: Ensure your hydrogen storage is both reliable and compliant with industry standards. Our Hydrogen Buffer Tanks are engineered for demanding industrial applications, featuring a substantial 60 cu.mr capacity and a robust vertical design. Manufactured strictly to the ASME SEC.VIII DIV.1 – Latest Edition code, these tanks boast main shells constructed from SA 516 GR 70N + NACE+ HIC material for enhanced durability and corrosion resistance. Designed for a maximum working pressure of 19.5 kg/cm² with an operating pressure of 15 kg/cm²g, they include a 1.5 mm corrosion allowance and undergo full radiography for shells. Each tank is supplied complete with essential safety valves and pressure gauges, providing a critical layer of security for your hydrogen infrastructure.
 
 Hydrogen Manifolds: Streamline your hydrogen cylinder management and ensure consistent flow with our precision-engineered Hydrogen Manifold Lines. Configured to handle a significant flow of 450cum3/Hr Hydrogen Gas, our quoted manifold line is designed for 3 x 22 cylinders. These systems are built with durable SS piping and incorporate high-pressure components, including manifold valves rated for a working pressure of 165 kg/cm2, safety valves, and pressure gauges with a range up to 420 kg/cm2. Complete with associated connectors and supports, these manifolds provide a reliable and efficient solution for aggregating and distributing hydrogen from multiple cylinders within your plant.

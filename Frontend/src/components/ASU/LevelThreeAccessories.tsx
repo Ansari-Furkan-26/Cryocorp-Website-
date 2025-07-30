@@ -116,7 +116,7 @@ const LevelThreeAccessories = () => {
             {/* Header */}
             <div id="level-3" className="w-full flex justify-center mb-10">
                 <div className="mb-10 sm:w-[50%] pl-4 border-l-[2px] border-gray-400 flex flex-col justify-between gap-10 sm:gap-20">
-                    <p className="text-sm opacity-70 text-catalog-text leading-relaxed max-w-[90%]">
+                    <p className="text-sm opacity-70 text-catalog-text leading-relaxed max-w-[90%] text-justify">
                         At Cryo Corp, we offer a wide selection of essential accessories and ancillary components
                         for ASUs and Liquid Bottling Plants for Oxygen, Nitrogen, Argon, and Acetylene gases.
                         We supply everything from industrial cylinders, cylinder valves, and valve guards to advanced

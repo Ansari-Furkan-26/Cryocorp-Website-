@@ -54,7 +54,7 @@ const Founders = () => {
         {/* Second Founder - Dr. Jaya Goyal */}
         <div className="flex flex-col-reverse md:flex-row pb-20 md:pb-0 mt-20 md:mt-80 p-5 w-full">
           <div className="w-full md:w-1/2 items-end mt-8 md:mt-0">
-            <div className="text-[24px] md:text-[28px] font-semibold text-center md:text-left md:ml-[500px]">Dr. Jaya Goyal</div>
+            <div className="text-[24px] md:text-[28px] font-semibold text-center md:text-left md:ml-[500px] ">Dr. Jaya Goyal</div>
             <div className="text-[16px] md:text-[20px] mb-4 text-center md:text-left md:ml-[500px]">Managing Partner</div>
             <div className="w-full md:w-[80%] opacity-70 text-justify md:text-justify px-4 md:px-0 md:ml-[100px]">
                Brings over 17 years of experience in driving innovation through best practices in technology, process design, and marketing. With an M.Sc. and a Ph.D, her academic background enriches her approach to strategic development and operational excellence. Jaya’s leadership strengthens CryoCorp’s commitment to using inclusive HR practices, Tech Automation & AI to be world class Indian MSME company. Her deep experience in research consultancy and higher education aligns closely with CryoCorp’s values of Innovation and Sustainability. Together with Ashish, she drives CryoCorp’s mission to engineer impactful solutions for industries worldwide.

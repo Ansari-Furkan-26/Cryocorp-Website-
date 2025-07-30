@@ -94,7 +94,7 @@ const Expansion = () => {
           </h1>
 
           <div className="text-sm text-catalog-text leading-relaxed mb-6">
-            <p className="sm:max-w-[80%]">
+            <p className="sm:max-w-[80%] text-justify">
               Located before the Air Separation Unit, is a vertical single
               acting, dry running with hydraulic valve control , bursting disc
               for safety, complete with Flywheel ,Pressure Gauges, Motor, Motor

@@ -87,7 +87,7 @@ const AirSeperation = () => {
         </h1>
 
         <div className="text-sm text-catalog-text leading-relaxed mb-6">
-          <p className="sm:max-w-[80%]">
+          <p className="sm:max-w-[80%] text-justify">
             Positioned after the Chilling Unit, this battery is crucial for
             removing remaining moisture and CO2 from the air. It consists of 2
             vessels inter-connected with pipeline of Nitrogen and Air Electric

@@ -70,7 +70,7 @@ const Oxygen = () => {
         </h1>
 
         <div className="text-sm text-catalog-text leading-relaxed mb-6">
-          <p className="sm:max-w-[80%]">
+          <p className="sm:max-w-[80%] text-justify">
             This component serves as the final stage in the plant process where
             gaseous oxygen is filled into cylinders. It is essential for the
             controlled and safe transfer of high-pressure oxygen to cylinders,

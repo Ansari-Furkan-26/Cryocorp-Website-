@@ -63,7 +63,7 @@ const FRP = () => {
           </h1>
 
           <div className="text-sm text-catalog-text leading-relaxed mb-6">
-            <p className="sm:max-w-[80%]">
+            <p className="sm:max-w-[80%] text-justify">
               This component is part of the plant's cooling system, helping to
               cool water used to lower the temperature of process air. Efficient
               cooling is vital for the performance of earlier stages like the

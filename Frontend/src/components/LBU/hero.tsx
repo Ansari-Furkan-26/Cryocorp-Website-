@@ -43,7 +43,7 @@ const ASUPage: React.FC = () => {
                             </div>
 
                             {/* Description */}
-                            <div className="w-full pt-24 lg:pt-24 pt-8">
+                            <div className="w-full pt-24 lg:pt-24 pt-8 text-justify">
                                 <p className="text-gray-600 leading-relaxed lg:text-base text-sm">
                                     Industrial gases like Oxygen, Nitrogen, Argon, and Carbon Dioxide are frequently transported in their liquid form from large production facilities.
                                     This liquid is stored in large cryogenic tanks for subsequent distribution. 
