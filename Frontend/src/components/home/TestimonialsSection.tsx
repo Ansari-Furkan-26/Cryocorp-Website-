@@ -57,49 +57,49 @@ const TestimonialsSection = () => {
       company: "Beni Impex",
       subtitle: "Beni Impex",
       role: "Owner",
-      quote: "Impressed by the delivery speed.",
+      quote: "rate",
       img: "testimonial8",
     },
     {
       company: "RedStone",
       subtitle:"ARV Engineer",
       role: "Purchase Manager",
-      quote: "Quality beyond expectations.",
+      quote: "rate",
       img: "testimonial9",
     },
     {
       company: "SilverPeak",
       subtitle: "Southern Gas Ltd.",
       role: "Plant Engineer",
-      quote: "Great customer engagement tools.",
+      quote: "rate",
       img: "testimonial10",
     },
     {
       company: "GoldLine",
       subtitle:"DPKG",
       role: "Owner",
-      quote: "Cost-effective and efficient.",
+      quote: "rate",
       img: "testimonial11",
     },
     {
       company: "PurpleSky",
       subtitle: "Apex Solution",
       role: "Owner",
-      quote: "Innovative products every time.",
+      quote: "rate",
       img: "testimonial12",
     },
     {
       company: "OrangeBloom",
       subtitle: "Mohit Ispat Ltd.",
       role: "Purchase Manager",
-      quote: "Excellent team support.",
+      quote: "rate",
       img: "testimonial13",
     },
     {
       company: "IndigoWave",
       subtitle: "Electrotherm India Ltd.",
       role: "Deputy General Manager",
-      quote: "Always available when needed.",
+      quote: "rate",
       img: "testimonial14",
     },
   ];
@@ -166,12 +166,12 @@ useEffect(() => {
         </div>
         <div
           ref={containerRef}
-          className="flex overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory gap-x-6"
+          className="flex overflow-x-auto md:overflow-x-hidden scroll-smooth snap-x snap-mandatory"
         >
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="flex-shrink-0 flex flex-col justify-between w-[90%] sm:w-[75%] md:w-[calc(33.333%-1rem)] snap-start p-4 border border-gray-900 shadow-sm hover:shadow-md transition-shadow rounded-xl bg-white"
+              className="flex-shrink-0 flex flex-col justify-between w-[90%] sm:w-[75%] md:w-[calc(33.333%-1rem)] snap-start p-4 border border-gray-900 shadow-sm hover:shadow-md transition-shadow bg-white"
             >
               <div className="mb-4">
                 <img
@@ -186,9 +186,10 @@ useEffect(() => {
                 )}
                 <p className="text-[20px] font-medium text-gray-600">{testimonial.role}</p>
               </div>
-              <blockquote className="text-[#5FC9D8] text-[35px] font-light">
+              {testimonial.quote == "rate"?<button className="px-4 py-2 w-[100px] rounded-full border-2 border-[#5FC9D8] text-[#5FC9D8]">5 star</button>:<blockquote className="text-[#5FC9D8] text-[35px] font-light">
                 "{testimonial.quote}"
-              </blockquote>
+              </blockquote>}
+              
             </div>
           ))}
         </div>
