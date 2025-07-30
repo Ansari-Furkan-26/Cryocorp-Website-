@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { FaWhatsapp, FaTelegram, FaDiscord } from "react-icons/fa";
+import { FaWhatsapp, FaTelegram, FaDiscord, FaInstagram, FaFacebookMessenger } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
@@ -99,6 +99,29 @@ const HeroSection = () => {
             >
               Let's connect
             </Button>
+            <div className="flex justify-start pl-2 space-x-4 mt-4">
+              <Button
+                onClick={() => window.open('https://api.whatsapp.com/send?phone=917710089939', '_blank')}
+                size="icon"
+                className="bg-green-500 hover:bg-green-600 rounded-full text-white"
+              >
+                <FaWhatsapp />
+              </Button>
+              <Button
+                onClick={() => window.open('https://www.instagram.com/cryocorp_/', '_blank')}
+                size="icon"
+                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-full text-white"
+              >
+                <FaInstagram />
+              </Button>
+              <Button
+                onClick={() => window.open('/')}
+                size="icon"
+                className="bg-indigo-500 hover:bg-indigo-600 rounded-full text-white"
+              >
+                <FaFacebookMessenger />
+              </Button>
+            </div>
           </div>
         </div>
       </div>   

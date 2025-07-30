@@ -1,4 +1,5 @@
 import React from "react";
+import layerImage from '/public/Layer_2.png';
 
 const productData = [
   {
@@ -23,7 +24,7 @@ const productData = [
 
 const LiquidProductsSection: React.FC = () => {
   return (
-    <section className="px-4 py-10 max-w-6xl mx-auto space-y-20">
+    <section className="px-4 py-10 max-w-6xl mx-auto space-y-20 relative">
       {productData.map((product, index) => (
         <div
           key={index}
@@ -35,14 +36,14 @@ const LiquidProductsSection: React.FC = () => {
             <img
               src={product.image}
               alt={product.title}
-              className="max-h-64 object-contain"
+              className="max-h-[350px] object-contain z-45"
             />
           </div>
           <div className="w-full md:w-1/2">
             <h3 className="text-[32px] font-light text-gray-800 mb-3">
               {product.title}
             </h3>
-            <p className="text-gray-700 text-sm leading-relaxed">
+            <p className="text-gray-700 text-sm leading-relaxed text-justify">
               {product.description}
             </p>
           </div>
@@ -52,12 +53,18 @@ const LiquidProductsSection: React.FC = () => {
       {/* Footer Note */}
       <div id="level-3" className="w-full flex justify-center mb-10">
                 <div className="mb-10 sm:w-[80%] pl-4 border-l-[2px] border-gray-400 flex flex-col justify-between gap-10 sm:gap-20">
-                    <p className="text-sm opacity-70 text-catalog-text leading-relaxed max-w-[90%]">
+                    <p className="text-sm opacity-70 text-catalog-text text-justify leading-relaxed max-w-[90%]">
                         At Cryo Corp, we take pride in supporting liquid bottling gas plant owners with a comprehensive range of high-performance system components. Whether upgrading, expanding, or starting fresh — our tailored solutions offer long-term value. With strict quality standards like ASME and EN 13458, our team ensures reliability, efficiency, and safety — all designed to maximize performance and uptime for oxygen, nitrogen, argon, CO₂, dry air, and more.
                     </p>
                     <h1 className="text-lg font-bold text-catalog-header mb-4 opacity-70">LEVEL 2</h1>
                 </div>
             </div>
+            <div
+                className="absolute top-[200px] left-[550px] w-[1000px] h-[1200px] bg-no-repeat bg-contain pointer-events-none z-0 lg:block hidden"
+                style={{
+                    backgroundImage: `url(${layerImage})`
+                }}
+            />
     </section>
   );
 };

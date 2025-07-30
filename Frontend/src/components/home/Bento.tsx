@@ -20,7 +20,7 @@ const gridItems: GridItem[] = [
     image: "/bento/asu.png",
     className: "col-span-2 row-span-2 h-[400px]",
     blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50",
-    id:"/products/#asu"
+    id:"/products/asu"
   },
   {
     title: "PSA Technology",
@@ -29,7 +29,7 @@ const gridItems: GridItem[] = [
     image: "/bento/psa.png",
     className: "col-span-1 row-span-1 h-[250px]",
     blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50",
-    id:"/products/#psa"
+    id:"/products/psa"
   },
   {
     title: "Maintenance Solutions",
@@ -58,7 +58,7 @@ const gridItems: GridItem[] = [
     image: "/bento/liquid.png",
     className: "col-span-2 row-span-2 h-[400px]",
     blueOverlay:"absolute inset-0 bg-blue-900 bg-opacity-50",
-    id:"/products/#liquid"
+    id:"/products/lbu"
   },
 ];
 

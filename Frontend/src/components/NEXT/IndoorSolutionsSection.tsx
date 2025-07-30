@@ -46,7 +46,7 @@ const IndoorSolutionsSection = () => {
             <img
               src={sec.image}
               alt={sec.title}
-              className="w-full max-w-md mx-auto object-contain"
+              className="w-full max-w-md mx-auto object-contain z-[999]"
             />
           </div>
 

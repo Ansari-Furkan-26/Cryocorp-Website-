@@ -24,7 +24,7 @@ const ASUPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-[300px] md:min-h-[145vh] bg-white relative overflow-hidden pt-6 lg:pt-8">
+        <div className="min-h-[300px] md:min-h-[145vh] bg-white relative pt-6 lg:pt-8">
             {/* Main Content */}
             <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">

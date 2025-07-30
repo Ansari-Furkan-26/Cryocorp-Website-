@@ -67,7 +67,7 @@ const SparePartsGrid: React.FC = () => {
             <h3 className="text-lg font-semibold text-[#5FC9D8] mb-2">
               {category.title}
             </h3>
-            <p className="text-sm text-[#4EA3AF] mt-10">{category.description}</p>
+            <p className="text-sm text-[#4EA3AF] mt-10 text-justify">{category.description}</p>
           </div>
 
           {/* Right section - Parts grid */}

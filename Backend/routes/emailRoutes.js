@@ -6,10 +6,11 @@ const router = express.Router()
 router.post("/emails", async (req, res) => {
   try {
     const email = new Email({ email: req.body.email });
-    await email.save();
     console.log(email);
+    await email.save();
     res.status(201).json(email);
   } catch (error) {
+    console.log(error)
     res.status(400).json({ error: error.message });
   }
 });

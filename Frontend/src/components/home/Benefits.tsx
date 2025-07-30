@@ -153,7 +153,7 @@ const prevSlide = () => {
 const ReliabilityModal = () => (
   <ModalWrapper onClose={() => setShowReliabilityModal(false)}>
     <ModalContent>
-      <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
+      <div className="fixed inset-0 z-[99999] bg-black/50 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
         <div className="relative w-full max-w-7xl h-full sm:h-full max-h-none sm:max-h-[90vh] bg-white rounded-lg border-2 border-gray-200 shadow-2xl overflow-hidden animate-slide-in-right">
           <div className="absolute inset-0">
             <img
@@ -183,9 +183,9 @@ const ReliabilityModal = () => (
                     Eliminate Plant Downtime
                   </p>
                   <ul className="text-white/90 list-disc pl-5 space-y-1 sm:space-y-2">
-                    <li className="text-sm sm:text-base">1. Cut-out downtime</li>
-                    <li className="text-sm sm:text-base">2. 24-hour crisis response</li>
-                    <li className="text-sm sm:text-base">3. Save up to $463 per avoided shutdown</li>
+                    <p className="text-sm sm:text-base"><strong>1.</strong> Cut-out downtime</p>
+                    <p className="text-sm sm:text-base"><strong>2.</strong> 24-hour crisis response</p>
+                    <p className="text-sm sm:text-base"><strong>3.</strong> Save up to $463 per avoided shutdown</p>
                   </ul>
                   <p className="text-sm sm:text-base text-white/90">
                     Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
@@ -298,15 +298,15 @@ const MaintenanceModal = () => (
                   <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white leading-tight">
                     Maintenance
                   </h2>
-                  <p className="text-sm sm:text-lg lg:text-2xl text-black leading-relaxed">
+                  <p className="text-sm sm:text-lg lg:text-2xl text-white leading-relaxed">
                     Extend Equipment Lifespan
                   </p>
-                  <ul className="text-black list-disc pl-5 space-y-1 sm:space-y-2">
-                    <li className="text-sm sm:text-base">1. Prolonged equipment lifespan with fewer breakdowns</li>
-                    <li className="text-sm sm:text-base">2. Reduced spare parts consumption due to quality maintenance</li>
-                    <li className="text-sm sm:text-base">3. Improved operational efficiency and cost savings</li>
-                  </ul>
-                  <p className="text-sm sm:text-base text-black">
+                  <div className="text-white list-disc pl-5 space-y-1 sm:space-y-2">
+                    <p className="text-sm sm:text-base"><strong>1.</strong> Prolonged equipment lifespan with fewer breakdowns</p>
+                    <p className="text-sm sm:text-base"><strong>2.</strong> Reduced spare parts consumption due to quality maintenance</p>
+                    <p className="text-sm sm:text-base"><strong>3.</strong> Improved operational efficiency and cost savings</p>
+                  </div>
+                  <p className="text-sm sm:text-base text-white">
                     Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
                   </p>
                   <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
@@ -364,10 +364,10 @@ const EfficiencyModal = () => (
                     Ensure Production Continuity
                   </p>
                   <ul className="text-white/90 list-disc pl-5 space-y-1 sm:space-y-2">
-                    <li className="text-sm sm:text-base">1. Consistent oxygen purity (93-95% for PSA, 99%+ for ASU)</li>
-                    <li className="text-sm sm:text-base">2. Uninterrupted operations and fast problem resolution</li>
-                    <li className="text-sm sm:text-base">3. Avoid production delays and financial losses from breakdowns (up to ₹75,000 saved per incident)</li>
-                    <li className="text-sm sm:text-base">4. International safety standards for peace of mind</li>
+                    <p className="text-sm sm:text-base"><strong>1.</strong> Consistent oxygen purity (93-95% for PSA, 99%+ for ASU)</p>
+                    <p className="text-sm sm:text-base"><strong>2.</strong> Uninterrupted operations and fast problem resolution</p>
+                    <p className="text-sm sm:text-base"><strong>3.</strong> Avoid production delays and financial losses from breakdowns (up to ₹75,000 saved per incident)</p>
+                    <p className="text-sm sm:text-base"><strong>4.</strong> International safety standards for peace of mind</p>
                   </ul>
                   <p className="text-sm sm:text-base text-white/90">
                     Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
@@ -445,7 +445,7 @@ const EfficiencyModal = () => (
           <div className="flip-card-inner w-full h-full">
             {/* Front of the card */}
             <Card
-              className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-start px-12 py-20 cursor-pointer hover:bg-accent/10 transition-colors"
+              className="flip-card-front absolute w-full h-full border-0 shadow-none bg-background flex flex-col justify-center items-start px-2 lg:px-4 xl:px-8 2xl:px-12 py-20 cursor-pointer hover:bg-accent/10 transition-colors"
               onClick={getClickHandler(feature.title)}
             >
               <div
@@ -456,7 +456,7 @@ const EfficiencyModal = () => (
               <h3 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 leading-tight">
                 {feature.title}
               </h3>
-              <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
+              <p className="text-md text-muted-foreground mb-12 leading-relaxed">
                 {feature.description}
               </p>
               <Button

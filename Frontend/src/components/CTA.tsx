@@ -1,57 +1,59 @@
 import React from 'react';
-import { Button } from "@/components/ui/button";
-import { MdEmail, MdPhone, MdAccessTime } from "react-icons/md";
-import { FaWhatsapp, FaRobot } from "react-icons/fa";
+import { FaRobot, FaWhatsappSquare } from 'react-icons/fa';
 
 function CTA() {
   return (
-    <div id='cta' className="w-full bg-background lg:mt-40">
-      {/* Let's Grow Together Section */}
+    <div id="cta" className="w-full bg-background lg:mt-40">
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-0">
 
-        {/* Column 1 */}
-        <div className="bg-white p-6 md:p-0 sm:ml-6 lg:pl-20 text-foreground h-full border-b md:border-r md:col-span-2">
+        {/* Column 1 - Left Side */}
+        <div className="bg-white p-6 md:p-0 sm:ml-6 lg:pl-20 text-black h-full border-b  md:col-span-2">
           <h2 className="text-xl md:text-2xl font-bold mb-4 md:mb-6">LET'S GROW TOGETHER</h2>
-          <p className="text-sm font-bold md:mb-1 leading-relaxed">
+
+          <p className="text-md font-medium leading-relaxed mb-1">
             Have questions about our industrial gas solutions, products, or services?
           </p>
-          <p className="text-sm mb-4 leading-relaxed">
+          <p className="text-md leading-relaxed mb-4">
             We would love to hear from you and discuss.
           </p>
 
-          <div className="mb-2 md:mb-6">
-            <h3 className="font-bold md:mb-1">Reach out to us.</h3>
-            <p className="text-sm leading-relaxed">
+          <div className="mb-4">
+            <h3 className="font-medium mb-1">Reach out to us.</h3>
+            <p className="text-md leading-relaxed">
               We believe in building lasting relationships with our clients!
             </p>
           </div>
 
-          <div className="hidden md:block mb-4">
-            <h3 className="font-bold mb-1">Leave Us a Message</h3>
-            <p className="text-sm leading-relaxed">
-              Fill out the form and we will get back to you within 24 hours.
+          <div className="mb-4 max-w-[50%]">
+            <h3 className="font-medium mb-1">Send Us a Message</h3>
+            <p className="text-md leading-relaxed">
+              Fill out the form and we will get back to you shortly. <br />
+              This requirement gets connected to our backend CRM inquiry collection system.
             </p>
           </div>
 
-          <Button variant="outline"
-            className="border-2 bg-foreground  text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfW25lcHJaqzTeg97xtwD1a0QWDNvg0o3RfDWFetrnbd0GFSA/viewform" target='_blank'>Click here</a>
-          </Button>
+          <button className="border-2 border-black bg-white text-black px-6 py-2 rounded-full text-sm font-medium hover:bg-white hover:text-black transition-colors">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfW25lcHJaqzTeg97xtwD1a0QWDNvg0o3RfDWFetrnbd0GFSA/viewform" target='_blank'>
+              Click here
+            </a>
+          </button>
 
-          
+          <p className="text-md font-bold mt-6 mb-10">
+            Business Hours:<br />
+            Monday – Saturday: 09:30 AM to 6:00 PM IST
+          </p>
         </div>
 
+        {/* Column 2 - Get in Touch */}
+        <div className="bg-white p-6 md:p-8 text-black md:col-span-2 shadow-sm xl:border-l border-gray-500 h-full">
+          <h3 className="font-bold text-2xl mb-4">Get in Touch</h3>
 
-        {/* Column 2 */}
-        <div className="bg-white p-6 md:p-8 text-foreground h-full md:col-span-2 rounded-xl shadow-sm">
-      <h3 className="font-bold text-2xl mb-4">Get in Touch</h3>
-
-      <div className="space-y-4 text-sm">
-        <div className="flex flex-wrap gap-2 items-center">
+          <div className="space-y-4 text-md">
+            <div className="flex flex-wrap gap-2 items-center">
           <p className="text-base font-medium">General Inquiries 24x7:</p>
           <a
             className="flex items-center gap-1 text-blue-700 px-3 py-1 border border-gray-300 hover:text-blue-900 hover:bg-gray-100 rounded-full"
-            href="https://agentivehub.com/chat/49559140-605e-458a-ab98-0708f11ddb21"
+            href="https://chatgpt.com/g/g-68650921e3b48191b61d8b06a7978505-cryogenic-solutions-assistant"
             target="_blank"
           >
             <FaRobot /> GPT
@@ -61,111 +63,69 @@ function CTA() {
             href="https://api.whatsapp.com/send?phone=917710089939"
             target="_blank"
           >
-            <FaWhatsapp /> WhatsApp Chat
+            <FaWhatsappSquare /> WhatsApp Chat
           </a>
         </div>
 
-        <div>
-          <p className="font-bold mb-2">Technical Help: Mr. Ashish Goyal</p>
-          <p className="break-words">
-            WhatsApp For Business:&nbsp;
-            <a
-              href="https://wa.me/917710049939"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-600 font-medium hover:underline"
-            >
-              +91 7710089939
-            </a>
-          </p>
-        </div>
-
-        <div className="space-y-1">
-          <p>
-            <span className="font-bold">Sales & General Inquiries:</span>{" "}
-            <a
-              href="mailto:admin@cryocorp.co.in"
-              className="text-blue-700 hover:underline"
-            >
-              admin@cryocorp.co.in
-            </a>
-          </p>
-          <p>
-            <span className="font-bold">Dispatch or Quotation Inquiries:</span>{" "}
-            <a
-              href="mailto:crm@cryocorp.in"
-              className="text-blue-700 hover:underline"
-            >
-              crm@cryocorp.in
-            </a>
-          </p>
-        </div>
-
-        <div className="pt-2">
-          <div className="flex items-start gap-2">
-            <MdPhone className="mt-1 text-blue-600" />
             <div>
-              <h4 className="font-bold">Call Us:</h4>
-              <p className="text-sm">+91 9004759939, +91 7738069949</p>
+              <p className="font-semibold mb-1">Technical Help: Mr. Ashish Goyal</p>
+              <p>WhatsApp For Business: <a href="https://wa.me/917710049939" target="_blank" className="text-green-600 hover:underline">+91 7710049939</a>,</p>
+              <p>Mr. Ashish Goyal can also be reached via WhatsApp at <a href="https://wa.me/919004759939" target="_blank" className="text-green-600 hover:underline">+91 9004759939</a></p>
             </div>
-          </div>
 
-          <div className="flex items-start gap-2 mt-3">
-            <MdAccessTime className="mt-1 text-blue-600" />
             <div>
-              <h4 className="font-bold">Business Hours:</h4>
-              <p className="text-sm">Monday – Saturday: 09:30 AM to 6:00 PM IST</p>
+              <p><span className='font-semibold'>Email:</span> Dispatch or Quotation Inquiries: <a href="mailto:crm@cryocorp.in" className="text-blue-700 hover:underline">crm@cryocorp.in</a></p>
+            </div>
+
+            <div>
+              <p><span className='font-semibold'>Sales & General Inquiries:</span> <a href="mailto:admin@cryocorp.co.in" className="text-blue-700 hover:underline">admin@cryocorp.co.in</a></p>
+            </div>
+
+            <div>
+              <p><span className='font-semibold'>Technical Support:</span> <a href="mailto:ashish@cryocorp.in" className="text-blue-700 hover:underline">ashish@cryocorp.in</a></p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-        {/* Column 3 - Full Image CTA */}
+        {/* Column 3 - Calendly CTA */}
         <div className="relative overflow-hidden h-full min-h-[400px] md:min-h-[500px] lg:min-h-[400px] col-span-1 lg:col-span-1">
-  {/* Background Image */}
-  <div className="absolute inset-0">
-    <img
-      src="/images/cta-bg.png"
-      alt="Industrial team meeting"
-      className="w-full h-full object-cover"
-    />
-  </div>
+          <div className="absolute inset-0">
+            <img
+              src="/images/cta-bg.png"
+              alt="Industrial team meeting"
+              className="w-full h-full object-cover"
+            />
+          </div>
 
-  {/* Content Overlay */}
-  <div className="relative z-10 p-6 md:p-8 text-gray-100 text-center h-full flex flex-col justify-center items-center">
-    {/* Calendly Logo in Black Circle */}
-    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-black flex items-center justify-center mb-6 shadow-lg">
-      <img
-        src="/calendly.png" // Make sure this path points to your Calendly logo
-        alt="Calendly Logo"
-        className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
-      />
-    </div>
+          <div className="relative z-10 p-6 md:p-8 text-gray-100 text-center h-full flex flex-col justify-center items-center">
+            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white flex items-center justify-center mb-6 shadow-lg">
+              <img
+                src="/calendly.png"
+                alt="Calendly Logo"
+                className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+              />
+            </div>
 
-    {/* Text */}
-    <div className="mb-4 max-w-[50%] md:max-w-[100%]">
-      <p className="text-xs sm:text-sm mb-1">You can also schedule a meeting</p>
-      <p className="text-xs sm:text-sm">appointment at your convenience using our online calendar.</p>
-    </div>
+            <div className="mb-4 max-w-[50%] md:max-w-[100%]">
+              <p className="text-xs sm:text-sm mb-1">You can also schedule a meeting</p>
+              <p className="text-xs sm:text-sm">appointment at your convenience using our online calendar.</p>
+            </div>
 
-    <h3 className="text-base sm:text-lg font-bold mb-6 max-w-[50%] md:max-w-[100%]">
-      Get in touch with our team today!
-    </h3>
+            <h3 className="text-base sm:text-lg font-bold mb-6 max-w-[50%] md:max-w-[100%]">
+              Get in touch with our team today!
+            </h3>
 
-    {/* Button */}
-    <Button className="bg-white/20 backdrop-blur-sm border-4 border-white max-w-[200px] mx-auto text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/30 transition-all duration-300">
-      <a
-        href="https://calendly.com/admin-cryocorp/new-meeting"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Book a slot
-      </a>
-    </Button>
-  </div>
-</div>
-
+            <button className="bg-white/20 backdrop-blur-sm border-4 border-white max-w-[200px] mx-auto text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/30 transition-all duration-300">
+              <a
+                href="https://calendly.com/admin-cryocorp/new-meeting"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a slot
+              </a>
+            </button>
+          </div>
+        </div>
 
       </div>
     </div>

@@ -65,7 +65,7 @@ function FloatingButton() {
 
         {/* Telegram */}
         <a
-  href="https://agentivehub.com/chat/49559140-605e-458a-ab98-0708f11ddb21"
+  href="https://chatgpt.com/g/g-68650921e3b48191b61d8b06a7978505-cryogenic-solutions-assistant"
   target="_blank"
   rel="noopener noreferrer"
   className="relative bg-white w-14 h-14 bg-gradient-to-br rounded-full flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300 border-2 border-blue-300 hover:border-blue-200 overflow-hidden group"

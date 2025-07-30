@@ -80,7 +80,7 @@ const Header = () => {
             </a>
           </div>
 
-          <div className="lg:hidden z-[999]">
+          <div className="lg:hidden z-[9999]">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-[#59C6D3] hover:text-teal-600 transition-colors duration-200"

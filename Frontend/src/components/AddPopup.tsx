@@ -31,8 +31,8 @@ const StepwisePopup = () => {
       icon: <MessageCircle className="w-5 h-5" />,
       actions: [
         {
-          text: "TEXT",
-          path: "/chat",
+          text: "WhatsApp Chat",
+          path: "/whatsapp",
           primary: false,
           icon: <MessageCircle className="w-4 h-4" />
         },
@@ -208,7 +208,7 @@ const StepwisePopup = () => {
                           className={`w-full py-1.5 sm:py-3 px-3 sm:px-5 rounded-xl font-semibold transition-all transform hover:scale-105 flex items-center justify-center gap-1 sm:gap-2 shadow-lg hover:shadow-xl ${
                             action.primary
                               ? `bg-gradient-to-r ${step.gradient} text-white hover:shadow-teal-200/50`
-                              : 'bg-white text-teal-700 border-2 border-teal-200 hover:border-teal-300 hover:bg-teal-50'
+                              : `bg-gradient-to-r ${step.gradient} text-white hover:shadow-teal-200/50`
                           }`}
                         >
                           {action.icon && action.icon}
