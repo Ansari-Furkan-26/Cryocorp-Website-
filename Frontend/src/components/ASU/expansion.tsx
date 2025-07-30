@@ -40,42 +40,42 @@ const Expansion = () => {
     {
       number: "01",
       title: "cylinder head.With allo steel liners and ss piston",
-      imageSrc: "expansion/1.png",
+      imageSrc: "/expansion/1.png",
     },
     {
       number: "02",
       title: "ball valve assembly with it compnents",
-      imageSrc: "expansion/2.png",
+      imageSrc: "/expansion/2.png",
     },
     {
       number: "03",
       title: "teflon piston rings with tension rings",
-      imageSrc: "expansion/3.png",
+      imageSrc: "/expansion/3.png",
     },
     {
       number: "04",
       title: "valve block & its integral parts",
-      imageSrc: "expansion/4.png",
+      imageSrc: "/expansion/4.png",
     },
     {
       number: "05",
       title: "push pump and its intergrall parts",
-      imageSrc: "expansion/5.png",
+      imageSrc: "/expansion/5.png",
     },
     {
       number: "06",
       title: "solenoid valve with magneto coil",
-      imageSrc: "expansion/6.png",
+      imageSrc: "/expansion/6.png",
     },
     {
       number: "07",
       title: "puppet valves with its supporting accessoroes",
-      imageSrc: "expansion/7.png",
+      imageSrc: "/expansion/7.png",
     },
     {
       number: "08",
       title: "cranshaft assembly with conneting rod and beraings",
-      imageSrc: "expansion/8.png",
+      imageSrc: "/expansion/8.png",
     },
   ];
 

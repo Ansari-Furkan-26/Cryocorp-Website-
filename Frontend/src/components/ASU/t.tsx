@@ -41,24 +41,24 @@ const T = () => {
     {
       number: "01",
       title: "Vertical Coil",
-      imageSrc: "t/1.png",
+      imageSrc: "/t/1.png",
       extraText: 'Sizes- 1", 1.5", 2" and 2.5" depending on capacity.',
     },
     {
       number: "02",
       title: "Side by Side Coil",
-      imageSrc: "t/2.png",
+      imageSrc: "/t/2.png",
       extraText: 'size - 1", 1.5", 2" and 2.5" depending on capacity.',
     },
     {
       number: "03",
       title: "Complete After Cooler with Coil",
-      imageSrc: "t/3.png",
+      imageSrc: "/t/3.png",
     },
     {
       number: "04",
       title: "COMPLETE CASCADE COOLER WITH S2S COIL",
-      imageSrc: "t/4.png",
+      imageSrc: "/t/4.png",
     },
   ];
 

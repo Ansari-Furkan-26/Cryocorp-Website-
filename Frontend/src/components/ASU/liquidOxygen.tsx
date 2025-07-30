@@ -37,39 +37,39 @@ const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
 
 const LiquidOxygen = () => {
   const spareParts = [
-    { number: "01", title: "s.s.liner", imageSrc: "liquidOxygen/1.png" },
-    { number: "02", title: "s.s.piston", imageSrc: "liquidOxygen/2.png" },
+    { number: "01", title: "s.s.liner", imageSrc: "/liquidOxygen/1.png" },
+    { number: "02", title: "s.s.piston", imageSrc: "/liquidOxygen/2.png" },
     {
       number: "03",
       title: "brass gland nut & cylinder head nut",
-      imageSrc: "liquidOxygen/3.png",
+      imageSrc: "/liquidOxygen/3.png",
     },
     {
       number: "04",
       title: "piston rings with guide",
-      imageSrc: "liquidOxygen/4.png",
+      imageSrc: "/liquidOxygen/4.png",
     },
     {
       number: "05",
       title: "non-return valves",
-      imageSrc: "liquidOxygen/5.png",
+      imageSrc: "/liquidOxygen/5.png",
     },
-    { number: "06", title: "gland packing", imageSrc: "liquidOxygen/6.png" },
-    { number: "07", title: "oil wiper rings", imageSrc: "liquidOxygen/7.png" },
-    { number: "08", title: "coldend assembly", imageSrc: "liquidOxygen/8.png" },
+    { number: "06", title: "gland packing", imageSrc: "/liquidOxygen/6.png" },
+    { number: "07", title: "oil wiper rings", imageSrc: "/liquidOxygen/7.png" },
+    { number: "08", title: "coldend assembly", imageSrc: "/liquidOxygen/8.png" },
     {
       number: "09",
       title: "cross head",
-      imageSrc: "liquidOxygen/10.png",
+      imageSrc: "/liquidOxygen/10.png",
       customCss: "",
     },
     {
       number: "10",
       title: "connecting rod with crank shaft",
-      imageSrc: "liquidOxygen/9.png",
+      imageSrc: "/liquidOxygen/9.png",
       customCss: "mt-24",
     },
-    { number: "11", title: "crank shaft", imageSrc: "liquidOxygen/11.png" },
+    { number: "11", title: "crank shaft", imageSrc: "/liquidOxygen/11.png" },
   ];
 
   return (

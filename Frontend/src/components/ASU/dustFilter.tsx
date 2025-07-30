@@ -40,14 +40,14 @@ const DustFilter = () => {
     {
       number: "01",
       title: "ACTIVATED CARBON FILTER",
-      imageSrc: "dustFilter/1.png",
+      imageSrc: "/dustFilter/1.png",
     },
-    { number: "02", title: "DUST FILTER", imageSrc: "dustFilter/2.png" },
-    { number: "03", title: "ACTIVATED CARBON", imageSrc: "dustFilter/3.png" },
+    { number: "02", title: "DUST FILTER", imageSrc: "/dustFilter/2.png" },
+    { number: "03", title: "ACTIVATED CARBON", imageSrc: "/dustFilter/3.png" },
     {
       number: "04",
       title: "COMPLETE ASSEMBLY OF DUST & ACTIVATED CARBON FILTER",
-      imageSrc: "dustFilter/4.png",
+      imageSrc: "/dustFilter/4.png",
       customCss: "rotate-[45deg]",
     },
   ];

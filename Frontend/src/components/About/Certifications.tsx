@@ -57,12 +57,13 @@ const Certifications = () => {
         <div className="mt-12 text-[#1A365E] text-[15px]">
           <h4 className="text-sm sm:text-base font-bold mb-3 uppercase">Certificates</h4>
           <ul className="text-sm sm:text-base font-semibold space-y-1 underline text-[#1A365E]">
-            <li><a href="https://drive.google.com/file/d/1H5nQ0M0a2KlKXeWBkjGuDl2wGFB4XOGM/view" target="_blank" rel="noopener noreferrer">Trademark</a></li>
-            <li><a href="https://drive.google.com/file/d/1NdVqAChMvHOtm4Gt-koep5n-SIuVKeBe/view" target="_blank" rel="noopener noreferrer">Udyog Aadhar</a></li>
-            <li><a href="https://drive.google.com/file/d/1fuzVtutXPLGXFJs33peOamVkmCjAgBU9/view" target="_blank" rel="noopener noreferrer">EEPC</a></li>
-            <li><a href="https://drive.google.com/file/d/1q8iMxPQb2lSipRSXUC_l_pWDrfpF7TAm/view" target="_blank" rel="noopener noreferrer">IMC</a></li>
-            <li><a href="https://drive.google.com/file/d/1NyNE3-nrPjF_bPIXzXSBk06YiiQgCzlS/view" target="_blank" rel="noopener noreferrer">Channel Partner Agreement Certificate with Summits Hygronics Pvt. Ltd.</a></li>
-          </ul>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Trademark</a></li>
+            <li><a href="https://drive.google.com/file/d/1NdVqAChMvHOtm4Gt-koep5n-SIuVKeBe/view?usp=sharing" target="_blank" rel="noopener noreferrer">Udyog Aadhar</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">EEPC</a></li>
+            <li><a href="#" target="_blank" rel="noopener noreferrer">IMC</a></li>
+            {/* <li><a href="#" target="_blank" rel="noopener noreferrer">BCI</a></li> */}
+            <li><a href="#" target="_blank" rel="noopener noreferrer">Channel Partner Agreement Certificate with Summits Hygronics Pvt. Ltd.</a></li>
+           </ul>
         </div>
 
         {/* Logos */}

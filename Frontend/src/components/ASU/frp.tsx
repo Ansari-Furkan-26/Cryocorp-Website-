@@ -40,12 +40,12 @@ const FRP = () => {
     {
       number: "01",
       title: "PVC FILLS",
-      imageSrc: "frp/1.png",
+      imageSrc: "/frp/1.png",
       customCss: "mt-24",
     },
-    { number: "02", title: "SPRINKER FOR COCLING TANK", imageSrc: "frp/2.png" },
-    { number: "03", title: "COOLING TOWER FAN", imageSrc: "frp/3.png" },
-    { number: "04", title: "COOLING TOWER MOTOR", imageSrc: "frp/4.png" },
+    { number: "02", title: "SPRINKER FOR COCLING TANK", imageSrc: "/frp/2.png" },
+    { number: "03", title: "COOLING TOWER FAN", imageSrc: "/frp/3.png" },
+    { number: "04", title: "COOLING TOWER MOTOR", imageSrc: "/frp/4.png" },
   ];
 
   return (

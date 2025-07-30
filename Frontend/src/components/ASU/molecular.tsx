@@ -40,33 +40,33 @@ const Molecular = () => {
     {
       number: "01",
       title: "NITROGEN INLET & OUTLET VALVES",
-      imageSrc: "molecular/1.png",
+      imageSrc: "/molecular/1.png",
     },
     {
       number: "02",
       title: "MOLECULAR SIEVE & ACTIVATED ALUMINA",
-      imageSrc: "molecular/2.png",
+      imageSrc: "/molecular/2.png",
     },
     {
       number: "03",
       title: "NEEDLE VALVES FOR PRESSURIZING & DE-PRESSURIZING LINES",
-      imageSrc: "molecular/3.png",
+      imageSrc: "/molecular/3.png",
     },
     {
       number: "04",
       title: "ELECTRIC HEATING ELEMENT FOR BATTERY HEATERS",
-      imageSrc: "molecular/4.png",
+      imageSrc: "/molecular/4.png",
       customCss: "rotate-[35deg]",
     },
     {
       number: "05",
       title: "TERMINALS FOR BATTERY HEATER",
-      imageSrc: "molecular/5.png",
+      imageSrc: "/molecular/5.png",
     },
     {
       number: "06",
       title: "TEMPERATURE INDICATOR WITH RTD THERMOCOUPLE",
-      imageSrc: "molecular/6.png",
+      imageSrc: "/molecular/6.png",
     },
   ];
 

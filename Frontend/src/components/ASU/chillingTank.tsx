@@ -38,32 +38,32 @@ const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
 
 const ChillingTank = () => {
   const spareParts = [
-    { number: "01", title: "FREON COMPRESSOR", imageSrc: "chilling/1.png" },
-    { number: "02", title: "EXPANSION VALVE", imageSrc: "chilling/2.png" },
-    { number: "03", title: "CHILLING UNIT FILTER", imageSrc: "chilling/3.png" },
-    { number: "04", title: "TEMPERATURE INCATOR", imageSrc: "chilling/4.png" },
+    { number: "01", title: "FREON COMPRESSOR", imageSrc: "/chilling/1.png" },
+    { number: "02", title: "EXPANSION VALVE", imageSrc: "/chilling/2.png" },
+    { number: "03", title: "CHILLING UNIT FILTER", imageSrc: "/chilling/3.png" },
+    { number: "04", title: "TEMPERATURE INCATOR", imageSrc: "/chilling/4.png" },
     {
       number: "05",
       title: "CONDENSER",
-      imageSrc: "chilling/5.png",
+      imageSrc: "/chilling/5.png",
       customCss: "rotate-[-60deg]",
     },
     {
       number: "06",
       title: "OUTERCASE",
-      imageSrc: "chilling/6.png",
+      imageSrc: "/chilling/6.png",
       customCss: "",
     },
     {
       number: "07",
       title: "INNER COIL",
-      imageSrc: "chilling/7.png",
+      imageSrc: "/chilling/7.png",
       customCss: "",
     },
     {
       number: "08",
       title: "OUTER COIL",
-      imageSrc: "chilling/8.png",
+      imageSrc: "/chilling/8.png",
       customCss: "",
     },
   ];

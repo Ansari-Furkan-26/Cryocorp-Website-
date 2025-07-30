@@ -41,37 +41,37 @@ const AirSeperation = () => {
     {
       number: "01",
       title: "TEMPERATURE SCANNER",
-      imageSrc: "airSeperation/1.png",
+      imageSrc: "/airSeperation/1.png",
     },
     {
       number: "02",
       title: "LIQUID LEVEL GAUGE",
-      imageSrc: "airSeperation/2.png",
+      imageSrc: "/airSeperation/2.png",
     },
-    { number: "03", title: "RTD SENSOR", imageSrc: "airSeperation/3.png" },
+    { number: "03", title: "RTD SENSOR", imageSrc: "/airSeperation/3.png" },
     {
       number: "04",
       title: "ISOLATION VALVES",
-      imageSrc: "airSeperation/4.png",
+      imageSrc: "/airSeperation/4.png",
     },
-    { number: "05", title: "PRESSURE GAUGES", imageSrc: "airSeperation/5.png" },
+    { number: "05", title: "PRESSURE GAUGES", imageSrc: "/airSeperation/5.png" },
     {
       number: "06",
       title: "EXPANSION VALVES",
-      imageSrc: "airSeperation/6.png",
+      imageSrc: "/airSeperation/6.png",
       customCss: "rotate-[-30deg]",
     },
-    { number: "07", title: "PERLITE POWDER", imageSrc: "airSeperation/7.png" },
+    { number: "07", title: "PERLITE POWDER", imageSrc: "/airSeperation/7.png" },
     {
       number: "08",
       title: "SAFETY VALVES FOR TOP AND BOTTOM COLUMS",
-      imageSrc: "airSeperation/8.png",
+      imageSrc: "/airSeperation/8.png",
     },
     {
       number: "09",
       title:
         "ANGLE TYPE MANIFOLD VALVE FOR OUTLET OF HIGH PURITY OXYGEN AND NITORGRN AT 165 KG/CM2 PRESSURE",
-      imageSrc: "airSeperation/9.png",
+      imageSrc: "/airSeperation/9.png",
     },
   ];
 

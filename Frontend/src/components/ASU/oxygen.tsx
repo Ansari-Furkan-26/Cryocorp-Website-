@@ -38,22 +38,22 @@ const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
 
 const Oxygen = () => {
   const spareParts = [
-    { number: "01", title: "cylindeer valves", imageSrc: "oxygen/1.png" },
-    { number: "02", title: "s.s.spindles", imageSrc: "oxygen/2.png" },
-    { number: "03", title: "brass bull nose & nuts", imageSrc: "oxygen/3.png" },
-    { number: "04", title: "spindle keys", imageSrc: "oxygen/4.png" },
+    { number: "01", title: "cylindeer valves", imageSrc: "/oxygen/1.png" },
+    { number: "02", title: "s.s.spindles", imageSrc: "/oxygen/2.png" },
+    { number: "03", title: "brass bull nose & nuts", imageSrc: "/oxygen/3.png" },
+    { number: "04", title: "spindle keys", imageSrc: "/oxygen/4.png" },
     {
       number: "05",
       title: "copper tubes for pig tail connection",
-      imageSrc: "oxygen/5.png",
+      imageSrc: "/oxygen/5.png",
       customCss: "rotate-[-90deg]",
     },
-    { number: "06", title: "manifold valves", imageSrc: "oxygen/6.png" },
-    { number: "07", title: "pressure gauges", imageSrc: "oxygen/7.png" },
+    { number: "06", title: "manifold valves", imageSrc: "/oxygen/6.png" },
+    { number: "07", title: "pressure gauges", imageSrc: "/oxygen/7.png" },
     {
       number: "08",
       title: "safety valves",
-      imageSrc: "oxygen/8.png",
+      imageSrc: "/oxygen/8.png",
       customCss: "rotate-[90deg]",
     },
   ];
