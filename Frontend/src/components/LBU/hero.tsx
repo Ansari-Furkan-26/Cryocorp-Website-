@@ -27,7 +27,7 @@ const ASUPage: React.FC = () => {
         <div className="min-h-screen bg-white relative pt-6 lg:pt-8" style={{ minHeight: '145vh' }}>
             {/* Main Content */}
             <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
-                <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
+                <div className="container mx-auto px-4 md:py-12 lg:py-12 py-6">
                     <div className="grid grid-cols-12 gap-4 min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
                         <div className="col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
@@ -62,7 +62,7 @@ const ASUPage: React.FC = () => {
                         </div>
 
                         {/* Right Side - Next Section and Navigation */}
-                        <div className="col-span-5 flex flex-col gap-5 lg:col-span-5 lg:flex col-span-1 hidden">
+                        <div className="md:col-span-5 md:flex flex-col gap-5 lg:col-span-4 lg:flex col-span-1 hidden">
                             {/* Next Section Number */}
                             <div className="flex items-center ml-80">
                                 <div className="text-2xl font-bold text-gray-300">04.</div>

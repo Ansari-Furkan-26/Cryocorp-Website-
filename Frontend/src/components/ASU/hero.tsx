@@ -115,28 +115,29 @@ const ASUPage: React.FC = () => {
     };
 
     return (
-        <div id="asu" className="sm:min-h-[225vh] bg-white relative mb-10 pt-6 lg:pt-8">
+        <div id="asu" className=" sm:min-h-[180vh] lg:min-h-[190vh] xl:min-h-[220vh] bg-white relative mb-10 pt-6 lg:pt-8">
             {/* Main Content */}
             <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 pr-4">
-                <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
-                    <div className="grid grid-cols-12 gap-4 sm:min-h-[80vh] lg:grid-cols-12 grid-cols-1">
+                <div className="container mx-auto px-4 md:py-12 lg:py-12 py-6">
+                    <div className="grid md:grid-cols-12 gap-4 sm:min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
-                        <div className="col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
+                        <div className="md:col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
                             {/* Section Numbers */}
                             <div className="flex items-center space-x-8 mb-5 lg:mb-8 mb-4">
-                                <div className="text-2xl font-bold lg:text-2xl text-lg">01.</div>
+                                <div className="md:text-2xl font-bold lg:text-2xl text-lg">01.</div>
                             </div>
 
                             {/* Main Heading */}
-                            <div className="mb-8 lg:mb-8 mb-4">
+                            <div className="md:mb-8 lg:mb-8 mb-4">
                                 <h1 className="text-5xl font-bold text-black mb-2 lg:text-5xl text-3xl">ASU Technology</h1>
-                                <h2 className="text-xl text-gray-700 lg:text-xl text-lg">Gas Production & Distributions</h2>
+                                <h2 className="md:text-xl font-bold text-gray-900 lg:text-xl text-lg">Gas Production & Distributions</h2>
                             </div>
 
                             {/* Description */}
-                            <div className="w-full pt-24 lg:pt-24 pt-8">
-                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm text-justify">
-                                    Air Separation Unit (ASU) technology is at the heart of CryoCorp's operations — a cutting-edge process
+                            <div className="w-full md:pt-24 lg:pt-24 pt-8">
+
+                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm  text-justify">
+                                    <span className="italic">Air Separation Unit (ASU) </span>technology is at the heart of CryoCorp's operations — a cutting-edge process
                                     where atmospheric air is compressed, cooled, and separated into its key components: oxygen, nitrogen,
                                     and argon. These gases are then purified, liquefied, or stored in gaseous form depending on industrial
                                     needs.
@@ -144,7 +145,7 @@ const ASUPage: React.FC = () => {
                             </div>
 
                             {/* Level Tags */}
-                            <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 lg:pt-32 pt-16">
+                            <div className="text-gray-600 hidden sm:block text-xs sm:text-sm font-black space-y-1 pl-4 lg:pt-32 pt-16">
                                 <a className="sm:block" href="#level-1">LEVEL 1</a>
                                 <a className="sm:block" href="#level-2">LEVEL 2</a>
                                 <a className="sm:block" href="#level-3">LEVEL 3</a>

@@ -64,7 +64,7 @@ const SparePartsGrid: React.FC = () => {
         <div key={categoryIndex} className="grid lg:grid-cols-3 gap-6">
           {/* Left column - Category description */}
           <div className="lg:col-span-1">
-            <h3 className="text-lg font-semibold text-[#5FC9D8] mb-2">
+            <h3 className="md:text-3xl text-[#5FC9D8] mb-2">
               {category.title}
             </h3>
             <p className="text-sm text-[#4EA3AF] mt-10 text-justify">{category.description}</p>
@@ -78,11 +78,11 @@ const SparePartsGrid: React.FC = () => {
                   key={partIndex}
                   className="bg-[#5FC9D8] min-h-[200px] rounded-xl p-4 flex flex-col items-center text-center shadow hover:shadow-md transition duration-300"
                 >
-                  <p className="text-sm font-medium text-gray-100">{part.label}</p>
+                  <p className="text-sm text-left font-medium text-gray-100">{part.label}</p>
                   <img
                     src={part.image}
                     alt={part.label}
-                    className="h-24 object-contain mt-4"
+                    className="h-30  object-contain mt-4"
                   />
                 </div>
               ))}

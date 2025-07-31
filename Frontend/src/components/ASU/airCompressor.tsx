@@ -8,7 +8,7 @@ interface SparePartProps {
 }
 
 const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
-  <Card className="p-4 bg-[#EDEDED] border-catalog-card-border hover:shadow-md transition-shadow  ">
+  <Card className="p-4 bg-[#EDEDED]  hover:shadow-md transition-shadow  ">
     <div className="space-y-0">
       <div className="text-sm font-medium text-catalog-number md:text-xl md:font-bold text-[#BDBDBD]">
         {number}.
@@ -17,7 +17,7 @@ const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
         {title}
       </div>
       <div
-        className={`h-64 bg-[#EDEDED] rounded-md flex items-center justify-center `}
+        className={`h-64 bg-[#EDEDED] flex items-center justify-center `}
       >
         {imageSrc ? (
           <img

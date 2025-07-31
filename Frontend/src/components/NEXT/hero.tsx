@@ -24,9 +24,16 @@ const ASUPage: React.FC = () => {
     };
 
     return (
-        <div className="min-h-[300px] md:min-h-[145vh] bg-white relative pt-6 lg:pt-8">
+        <div className="md:min-h-[150px] lg:min-h-[200px] xl:min-h-[300px] bg-white relative pt-6 lg:pt-8">
+             {/* Bottom-Left Background Image */}
+            <div
+                className="absolute top-60 left-0 z-40 w-[800px] h-[800px] bg-no-repeat bg-contain pointer-events-none lg:block hidden"
+                style={{
+                    backgroundImage: `url(${layerImage})`
+                }}/>
+
             {/* Main Content */}
-            <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
+            <div  className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">
                     <div className="grid grid-cols-12 gap-4 min-h-[56vh] sm:min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
@@ -50,7 +57,7 @@ const ASUPage: React.FC = () => {
                             </div>
 
                             {/* Level Tags */}
-                            <div className="text-gray-400 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4 pt-16 lg:pt-16 pt-8">
+                            <div className="text-gray-600 hidden sm:block text-xs sm:text-sm font-bold space-y-1 pl-4  lg:pt-32 pt-8">
                                 <p>RELAXAIR</p>
                                 <p>MEDICAL AIR DRYERS</p>
                                 <p>HYDROGEN STORAGE TANKS & FILLING MANIFOLDS</p>
@@ -58,7 +65,7 @@ const ASUPage: React.FC = () => {
                         </div>
 
                         {/* Right Side - Next Section and Navigation */}
-                        <div className="col-span-5 flex flex-col gap-5 lg:col-span-5 lg:flex col-span-1 hidden">
+                        <div className="md:col-span-5 md:flex flex-col gap-5 lg:col-span-5 lg:flex col-span-1 hidden">
                             {/* Next Section Number */}
                             <div className="flex items-center ml-80">
                                 <div className="text-2xl font-bold text-gray-300">01.</div>
@@ -101,15 +108,7 @@ const ASUPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </main>
-
-            {/* Bottom-Left Background Image */}
-            <div
-                className="absolute top-80 left-0 w-[800px] h-[800px] bg-no-repeat bg-contain pointer-events-none lg:block hidden"
-                style={{
-                    backgroundImage: `url(${layerImage})`
-                }}
-            />
+            </div>
         </div>
     );
 };

@@ -13,7 +13,7 @@ const Founders = () => {
         <div className="w-full md:w-1/2">
           <div className="flex flex-col text-center md:text-left">
             <div className="text-[40px] md:text-[60px] font-semibold">Meet</div>
-            <div className="text-[40px] md:text-[60px] font-semibold">The Founders</div>
+            <div className="text-[40px] md:text-[100px] font-semibold">The Founders</div>
           </div>
         </div>
         
@@ -35,12 +35,12 @@ const Founders = () => {
           <div className="w-full md:w-1/2 mt-8 md:mt-0">
             <div className="text-[24px] md:text-[28px] font-semibold text-center md:text-left">Ashish Goyal</div>
             <div className="text-[16px] md:text-[20px] mb-4 text-center md:text-left">Managing Director</div>
-            <div className="w-full md:w-[80%] opacity-70 text-justify md:text-justify md:px-0">
+            <div className="w-full md:w-[80%] opacity-70 text-left md:px-0">
               Leads the company with over 28 years of experience in the
-              industrial gas sector. A graduate in Engineering from Mumbai
-              University's Shah and Anchor Kutchi College of Engineering, he
-              also holds a Post Graduate Diploma in Export-Import Management
-              from NMIMS University, Mumbai. His strong technical foundation
+              industrial gas sector. A graduate in <span className="italic">Engineering from Mumbai
+              University's Shah and Anchor Kutchi College of Engineering</span>, he
+              also holds <span className="italic">a Post Graduate Diploma in Export-Import Management
+              from NMIMS University, Mumbai.</span> His strong technical foundation
               supports his experience in providing end-to-end solutions to
               clients for industrial gas machinery. He is known as the go-to
               person for end-to-end solutions, driving our vision to be a global
@@ -54,9 +54,9 @@ const Founders = () => {
         {/* Second Founder - Dr. Jaya Goyal */}
         <div className="flex flex-col-reverse md:flex-row pb-20 md:pb-0 mt-20 md:mt-80 py-5 w-full">
           <div className="w-full md:w-1/2 items-end mt-8 md:mt-0">
-            <div className="text-[24px] md:text-[28px] font-semibold text-center md:text-left md:ml-[500px] ">Dr. Jaya Goyal</div>
-            <div className="text-[16px] md:text-[20px] mb-4 text-center md:text-left md:ml-[500px]">Managing Partner</div>
-            <div className="w-full md:w-[80%] opacity-70 text-justify md:text-justify md:px-0 md:ml-[100px]">
+            <div className="text-[24px] md:text-[28px] font-semibold text-right md:text-center md:ml-[490px] ">Dr. Jaya Goyal</div>
+            <div className="text-[16px] md:text-[20px] mb-4 text-center md:text-center md:ml-[500px]">Managing Partner</div>
+            <div className="w-full md:w-[80%] opacity-70 text-right md:px-0 md:ml-[100px]">
                Brings over 17 years of experience in driving innovation through best practices in technology, process design, and marketing. With an M.Sc. and a Ph.D, her academic background enriches her approach to strategic development and operational excellence. Jaya’s leadership strengthens CryoCorp’s commitment to using inclusive HR practices, Tech Automation & AI to be world class Indian MSME company. Her deep experience in research consultancy and higher education aligns closely with CryoCorp’s values of Innovation and Sustainability. Together with Ashish, she drives CryoCorp’s mission to engineer impactful solutions for industries worldwide.
             </div>
           </div>
@@ -67,8 +67,8 @@ const Founders = () => {
               className="md:absolute md:top-[-250px] md:right-[210px] h-[400px] md:h-[600px] relative top-0 right-0"
             />
             <div className="hidden md:block md:absolute md:bottom-[-270px] md:left-[-50px] text-center mt-4 md:mt-0 relative bottom-0 left-0">
-              <img src="/about/quote1.png" alt="" className="relative mx-auto md:mx-0 h-[300px]" />
-              <div className="md:absolute md:top-0 text-black p-4 md:p-10 text-[12px] md:text-[14px] italic relative top-0 left-5 bg-white md:bg-transparent text-left rounded-lg md:rounded-none shadow-md md:shadow-none mt-2 md:mt-0">
+              <img src="/about/quote1.png" alt="" className="relative mx-auto md:mx-0 h-[310px]" />
+              <div className="md:absolute md:top-0 text-black p-4 md:p-10 text-[12px] md:text-[.9rem] italic relative top-0 left-5 bg-white md:bg-transparent text-left rounded-lg md:rounded-none shadow-md md:shadow-none mt-2 md:mt-0">
                 "As Managing Partner, I am committed to infusing innovation and best practices into everything we do at CryoCorp. By embracing technology and strategic design, we aim to deliver sustainable and advanced gas solutions to industries worldwide. We strive for continuous improvement, ensuring we meet our mission and support our clients' growth journey."
               </div>
             </div>
