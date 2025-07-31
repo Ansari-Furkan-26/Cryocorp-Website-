@@ -71,7 +71,7 @@ const HeroSection = () => {
           {/* Left column */}
           <div className="h-full">
             <div className="sm:p-8 text-left max-w-[70%]">
-              <h2 className="text-[38px] font-normal mb-4 pt-10">
+              <h2 className="text-[38px] font-thin mb-4 pt-10">
                 Together we can build a world of positive consumption
               </h2>
             </div>
@@ -142,10 +142,10 @@ const HeroSection = () => {
                 </p>
                 <p className="pb-2">
                   Ashish Goyal, the firm’s driving force, is actively engaged
-                  with institutions like the Engineering Export Promotion
-                  Council (EEPC) and Business Coaching India (BCI), and has
-                  formerly served with AIIGMA (All India Industrial Gas
-                  Manufacturers Association)—helping shape India’s industrial
+                  with institutions like the <span className="italic font-semibold">Engineering Export Promotion
+                  Council (EEPC)</span> and <span className="italic font-semibold">Business Coaching India (BCI)</span>, and has
+                  formerly served with <span className="italic font-semibold">AIIGMA (All India Industrial Gas
+                  Manufacturers Association)</span> —helping shape India’s industrial
                   gas export vision.
                 </p>
                 <p className="pb-2">

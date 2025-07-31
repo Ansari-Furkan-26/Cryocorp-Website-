@@ -104,7 +104,7 @@ const Molecular = () => {
           </div>
         </div>
         <div className="">
-          <img src="/molecular/molecular.png" alt="" />
+          <img src="/molecular/ASU6.png" alt="" />
         </div>
       </div>
 

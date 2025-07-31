@@ -38,7 +38,7 @@ const SparePart = ({ number, title, imageSrc, customCss }: SparePartProps) => (
 const LiquidOxygen = () => {
   const spareParts = [
     { number: "01", title: "s.s.liner", imageSrc: "/liquidOxygen/1.png" },
-    { number: "02", title: "s.s.piston", imageSrc: "/liquidOxygen/2.png" },
+    { number: "02", title: "s.s.piston", imageSrc: "/liquidOxygen/2.png", customCss: "rotate-45"  },
     {
       number: "03",
       title: "brass gland nut & cylinder head nut",
@@ -54,7 +54,7 @@ const LiquidOxygen = () => {
       title: "non-return valves",
       imageSrc: "/liquidOxygen/5.png",
     },
-    { number: "06", title: "gland packing", imageSrc: "/liquidOxygen/6.png" },
+    { number: "06", title: "gland packing", imageSrc: "/liquidOxygen/6.png", customCss: "-rotate-90"  },
     { number: "07", title: "oil wiper rings", imageSrc: "/liquidOxygen/7.png" },
     { number: "08", title: "coldend assembly", imageSrc: "/liquidOxygen/8.png" },
     {

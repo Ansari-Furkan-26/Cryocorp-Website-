@@ -5,25 +5,25 @@ const values = [
     title: 'Make It Happen',
     description:
       'We proactively take responsibility and collaborate to solve challenges and deliver agreed outcomes.',
-    icon: '/about/icon1.png', 
+    icon: '/about/Vector.svg', 
   },
   {
     title: 'Win-Win for All',
     description:
       'Acting responsibly, prioritizing every stakeholder for collaborative value and fair treatment.',
-    icon: '/about/icon2.png',
+    icon: '/about/Vector1.svg',
   },
   {
     title: 'Expert & Inclusive',
     description:
       'We leverage collective expertise through open communication and teamwork, striving to be experts in our domains.',
-    icon: '/about/icon3.png',
+    icon: '/about/Vector2.svg',
   },
   {
     title: 'Integrity',
     description:
       'Our most valued behaviour means upholding ethical standards, safeguarding assets, and being transparent and trustworthy in all dealings.',
-    icon: '/about/icon4.png',
+    icon: '/about/Vector3.svg',
   },
 ];
 
@@ -44,11 +44,11 @@ const OurValues = () => {
           {values.map((item, index) => (
             <div
               key={index}
-              className="group bg-[#E5E5E5] rounded-xl p-6 flex flex-col justify-between hover:bg-[#385d68] transition duration-300 h-[300px]"
-            >
+              className="group bg-[#E5E5E5] rounded-xl p-6 flex flex-col justify-between hover:bg-[#5FC9D8] transition duration-300 h-[300px]">
               {/* Icon */}
-              <div className="text-3xl text-[#47C6E6] mb-4 group-hover:text-white">
-                <img src={item.icon} alt="" />
+              <div className="text-3xl mb-4 text-[#5FC9D8] ">
+                <img src={item.icon} alt="" className='fill-[#5FC9D8]'/>
+                
               </div>
 
               {/* Description */}

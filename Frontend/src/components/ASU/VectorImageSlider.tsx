@@ -124,7 +124,7 @@ const VectorImageSlider = () => {
                       src={image.src[1]}
                       alt={`${image.alt} 2`}
                       style={{
-                        width: 50,
+                        width: 120,
                         height: 85,
                         objectFit: 'contain'
                       }}
@@ -135,14 +135,14 @@ const VectorImageSlider = () => {
                     src={image.src[0]}
                     alt={image.alt}
                     style={{
-                      width: 80,
-                      height: 95,
+                      width: 120,
+                      height: 100,
                       objectFit: 'contain'
                     }}
                   />
                 )}
               </div>
-              <div className="text-[11px] text-center font-bold text-gray-800 max-w-[125px] leading-tight">
+              <div className="text-[11px]  font-bold text-gray-800 max-w-[125px] leading-tight">
                 <span className="block mb-0.5">{`${image.number}.`}</span>
                 <span className="block">
                   {image.title.toUpperCase()}

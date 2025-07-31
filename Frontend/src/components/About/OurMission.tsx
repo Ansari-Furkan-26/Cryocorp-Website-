@@ -63,8 +63,9 @@ const OurMission = () => {
           ].map((item) => (
             <div key={item.id}>
               <h3 className="md:text-[#A1D5B1] text-[#5c946d] text-xl sm:text-[50px] font-bold mb-1 sm:mb-4">{item.id}</h3>
-              <h4 className="md:text-[#A1D5B1] text-[#5c946d] text-md font-semibold mb-1">{item.title}</h4>
-              <p className="text-sm text-gray-800 leading-relaxed font-light text-justify">{item.desc}</p>
+
+              <h4 className="md:text-[#A1D5B1] text-[#5c946d] text-sm font-semibold mb-1">{item.title}</h4>
+              <p className="text-sm text-gray-800 md:text-lg font-light text-justify">{item.desc}</p>
             </div>
           ))}
         </div>

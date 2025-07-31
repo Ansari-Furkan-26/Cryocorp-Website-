@@ -5,19 +5,19 @@ const productData = [
   {
     title: "Cryogenic Storage Tanks",
     description:
-      "These tanks are key components of Liquid Bottling Stations. Designed to hold cryogenic gases at extremely low temperatures such as Argon, Nitrogen, and Oxygen, they ensure safe and efficient long-term storage. These vessels are available in horizontal or vertical configurations with capacities ranging from 1 KL to 60 KL. Made with high-vacuum multi-layer insulation for minimal heat transfer, they’re manufactured per ASME/EN 13458/AD 2000 standards. With pressure ratings up to 37 Bar (g), these tanks are skid-mounted and customizable, and are a critical part of the system.",
+      "These tanks are major components of the Liquid Refilling Bottling Plant. Their use is to store industrial gases like Oxygen (LOX), Nitrogen (LNG), Argon (LAR), and Carbon Dioxide (LCO) in their liquid form. They are used for storing other gases like LPG. These tanks can have a capacity of up to 40 KL and are typically vertical, with a horizontal option available. They are designed for cryogenic temperatures (-196°C) and pressures up to 40 bar. Placement of a Liquid Tank is a central part of the system.",
     image: "/LBU/LBU1.png", // Adjust path as needed
   },
   {
     title: "Ambient Liquid Vapourizer",
     description:
-      "These are key components to gasify the liquid from our LOX/Nitrogen storage tanks using natural convection. These fin-type aluminum vaporizers have high thermal efficiency, and come in sizes from 500 Nm³/hr to 10,000 Nm³/hr. Their design eliminates the need for electricity or fuel-based heating, supporting a clean and cost-effective mode of vaporization.",
+      "These are major components of the plant. They are vaporization systems specifically for industrial gases like Oxygen (LOX), Nitrogen (LNG), Argon (LAR), and Carbon Dioxide. Their use is to convert the liquid gas back into a gaseous state. They can handle flow rates ranging from 30 to 2,500 Nm³/hr. Their placement is after and connected to the Liquid Tank, suggesting they are located downstream of the storage.",
     image: "/LBU/LBU3.png",
   },
   {
     title: "Liquid Oxygen/ Nitrogen Pumps",
     description:
-      "These are a major component of the Liquid Bottling Station Plant. Their role is to pressurize the cryogenic fluid before it's vaporized and filled in gas cylinders. CRYO CORP provides high-efficiency piston-type pumps used in both cylinder filling and gas transfer operations. Available in multiple flow & pressure ratings, they are built to precise specifications and come with PLC-controlled automation.",
+      "These are a major component of the Liquid Refilling Bottling Plant. Their use is for transferring liquid gages - Oxygen, Nitrogen, Argon, or Carbon Dioxide. CRYO CORP offers Liquid Oxygen Pumps suitable for a capacity range from 200 cu.m/hr up to 400 cu.m/hr. Their placement is part of the overall system for handling the liquid from the storage tank. CryoCorp offers best quality both Liquid Oxygen Pumps and Liquid Nitrogen Pumps for Bottling Units also as per customsied specifications. ",
     image: "/LBU/LBU2.png",
   },
 ];
@@ -40,10 +40,10 @@ const LiquidProductsSection: React.FC = () => {
             />
           </div>
           <div className="w-full md:w-1/2">
-            <h3 className="text-[32px] font-light text-gray-800 mb-3">
+            <h3 className="text-[32px] text-right text-gray-800 mb-3">
               {product.title}
             </h3>
-            <p className="text-gray-700 text-sm leading-relaxed text-justify">
+            <p className="text-gray-700 text-base leading-relaxed text-justify">
               {product.description}
             </p>
           </div>
