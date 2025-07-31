@@ -35,7 +35,7 @@ const ProductsContainerInner = () => {
   }, [productType, updateCurrentPage]);
 
   return (
-    <div className={`bg-white relative overflow-x-hidden pt-16 lg:pt-16 xl:pt-16 sm:pt-32 transition-all duration-300`}>
+    <div className={`bg-white relative overflow-hidden pt-16 lg:pt-16 xl:pt-16 sm:pt-32 transition-all duration-300`}>
       <AnimatePresence mode="wait">
         {currentPage === 1 && (
           <PageTransition key="page-1" pageIndex={1}>

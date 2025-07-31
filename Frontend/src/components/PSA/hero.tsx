@@ -238,7 +238,7 @@ const ASUPage = () => {
     };
 
     return (
-        <div id="psa" className="min-h-screen bg-white pt-6 lg:pt-8 pb-20 sm:pb-0" >
+        <div id="psa" className="h-[2000px] bg-white pt-6 lg:pt-8 pb-20 sm:pb-0" >
             {/* Main Content */}
             <main className="relative z-10 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 left-0 pr-4">
                 <div className="container mx-auto px-4 py-12 lg:py-12 py-6">

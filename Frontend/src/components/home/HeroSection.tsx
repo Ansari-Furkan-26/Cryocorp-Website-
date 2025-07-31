@@ -108,7 +108,7 @@ const HeroSection = () => {
                 <FaWhatsapp />
               </Button>
               <Button
-                onClick={() => window.open('https://www.instagram.com/cryocorp_/', '_blank')}
+                onClick={() => window.open('https://www.instagram.com/direct/t/17842207418289786/', '_blank')}
                 size="icon"
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-full text-white"
               >

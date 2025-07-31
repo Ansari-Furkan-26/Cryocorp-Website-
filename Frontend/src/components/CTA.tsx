@@ -28,7 +28,6 @@ function CTA() {
             <h3 className="font-medium mb-1">Send Us a Message</h3>
             <p className="text-md leading-relaxed">
               Fill out the form and we will get back to you shortly. <br />
-              This requirement gets connected to our backend CRM inquiry collection system.
             </p>
           </div>
 
