@@ -49,6 +49,7 @@ const Footer = () => {
         <div className="md:mr-20">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Logo and Let's Talk */}
+            <div className="flex flex-col md:flex-row gap-8 md:gap-20">
             <div>
               <div className="flex items-center mb-10">
                 <a href="/">
@@ -78,14 +79,25 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="md:flex justify-between">
-              {/* Address */}
-              <div>
-                <h4 className="font-bold text-gray-800 md:mb-4">Address</h4>
+            <div>
+              <h4 className="font-medium text-[17px] text-[#8B8D8E] md:mb-4">Office Address</h4>
                 <div className="text-gray-600 text-sm space-y-1">
                   <p>Unit no. 10, Swasth Chamber, S. G. Barve</p>
                   <p>Marg, Off Sion-Trombay Road, Chembur,</p>
                   <p>Mumbai, India - 400089</p>
+                </div>
+            </div>
+            </div>
+            <div className="md:flex justify-between">
+              {/* Address */}
+              <div>
+                <h4 className="font-medium text-[17px] text-[#8B8D8E] md:mb-4">Factory and Godown Address</h4>
+                <div className="text-gray-600 text-sm space-y-1">
+                  <p>CryoCorp O2 LLP</p>
+                  <p>Gala No. 32, Shubham Industrial Estate</p>
+                  <p>Azad Nagar, Golani Naka, Waliv</p>
+                  <p>Vasai East – 401208, District Thane</p>
+                  <p>Maharashtra, India</p>
                 </div>
 
                 <div className="flex space-x-4 mt-6">
@@ -124,8 +136,8 @@ const Footer = () => {
               </div>
 
               {/* Subscribe */}
-              <div className="mt-6 mr-14">
-                <h4 className="font-bold text-gray-800 md:mb-4">Subscribe</h4>
+              <div className="mt-0 mr-14">
+                <h4 className="font-medium text-[17px] text-[#8B8D8E] md:mb-4">Subscribe</h4>
                 <p className="text-gray-600 text-sm mb-4">
                   To get notified about our new solutions!
                 </p>
@@ -165,7 +177,7 @@ const Footer = () => {
               alt=""
               className="hidden md:block absolute h-8 left-[45%] top-[10px]"
             />
-            <nav className="flex justify-center flex-wrap gap-4 mb-4 sm:mb-0 text-xs pr-10 md:text-sm pt-4 md:ml-[400px]">
+            <nav className="flex justify-center flex-wrap gap-4 pb-4 sm:pb-0 text-xs pr-10 md:text-sm pt-4 md:ml-[400px]">
               <a
                 href="#"
                 className="text-teal-500 hover:text-teal-600 transition-colors"
