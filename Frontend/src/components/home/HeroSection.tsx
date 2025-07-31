@@ -101,7 +101,7 @@ const HeroSection = () => {
             </Button>
             <div className="flex justify-start pl-2 space-x-4 mt-4">
               <Button
-                onClick={() => window.open('https://api.whatsapp.com/send?phone=917710089939', '_blank')}
+                onClick={() => window.open('https://whatsapp.com/channel/0029Vao5Mx8DTkKAYtRf382R', '_blank')}
                 size="icon"
                 className="bg-green-500 hover:bg-green-600 rounded-full text-white"
               >
@@ -115,7 +115,7 @@ const HeroSection = () => {
                 <FaInstagram />
               </Button>
               <Button
-                onClick={() => window.open('/')}
+                onClick={() => window.open('https://m.me/cryocorp.co.in', '_blank')}
                 size="icon"
                 className="bg-indigo-500 hover:bg-indigo-600 rounded-full text-white"
               >
