@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoAreYou: React.FC = () => {
   return (
-    <section className="w-full bg-white py-10 px-6 md:px-20 font-sans text-[#1A365E] mt-20 md:mt-52 ">
+    <section className="w-full bg-white pt-10 px-6 md:px-20 font-sans text-[#1A365E] mt-20 md:mt-52 ">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
       
@@ -14,8 +14,7 @@ const WhoAreYou: React.FC = () => {
             <button onClick={() => window.location.href = "/quiz-form/NewPlant"} className="bg-[#0A2A45] text-white py-4 px-6 rounded-lg text-center text-sm font-semibold hover:bg-opacity-90 transition">
               CONFUSED ABOUT WHICH GAS PLANT TO PICK FOR YOUR BUSINESS
             </button>
-            <button className="bg-[#0A2A45] text-white py-4 px-6 rounded-lg text-center text-sm font-semibold hover:bg-opacity-90 transition">
-              <a href="/select-quiz">ALREADY OWNS A GAS PLANT</a>
+            <button onClick={() => window.location.href = "/select-quiz"} className="bg-[#0A2A45] text-white py-4 px-6 rounded-lg text-center text-sm font-semibold hover:bg-opacity-90 transition">ALREADY OWNS A GAS PLANT
             </button>
           </div>
 

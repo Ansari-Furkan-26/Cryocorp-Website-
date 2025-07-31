@@ -186,7 +186,7 @@ useEffect(() => {
                 )}
                 <p className="text-[20px] font-medium text-gray-600">{testimonial.role}</p>
               </div>
-              {testimonial.quote == "rate"?<button className="px-4 py-2 font-medium w-[100px] rounded-full border-[3px] border-[#5FC9D8] text-[#5FC9D8]">5 stars</button>:<blockquote className="text-[#5FC9D8] text-[35px] font-light">
+              {testimonial.quote == "rate"?<button className="px-4 py-2 font-medium text-2xl w-[120px] rounded-full border-[3px] border-[#5FC9D8] text-[#5FC9D8]">5 stars</button>:<blockquote className="text-[#5FC9D8] text-[35px] font-light">
                 "{testimonial.quote}"
               </blockquote>}
               

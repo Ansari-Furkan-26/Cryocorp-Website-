@@ -9,16 +9,17 @@ const IndustriesAnimatedSection2 = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const industries = [
-    "Healthcare",
+    "Iron & Steel",
+    "Medical &",
     "Hospitals",
     "Petrochemicals",
     "Fertilizers",
     "Pharmaceuticals",
     "Biotechnology",
-    "Food Processing",
-    "Preservation",
+    "Food",
+    "Preservation &",
     "Processing",
-    "Aviation Industry",
+    "Aviation",
     "Aqua & Fisheries"
   ];
 

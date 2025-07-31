@@ -193,14 +193,14 @@ const StepwisePopup = () => {
                     </div>
 
                     {/* Step Content */}
-                    <div className="mb-3 sm:mb-6">
+                    <div className="mb-12 sm:mb-12">
                       <h3 className="text-base sm:text-xl font-bold text-gray-800 mb-1 group-hover:text-teal-700 transition-colors">{step.title}</h3>
                       <p className="text-xs text-teal-600 font-semibold mb-1 sm:mb-3">{step.subtitle}</p>
                       <p className="text-xs text-gray-600 leading-relaxed">{step.description}</p>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className="space-y-2">
+                    <div className="space-y-2 absolute bottom-4">
                       {step.actions.map((action, actionIndex) => (
                         <button
                           key={actionIndex}

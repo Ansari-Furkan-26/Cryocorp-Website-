@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { ArrowRight, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { FaArrowRight } from "react-icons/fa6";
 
 const Benefits = () => {
   const [showReliabilityModal, setShowReliabilityModal] = useState(false);
@@ -170,9 +171,9 @@ const ReliabilityModal = () => (
             <X className="h-6 w-6 text-white" />
           </button>
           <div className="relative z-10 h-full flex items-center p-4 sm:p-8">
-            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-8 w-full items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[20%_80%] gap-4 sm:gap-8 w-full items-center">
               <div className="text-left space-y-4 sm:space-y-6">
-                <div className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
+                <div className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-none">
                   01
                 </div>
                 <div className="space-y-2 sm:space-y-4">
@@ -182,20 +183,22 @@ const ReliabilityModal = () => (
                   <p className="text-sm sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
                     Eliminate Plant Downtime
                   </p>
-                  <ul className="text-white/90 list-disc pl-5 space-y-1 sm:space-y-2">
-                    <p className="text-sm sm:text-base"><strong>1.</strong> Cut-out downtime</p>
-                    <p className="text-sm sm:text-base"><strong>2.</strong> 24-hour crisis response</p>
-                    <p className="text-sm sm:text-base"><strong>3.</strong> Save up to $463 per avoided shutdown</p>
+                  <ul className="text-white/90 list-disc space-y-1 sm:space-y-2">
+                    <p className="text-xs sm:text-base"><strong>1.</strong> Cut-out downtime</p>
+                    <p className="text-xs sm:text-base"><strong>2.</strong> 24-hour crisis response</p>
+                    <p className="text-xs sm:text-base"><strong>3.</strong> Save up to $463 per avoided shutdown</p>
                   </ul>
-                  <p className="text-sm sm:text-base text-white/90">
+                  <p className="text-xs sm:text-base sm:text-left text-white/90">
                     Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
                   </p>
-                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
-                    Take test
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 flex items-center gap-2 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base border border-black">
+                    <p>Take test</p>
+                    <FaArrowRight/>
                   </button>
                 </div>
               </div>
-              <div className="flex justify-center lg:justify-end">
+              <div className="flex flex-col items-center justify-center lg:justify-end">
+                <div className="text-white text-[38px]">Struggling with costly unplanned downtime? </div>
                 <div className="rounded-lg">
                   <img
                     src="benefits/benefits1.png"
@@ -232,9 +235,9 @@ const CostModal = () => (
             <X className="h-6 w-6 text-white" />
           </button>
           <div className="relative z-10 h-full flex items-center p-4 sm:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-6 w-full items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[20%_80%] gap-4 sm:gap-6 w-full items-center">
               <div className="text-left space-y-4 sm:space-y-8">
-                <div className="text-6xl sm:text-8xl lg:text-9xl font-bold text-white leading-none">
+                <div className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white leading-none">
                   02
                 </div>
                 <div className="space-y-2 sm:space-y-4">
@@ -244,20 +247,25 @@ const CostModal = () => (
                   <p className="text-sm sm:text-xl lg:text-2xl text-white/90 leading-relaxed">
                     Reduce Operations Cost
                   </p>
-                  <p className="text-sm sm:text-base text-white/90">
-                    Ready to see how much you can save? Take our quick Plant Assessment and start cutting costs today!
+                  <p className="text-sm sm:text-base text-justify text-white/90">
+                    Ready to see how much you can save? 
                   </p>
-                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
-                    Take test
+                  <p className="text-sm sm:text-base text-justify text-white/90">
+                    Take our quick Plant Assessment and start cutting costs today! 
+                  </p>
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 hover:bg-gray-300 transition-colors text-sm sm:text-base border border-black">
+                    <p>Take test</p>
+                    <FaArrowRight/>
                   </button>
                 </div>
               </div>
-              <div className="flex justify-center lg:justify-end">
+              <div className="flex flex-col items-center justify-between lg:justify-end">
+                <div className="text-white text-[30px]">Worried about high maintenance bills and surprise breakdowns?</div>
                 <div className="rounded-lg">
                   <img
                     src="benefits/benefits4.png"
                     alt="Cost Analysis Chart"
-                    className="w-full max-w-full sm:w-[630px] h-auto sm:h-[600px] rounded-lg shadow-lg object-cover"
+                    className="w-full max-w-full sm:w-[630px] h-auto sm:h-[500px] rounded-lg shadow-lg object-cover"
                   />
                 </div>
               </div>
@@ -289,9 +297,9 @@ const MaintenanceModal = () => (
             <X className="h-6 w-6 text-white" />
           </button>
           <div className="relative z-10 h-full flex items-center p-4 sm:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-6 w-full items-center">
-              <div className="text-left space-y-4 sm:space-y-8">
-                <div className="text-5xl sm:text-6xl lg:text-9xl font-bold text-white leading-none">
+            <div className="grid grid-cols-1 lg:grid-cols-[20%_80%] gap-4 sm:gap-6 w-full items-center">
+              <div className="text-left space-y-4 sm:space-y-4">
+                <div className="text-3xl sm:text-4xl lg:text-7xl font-bold text-white leading-none">
                   03
                 </div>
                 <div className="space-y-2 sm:space-y-4">
@@ -301,16 +309,17 @@ const MaintenanceModal = () => (
                   <p className="text-sm sm:text-lg lg:text-2xl text-white leading-relaxed">
                     Extend Equipment Lifespan
                   </p>
-                  <div className="text-white list-disc pl-5 space-y-1 sm:space-y-2">
-                    <p className="text-sm sm:text-base"><strong>1.</strong> Prolonged equipment lifespan with fewer breakdowns</p>
-                    <p className="text-sm sm:text-base"><strong>2.</strong> Reduced spare parts consumption due to quality maintenance</p>
-                    <p className="text-sm sm:text-base"><strong>3.</strong> Improved operational efficiency and cost savings</p>
+                  <div className="text-white list-disc space-y-1 sm:space-y-2">
+                    <p className="text-xs sm:text-base"><strong>1.</strong> Prolonged equipment lifespan with fewer breakdowns</p>
+                    <p className="text-xs sm:text-base"><strong>2.</strong> Reduced spare parts consumption due to quality maintenance</p>
+                    <p className="text-xs sm:text-base"><strong>3.</strong> Improved operational efficiency and cost savings</p>
                   </div>
-                  <p className="text-sm sm:text-base text-white">
+                  <p className="text-xs sm:text-base text-white">
                     Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
                   </p>
-                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
-                    Take test
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 hover:bg-gray-300 transition-colors text-sm sm:text-base border border-black">
+                    <p>Take test</p>
+                    <FaArrowRight/>
                   </button>
                 </div>
               </div>
@@ -351,33 +360,35 @@ const EfficiencyModal = () => (
             <X className="h-6 w-6 text-white" />
           </button>
           <div className="relative z-10 h-full flex items-center p-4 sm:p-12">
-            <div className="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-4 sm:gap-6 w-full items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[20%_80%] gap-4 sm:gap-6 w-full items-center">
               <div className="text-left space-y-2">
-                <div className="text-5xl sm:text-6xl lg:text-9xl font-bold text-white leading-none">
+                <div className="text-5xl sm:text-6xl lg:text-5xl font-bold text-white leading-none">
                   04
                 </div>
                 <div className="space-y-2 sm:space-y-2">
-                  <h2 className="text-2xl sm:text-3xl lg:text-6xl font-bold text-white leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
                     Efficiency
                   </h2>
-                  <p className="text-sm sm:text-lg lg:text-2xl text-white/90 leading-relaxed">
+                  <p className="text-sm sm:text-lg lg:text-xl text-white/90 leading-relaxed">
                     Ensure Production Continuity
                   </p>
-                  <ul className="text-white/90 list-disc pl-5 space-y-1 sm:space-y-2">
-                    <p className="text-sm sm:text-base"><strong>1.</strong> Consistent oxygen purity (93-95% for PSA, 99%+ for ASU)</p>
-                    <p className="text-sm sm:text-base"><strong>2.</strong> Uninterrupted operations and fast problem resolution</p>
-                    <p className="text-sm sm:text-base"><strong>3.</strong> Avoid production delays and financial losses from breakdowns (up to ₹75,000 saved per incident)</p>
-                    <p className="text-sm sm:text-base"><strong>4.</strong> International safety standards for peace of mind</p>
+                  <ul className="text-white/90 list-disc space-y-1 sm:space-y-2">
+                    <p className="text-xs sm:text-base"><strong>1.</strong> Consistent oxygen purity (93-95% for PSA, 99%+ for ASU)</p>
+                    <p className="text-xs sm:text-base"><strong>2.</strong> Uninterrupted operations and fast problem resolution</p>
+                    <p className="text-xs sm:text-base"><strong>3.</strong> Avoid production delays and financial losses from breakdowns (up to ₹75,000 saved per incident)</p>
+                    <p className="text-xs sm:text-base"><strong>4.</strong> International safety standards for peace of mind</p>
                   </ul>
-                  <p className="text-sm sm:text-base text-white/90">
+                  <p className="text-sm sm:text-base text-justify text-white/90">
                     Take our quick Assessment Test to evaluate your plant's efficiency and start saving costs today!
                   </p>
-                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-gray-300 transition-colors text-sm sm:text-base">
-                    Take test
+                  <button onClick={() => window.location.href = "/quiz"} className="bg-white text-black px-4 sm:px-6 py-2 sm:py-3 rounded-full flex items-center gap-2 hover:bg-gray-300 transition-colors text-sm sm:text-base border border-black border border-black">
+                    <p>Take test</p>
+                    <FaArrowRight/>
                   </button>
                 </div>
               </div>
-              <div className="flex flex-col items-center justify-center lg:justify-end text-white space-y-4 sm:space-y-6">
+              <div className="flex flex-col items-center justify-between lg:justify-end text-white space-y-4 sm:space-y-6">
+                <div className="hidden sm:block text-[48px]">What Sets Us Apart</div>
                 <div className="rounded-lg max-w-full">
                   <img
                     src="benefits/benefits8.png"

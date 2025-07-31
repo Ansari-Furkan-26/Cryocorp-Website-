@@ -4,6 +4,83 @@ import layerImage from '/public/Layer.png';
 import { useNavigation } from '../../contexts/NavigationContext';
 import { useNavigate } from "react-router-dom";
 
+// Card component to handle flip animation and content
+const PlantCard = ({ title, imageSrc, frontContent, backContent, positionStyle }) => {
+    const [isFlipped, setIsFlipped] = React.useState(false);
+
+    // Check if this card should have text positioned at top-right
+    const isTopRightCard = title === "ASU Nitrogen Plant" || title === "Second Hand ASU Plant";
+
+    return (
+        <div 
+            className="flip-card relative"
+            style={positionStyle}
+            onMouseEnter={() => setIsFlipped(true)}
+            onMouseLeave={() => setIsFlipped(false)}
+        >
+            <div className={`flip-card-inner ${isFlipped ? 'flipped' : ''}`}>
+                <div className="flip-card-front relative w-full h-full overflow-hidden shadow-lg">
+                    <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-blue-300/40" />
+                    <div className={`absolute text-white text-2xl font-bold tracking-wide ${
+                        isTopRightCard 
+                            ? 'top-4 right-4 text-right max-w-[60%]' 
+                            : 'bottom-4 left-4'
+                    }`}>
+                        {frontContent}
+                    </div>
+                </div>
+                <div className="flip-card-back absolute w-full h-full overflow-hidden bg-[#5FC9D8] text-white flex flex-col">
+                    {title === "ASU Oxygen Plant" ? (
+                        <div className="flex flex-col justify-between">
+                            {/* Top section */}
+                            <div className="flex-1 p-4 pb-2">
+                                <div className="text-sm leading-relaxed text-justify">
+                                    <p>Our <strong>ASU Oxygen Plants</strong> are engineered for high-purity oxygen generation. Designed for reliability and scalability, they feature semi-automatic operations with optional PLC/SCADA automation and user-friendly interfaces. We provide complete erection and commissioning to ensure seamless integration and peak performance.</p>
+                                </div>
+                            </div>
+                            {/* Bottom section */}
+                            <div className="flex-1 p-4 pt-16 bg-[#5FC9D8]">
+                                <div className="text-sm leading-relaxed text-justify">
+                                    <p>offer capacities from <strong>80 to 600 cu.m/hr</strong>,</p>
+                                    <p>low maintenance cycles — once every <strong>6-9 months</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    ) : title === "ASU Nitrogen Plant" ? (
+                        <>
+                            {/* Top section */}
+                            <div className="flex-1 p-4 pb-2">
+                                <div className="text-sm leading-relaxed text-justify">
+                                    <p>Similar to our oxygen systems, <strong>ASU Nitrogen Plants</strong> are of high-purity nitrogen. With extended operating cycles and options for remote monitoring and automation, these plants are built for consistency and ease of use. Our end-to-end installation and commissioning services ensure quick deployment and reliable operation from day one.</p>
+                                </div>
+                            </div>
+                            {/* Bottom section */}
+                            <div className="flex-1 p-4 pt-36 bg-[#5FC9D8] flex items-center">
+                                <div className="text-sm leading-relaxed text-justify">
+                                    <p>Deliver <strong>80 to 600 cu.m/hr</strong></p>
+                                </div>
+                            </div>
+                        </>
+                    ) : title === "New ASU Plant" ? (
+                        <div className="p-4 bg-[#5FC9D8] h-full">
+                            <div className="text-sm leading-relaxed text-justify">
+                                <p>Available in <strong>25, 45, and 100 cu.m/hr</strong>, these <strong>New ASU Plants</strong> offer a quick 15-minute start-up, automated valve controls, and integrated safety systems for precise and secure operation. Designed for reliability, they include advanced pressure monitoring, with maintenance tailored to the specific demands of gas handling.</p>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="p-4 bg-[#5FC9D8] h-full">
+                            <div className="text-sm leading-relaxed text-justify">
+                                <p>These projects involve <strong>Second-Hand Oxygen/Nitrogen plants</strong>, relevant for capacities typically ranging from <strong>50 to 400 cubic meters</strong>. A key aspect is the detailed evaluation of the plant's current condition and technical suitability to ensure reliability. The degree of automation and ease of operation would depend on the specific plant acquired. Comprehensive turnkey support includes dismantling, transportation, reinstallation, and commissioning services at the new site.</p>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const ASUPage: React.FC = () => {
     const { currentPage, updateCurrentPage } = useNavigation();
     const navigate = useNavigate();
@@ -21,6 +98,20 @@ const ASUPage: React.FC = () => {
         
         updateCurrentPage(newPage);
         navigate(`/products/${productRoutes[newPage - 1]}`);
+    };
+
+    // Updated card contents to match the image structure
+    const cardContents = {
+        "ASU Oxygen Plant": {
+            section1: "Our ASU Oxygen Plants are engineered for high-purity oxygen generation. Designed for reliability and scalability, they feature semi-automatic operations with optional PLC/SCADA automation and user-friendly interfaces. We provide complete erection and commissioning to ensure seamless integration and peak performance.",
+            section2: "offer capacities from 80 to 600 cu.m/hr, low maintenance cycles — once every 6-9 months."
+        },
+        "ASU Nitrogen Plant": {
+            section1: "Similar to our oxygen systems, ASU Nitrogen Plants are of high-purity nitrogen. With extended operating cycles and options for remote monitoring and automation, these plants are built for consistency and ease of use. Our end-to-end installation and commissioning services ensure quick deployment and reliable operation from day one.",
+            section2: "Deliver 80 to 600 cu.m/hr"
+        },
+        "New ASU Plant": "Available in 25, 45, and 100 cu.m/hr, these New ASU Plants offer a quick 15-minute start-up, automated valve controls, and integrated safety systems for precise and secure operation. Designed for reliability, they include advanced pressure monitoring, with maintenance tailored to the specific demands of gas handling.",
+        "Second Hand ASU Plant": "These projects involve Second-Hand Oxygen/Nitrogen plants, relevant for capacities typically ranging from 50 to 400 cubic meters. A key aspect is the detailed evaluation of the plant's current condition and technical suitability to ensure reliability. The degree of automation and ease of operation would depend on the specific plant acquired. Comprehensive turnkey support includes dismantling, transportation, reinstallation, and commissioning services at the new site."
     };
 
     return (
@@ -44,7 +135,7 @@ const ASUPage: React.FC = () => {
 
                             {/* Description */}
                             <div className="w-full pt-24 lg:pt-24 pt-8">
-                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm  text-justify">
+                                <p className="text-gray-600 leading-relaxed lg:text-base text-sm text-justify">
                                     Air Separation Unit (ASU) technology is at the heart of CryoCorp's operations — a cutting-edge process
                                     where atmospheric air is compressed, cooled, and separated into its key components: oxygen, nitrogen,
                                     and argon. These gases are then purified, liquefied, or stored in gaseous form depending on industrial
@@ -119,137 +210,104 @@ const ASUPage: React.FC = () => {
             <div id="level-1" className="absolute top-[1000px] left-0 ml-60 right-0 h-[600px] z-10 lg:block hidden">
                 <p className="font-bold">LEVEL 1</p>
                 <div className="relative sm:h-full w-full">
-                    {/* ASU OXYGEN PLANT (Filtered Image Only) */}
-                    <div className="absolute top-0 w-[390px] h-72">
-                        <div className="relative w-full h-full overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/ASU.jpg"
-                                alt="ASU Oxygen Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute bottom-4 left-4 text-white text-2xl font-bold tracking-wide">
-                                ASU OXYGEN PLANT
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* ASU NITROGEN PLANT (Top Center Large) */}
-                    <div className="absolute top-0 left-[420px] w-[380px] h-[380px]">
-                        <div className="relative w-full h-full overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/asu4.png"
-                                alt="ASU Nitrogen Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute top-4 right-4 text-white text-2xl font-bold tracking-wide">
-                                ASU NITROGEN PLANT
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* NEW ASU PLANT (Bottom Left Small) */}
-                    <div className="absolute top-[300px] left-[180px] w-52 h-36">
-                        <div className="relative w-full h-full overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/asu2.png"
-                                alt="New ASU Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute bottom-2 left-2 text-white text-xl font-bold">
-                                NEW ASU PLANT
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* SECOND HAND ASU PLANT (Top Right) */}
-                    <div className="absolute top-[250px] left-[830px] w-64 h-64">
-                        <div className="relative w-[300px] h-full overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/asu3.png"
-                                alt="Second Hand ASU Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute top-2 right-2 text-white text-2xl font-bold">
-                                SECOND HAND
-                            </div>
-                            <div className="absolute top-8 right-2 text-white text-2xl font-bold">
-                                ASU PLANT
-                            </div>
-                        </div>
-                    </div>
+                    <PlantCard 
+                        title="ASU Oxygen Plant" 
+                        imageSrc="/ASU/ASU.jpg" 
+                        frontContent="ASU Oxygen Plant" 
+                        backContent={cardContents["ASU Oxygen Plant"]} 
+                        positionStyle={{ position: 'absolute', top: 0, width: '390px', height: '288px' }} 
+                    />
+                    <PlantCard 
+                        title="ASU Nitrogen Plant" 
+                        imageSrc="/ASU/asu4.png" 
+                        frontContent="ASU Nitrogen Plant" 
+                        backContent={cardContents["ASU Nitrogen Plant"]} 
+                        positionStyle={{ position: 'absolute', top: 0, left: '420px', width: '380px', height: '380px' }} 
+                    />
+                    <PlantCard 
+                        title="New ASU Plant" 
+                        imageSrc="/ASU/asu2.png" 
+                        frontContent="New ASU Plant" 
+                        backContent={cardContents["New ASU Plant"]} 
+                        positionStyle={{ position: 'absolute', top: '300px', left: '80px', width: '308px', height: '174px' }} 
+                    />
+                    <PlantCard 
+                        title="Second Hand ASU Plant" 
+                        imageSrc="/ASU/asu3.png" 
+                        frontContent="Second Hand ASU Plant" 
+                        backContent={cardContents["Second Hand ASU Plant"]} 
+                        positionStyle={{ position: 'absolute', top: '250px', left: '830px', width: '300px', height: '256px' }} 
+                    />
                 </div>
             </div>
 
             {/* Mobile Plant Images Section */}
             <div className="lg:hidden block px-4">
                 <div className="space-y-6">
-                    {/* ASU OXYGEN PLANT */}
-                    <div className="w-full h-48">
-                        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/ASU.jpg"
-                                alt="ASU Oxygen Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute bottom-2 left-2 text-white text-lg font-bold tracking-wide">
-                                ASU OXYGEN PLANT
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* ASU NITROGEN PLANT */}
-                    <div className="w-full h-48">
-                        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/asu4.png"
-                                alt="ASU Nitrogen Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute bottom-2 left-2 text-white text-lg font-bold tracking-wide">
-                                ASU NITROGEN PLANT
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* NEW ASU PLANT */}
-                    <div className="w-full h-48">
-                        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/asu2.png"
-                                alt="New ASU Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute bottom-2 left-2 text-white text-lg font-bold">
-                                NEW ASU PLANT
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* SECOND HAND ASU PLANT */}
-                    <div className="w-full h-48">
-                        <div className="relative w-full h-full rounded-lg overflow-hidden shadow-lg">
-                            <img
-                                src="/ASU/asu3.png"
-                                alt="Second Hand ASU Plant"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-blue-300/40" />
-                            <div className="absolute bottom-2 left-2 text-white text-lg font-bold">
-                                SECOND HAND ASU PLANT
-                            </div>
-                        </div>
-                    </div>
+                    <PlantCard 
+                        title="ASU Oxygen Plant" 
+                        imageSrc="/ASU/ASU.jpg" 
+                        frontContent="ASU Oxygen Plant" 
+                        backContent={cardContents["ASU Oxygen Plant"]} 
+                        positionStyle={{ width: '100%', height: '192px' }} 
+                    />
+                    <PlantCard 
+                        title="ASU Nitrogen Plant" 
+                        imageSrc="/ASU/asu4.png" 
+                        frontContent="ASU Nitrogen Plant" 
+                        backContent={cardContents["ASU Nitrogen Plant"]} 
+                        positionStyle={{ width: '100%', height: '192px' }} 
+                    />
+                    <PlantCard 
+                        title="New ASU Plant" 
+                        imageSrc="/ASU/asu2.png" 
+                        frontContent="New ASU Plant" 
+                        backContent={cardContents["New ASU Plant"]} 
+                        positionStyle={{ width: '100%', height: '192px' }} 
+                    />
+                    <PlantCard 
+                        title="Second Hand ASU Plant" 
+                        imageSrc="/ASU/asu3.png" 
+                        frontContent="Second Hand ASU Plant" 
+                        backContent={cardContents["Second Hand ASU Plant"]} 
+                        positionStyle={{ width: '100%', height: '192px' }} 
+                    />
                 </div>
             </div>
         </div>
     );
 };
+
+// CSS for flip animation
+const styles = `
+    .flip-card {
+        perspective: 1000px;
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+    .flip-card-inner.flipped {
+        transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+    }
+    .flip-card-back {
+        transform: rotateY(180deg);
+        overflow-y: auto;
+        max-height: 100%;
+    }
+`;
+
+const styleSheet = new CSSStyleSheet();
+styleSheet.replaceSync(styles);
+document.adoptedStyleSheets = [styleSheet];
 
 export default ASUPage;

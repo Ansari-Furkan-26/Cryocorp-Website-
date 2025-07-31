@@ -46,7 +46,7 @@ const ProjectGridSection = () => {
             <div className="absolute inset-0 z-10 backdrop-blur-2xl bg-white/30" />
 
             {/* Grid Layout - Responsive adjustments */}
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4  mx-auto border-b-[0.5px] border-[#1A365E]">
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-auto border-b-[0.5px] border-[#1A365E]">
     {/* 1. Large top-left image */}
     <div className="md:col-span-2 row-span-1 overflow-hidden rounded-lg order-1">
         <img
@@ -59,11 +59,14 @@ const ProjectGridSection = () => {
     {/* 2. Turn-key content block (moved below img6.png in mobile) */}
     <div id='01. TURN-KEY PROJECTS FOR PLANT RELOCATION' className="md:col-span-2 row-span-1 bg-transparent flex flex-col justify-start order-2 md:order-3">
         <div className="p-4 md:p-6">
-            <h3 className="text-xl md:text-2xl font-bold text-black mb-2 md:mb-4">
+            <h3 className="text-xl md:text-4xl font-extrabold text-black mb-2 md:mb-4">
                 01. TURN-KEY PROJECTS FOR PLANT RELOCATION
             </h3>
+            <p className="text-sm md:text-base text-black">
+                We are Global Plant Shift Masters who understand that – 
+            </p>
             <p className="text-sm md:text-base text-black font-medium mb-2 md:mb-4">
-                We are Global Plant Shift Masters who understand that – "Your plant moves, Your production doesn't."
+                "Your plant moves, Your production doesn't."
             </p>
             <ul className="list-disc list-inside text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
                 <li>End-to-end relocation of ASU/PSA plants across borders</li>
@@ -84,10 +87,10 @@ const ProjectGridSection = () => {
             className="w-full h-48 md:h-1/2 object-cover"
         />
         <div className="p-4 md:p-6 flex-1">
-            <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4 text-black">
+            <h3 className="text-lg md:text-4xl font-extrabold mb-2 md:mb-4 text-black">
                 02. ERECTING & COMMISSIONING FOR PSA PLANTS
             </h3>
-            <p className="text-sm md:text-base font-medium text-black mb-2 md:mb-4">
+            <p className="text-sm md:text-base text-black mb-2 md:mb-4">
                 We are known for Precision-Built Gas Solutions, from blueprint to first-breath – we engineer certainty.
             </p>
             <p className='font-medium'>Key Features of our Projects services include:</p>
@@ -110,8 +113,8 @@ const ProjectGridSection = () => {
             className="w-full h-48 md:h-1/2 object-cover"
         />
         <div className="p-4 md:p-6 flex-1">
-            <h3 className="text-lg font-bold mb-2">03. LIQUID BOTTLING PLANT COMMISSIONING</h3>
-            <p className="text-xs text-black font-medium mb-2 md:mb-4">
+            <h3 className="text-lg md:text-4xl font-extrabold mb-4">03. LIQUID BOTTLING PLANT COMMISSIONING</h3>
+            <p className="text-xs text-black mb-2 md:mb-4">
                 Your liquid Gold, bottled perfectly, where cryogenic safety meets distributing brilliance.
             </p>
             <p className='font-medium'>Key Features of the Project Service includes:</p>
