@@ -5,25 +5,29 @@ const values = [
     title: 'Make It Happen',
     description:
       'We proactively take responsibility and collaborate to solve challenges and deliver agreed outcomes.',
-    icon: '/about/Vector.svg', 
+     iconPng: '/about/icon1.png',
+    iconSvg: '/about/Vector.svg',
   },
   {
     title: 'Win-Win for All',
     description:
       'Acting responsibly, prioritizing every stakeholder for collaborative value and fair treatment.',
-    icon: '/about/Vector1.svg',
+     iconPng: '/about/icon2.png',
+    iconSvg: '/about/Vector1.svg',
   },
   {
     title: 'Expert & Inclusive',
     description:
       'We leverage collective expertise through open communication and teamwork, striving to be experts in our domains.',
-    icon: '/about/Vector2.svg',
+     iconPng: '/about/icon3.png',
+    iconSvg: '/about/Vector2.svg',
   },
   {
     title: 'Integrity',
     description:
       'Our most valued behaviour means upholding ethical standards, safeguarding assets, and being transparent and trustworthy in all dealings.',
-    icon: '/about/Vector3.svg',
+     iconPng: '/about/icon4.png',
+    iconSvg: '/about/Vector3.svg',
   },
 ];
 
@@ -46,11 +50,21 @@ const OurValues = () => {
               key={index}
               className="group bg-[#E5E5E5] rounded-xl p-6 flex flex-col justify-between hover:bg-[#5FC9D8] transition duration-300 h-[300px]">
               {/* Icon */}
-              <div className="text-3xl mb-4 text-[#5FC9D8] ">
-                <img src={item.icon} alt="" className='fill-[#5FC9D8]'/>
+              <div className="relative w-24 h-16 mb-4">
+                {/* PNG: visible by default, hidden on hover */}
+                <img
+                  src={item.iconPng}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain transition-opacity duration-300 group-hover:opacity-0"
+                />
                 
+                {/* SVG: hidden by default, shown on hover */}
+                <img
+                  src={item.iconSvg}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
               </div>
-
               {/* Description */}
               <div>
               <p className="text-sm text-gray-700 group-hover:text-white mb-1">
