@@ -83,8 +83,13 @@ function CTA() {
             </div>
         
             <div>
-              <p><span className='font-semibold'>Call Us:</span> <a href="mailto:crm@cryocorp.in" className="hover:underline">+91 7738069949</a></p>
-            </div>
+            <p>
+  <span className='font-semibold'>Call Us:</span>{' '}
+  <a href="tel:+917738069949" className="hover:underline">
+    +91 7738069949
+  </a>
+</p>
+</div>
 
             
           <p className="text-md">
