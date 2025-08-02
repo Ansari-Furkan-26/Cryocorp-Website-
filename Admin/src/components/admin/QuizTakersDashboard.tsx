@@ -57,16 +57,17 @@ const QuizTakersDashboard = () => {
           <p className="text-gray-500">No quiz takers found.</p>
         ) : (
           <div className="space-y-2 max-h-[400px] overflow-y-auto border border-gray-200 rounded-md p-4">
-            {emails.map((email, index) => (
-              <div
-                key={index}
-                className="text-sm text-gray-800 flex gap-4 items-center px-4 py-2 rounded-md hover:bg-slate-100 transition"
-              >
-                <UserRoundCheck className="text-green-600" />
-                {email?.email}
-              </div>
-            ))}
-          </div>
+  {[...new Map(emails.map(item => [item.email, item])).values()].map((email, index) => (
+    <div
+      key={index}
+      className="text-sm text-gray-800 flex gap-4 items-center px-4 py-2 rounded-md hover:bg-slate-100 transition"
+    >
+      <UserRoundCheck className="text-green-600" />
+      {email?.email}
+    </div>
+  ))}
+</div>
+
         )}
       </div>
     </div>
