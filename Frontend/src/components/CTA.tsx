@@ -36,11 +36,6 @@ function CTA() {
               Click here
             </a>
           </button>
-
-          <p className="text-md font-bold mt-6 mb-10">
-            Business Hours:<br />
-            Monday – Saturday: 09:30 AM to 6:00 PM IST
-          </p>
         </div>
 
         {/* Column 2 - Get in Touch */}
@@ -49,7 +44,7 @@ function CTA() {
 
           <div className="space-y-4 text-md">
             <div className="flex flex-wrap gap-2 items-center">
-          <p className="text-base font-medium">General Inquiries 24x7:</p>
+          <p className="text-base font-medium">General Inquiries:</p>
           <a
             className="flex items-center gap-1 text-blue-700 px-3 py-1 border border-gray-300 hover:text-blue-900 hover:bg-gray-100 rounded-full"
             href="https://chatgpt.com/g/g-68650921e3b48191b61d8b06a7978505-cryogenic-solutions-assistant"
@@ -66,23 +61,35 @@ function CTA() {
           </a>
         </div>
 
-            <div>
-              <p className="font-semibold mb-1">Technical Help: Mr. Ashish Goyal</p>
-              <p>WhatsApp For Business: <a href="https://wa.me/917710049939" target="_blank" className="text-green-600 hover:underline">+91 7710049939</a>,</p>
-              <p>Mr. Ashish Goyal can also be reached via WhatsApp at <a href="https://wa.me/919004759939" target="_blank" className="text-green-600 hover:underline">+91 9004759939</a></p>
+           <div>
+              <p><span className='font-semibold'>WhatsApp For Business:</span> <a href="https://wa.me/917710049939" target="_blank" className=" hover:underline">+91 7710049939</a></p>
             </div>
 
             <div>
-              <p><span className='font-semibold'>Email:</span> Dispatch or Quotation Inquiries: <a href="mailto:crm@cryocorp.in" className="text-blue-700 hover:underline">crm@cryocorp.in</a></p>
+              <p><span className='font-semibold'>Sales & General Inquiries:</span> <a href="mailto:admin@cryocorp.co.in" className="hover:underline">admin@cryocorp.co.in</a></p>
+            </div>
+        
+            <div>
+              <p><span className='font-semibold'>Dispatch or Quotation Inquiries:</span> <a href="mailto:crm@cryocorp.in" className=" hover:underline">crm@cryocorp.in</a></p>
             </div>
 
             <div>
-              <p><span className='font-semibold'>Sales & General Inquiries:</span> <a href="mailto:admin@cryocorp.co.in" className="text-blue-700 hover:underline">admin@cryocorp.co.in</a></p>
+              <p><span className='font-semibold'>Schedule a Call -</span> <a
+                href="https://calendly.com/admin-cryocorp/new-meeting"
+                target="_blank"
+                rel="noopener noreferrer">
+                Calendly
+              </a></p>
+            </div>
+        
+            <div>
+              <p><span className='font-semibold'>Call Us:</span> <a href="mailto:crm@cryocorp.in" className="hover:underline">+91 7738069949</a></p>
             </div>
 
-            <div>
-              <p><span className='font-semibold'>Technical Support:</span> <a href="mailto:ashish@cryocorp.in" className="text-blue-700 hover:underline">ashish@cryocorp.in</a></p>
-            </div>
+            
+          <p className="text-md">
+            <span className='font-semibold'>During Business Hours: </span> Monday – Saturday: 09:30 AM to 6:00 PM IST
+          </p>
           </div>
         </div>
 

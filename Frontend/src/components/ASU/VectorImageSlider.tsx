@@ -104,27 +104,17 @@ const VectorImageSlider = () => {
               <div
                 className="flex justify-center items-end mb-1"
                 style={{
-                  height: 95, // Matches the reference height for all cards
-                  width: '100%'
+                  height: 100, // Matches the reference height for all cards
+                  width: '110%'
                 }}
               >
                 {image.src.length === 2 ? (
                   <>
                     <img
-                      src={image.src[0]}
-                      alt={`${image.alt} 1`}
-                      style={{
-                        width: 50,
-                        height: 85,
-                        objectFit: 'contain',
-                        marginRight: 4
-                      }}
-                    />
-                    <img
                       src={image.src[1]}
                       alt={`${image.alt} 2`}
                       style={{
-                        width: 120,
+                        width: 130,
                         height: 85,
                         objectFit: 'contain'
                       }}
@@ -142,28 +132,28 @@ const VectorImageSlider = () => {
                   />
                 )}
               </div>
-              <div className="text-[11px]  font-bold text-gray-800 max-w-[125px] leading-tight">
+              <div className="text-sm  font-bold text-gray-800 max-w-[125px] leading-tight">
                 <span className="block mb-0.5">{`${image.number}.`}</span>
                 <span className="block">
                   {image.title.toUpperCase()}
                   {index === 0 && (
-                    <span className="block font-normal text-[10px]">
+                    <span className="block font-base text-[10px]">
                       (KIRLOSKAR /<br />INGERSOLL RAND /<br />Booster Compressor)
                     </span>
                   )}
                   {index === 1 && (
-                    <span className="block font-normal text-[10px]">
+                    <span className="block font-base text-[10px]">
                       &amp; CASCADE COOLER
                     </span>
                   )}
                   {index === 2 && (
-                    <span className="block font-normal text-[10px]">CHILLING UNIT</span>
+                    <span className="block font-base text-[10px]">CHILLING UNIT</span>
                   )}
                   {index === 4 && (
-                    <span className="block font-normal text-[10px]">OIL ABSORBER</span>
+                    <span className="block font-base text-[10px]">OIL ABSORBER</span>
                   )}
                   {index === 8 && (
-                    <span className="block font-normal text-[10px]">
+                    <span className="block font-base text-[10px]">
                       &amp; Liquid Nitrogen Pump
                     </span>
                   )}
