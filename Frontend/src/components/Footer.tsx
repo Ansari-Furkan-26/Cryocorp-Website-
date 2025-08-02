@@ -91,7 +91,7 @@ const Footer = () => {
             <div className="md:flex justify-between">
               {/* Address */}
               <div>
-                <h4 className="font-medium text-[17px] text-[#8B8D8E] md:mb-4">Factory and Godown Address</h4>
+                <h4 className="font-medium text-[17px] text-[#8B8D8E] md:mb-4">Factory and Warehouse Address</h4>
                 <div className="text-gray-600 text-sm space-y-1">
                   <p>CryoCorp O2 LLP</p>
                   <p>Gala No. 32, Shubham Industrial Estate</p>

@@ -1046,9 +1046,7 @@
 
         // Contact button click handler
         contactButton.addEventListener("click", function () {
-          alert(
-            "Thank you for your interest! Our team will contact you shortly to discuss your results and requirements in more detail."
-          );
+          window.location.href = "https://calendly.com/admin-cryocorp/new-meeting"
         });
 
         // Highlight selected options
@@ -1274,7 +1272,6 @@
             "Technical presentation and demonstration of similar installations",
             "Contract finalization and project initiation",
           ];
-
           // Display results
           document.getElementById("technology-result").textContent = technology;
           document.getElementById("capacity-result").textContent = capacity;
