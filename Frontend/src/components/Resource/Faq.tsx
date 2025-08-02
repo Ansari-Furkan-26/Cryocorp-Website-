@@ -40,7 +40,7 @@ const FAQ_DATA: Record<string, FAQ[]> = {
     {
       question:
         "What is the typical purity level for oxygen from your PSA systems?",
-      answer: "Our PSA systems typically deliver 93±3% purity.",
+      answer: "Our PSA systems typically deliver 93-96% purity.",
     },
     {
       question: "What major machinery and spares does CryoCorp offer?",

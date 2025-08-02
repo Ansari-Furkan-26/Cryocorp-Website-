@@ -213,8 +213,21 @@
         background-color: var(--light);
         padding: 1.5rem;
         border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         text-align: center;
         margin-top: 2rem;
+      }
+
+      .contact-links {
+        text-align: left;
+      }
+
+      .contact-links a {
+        text-decoration: none;
+        color: black;
       }
 
       @media (max-width: 768px) {
@@ -890,11 +903,11 @@
           For more information or to discuss your results with our technical
           experts, please contact us at:
         </p>
-        <p>
-          Email: info@cryocorpo2.com<br />
-          Phone: +91-XXXXXXXXXX<br />
-          Website: www.cryocorpo2.com
-        </p>
+        <div class="contact-links">
+          Contact us - <a href="https://calendly.com/admin-cryocorp/new-meeting" target="_blank">https://calendly.com/admin-cryocorp/new-meeting</a><br />
+          Email: <a href="mailto:admin@cryocorp.co.in"> admin@cryocorp.co.in</a><br />
+          Phone: +91 9004759939, +91 7738069949
+        </div>
       </div>
     </div>
 

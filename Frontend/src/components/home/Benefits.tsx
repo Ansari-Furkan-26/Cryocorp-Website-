@@ -265,7 +265,7 @@ const CostModal = () => (
                   <img
                     src="benefits/benefits4.png"
                     alt="Cost Analysis Chart"
-                    className="w-full max-w-full sm:w-[630px] h-auto sm:h-[500px] rounded-lg shadow-lg object-cover"
+                    className="w-full max-w-full sm:w-[630px] h-auto sm:h-[500px] rounded-lg shadow-lg object-contain"
                   />
                 </div>
               </div>

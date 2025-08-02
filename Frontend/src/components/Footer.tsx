@@ -113,8 +113,9 @@ const Footer = () => {
                     <a
                       href="https://www.facebook.com/cryocorp.co.in"
                       target="_blank"
-                    ></a>
+                    >
                     <FaFacebook size={25} className="text-blue-500" />
+                    </a>
                   </div>
                   <div className="flex items-center justify-center transition-colors cursor-pointer hover:text-teal-500">
                     <a
