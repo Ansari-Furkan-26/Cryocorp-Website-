@@ -23,20 +23,25 @@ const QuizTakersDashboard = () => {
   }, []);
 
   const handleExport = () => {
-    if (emails.length === 0) {
-      toast.warning("No emails to export.");
-      return;
-    }
+  if (emails.length === 0) {
+    toast.warning("No emails to export.");
+    return;
+  }
 
-    const csvContent = "data:text/csv;charset=utf-8," + emails.join("\n");
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "quiz_takers.csv");
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // Extract and deduplicate emails
+  const uniqueEmails = Array.from(new Set(emails.map(item => item.email)));
+
+  const csvContent = "data:text/csv;charset=utf-8,email\n" + uniqueEmails.join("\n");
+  const encodedUri = encodeURI(csvContent);
+
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", "quiz_takers.csv");
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   return (
     <div className="min-h-screen bg-slate-50 p-6">
