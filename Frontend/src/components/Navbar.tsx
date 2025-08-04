@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import { useNavigation } from "@/contexts/NavigationContext";
 
 const Header = () => {
@@ -91,10 +91,10 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mobile menu remains the same */}
+      {/* Mobile menu with expandable Products */}
       {isMenuOpen && (
         <div className="min-h-screen z-40 bg-white">
-          <div className="flex flex-col h-full px-6 pt-20">
+          <div className="flex flex-col h-full px-6">
             <nav className="flex-1">
               <div className="space-y-0">
                 {[
@@ -108,21 +108,31 @@ const Header = () => {
                   <div key={idx}>
                     {item.hasDropdown ? (
                       <div>
-                        <div className="py-4 text-left text-lg font-medium text-[#428b93]">
+                        <button
+                          onClick={() => setIsProductsOpen(!isProductsOpen)}
+                          className="w-full flex items-center justify-between py-4 text-left text-lg font-medium text-[#428b93] hover:text-[#59C6D3] transition-colors"
+                        >
                           {item.label}
-                        </div>
-                        <div className="pl-4 space-y-2">
-                          {productCategories.map((category, catIdx) => (
-                            <a
-                              key={catIdx}
-                              href={`/products/${category.route}`}
-                              onClick={() => setIsMenuOpen(false)}
-                              className="block py-2 text-md text-[#428b93] hover:text-[#59C6D3] transition-colors"
-                            >
-                              {category.name}
-                            </a>
-                          ))}
-                        </div>
+                          {isProductsOpen ? (
+                            <ChevronUp size={20} />
+                          ) : (
+                            <ChevronDown size={20} />
+                          )}
+                        </button>
+                        {isProductsOpen && (
+                          <div className="pl-4 space-y-2">
+                            {productCategories.map((category, catIdx) => (
+                              <a
+                                key={catIdx}
+                                href={`/products/${category.route}`}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="block py-2 text-md text-[#428b93] hover:text-[#59C6D3] transition-colors"
+                              >
+                                {category.name}
+                              </a>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ) : (
                       <a
