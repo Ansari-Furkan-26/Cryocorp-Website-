@@ -15,9 +15,9 @@ const AdminLayout = () => {
 
   const navItems = [
     { path: '/admin', label: 'Blogs', icon: BookOpen, exact: true },
-    { path: '/admin/profile', label: 'Profile', icon: User, exact: false },
     { path: '/admin/Subscribers', label: 'Subscribers', icon: MailCheck, exact: true },
     { path: '/admin/quiz', label: 'Quiz Emails', icon: MailCheck, exact: true },
+    { path: '/admin/profile', label: 'Profile', icon: User, exact: false },
   ];
 
   const NavItems = ({ onItemClick }: { onItemClick?: () => void }) => (
