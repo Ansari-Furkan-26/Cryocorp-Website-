@@ -137,7 +137,7 @@ const Footer = () => {
               </div>
 
               {/* Subscribe */}
-              <div className="mt-0 mr-14">
+              <div className="mt-5 sm:mt-0 mr-14">
                 <h4 className="font-medium text-[17px] text-[#8B8D8E] md:mb-4">Subscribe</h4>
                 <p className="text-gray-600 text-sm mb-4">
                   To get notified about our new solutions!
