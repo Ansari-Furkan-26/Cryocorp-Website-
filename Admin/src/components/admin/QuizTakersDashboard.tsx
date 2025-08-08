@@ -12,24 +12,29 @@ const QuizTakersDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(20);
 
-  useEffect(() => {
-    fetch("https://api.cryocorp.in/api/email/emails")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // Remove duplicates based on email
-        const uniqueEmails = Array.from(
-          new Map(data?.map(item => [item.email, item])).values()
-        );
-        setEmails(uniqueEmails || []);
-        setFilteredEmails(uniqueEmails || []);
-        setLoading(false);
-      })
-      .catch(() => {
-        toast.error("Failed to fetch quiz takers.");
-        setLoading(false);
-      });
-  }, []);
+useEffect(() => {
+  fetch("https://api.cryocorp.in/api/email/emails")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      // Remove duplicates based on email
+      const uniqueEmails = Array.from(
+        new Map(data?.map(item => [item.email, item])).values()
+      );
+
+      // Show newest first
+      const sortedEmails = [...uniqueEmails].reverse();
+
+      setEmails(sortedEmails || []);
+      setFilteredEmails(sortedEmails || []);
+      setLoading(false);
+    })
+    .catch(() => {
+      toast.error("Failed to fetch quiz takers.");
+      setLoading(false);
+    });
+}, []);
+
 
   // Filter emails based on search term
   useEffect(() => {

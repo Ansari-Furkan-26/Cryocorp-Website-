@@ -13,13 +13,13 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
   const readingTime = Math.ceil(blog.content.split(' ').length / 200); // Approximate reading time
 
   return (
-    <Card className="hover:shadow-lg transition-all duration-200 h-full flex flex-col">
+    <Card className="hover:shadow-lg transition-all duration-200 h-full flex flex-col rounded-lg">
       {blog.coverImage && (
         <div className="aspect-video overflow-hidden">
           <img
             src={blog.coverImage}
             alt={blog.title}
-            className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
+            className="w-full h-full object-cover transition-transform duration-200 rounded-t-lg"
           />
         </div>
       )} 
@@ -35,7 +35,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog }) => {
           })}
         </div>
         
-        <CardTitle className="line-clamp-2 mb-1 pb-1 hover:text-blue-600 transition-colors">
+        <CardTitle className="line-clamp-3 mb-1 pb-1 leading-tight hover:text-black transition-colors">
             {blog.title}
         </CardTitle>
         

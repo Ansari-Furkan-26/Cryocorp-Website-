@@ -153,7 +153,7 @@ const Header = () => {
 
             <div className="pb-8">
               <hr className="border-gray-300 border-t-[1px] mb-6" />
-              <a href="/quiz-form" onClick={() => setIsMenuOpen(false)}>
+              <a href="/quiz" onClick={() => setIsMenuOpen(false)}>
                 <button className="w-full bg-[#59C6D3] hover:bg-[#4bb5c2] text-white text-base rounded-3xl px-6 py-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
                   Take Your Plant Efficiency Test!
                 </button>

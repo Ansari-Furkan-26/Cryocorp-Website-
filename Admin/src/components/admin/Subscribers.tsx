@@ -12,22 +12,25 @@ const SubscriberDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(20);
 
-  useEffect(() => {
-    fetch("https://api.cryocorp.in/api/subscribers")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        // Remove duplicates
-        const uniqueSubscribers = [...new Set(data.subscribers || [])];
-        setSubscribers(uniqueSubscribers);
-        setFilteredSubscribers(uniqueSubscribers);
-        setLoading(false);
-      })
-      .catch(() => {
-        toast.error("Failed to fetch subscribers.");
-        setLoading(false);
-      });
-  }, []);
+useEffect(() => {
+  fetch("https://api.cryocorp.in/api/subscribers")
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      // Remove duplicates
+      const uniqueSubscribers = [...new Set(data.subscribers || [])];
+      // Reverse to show newest first
+      const sortedSubscribers = [...uniqueSubscribers].reverse();
+      setSubscribers(sortedSubscribers);
+      setFilteredSubscribers(sortedSubscribers);
+      setLoading(false);
+    })
+    .catch(() => {
+      toast.error("Failed to fetch subscribers.");
+      setLoading(false);
+    });
+}, []);
+
 
   // Filter subscribers based on search term
   useEffect(() => {
