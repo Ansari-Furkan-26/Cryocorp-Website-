@@ -90,7 +90,7 @@ const IndustriesAnimatedSection2 = () => {
               <p className={`opacity-90 leading-relaxed text-justify ${isMobile ? 'text-sm mb-3' : 'text-md mb-6'}`}>
                 CryoCorp acts as a comprehensive partner to these businesses, providing engineering solutions in ASU or PSA Oxygen or Nitrogen generation, OEM quality genuine spares, and expert maintenance services, going beyond supplying products. We exists to reduce operational costs and increase profits of our clients.
               </p>
-              <p className={`opacity-80 leading-relaxed text-justify ${isMobile ? 'text-xs mb-3' : 'text-md mb-6'}`}>
+              <p className={`opacity-90 leading-relaxed text-justify ${isMobile ? 'text-sm mb-3' : 'text-md mb-6'}`}>
                 Drawing on over 35+ years of combined industry experience, our focus is on addressing our clients' pain points and helping save costs across diverse Oxygen & Nitrogen Plant types and applications. Our aim is to ensure production continuity and extend the lifespan of valuable equipment for our clients globally. 
               </p>
             </div>

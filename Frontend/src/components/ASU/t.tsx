@@ -89,10 +89,10 @@ const T = () => {
         </div>
         </div>
         <div className="">
-          <img src="/t/3.png" alt="" />
+          <img src="/t/3.png" alt="" className="h-[200px] sm:h-full mx-auto"/>
         </div>
         <div>
-          <img src="/t/4.png" alt="" />
+          <img src="/t/4.png" alt="" className="h-[200px] sm:h-full mx-auto"/>
         </div>
       </div>
 
