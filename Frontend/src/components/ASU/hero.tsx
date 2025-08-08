@@ -119,9 +119,9 @@ const ASUPage: React.FC = () => {
             {/* Main Content */}
             <main className="relative z-10 sm:ml-64 left-0 sm:pr-40 lg:ml-64 lg:left-20 lg:pr-40 ml-0 pr-4">
                 <div className="container mx-auto px-4 md:py-12 lg:py-12 py-6">
-                    <div className="grid md:grid-cols-12 gap-4 sm:min-h-[80vh] lg:grid-cols-12 grid-cols-1">
+                    <div className="grid grid-cols-12 gap-4 min-h-[80vh] lg:grid-cols-12 grid-cols-1">
                         {/* Main Content Area */}
-                        <div className="md:col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
+                        <div className="col-span-8 lg:col-span-7 col-span-1 sm:pl-6 sm:border-l-2 border-[#5b88c9]">
                             {/* Section Numbers */}
                             <div className="flex items-center space-x-8 mb-5 lg:mb-8 mb-4">
                                 <div className="md:text-2xl font-bold lg:text-2xl text-lg">01.</div>

@@ -75,7 +75,7 @@ const ProjectGridSection = () => {
             <p className="text-sm md:text-base text-black font-medium mb-2 md:mb-4">
               "Your plant moves, Your production doesn't."
             </p>
-            <ul className="list-disc list-inside text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
+            <ul className="list-disc list-outside pl-5 text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
               <li>End-to-end relocation of ASU/PSA plants across borders</li>
               <li>
                 Zero-downtime strategy with pre-mobilization planning & modular
@@ -111,10 +111,10 @@ const ProjectGridSection = () => {
               We are known for Precision-Built Gas Solutions, from blueprint to
               first-breath – we engineer certainty.
             </p>
-            <p className="font-medium">
+            <p className="font-medium mb-2">
               Key Features of our Projects services include:
             </p>
-            <ul className="list-disc list-inside text-xs md:text-base font-medium text-black space-y-1 md:space-y-2">
+            <ul className="list-disc list-outside pl-5 text-xs md:text-sm font-medium text-black space-y-1 md:space-y-2">
               <li>
                 Custom site drawings for seamless integration into your
                 facility.
@@ -148,14 +148,14 @@ const ProjectGridSection = () => {
             <h3 className="text-lg md:text-4xl font-extrabold mb-4">
               03. LIQUID BOTTLING PLANT COMMISSIONING
             </h3>
-            <p className="text-xs text-black mb-2 md:mb-4">
+            <p className="text-sm md:text-base text-black mb-2 md:mb-4">
               Your liquid Gold, bottled perfectly, where cryogenic safety meets
               distributing brilliance.
             </p>
-            <p className="font-medium">
+            <p className="font-medium mb-2">
               Key Features of the Project Service includes:
             </p>
-            <ul className="list-disc list-inside text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
+            <ul className="list-disc list-outside pl-5 text-xs md:text-sm text-black font-medium space-y-1 md:space-y-2">
               <li>
                 Expertise in bottling ultra-cold gases (-196°C handling for
                 O2/N2/Ar).

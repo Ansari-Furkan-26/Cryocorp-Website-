@@ -71,7 +71,7 @@ const OurMission = () => {
         </div>
 
         {/* Bottom Text */}
-        <p className="text-sm md:text-xl font-light text-[#80B791] mb-3 max-w-lg md:mt-52">
+        <p className="text-base text-[#80B791] mb-3 max-w-lg md:mt-52">
           At CryoCorp, our mission stems from a deep commitment to strengthen the oxygen infrastructure through
           purpose-driven partnerships and progress.
         </p>

@@ -274,7 +274,7 @@ const ASUPage = () => {
                         </div>
 
                         {/* Right Side - PSU and Social Icons */}
-                        <div className="col-span-5 flex flex-col gap-5 lg:col-span-5 lg:flex col-span-1 hidden">
+                        <div className="md:col-span-5 md:flex flex-col gap-5 lg:col-span-4 lg:flex col-span-1 hidden">
                             {/* PSU Text */}
                             <div className="flex items-center ml-80">
                                 <div className="text-2xl font-bold text-gray-300">03.</div>

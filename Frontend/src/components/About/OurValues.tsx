@@ -37,7 +37,7 @@ const OurValues = () => {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-start justify-between">
         {/* Left Section */}
         <div className="self-center">
-          <h2 className="text-6xl font-bold text-[#5FC9D8] leading-tight mb-4">Our <br /> Values</h2>
+          <h2 className="text-4xl sm:text-6xl md:text-8xl font-bold text-[#5FC9D8] leading-tight mb-4">Our <br className='hidden sm:block' /> Values</h2>
           <p className="text-[#3C8089] text-base max-w-md">
             At CryoCorp, we value the core principles that drive every solution we build and every relationship we nurture.
           </p>

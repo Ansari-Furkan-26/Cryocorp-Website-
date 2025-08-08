@@ -39,7 +39,7 @@ function CTA() {
         </div>
 
         {/* Column 2 - Get in Touch */}
-        <div className="bg-white p-6 md:p-8 text-black md:col-span-2 shadow-sm xl:border-l border-gray-500 h-full">
+        <div className="bg-white mb-4 px-6 md:px-8 text-black md:col-span-2 shadow-sm xl:border-l border-gray-500 h-full">
           <h3 className="font-bold text-2xl mb-4">Get in Touch</h3>
 
           <div className="space-y-4 text-md">

@@ -10,7 +10,7 @@ const IndustrialDiagram: React.FC = () => {
       <div className="mb-6 max-w-4xl mx-auto border-l-[0.5px] border-[#1A365E] pl-5 text-justify">
        
 
-        <p className="text-gray-700 text-sm leading-relaxed">
+        <p className="text-gray-700 text-sm leading-relaxed pt-2">
           At <span className="italic">CryoCorp</span>, our <strong className="italic">ASU (Air Separation Unit) Plants</strong>{" "}
           transform atmospheric air into high-purity industrial gases through a
           precise and highly efficient cryogenic process. It starts with
