@@ -186,13 +186,13 @@ const Footer = () => {
                 Products
               </a>
               <a
-                href="services"
+                href="/services"
                 className="text-teal-500 hover:text-teal-600 transition-colors"
               >
                 Services
               </a>
               <a
-                href="Resources"
+                href="/Resources"
                 className="text-teal-500 hover:text-teal-600 transition-colors"
               >
                 Resource Hub
