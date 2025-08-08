@@ -25,7 +25,7 @@ const BlogDetailPage = () => {
 
   if (loading) {
     return (
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto mt-72 md:mt-80 px-4 py-8">
         <p className="text-center">Loading blog...</p>
       </div>
     );
@@ -48,30 +48,33 @@ const BlogDetailPage = () => {
 
   const readingTime = Math.ceil(blog.content.split(' ').length / 200);
 
-  const handleShare = async () => {
-    const url = window.location.href;
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: blog.title,
-          text: blog.excerpt,
-          url,
-        });
-      } else {
-        await navigator.clipboard.writeText(url);
-        toast({
-          title: 'Link copied',
-          description: 'Article link has been copied to clipboard.',
-        });
-      }
-    } catch {
+const handleShare = async () => {
+  const url = window.location.href;
+  const shareText = `📖 View our blog: ${blog.title}\n\nRead here:`;
+
+  try {
+    if (navigator.share) {
+      await navigator.share({
+        title: blog.title,
+        text: shareText,
+        url,
+      });
+    } else {
+      await navigator.clipboard.writeText(`${shareText} ${url}`);
       toast({
-        title: 'Error',
-        description: 'Failed to share or copy the link.',
-        variant: 'destructive',
+        title: 'Link copied',
+        description: 'Article link has been copied to clipboard.',
       });
     }
-  };
+  } catch {
+    toast({
+      title: 'Error',
+      description: 'Failed to share or copy the link.',
+      variant: 'destructive',
+    });
+  }
+};
+
 
   const renderContent = (content: string) => {
     return content
@@ -119,7 +122,7 @@ const BlogDetailPage = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-32">
+    <div className="container mx-auto px-4 pt-28 pb-10">
       <div className="mx-auto">
         <Link to="/blog" className="inline-flex items-center text-gray-600 hover:text-gray-900 mb-8">
           <ArrowLeft className="h-4 w-4 mr-2" />

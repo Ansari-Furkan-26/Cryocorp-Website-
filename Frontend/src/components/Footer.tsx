@@ -172,7 +172,7 @@ const Footer = () => {
           </div>
 
           {/* Bottom Navigation */}
-          <div className="md:relative md:mt-6">
+          <div className="md:relative md:mt-6 pb-4 md:pb-1">
             <img
               src="/images/arrow.png"
               alt=""
@@ -180,25 +180,25 @@ const Footer = () => {
             />
             <nav className="flex justify-center flex-wrap gap-4 pb-4 sm:pb-0 text-xs pr-10 md:text-sm pt-4 md:ml-[400px]">
               <a
-                href="#"
+                href="products"
                 className="text-teal-500 hover:text-teal-600 transition-colors"
               >
                 Products
               </a>
               <a
-                href="#"
+                href="services"
                 className="text-teal-500 hover:text-teal-600 transition-colors"
               >
                 Services
               </a>
               <a
-                href="#"
+                href="Resources"
                 className="text-teal-500 hover:text-teal-600 transition-colors"
               >
                 Resource Hub
               </a>
               <a
-                href="#"
+                href="/about"
                 className="text-teal-500 hover:text-teal-600 transition-colors"
               >
                 About Us
