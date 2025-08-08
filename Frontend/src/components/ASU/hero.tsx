@@ -159,7 +159,7 @@ const ASUPage: React.FC = () => {
                                 <div className="text-2xl font-bold text-gray-300">02.</div>
                             </div>
                             <div className="text-right">
-                                <div className="text-6xl font-bold text-gray-200 tracking-wider pb-60">PSU</div>
+                                <div className="text-6xl font-bold text-gray-200 tracking-wider pb-60">PSA</div>
                             </div>
 
                             {/* Navigation Arrows */}

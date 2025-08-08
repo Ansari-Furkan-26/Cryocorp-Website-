@@ -62,7 +62,7 @@ const ASUPage: React.FC = () => {
                         </div>
 
                         {/* Right Side - Next Section and Navigation */}
-                        <div className="md:col-span-5 md:flex flex-col gap-5 lg:col-span-4 lg:flex col-span-1 hidden">
+                        <div className="col-span-5 flex flex-col gap-5 lg:col-span-5 lg:flex col-span-1 hidden">
                             {/* Next Section Number */}
                             <div className="flex items-center ml-80">
                                 <div className="text-2xl font-bold text-gray-300">04.</div>
