@@ -41,14 +41,19 @@ const BlogList = () => {
   });
 };
 
+// Sort blogs by createdAt in descending order
+const sortedBlogs = [...blogs].sort(
+  (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+);
 
-  const filteredBlogs = blogs.filter(blog =>
-    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+const filteredBlogs = sortedBlogs.filter(blog =>
+  blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  blog.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  blog.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+);
 
-  const visibleBlogs = filteredBlogs.slice(0, visibleCount);
+const visibleBlogs = filteredBlogs.slice(0, visibleCount);
+
 
   const handleDelete = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this blog post?')) {
